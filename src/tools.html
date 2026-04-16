@@ -1,0 +1,143 @@
+<!-- ═══════════════════════════════════════════════════════
+     SMEMINDS PLAYBOOK — TOOLS LIBRARY (hidden, used by modules)
+     ═══════════════════════════════════════════════════════ -->
+
+<!-- TOOL 1: Fee Calculator (used in module 1.5) -->
+<div id="tool_fees" class="tool-container">
+    <h3>Amazon India Fee Calculator (2025–2026)</h3>
+    <div class="tool-grid">
+        <div class='form-group'>
+            <label>Product Category</label>
+            <select id='t1_cat' class='form-control'>
+                <option value='0.04'>Mobile Phones (4%)</option>
+                <option value='0.05'>Consumer Electronics / Computers (5%)</option>
+                <option value='0.055'>Books / Music / Movies (5.5%)</option>
+                <option value='0.09'>Home &amp; Kitchen / Sports (9%)</option>
+                <option value='0.10' selected>Beauty / Toys / Games (10%)</option>
+                <option value='0.14'>Fine Jewellery (14%)</option>
+                <option value='0.15'>Clothing / Shoes / Handbags (15%)</option>
+                <option value='0.17'>Apparel Premium (17%)</option>
+                <option value='0.20'>Fashion Jewellery (20%)</option>
+            </select>
+        </div>
+        <div class='form-group'>
+            <label>Selling Price (₹)</label>
+            <input type='number' id='t1_price' class='form-control' value='999'>
+        </div>
+        <div class='form-group'>
+            <label>Product Weight (grams)</label>
+            <input type='number' id='t1_weight' class='form-control' value='500'>
+        </div>
+        <div class='form-group'>
+            <label>Fulfilment Method</label>
+            <select id='t1_type' class='form-control'>
+                <option value='fba'>FBA (Fulfilment by Amazon)</option>
+                <option value='easy'>Easy Ship</option>
+                <option value='self'>Self Ship / MFN</option>
+            </select>
+        </div>
+    </div>
+    <button class='btn btn-primary' onclick='calcFeeTool()'>Calculate Net Proceeds</button>
+    <div id='t1_res' class='tool-result' style='display:none;'></div>
+</div>
+
+<!-- TOOL 2: ACOS Calculator (used in module 3.2) -->
+<div id="tool_acos" class="tool-container">
+    <h3>ACOS / TACOS Calculator</h3>
+    <div class="tool-grid">
+        <div class='form-group'><label>Ad Spend (₹)</label><input type='number' id='t2_spend' class='form-control' value='1500'></div>
+        <div class='form-group'><label>Ad-Attributed Revenue (₹)</label><input type='number' id='t2_adrev' class='form-control' value='5000'></div>
+        <div class='form-group'><label>Total Revenue (₹) — organic + ad</label><input type='number' id='t2_totalrev' class='form-control' value='15000'></div>
+        <div class='form-group'><label>Gross Margin % (after COGS only)</label><input type='number' id='t2_margin' class='form-control' value='40'></div>
+    </div>
+    <button class='btn btn-primary' onclick='calcAcosTool()'>Calculate Performance</button>
+    <div id='t2_res' class='tool-result' style='display:none;'></div>
+</div>
+
+<!-- TOOL 3: Buy Box Estimator (module 2.1) -->
+<div id="tool_buybox" class="tool-container">
+    <h3>Buy Box Win Probability Estimator</h3>
+    <div class="tool-grid">
+        <div class='form-group'><label>Fulfilment Method</label><select id='bb_ful' class='form-control'><option value='4'>FBA</option><option value='3'>Seller Flex / SFP</option><option value='2'>Easy Ship</option><option value='1'>Self Ship</option></select></div>
+        <div class='form-group'><label>Your Price vs Lowest Offer (0 = same, 5 = 5% higher)</label><input type='number' id='bb_price' class='form-control' value='0'></div>
+        <div class='form-group'><label>Your Seller Rating (1–5)</label><input type='number' id='bb_rating' class='form-control' value='4.5' step='0.1' min='1' max='5'></div>
+        <div class='form-group'><label>ODR % (e.g. 0.5)</label><input type='number' id='bb_odr' class='form-control' value='0.5' step='0.1'></div>
+    </div>
+    <button class='btn btn-primary' onclick='calcBuyBox()'>Estimate Probability</button>
+    <div id='bb_res' class='tool-result' style='display:none;'></div>
+</div>
+
+<!-- TOOL 4: Pricing Simulator (module 1.11) -->
+<div id="tool_pricing" class="tool-container">
+    <h3>Pricing Simulator (Backward from Customer)</h3>
+    <div class="tool-grid">
+        <div class='form-group'><label>MRP / List Price (₹)</label><input type='number' id='ps_mrp' class='form-control' value='1999'></div>
+        <div class='form-group'><label>Cost Price / COGS (₹)</label><input type='number' id='ps_cogs' class='form-control' value='450'></div>
+        <div class='form-group'><label>Referral Fee % (e.g. 10)</label><input type='number' id='ps_fee' class='form-control' value='10'></div>
+        <div class='form-group'><label>Target Net Margin %</label><input type='number' id='ps_margin' class='form-control' value='20'></div>
+    </div>
+    <button class='btn btn-primary' onclick='calcPricing()'>Simulate Pricing</button>
+    <div id='ps_res' class='tool-result' style='display:none;'></div>
+</div>
+
+<!-- TOOL 5: Error Code Lookup (module 1.12) -->
+<div id="tool_error" class="tool-container">
+    <h3>Error Code Lookup</h3>
+    <div class='form-group'><label>Enter Amazon Error Code or Keyword</label><input type='text' id='err_input' class='form-control' placeholder='e.g. 8572 or barcode or image' oninput='lookupError()' style='user-select:text'></div>
+    <div id='err_res' class='tool-result'><p style='color:var(--text-muted)'>Type an error code or keyword above to see resolution steps.</p></div>
+</div>
+
+<!-- TOOL 6: OOS Reorder Calculator (module 2.5) -->
+<div id="tool_oos" class="tool-container">
+    <h3>Reorder Point Calculator</h3>
+    <div class="tool-grid">
+        <div class='form-group'><label>Daily Sales Velocity (units/day)</label><input type='number' id='oos_velocity' class='form-control' value='8'></div>
+        <div class='form-group'><label>Supplier Lead Time (days)</label><input type='number' id='oos_lead' class='form-control' value='14'></div>
+        <div class='form-group'><label>Safety Buffer (days)</label><input type='number' id='oos_buffer' class='form-control' value='10'></div>
+        <div class='form-group'><label>Current Stock in FC (units)</label><input type='number' id='oos_stock' class='form-control' value='50'></div>
+    </div>
+    <button class='btn btn-primary' onclick='calcOOS()'>Calculate Reorder Point</button>
+    <div id='oos_res' class='tool-result' style='display:none;'></div>
+</div>
+
+<!-- TOOL 7: Deal ROI Calculator (module 2.4) -->
+<div id="tool_deal" class="tool-container">
+    <h3>Deal ROI Calculator</h3>
+    <div class="tool-grid">
+        <div class='form-group'><label>Regular Selling Price (₹)</label><input type='number' id='deal_regular' class='form-control' value='1299'></div>
+        <div class='form-group'><label>Deal Price (₹)</label><input type='number' id='deal_price' class='form-control' value='899'></div>
+        <div class='form-group'><label>Expected Units During Deal</label><input type='number' id='deal_units' class='form-control' value='100'></div>
+        <div class='form-group'><label>Deal Fee (₹)</label><input type='number' id='deal_fee' class='form-control' value='1000'></div>
+        <div class='form-group'><label>Cost Price / COGS per unit (₹)</label><input type='number' id='deal_cogs' class='form-control' value='350'></div>
+    </div>
+    <button class='btn btn-primary' onclick='calcDealRoi()'>Calculate Deal ROI</button>
+    <div id='deal_res' class='tool-result' style='display:none;'></div>
+</div>
+
+<!-- TOOL 8: ASIN Health Score (module 1.2) -->
+<div id="tool_health" class="tool-container">
+    <h3>ASIN Health Score Calculator</h3>
+    <div class="tool-grid">
+        <div class='form-group'><label>Title length (characters)</label><input type='number' id='ah_title' class='form-control' value='75' min='1' max='300'></div>
+        <div class='form-group'><label>Number of bullet points</label><input type='number' id='ah_bullets' class='form-control' value='5' min='0' max='10'></div>
+        <div class='form-group'><label>Number of images</label><input type='number' id='ah_images' class='form-control' value='6' min='0' max='9'></div>
+        <div class='form-group'><label>A+ Content applied?</label><select id='ah_aplus' class='form-control'><option value='1'>Yes</option><option value='0'>No</option></select></div>
+        <div class='form-group'><label>Search Terms filled?</label><select id='ah_terms' class='form-control'><option value='1'>Yes</option><option value='0'>No</option></select></div>
+        <div class='form-group'><label>Has product video?</label><select id='ah_video' class='form-control'><option value='1'>Yes</option><option value='0'>No</option></select></div>
+    </div>
+    <button class='btn btn-primary' onclick='calcAsinHealth()'>Calculate Health Score</button>
+    <div id='ah_res' class='tool-result' style='display:none;'></div>
+</div>
+
+<!-- TOOL 9: Image Compliance Checker (module 1.4) -->
+<div id="tool_image" class="tool-container">
+    <h3>Image Compliance Checker</h3>
+    <div class="tool-grid">
+        <div class='form-group'><label>Image Width (px)</label><input type='number' id='img_w' class='form-control' value='1500'></div>
+        <div class='form-group'><label>Image Height (px)</label><input type='number' id='img_h' class='form-control' value='1500'></div>
+        <div class='form-group'><label>Image Type</label><select id='img_type' class='form-control'><option value='main'>MAIN Image</option><option value='alt'>Additional Image</option></select></div>
+        <div class='form-group'><label>Is background pure white (255,255,255)?</label><select id='img_bg' class='form-control'><option value='1'>Yes</option><option value='0'>No</option></select></div>
+    </div>
+    <button class='btn btn-primary' onclick='checkImageCompliance()'>Check Compliance</button>
+    <div id='img_res' class='tool-result' style='display:none;'></div>
+</div>

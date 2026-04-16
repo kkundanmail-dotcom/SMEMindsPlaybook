@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Account Management Playbook — SMEMinds</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <style>{{ CSS }}</style>
+</head>
+<body oncontextmenu="return false;">
+
+<div id="copy-toast" class="toast">© SMEMinds — Content Protected. Not for redistribution.</div>
+
+<!-- ══════════════════════════════════════════
+     SSO LOGIN OVERLAY
+══════════════════════════════════════════ -->
+<div id="login-overlay">
+    <div class="login-card">
+        <div class="login-logo-wrap">
+            <img src="{{ LOGO_B64 }}" alt="SMEMinds" onerror="this.style.display='none'">
+        </div>
+        <span class="login-tagline">Amazon Account Management Playbook</span>
+        <button class="btn-google" onclick="triggerGoogleLogin()">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+            Continue with Google
+        </button>
+        <div class="login-divider">or sign in with email</div>
+        <div class="auth-tabs">
+            <button id="tab-signin" class="auth-tab active" onclick="switchAuthTab('signin')">Sign In</button>
+            <button id="tab-signup" class="auth-tab" onclick="switchAuthTab('signup')">Sign Up</button>
+        </div>
+        <form class="login-form" id="form-signin" onsubmit="handleEmailSignIn(event)">
+            <div class="form-group">
+                <label for="si-email">Email</label>
+                <input type="email" id="si-email" class="form-control" placeholder="you@company.com" required style="user-select:text">
+            </div>
+            <div class="form-group">
+                <label for="si-pass">Password</label>
+                <input type="password" id="si-pass" class="form-control" placeholder="••••••••" required style="user-select:text">
+            </div>
+            <button type="submit" class="btn-login">Sign In →</button>
+            <div class="login-error" id="si-error"></div>
+        </form>
+        <form class="login-form" id="form-signup" onsubmit="handleEmailSignUp(event)" style="display:none">
+            <div class="form-group">
+                <label for="su-name">Full Name</label>
+                <input type="text" id="su-name" class="form-control" placeholder="Your name" required style="user-select:text">
+            </div>
+            <div class="form-group">
+                <label for="su-email">Work Email</label>
+                <input type="email" id="su-email" class="form-control" placeholder="you@company.com" required style="user-select:text">
+            </div>
+            <div class="form-group">
+                <label for="su-pass">Password</label>
+                <input type="password" id="su-pass" class="form-control" placeholder="Min 6 characters" minlength="6" required style="user-select:text">
+            </div>
+            <div class="form-group">
+                <label for="su-role">Your Role</label>
+                <select id="su-role" class="form-control">
+                    <option value="">Select role...</option>
+                    <option>Account Manager</option>
+                    <option>Brand Owner / Seller</option>
+                    <option>Consultant</option>
+                    <option>Operations</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-login">Create Account →</button>
+            <div class="login-error" id="su-error"></div>
+            <div class="login-success" id="su-success"></div>
+        </form>
+        <p class="login-footer-note">🔒 Data stored locally in your browser only.<br>Authorised SMEMinds users only.</p>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     MAIN APP
+══════════════════════════════════════════ -->
+<div class="app-container" id="main-app" style="display:none">
+
+    <!-- ── SIDEBAR ──────────────────────────────────── -->
+    <aside class="sidebar" id="sidebar">
+
+        <!-- Logo + Collapse -->
+        <div class="sidebar-header">
+            <img src="{{ LOGO_B64 }}" alt="SMEMinds" class="sidebar-logo-img" onerror="this.style.display='none'">
+            <button class="sidebar-collapse-btn" onclick="toggleSidebar()" title="Collapse sidebar" aria-label="Toggle sidebar">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+        </div>
+
+        <!-- Overall Progress -->
+        <div class="sidebar-progress">
+            <div class="progress-label">
+                <span>Overall Progress</span>
+                <span id="progress-text" class="progress-pct">0%</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="progress-bar"></div>
+            </div>
+        </div>
+
+        <!-- Search -->
+        <div class="sidebar-search">
+            <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input type="text" id="global-search" placeholder="Search modules..." onkeyup="searchContent()" style="user-select:text">
+            <kbd class="search-kbd">⌘K</kbd>
+        </div>
+
+        <!-- Nav -->
+        <nav class="sidebar-nav" id="sidebar-nav">
+
+            <!-- Dashboard link -->
+            <button class="nav-home-btn" onclick="showDashboard()" id="nav-home">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                Dashboard
+            </button>
+
+            <!-- Pillar 1 — Selection -->
+            <div class="nav-group open" id="group-p1">
+                <button class="nav-group-header" onclick="toggleNav('nav-p1','group-p1')">
+                    <div class="nav-group-left">
+                        <span class="nav-group-icon p1-icon">📦</span>
+                        <span class="nav-group-title">Selection</span>
+                    </div>
+                    <div class="nav-group-right">
+                        <span class="nav-group-count" id="count-p1">0/8</span>
+                        <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                </button>
+                <ul class="nav-list open" id="nav-p1"></ul>
+            </div>
+
+            <!-- Pillar 2 — Efficiency -->
+            <div class="nav-group" id="group-p2">
+                <button class="nav-group-header" onclick="toggleNav('nav-p2','group-p2')">
+                    <div class="nav-group-left">
+                        <span class="nav-group-icon p2-icon">⚡</span>
+                        <span class="nav-group-title">Efficiency</span>
+                    </div>
+                    <div class="nav-group-right">
+                        <span class="nav-group-count" id="count-p2">0/7</span>
+                        <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                </button>
+                <ul class="nav-list" id="nav-p2"></ul>
+            </div>
+
+            <!-- Pillar 3 — Traffic -->
+            <div class="nav-group" id="group-p3">
+                <button class="nav-group-header" onclick="toggleNav('nav-p3','group-p3')">
+                    <div class="nav-group-left">
+                        <span class="nav-group-icon p3-icon">🚦</span>
+                        <span class="nav-group-title">Traffic</span>
+                    </div>
+                    <div class="nav-group-right">
+                        <span class="nav-group-count" id="count-p3">0/6</span>
+                        <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                </button>
+                <ul class="nav-list" id="nav-p3"></ul>
+            </div>
+
+            <!-- Pillar 4 — Conversion -->
+            <div class="nav-group" id="group-p4">
+                <button class="nav-group-header" onclick="toggleNav('nav-p4','group-p4')">
+                    <div class="nav-group-left">
+                        <span class="nav-group-icon p4-icon">🎯</span>
+                        <span class="nav-group-title">Conversion</span>
+                    </div>
+                    <div class="nav-group-right">
+                        <span class="nav-group-count" id="count-p4">0/5</span>
+                        <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                </button>
+                <ul class="nav-list" id="nav-p4"></ul>
+            </div>
+
+            <!-- Pillar 5 — Speed -->
+            <div class="nav-group" id="group-p5">
+                <button class="nav-group-header" onclick="toggleNav('nav-p5','group-p5')">
+                    <div class="nav-group-left">
+                        <span class="nav-group-icon p5-icon">🚀</span>
+                        <span class="nav-group-title">Speed</span>
+                    </div>
+                    <div class="nav-group-right">
+                        <span class="nav-group-count" id="count-p5">0/7</span>
+                        <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                </button>
+                <ul class="nav-list" id="nav-p5"></ul>
+            </div>
+
+            <!-- Pillar 6 — Tools -->
+            <div class="nav-group" id="group-p6">
+                <button class="nav-group-header" onclick="toggleNav('nav-p6','group-p6')">
+                    <div class="nav-group-left">
+                        <span class="nav-group-icon p6-icon">🧰</span>
+                        <span class="nav-group-title">Tools</span>
+                    </div>
+                    <div class="nav-group-right">
+                        <span class="nav-group-count" id="count-p6">0/8</span>
+                        <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                </button>
+                <ul class="nav-list" id="nav-p6"></ul>
+            </div>
+
+            <!-- Pillar 7 — Brand Registry -->
+            <div class="nav-group" id="group-p7">
+                <button class="nav-group-header" onclick="toggleNav('nav-p7','group-p7')">
+                    <div class="nav-group-left">
+                        <span class="nav-group-icon p7-icon">🪪</span>
+                        <span class="nav-group-title">Brand Registry</span>
+                    </div>
+                    <div class="nav-group-right">
+                        <span class="nav-group-count" id="count-p7">0/6</span>
+                        <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                </button>
+                <ul class="nav-list" id="nav-p7"></ul>
+            </div>
+
+            <!-- Pillar 8 — Brand Protection -->
+            <div class="nav-group" id="group-p8">
+                <button class="nav-group-header" onclick="toggleNav('nav-p8','group-p8')">
+                    <div class="nav-group-left">
+                        <span class="nav-group-icon p8-icon">🔐</span>
+                        <span class="nav-group-title">Brand Protection</span>
+                    </div>
+                    <div class="nav-group-right">
+                        <span class="nav-group-count" id="count-p8">0/8</span>
+                        <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                </button>
+                <ul class="nav-list" id="nav-p8"></ul>
+            </div>
+
+        </nav>
+
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer">
+            <button class="sidebar-footer-btn" onclick="showBookmarks()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                SC Bookmarks
+            </button>
+            <button class="sidebar-footer-btn" onclick="showGlobalFeedback()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                My Progress
+            </button>
+        </div>
+    </aside>
+
+    <!-- ── MAIN CONTENT ──────────────────────────────── -->
+    <main class="main-content" id="main-content">
+
+        <!-- Top Header -->
+        <header class="top-header">
+            <div class="header-left">
+                <button class="sidebar-toggle-btn" onclick="toggleSidebar()" aria-label="Toggle sidebar">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                </button>
+                <nav class="breadcrumb" id="breadcrumb" aria-label="breadcrumb">
+                    <span class="bc-home" onclick="showDashboard()">Home</span>
+                    <span class="bc-sep">›</span>
+                    <span class="bc-current" id="bc-current">Dashboard</span>
+                </nav>
+            </div>
+            <div class="header-right">
+                <button class="header-action-btn" onclick="showBookmarks()" title="SC Bookmarks">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                </button>
+                <button class="header-action-btn" onclick="showGlobalFeedback()" title="My Progress">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </button>
+                <div class="user-badge" id="user-badge" onclick="handleLogout()" title="Sign out">
+                    <div class="user-avatar" id="user-avatar-el">?</div>
+                    <span id="user-name-el">User</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="opacity:0.5"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-scrollable" id="content-scrollable">
+
+            <!-- ═══ DASHBOARD ═════════════════════════════ -->
+            <div id="dashboard" class="dashboard-section active">
+
+                <!-- ── HERO ─────────────────────────────────── -->
+                <div class="hero-banner">
+                    <div class="hero-inner">
+                        <div class="hero-content">
+                            <div class="hero-eyebrow">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+                                Amazon India &nbsp;·&nbsp; Ex-Amazonians Built &nbsp;·&nbsp; 400+ Brands
+                            </div>
+                            <h1>Your Complete Amazon<br><span class="hero-accent">Growth Playbook</span></h1>
+                            <p>Master every growth lever on Amazon India. 40 expert modules across 8 pillars — from selection strategy to brand protection, powered by SMEMinds AI.</p>
+                            <div class="hero-features">
+                                <span class="hero-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>200+ SOPs &amp; Checklists</span>
+                                <span class="hero-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Quizzes &amp; Progress Tracking</span>
+                                <span class="hero-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>SC Bookmarks &amp; Video Cards</span>
+                            </div>
+                            <div class="hero-actions">
+                                <button class="hero-btn-primary" onclick="navToModule('1.1')">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                    Start Learning
+                                </button>
+                                <button class="hero-btn-ghost" onclick="showGlobalFeedback()">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                                    My Progress
+                                </button>
+                            </div>
+                        </div>
+                        <div class="hero-visual">
+                            <div class="hv-card hv-c1">
+                                <div class="hv-val">40</div>
+                                <div class="hv-label">Expert Modules</div>
+                                <div class="hv-icon">📚</div>
+                            </div>
+                            <div class="hv-card hv-c2">
+                                <div class="hv-val">200+</div>
+                                <div class="hv-label">SOPs Inside</div>
+                                <div class="hv-icon">📋</div>
+                            </div>
+                            <div class="hv-card hv-c3">
+                                <div class="hv-val">8</div>
+                                <div class="hv-label">Growth Pillars</div>
+                                <div class="hv-icon">🏛️</div>
+                            </div>
+                            <div class="hv-card hv-c4">
+                                <div class="hv-val">400+</div>
+                                <div class="hv-label">Brands Managed</div>
+                                <div class="hv-icon">🏷️</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── TRUST BAR ─────────────────────────────── -->
+                <div class="trust-bar">
+                    <div class="trust-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        Built by Ex-Amazonians
+                    </div>
+                    <div class="trust-dot"></div>
+                    <div class="trust-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        Always Up-to-Date
+                    </div>
+                    <div class="trust-dot"></div>
+                    <div class="trust-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        400+ Brands Served
+                    </div>
+                    <div class="trust-dot"></div>
+                    <div class="trust-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                        Track Your Progress
+                    </div>
+                    <div class="trust-dot"></div>
+                    <div class="trust-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        Secure &amp; Private
+                    </div>
+                </div>
+
+                <!-- ── PILLARS SECTION ────────────────────────── -->
+                <div class="dash-section-header">
+                    <div class="dash-sh-left">
+                        <span class="dash-sh-eyebrow">Complete Curriculum</span>
+                        <h2 class="dash-sh-title">8 Growth Pillars</h2>
+                    </div>
+                    <span class="dash-sh-meta">40 Modules &nbsp;·&nbsp; 200+ SOPs</span>
+                </div>
+                <div class="pillar-grid-v">
+                    <div class="pgv-card p1" onclick="navToModule('1.1')">
+                        <div class="pgv-top">
+                            <span class="pgv-num">01</span>
+                            <span class="pgv-icon">📦</span>
+                        </div>
+                        <div class="pgv-body">
+                            <h3>Selection</h3>
+                            <p>Catalogue strategy, ASIN creation, health &amp; India-specific localisation.</p>
+                        </div>
+                        <div class="pgv-foot">
+                            <span class="pgv-tag">4 Modules</span>
+                            <span class="pgv-arrow">→</span>
+                        </div>
+                    </div>
+                    <div class="pgv-card p2" onclick="navToModule('2.1')">
+                        <div class="pgv-top">
+                            <span class="pgv-num">02</span>
+                            <span class="pgv-icon">⚡</span>
+                        </div>
+                        <div class="pgv-body">
+                            <h3>Efficiency</h3>
+                            <p>Listing quality, image optimisation, pricing strategy &amp; A+ content.</p>
+                        </div>
+                        <div class="pgv-foot">
+                            <span class="pgv-tag">5 Modules</span>
+                            <span class="pgv-arrow">→</span>
+                        </div>
+                    </div>
+                    <div class="pgv-card p3" onclick="navToModule('3.1')">
+                        <div class="pgv-top">
+                            <span class="pgv-num">03</span>
+                            <span class="pgv-icon">🚦</span>
+                        </div>
+                        <div class="pgv-body">
+                            <h3>Traffic</h3>
+                            <p>Sponsored Ads, DSP, external traffic, organic SEO &amp; deals planning.</p>
+                        </div>
+                        <div class="pgv-foot">
+                            <span class="pgv-tag">5 Modules</span>
+                            <span class="pgv-arrow">→</span>
+                        </div>
+                    </div>
+                    <div class="pgv-card p4" onclick="navToModule('4.1')">
+                        <div class="pgv-top">
+                            <span class="pgv-num">04</span>
+                            <span class="pgv-icon">🎯</span>
+                        </div>
+                        <div class="pgv-body">
+                            <h3>Conversion</h3>
+                            <p>Detail page CRO, promotions, social proof &amp; cross-sell strategy.</p>
+                        </div>
+                        <div class="pgv-foot">
+                            <span class="pgv-tag">5 Modules</span>
+                            <span class="pgv-arrow">→</span>
+                        </div>
+                    </div>
+                    <div class="pgv-card p5" onclick="navToModule('5.1')">
+                        <div class="pgv-top">
+                            <span class="pgv-num">05</span>
+                            <span class="pgv-icon">🚀</span>
+                        </div>
+                        <div class="pgv-body">
+                            <h3>Speed</h3>
+                            <p>FBA &amp; FBM management, inventory planning &amp; account health SLAs.</p>
+                        </div>
+                        <div class="pgv-foot">
+                            <span class="pgv-tag">4 Modules</span>
+                            <span class="pgv-arrow">→</span>
+                        </div>
+                    </div>
+                    <div class="pgv-card p6" onclick="navToModule('6.1')">
+                        <div class="pgv-top">
+                            <span class="pgv-num">06</span>
+                            <span class="pgv-icon">🧰</span>
+                        </div>
+                        <div class="pgv-body">
+                            <h3>Tools</h3>
+                            <p>Seller Central, Brand Analytics, Ad Console &amp; 3P tools mastery.</p>
+                        </div>
+                        <div class="pgv-foot">
+                            <span class="pgv-tag">5 Modules</span>
+                            <span class="pgv-arrow">→</span>
+                        </div>
+                    </div>
+                    <div class="pgv-card p7" onclick="navToModule('7.1')">
+                        <div class="pgv-top">
+                            <span class="pgv-num">07</span>
+                            <span class="pgv-icon">🪪</span>
+                        </div>
+                        <div class="pgv-body">
+                            <h3>Brand Registry</h3>
+                            <p>Enrolment, Brand Store, A+ content, Sponsored Brands &amp; Vine.</p>
+                        </div>
+                        <div class="pgv-foot">
+                            <span class="pgv-tag">6 Modules</span>
+                            <span class="pgv-arrow">→</span>
+                        </div>
+                    </div>
+                    <div class="pgv-card p8" onclick="navToModule('8.1')">
+                        <div class="pgv-top">
+                            <span class="pgv-num">08</span>
+                            <span class="pgv-icon">🔐</span>
+                        </div>
+                        <div class="pgv-body">
+                            <h3>Brand Protection</h3>
+                            <p>IP &amp; trademark, Transparency, Project Zero &amp; hijacking defence.</p>
+                        </div>
+                        <div class="pgv-foot">
+                            <span class="pgv-tag">6 Modules</span>
+                            <span class="pgv-arrow">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── QUICK ACTIONS ──────────────────────────── -->
+                <div class="dash-section-header" style="margin-top:8px">
+                    <div class="dash-sh-left">
+                        <span class="dash-sh-eyebrow">Jump Right In</span>
+                        <h2 class="dash-sh-title">Quick Actions</h2>
+                    </div>
+                </div>
+                <div class="quick-actions-row">
+                    <button class="qa-card qa-ads" onclick="navToModule('3.1')">
+                        <span class="qa-icon">📈</span>
+                        <div class="qa-text">
+                            <span class="qa-title">Sponsored Ads</span>
+                            <span class="qa-sub">Traffic · Pillar 3</span>
+                        </div>
+                        <span class="qa-arr">→</span>
+                    </button>
+                    <button class="qa-card qa-fba" onclick="navToModule('5.1')">
+                        <span class="qa-icon">📦</span>
+                        <div class="qa-text">
+                            <span class="qa-title">FBA Guide</span>
+                            <span class="qa-sub">Speed · Pillar 5</span>
+                        </div>
+                        <span class="qa-arr">→</span>
+                    </button>
+                    <button class="qa-card qa-cro" onclick="navToModule('4.1')">
+                        <span class="qa-icon">🎯</span>
+                        <div class="qa-text">
+                            <span class="qa-title">CRO Guide</span>
+                            <span class="qa-sub">Conversion · Pillar 4</span>
+                        </div>
+                        <span class="qa-arr">→</span>
+                    </button>
+                    <button class="qa-card qa-brand" onclick="navToModule('7.1')">
+                        <span class="qa-icon">🪪</span>
+                        <div class="qa-text">
+                            <span class="qa-title">Brand Registry</span>
+                            <span class="qa-sub">Registry · Pillar 7</span>
+                        </div>
+                        <span class="qa-arr">→</span>
+                    </button>
+                    <button class="qa-card qa-bk" onclick="showBookmarks()">
+                        <span class="qa-icon">🔖</span>
+                        <div class="qa-text">
+                            <span class="qa-title">SC Bookmarks</span>
+                            <span class="qa-sub">Seller Central Links</span>
+                        </div>
+                        <span class="qa-arr">→</span>
+                    </button>
+                    <button class="qa-card qa-prog" onclick="showGlobalFeedback()">
+                        <span class="qa-icon">📊</span>
+                        <div class="qa-text">
+                            <span class="qa-title">My Progress</span>
+                            <span class="qa-sub">All 40 Modules</span>
+                        </div>
+                        <span class="qa-arr">→</span>
+                    </button>
+                </div>
+
+            </div><!-- /dashboard -->
+
+            <!-- ═══ MODULES ════════════════════════════════ -->
+            <div id="modules-container">{{ MODULES }}</div>
+            <div id="tools-library" style="display:none;">{{ TOOLS }}</div>
+
+            <!-- ═══ BOOKMARKS MODAL ════════════════════════ -->
+            <div id="bookmarks-modal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Seller Central Bookmarks</h2>
+                        <button class="modal-close" onclick="closeBookmarks()">✕</button>
+                    </div>
+                    <p class="text-muted">All links open Seller Central India. Navigate to the section after logging in.</p>
+                    <div class="bookmarks-grid">
+                        <div class="bk-category">
+                            <h4>📦 Inventory</h4>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Manage Inventory</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Add a Product</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">FBA Inventory</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Restock Inventory</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Upload Flat File</a>
+                        </div>
+                        <div class="bk-category">
+                            <h4>📋 Listings &amp; Catalogue</h4>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Catalogue Correction</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Listing Quality Report</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Variation Wizard</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Size Charts</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">A+ Content Manager</a>
+                        </div>
+                        <div class="bk-category">
+                            <h4>💰 Pricing &amp; Deals</h4>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Manage Pricing</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Automate Pricing</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Lightning Deals</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Manage Promotions</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">B2B Pricing</a>
+                        </div>
+                        <div class="bk-category">
+                            <h4>📣 Advertising</h4>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Campaign Manager</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Sponsored Products</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Sponsored Brands</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Search Term Report</a>
+                        </div>
+                        <div class="bk-category">
+                            <h4>📊 Reports &amp; Analytics</h4>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Business Reports</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Transaction View</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">FBA Reports</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Advertising Reports</a>
+                        </div>
+                        <div class="bk-category">
+                            <h4>🏥 Account Health</h4>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Account Health Dashboard</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Performance Notifications</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Voice of the Customer</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Feedback Manager</a>
+                        </div>
+                        <div class="bk-category">
+                            <h4>🏷️ Brand Tools</h4>
+                            <a class="bk-link" href="https://brandservices.amazon.in" target="_blank">Brand Registry Portal</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Brand Store Builder</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Transparency Programme</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Brand Analytics</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Amazon Vine</a>
+                        </div>
+                        <div class="bk-category">
+                            <h4>🚚 Fulfilment</h4>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Create FBA Shipment</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">FBA Revenue Calculator</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Seller Flex Programme</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">Easy Ship Dashboard</a>
+                            <a class="bk-link" href="https://sellercentral.amazon.in" target="_blank">SFP Enrollment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══ PROGRESS & FEEDBACK MODAL ═════════════ -->
+            <div id="global-feedback-modal" class="modal">
+                <div class="modal-content" style="max-width:820px">
+                    <div class="modal-header">
+                        <h2>My Progress &amp; Feedback</h2>
+                        <button class="modal-close" onclick="closeGlobalFeedback()">✕</button>
+                    </div>
+                    <div id="global-progress-stats" class="progress-stats-box"></div>
+                    <button class="btn btn-accent btn-sm" onclick="exportFeedback()" style="margin-bottom:20px">⬇ Export Feedback CSV</button>
+                    <h3>Submitted Feedback</h3>
+                    <div id="global-feedback-list"></div>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <img src="{{ LOGO_B64 }}" alt="SMEMinds" style="height:44px;width:auto;border-radius:6px;margin-bottom:14px;display:block;margin-left:auto;margin-right:auto;" onerror="this.style.display='none'">
+                <p><strong>© 2025–2026 SMEMinds Consulting. All rights reserved.</strong></p>
+                <p>Built by Ex-Amazonians &nbsp;|&nbsp; <a href="https://www.smeminds.com" target="_blank">www.smeminds.com</a> &nbsp;|&nbsp; support@smeminds.com</p>
+                <p>Certified Amazon Advertising Partner &nbsp;|&nbsp; 400+ Brands Scaled Globally</p>
+                <p style="margin-top:10px;font-size:11px;color:rgba(255,255,255,0.3)">Confidential — authorised SMEMinds users only.</p>
+            </footer>
+
+        </div><!-- /content-scrollable -->
+    </main>
+</div><!-- /main-app -->
+
+<script>{{ JS }}</script>
+</body>
+</html>
