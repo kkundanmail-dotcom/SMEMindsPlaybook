@@ -1,764 +1,343 @@
-# ══════════════════════════════════════════════════════════════
-# PILLAR 6 — TOOLS  (5 Modules)
-# ══════════════════════════════════════════════════════════════
+# ==============================================================
+# PILLAR 6 — SPEED  (7 Modules)
+# Auto-generated from the backend DB by _renumber.py.
+# Edit modules in the admin panel (source of truth = smeminds.db).
+# ==============================================================
 
 pillar6_modules = [
-
-{
+  {
     "id": "6.1",
+    "pillar": "p6",
     "number": "Module 6.1",
-    "title": "Seller Central",
-    "difficulty": "Beginner",
-    "time": "35 mins",
-    "overview": """<p>Seller Central is your Amazon command centre. This module covers the essential setup — user permissions, the reports you must pull weekly, Business Reports setup, inventory reporting automation, payment reconciliation, and FBA discrepancy resolution — giving your team a structured operating rhythm.</p>""",
-    "content": """
-        <h3>1. Seller Central Dashboard Setup & User Permissions</h3>
-        <div class='callout pro-tip'>
-            <div><strong>User Permissions by Role (SC → Settings → User Permissions):</strong><br>
-            • <strong>Account Manager:</strong> Full access except banking<br>
-            • <strong>Catalogue Manager:</strong> Inventory + listings only<br>
-            • <strong>Finance:</strong> Reports + payments view only<br>
-            • <strong>PPC Manager:</strong> Advertising console only<br>
-            • <strong>CS Team:</strong> Orders + messaging only<br><br>
-            Use principle of least privilege — give each user only what they need.</div>
-        </div>
-
-        <h3>2. Core Reports Library — What to Pull & When</h3>
-        <table class='data-table'>
-            <thead><tr><th>Report</th><th>Frequency</th><th>Path in SC</th></tr></thead>
-            <tbody>
-                <tr><td>Business Reports (Detail Page)</td><td>Daily</td><td>Reports → Business Reports → By ASIN</td></tr>
-                <tr><td>Search Term Report (PPC)</td><td>Weekly</td><td>Advertising → Reports → Search Term</td></tr>
-                <tr><td>Search Query Performance</td><td>Weekly</td><td>Brand Analytics → SQP</td></tr>
-                <tr><td>Inventory Ledger Report</td><td>Monthly</td><td>Reports → Fulfilment → Inventory Ledger</td></tr>
-                <tr><td>Transaction View</td><td>Weekly</td><td>Reports → Payments → Transaction View</td></tr>
-                <tr><td>A-to-Z Claims</td><td>Daily</td><td>Performance → A-to-Z Guarantee Claims</td></tr>
-            </tbody>
-        </table>
-
-        <h3>3. Business Reports Setup</h3>
-        <ul>
-            <li><strong>Detail Page Sales and Traffic:</strong> Sessions, pageviews, Buy Box %, Unit Session %</li>
-            <li><strong>Sales and Traffic by ASIN:</strong> Revenue per ASIN, sessions, conversion</li>
-            <li><strong>Brand Analytics Reports:</strong> Search Query Performance, Market Basket, Demographics</li>
-        </ul>
-        <p>Pro tip: Download weekly to Excel and build a running tracker to see trends. Trends matter more than any single data point.</p>
-
-        <h3>4. Payment & Disbursement Reconciliation</h3>
-        <div class='callout success'>
-            <div><strong>Weekly reconciliation SOP:</strong><br>
-            SC → Reports → Payments → Transaction View<br>
-            1. Export all transactions for the period<br>
-            2. Cross-check total sales vs. total disbursed<br>
-            3. Flag: unexpected fee charges, missing reimbursements, damaged inventory claims<br>
-            4. File SC case for any discrepancy &gt;₹500</div>
-        </div>
-
-        <h3>5. FBA Shipment Discrepancy Resolution</h3>
-        <ul>
-            <li>Amazon FCs occasionally receive fewer units than sent (discrepancy)</li>
-            <li>Window to file: within 9 months of shipment creation</li>
-            <li>Path: SC → Inventory → Shipments → Select shipment → Report Problem</li>
-            <li>Evidence needed: Supplier invoice, packing list with quantities</li>
-            <li>Amazon reimburses at average selling price if discrepancy confirmed</li>
-        </ul>
-
-        <div class='bookmarks-inline'>
-            <strong>Key Links:</strong><br>
-            <a class='pill' href='https://sellercentral.amazon.in/gp/account-manager/home.html' target='_blank'>User Permissions</a>
-            <a class='pill' href='https://sellercentral.amazon.in/gp/site-metrics/report.html' target='_blank'>Business Reports</a>
-            <a class='pill' href='https://sellercentral.amazon.in/reportcentral' target='_blank'>Reports Library</a>
-            <a class='pill' href='https://sellercentral.amazon.in/payments/summary/ref=xx_payments_dnav_xx' target='_blank'>Payments</a>
-        </div>
-    """,
-    "process_flow": "",
-    "tools": "",
-    "videos": [
-        {"id": "GGLI_aIUO0M", "title": "Amazon Seller Central — Complete Navigation Guide"},
-        {"id": "y4icIWo5ciY", "title": "Essential Amazon Reports Every Seller Must Track"}
-    ],
-    "checklist": [
-        "User permissions set correctly for all team members",
-        "Weekly reports calendar established and followed by team",
-        "Business Reports dashboard bookmarked and checked daily",
-        "Payment reconciliation completed weekly",
-        "FBA shipment discrepancies reviewed and filed within 9 months",
-        "Transaction View exported and reconciled monthly"
-    ],
-    "quiz": [
-        {
-            "question": "What is the deadline to file an FBA shipment discrepancy claim?",
-            "options": ["30 days", "90 days", "9 months", "12 months"],
-            "answer": "9 months",
-            "explanation": "Amazon allows up to 9 months from shipment creation to file a discrepancy claim. After this window, the claim is not eligible for investigation or reimbursement."
-        }
-    ]
-},
-
-{
-    "id": "6.2",
-    "number": "Module 6.2",
-    "title": "Brand Analytics",
-    "difficulty": "Advanced",
-    "time": "40 mins",
-    "overview": """<p>Brand Analytics is Amazon's most powerful data intelligence tool — available exclusively to Brand Registered sellers. This module covers all five Brand Analytics reports: Search Query Performance, Market Basket, Repeat Purchase Behaviour, Demographics, and Item Comparison — and how to turn each into action.</p>""",
-    "content": """
-        <h3>1. Search Query Performance (SQP) Report</h3>
-        <div class='callout pro-tip'>
-            <div><strong>SQP shows you:</strong><br>
-            • Total search volume for any query<br>
-            • Your ASIN's Impression Share, Click Share, and Conversion Share vs. top 3 results<br><br>
-            <strong>Use it to:</strong><br>
-            1. Identify keywords where you get impressions but lose clicks → fix title/image<br>
-            2. Find keywords where competitors dominate → increase bid on SP<br>
-            3. Discover new high-volume keywords to add to listings</div>
-        </div>
-
-        <h3>2. Market Basket Analysis</h3>
-        <p>Shows top 3 products purchased alongside each of your ASINs in the same transaction.</p>
-        <p><strong>Actions:</strong></p>
-        <ul>
-            <li>Create Virtual Bundles from top FBT pairs</li>
-            <li>Target FBT products with Sponsored Display</li>
-            <li>Add cross-sell module to A+ Content showing FBT products</li>
-        </ul>
-
-        <h3>3. Repeat Purchase Behaviour Report</h3>
-        <p>Shows what percentage of your customers are repeat buyers and their purchase frequency.</p>
-        <div class='callout success'>
-            <div><strong>Repeat Purchase Actions:</strong><br>
-            High repeat rate ASIN: Enrol in Subscribe &amp; Save → lock in recurring revenue<br>
-            Low repeat rate: Investigate — poor product experience? Better alternatives available?</div>
-        </div>
-
-        <h3>4. Demographics Report</h3>
-        <p>Shows your customer profile: age range, household income, education, gender, marital status, geography.</p>
-        <p>Use to:</p>
-        <ul>
-            <li>Refine DSP and Sponsored Display audience targeting</li>
-            <li>Inform product development (what income/age bracket buys you?)</li>
-            <li>Tailor creative (lifestyle images, tone of voice) to actual buyer profile</li>
-        </ul>
-
-        <h3>5. Item Comparison & Alternate Purchase Report</h3>
-        <p>Shows which products customers view when they view yours — and what they ultimately buy instead.</p>
-        <div class='callout info'>
-            <div><strong>Two use cases:</strong><br>
-            1. <strong>Item Comparison:</strong> What customers view alongside your ASIN = competitor map<br>
-            2. <strong>Alternate Purchase:</strong> What they buy instead = your actual competition for conversion<br><br>
-            Target alternate purchase ASINs with Sponsored Display product targeting.</div>
-        </div>
-
-        <div class='bookmarks-inline'>
-            <strong>Key Links:</strong><br>
-            <a class='pill' href='https://sellercentral.amazon.in/brand-analytics' target='_blank'>Brand Analytics Dashboard</a>
-        </div>
-    """,
-    "process_flow": "",
-    "tools": "",
-    "videos": [],
-    "checklist": [
-        "SQP report reviewed weekly for top 50 ASINs",
-        "Market Basket pairs identified and actioned (bundles + SD targeting)",
-        "Repeat Purchase rate tracked monthly — S&S enrolment for high-repeat ASINs",
-        "Demographics report used to inform A+ Content creative and DSP targeting",
-        "Alternate Purchase report reviewed monthly — top competitors targeted via SD"
-    ],
-    "quiz": [
-        {
-            "question": "What does the Alternate Purchase report show you?",
-            "options": [
-                "What customers buy alongside your product",
-                "What customers ultimately buy instead of your product",
-                "Your top performing keywords",
-                "Your customer's geographic location"
-            ],
-            "answer": "What customers ultimately buy instead of your product",
-            "explanation": "The Alternate Purchase report shows the products customers buy when they view your ASIN but don't purchase. These are your direct conversion competitors — ideal targets for Sponsored Display product targeting."
-        }
-    ]
-},
-
-{
-    "id": "6.3",
-    "number": "Module 6.3",
-    "title": "Advertising Console",
-    "difficulty": "Advanced",
-    "time": "40 mins",
-    "overview": """<p>The Amazon Advertising Console is your central hub for all paid media on Amazon India. This module covers campaign structure best practices, naming conventions, bulk operations, Amazon Attribution setup, and integration with third-party tools — everything needed to run a professional advertising operation at scale.</p>""",
-    "content": """
-        <h3>1. Campaign Structure & Naming Convention</h3>
-        <div class='callout pro-tip'>
-            <div><strong>Campaign Naming Convention:</strong><br>
-            <code>[Brand]_[Ad Type]_[ASIN/Category]_[Match Type]_[Objective]_[YYYYMM]</code><br><br>
-            Examples:<br>
-            • SMEMinds_SP_B09XYZ_Exact_Harvest_202601<br>
-            • SMEMinds_SB_Kitchen_Brand_Awareness_202601<br>
-            • SMEMinds_SD_Retarget_ASIN_Viewers_202601</div>
-        </div>
-        <table class='data-table'>
-            <thead><tr><th>Ad Type</th><th>Abbreviation</th><th>Best Structure</th></tr></thead>
-            <tbody>
-                <tr><td>Sponsored Products</td><td>SP</td><td>1 ASIN per ad group, separate match types</td></tr>
-                <tr><td>Sponsored Brands</td><td>SB</td><td>1 campaign per brand story / collection</td></tr>
-                <tr><td>Sponsored Display</td><td>SD</td><td>1 targeting type per campaign</td></tr>
-                <tr><td>Sponsored Brands Video</td><td>SBV</td><td>1 video per campaign, test thumbnails</td></tr>
-            </tbody>
-        </table>
-
-        <h3>2. Bulk Operations</h3>
-        <p>Bulk operations allow editing thousands of bids, budgets, and keywords at once:</p>
-        <ol>
-            <li>Advertising Console → Bulk Operations → Download report</li>
-            <li>Edit in Excel: bid adjustments, pause/enable, budget changes</li>
-            <li>Upload modified file</li>
-            <li>Changes apply within 1–4 hours</li>
-        </ol>
-        <p>Use for: weekly bid optimisation across 100+ keywords, event budget increases, new negative keyword additions at scale.</p>
-
-        <h3>3. Amazon Attribution Dashboard</h3>
-        <p>Track how external traffic converts on Amazon:</p>
-        <ul>
-            <li>SC → Advertising → Amazon Attribution → Create tag → Copy URL</li>
-            <li>Use unique tag per channel (Meta, Google, Email, Influencer)</li>
-            <li>Dashboard shows: Clicks, DPV (Detail Page Views), Add-to-Carts, Purchases, Revenue</li>
-            <li>Unlocks Brand Referral Bonus (~10% credit on external-driven new customer purchases)</li>
-        </ul>
-
-        <h3>4. 3P PPC Tools Integration</h3>
-        <div class='callout info'>
-            <div><strong>When to consider 3P tools:</strong><br>
-            &gt;50 campaigns or &gt;1,000 keywords → manual optimisation becomes inefficient<br><br>
-            <strong>Options:</strong><br>
-            • <strong>SellerApp:</strong> India-focused, SC integration, ACOS optimisation<br>
-            • <strong>Helium 10 Adtomic:</strong> Keyword bid automation, dayparting<br>
-            • <strong>Pacvue / Perpetua:</strong> Enterprise-grade, algorithmic bidding<br>
-            • <strong>Scale Insights:</strong> Automated rules with granular controls</div>
-        </div>
-
-        <div class='bookmarks-inline'>
-            <strong>Key Links:</strong><br>
-            <a class='pill' href='https://advertising.amazon.in' target='_blank'>Amazon Advertising Console</a>
-            <a class='pill' href='https://sellercentral.amazon.in/attribution/overview' target='_blank'>Amazon Attribution</a>
-            <a class='pill' href='https://advertising.amazon.in/tools/bulk-operations' target='_blank'>Bulk Operations</a>
-        </div>
-    """,
-    "process_flow": "",
-    "tools": "",
-    "videos": [],
-    "checklist": [
-        "All campaigns follow consistent naming convention",
-        "Campaigns structured: 1 ASIN or 1 targeting type per ad group",
-        "Bulk operations used weekly for bid optimisation",
-        "Amazon Attribution tags live for all external channels",
-        "Brand Referral Bonus enrolled",
-        "3P advertising tool evaluated if managing &gt;50 campaigns"
-    ],
-    "quiz": [
-        {
-            "question": "What is the recommended campaign structure for Sponsored Products?",
-            "options": [
-                "All ASINs in one campaign",
-                "1 ASIN per ad group, separate campaigns per match type",
-                "All match types in one ad group",
-                "1 brand per campaign"
-            ],
-            "answer": "1 ASIN per ad group, separate campaigns per match type",
-            "explanation": "This structure gives granular budget control and performance visibility per ASIN, and separates exact/phrase/broad match types to allow different bid strategies."
-        }
-    ]
-},
-
-{
-    "id": "6.4",
-    "number": "Module 6.4",
-    "title": "3P Tools",
-    "difficulty": "Intermediate",
-    "time": "35 mins",
-    "overview": """<p>Third-party tools extend Amazon's native capabilities in keyword research, competitor intelligence, inventory management, and review management. This module covers the key tools used by top Amazon India sellers and when to invest in each.</p>""",
-    "content": """
-        <h3>1. Keyword Research Tools</h3>
-        <table class='data-table'>
-            <thead><tr><th>Tool</th><th>Best For</th><th>India-Specific?</th></tr></thead>
-            <tbody>
-                <tr><td>Helium 10 Cerebro</td><td>Reverse ASIN lookup — find competitor keywords</td><td>Partial (India data improving)</td></tr>
-                <tr><td>DataHawk</td><td>India-specific keyword rank tracking</td><td>Yes — India focused</td></tr>
-                <tr><td>SellerApp</td><td>India keyword research + BSR tracking</td><td>Yes — India built</td></tr>
-                <tr><td>Jungle Scout</td><td>Product/keyword opportunity research</td><td>Limited India data</td></tr>
-            </tbody>
-        </table>
-        <div class='callout pro-tip'>
-            <div><strong>For Amazon India specifically,</strong> DataHawk and SellerApp have the best local data quality. Helium 10 is excellent for global benchmarking but India search volume data is less reliable than US data.</div>
-        </div>
-
-        <h3>2. Competitor Intelligence Tools</h3>
-        <ul>
-            <li><strong>Keepa (India):</strong> Price history, BSR history, review history over time — essential for competitive analysis</li>
-            <li><strong>Jungle Scout Cobalt:</strong> Market share, competitive landscape, new product launches</li>
-            <li><strong>SellerApp Competitor Intelligence:</strong> India-specific competitor ASIN tracking</li>
-        </ul>
-        <p>Use Keepa weekly to monitor: competitor pricing strategies, inventory gaps (when a competitor goes OOS = opportunity to increase ad bids).</p>
-
-        <h3>3. Inventory Management Tools</h3>
-        <table class='data-table'>
-            <thead><tr><th>Tool</th><th>Use Case</th></tr></thead>
-            <tbody>
-                <tr><td>Unicommerce</td><td>India's leading OMS — multi-channel inventory sync for omnichannel sellers</td></tr>
-                <tr><td>Linnworks</td><td>Multi-warehouse, multi-channel inventory for scaling brands</td></tr>
-                <tr><td>Browntape</td><td>India-focused multi-channel order &amp; inventory management</td></tr>
-            </tbody>
-        </table>
-
-        <h3>4. Review Management Tools</h3>
-        <ul>
-            <li><strong>FeedbackWhiz:</strong> Automated review request sequences (compliant with Amazon ToS), negative review alerts</li>
-            <li><strong>Jungle Scout Alerts:</strong> Real-time review monitoring across all ASINs</li>
-            <li><strong>SellerApp Review Automation:</strong> India-optimised review request timing</li>
-        </ul>
-
-        <h3>5. PPC Automation Platforms</h3>
-        <div class='callout info'>
-            <div><strong>For brands with 50+ campaigns:</strong><br>
-            • <strong>Pacvue:</strong> Enterprise, dayparting, portfolio bidding<br>
-            • <strong>Perpetua:</strong> AI-driven bid optimisation, stream-optimised<br>
-            • <strong>Scale Insights:</strong> Rule-based automation with granular control<br>
-            • <strong>SellerApp Ads:</strong> India-native, most cost-effective for local brands</div>
-        </div>
-
-        <div class='bookmarks-inline'>
-            <strong>Key Links:</strong><br>
-            <a class='pill' href='https://www.helium10.com' target='_blank'>Helium 10</a>
-            <a class='pill' href='https://www.datahawk.co' target='_blank'>DataHawk</a>
-            <a class='pill' href='https://www.sellerapp.com' target='_blank'>SellerApp</a>
-            <a class='pill' href='https://www.keepa.com' target='_blank'>Keepa</a>
-            <a class='pill' href='https://www.unicommerce.com' target='_blank'>Unicommerce</a>
-        </div>
-    """,
-    "process_flow": "",
-    "tools": "",
-    "videos": [],
-    "checklist": [
-        "Keyword research tool selected and integrated into weekly workflow",
-        "Competitor ASINs tracked in Keepa for price/BSR history",
-        "Inventory management tool implemented if selling on 2+ channels",
-        "Review automation tool set up (FeedbackWhiz or SellerApp)",
-        "PPC automation evaluated if managing &gt;50 campaigns"
-    ],
-    "quiz": [
-        {
-            "question": "Which tool provides the most accurate Amazon India keyword and BSR data?",
-            "options": ["Helium 10", "Jungle Scout", "DataHawk / SellerApp (India-focused)", "Google Keyword Planner"],
-            "answer": "DataHawk / SellerApp (India-focused)",
-            "explanation": "DataHawk and SellerApp are built with Amazon India as a primary market. They have local data crawlers that provide more accurate India-specific keyword volume and BSR data than US-first tools."
-        }
-    ]
-},
-
-{
-    "id": "6.5",
-    "number": "Module 6.5",
-    "title": "Manage Your Experiments",
-    "difficulty": "Advanced",
-    "time": "30 mins",
-    "overview": """<p>Manage Your Experiments (MYE) is Amazon's native A/B testing tool for Brand Registered sellers. Split traffic between two versions of your title, main image, or A+ Content — and let data decide which converts better. This module covers MYE setup, test design, results interpretation, and rollout.</p>""",
-    "content": """
-        <h3>1. MYE Eligibility Requirements</h3>
-        <div class='callout pro-tip'>
-            <div><strong>Eligibility checklist:</strong><br>
-            ✓ Brand Registry enrolled and approved<br>
-            ✓ ASIN has sufficient traffic (Amazon typically requires 30+ sessions/week)<br>
-            ✓ You are the brand owner (not a reseller) on the ASIN<br>
-            ✓ A+ Content published on the ASIN (for A+ testing)<br><br>
-            Path: SC → Growth → Manage Your Experiments</div>
-        </div>
-
-        <h3>2. What You Can Test</h3>
-        <table class='data-table'>
-            <thead><tr><th>Experiment Type</th><th>Elements</th><th>Primary Metric</th></tr></thead>
-            <tbody>
-                <tr><td>Product Title</td><td>Title text (both versions must be policy-compliant)</td><td>Sales / session</td></tr>
-                <tr><td>Main Image</td><td>Two different main images</td><td>Click-through rate</td></tr>
-                <tr><td>A+ Content</td><td>Two different A+ modules/layouts</td><td>Conversion rate</td></tr>
-                <tr><td>Bullet Points</td><td>Different benefit ordering</td><td>Conversion rate</td></tr>
-            </tbody>
-        </table>
-
-        <h3>3. Test Design Best Practices</h3>
-        <ul>
-            <li><strong>One variable at a time:</strong> Don't change title AND image in the same experiment</li>
-            <li><strong>Hypothesis-driven:</strong> Define expected outcome before launching ("We expect Version B to increase CVR by 5% because benefit-first bullets")</li>
-            <li><strong>Minimum duration:</strong> 4 weeks (Amazon recommends 4–8 weeks for significance)</li>
-            <li><strong>Don't run during deals:</strong> Promotions skew conversion data</li>
-        </ul>
-
-        <h3>4. Interpreting & Rolling Out Results</h3>
-        <div class='callout success'>
-            <div><strong>MYE Results Reading:</strong><br>
-            • <strong>Statistically significant winner:</strong> Roll out immediately to 100% of traffic<br>
-            • <strong>Inconclusive result:</strong> Extend test duration or redesign more differentiated versions<br>
-            • <strong>Surprising loser:</strong> Investigate — could be device-type split (mobile vs desktop)</div>
-        </div>
-        <p>Keep a test log: what was tested, hypothesis, result, action taken. Over 12 months, this compound learning is a competitive moat.</p>
-
-        <div class='bookmarks-inline'>
-            <strong>Key Links:</strong><br>
-            <a class='pill' href='https://sellercentral.amazon.in/manage-your-experiments' target='_blank'>Manage Your Experiments</a>
-        </div>
-    """,
-    "process_flow": "",
-    "tools": "",
-    "videos": [],
-    "checklist": [
-        "MYE eligibility confirmed — Brand Registry active",
-        "At least 1 active experiment running on top 5 ASINs at all times",
-        "Tests run for minimum 4 weeks (no deals during test period)",
-        "One variable changed per experiment",
-        "Test log maintained with hypothesis, result, and rollout action",
-        "Winners rolled out to 100% within 1 week of significance"
-    ],
-    "quiz": [
-        {
-            "question": "What is the minimum recommended duration for a Manage Your Experiments test?",
-            "options": ["1 week", "2 weeks", "4 weeks", "8 weeks"],
-            "answer": "4 weeks",
-            "explanation": "Amazon recommends 4–8 weeks minimum for statistical significance. Tests shorter than 4 weeks may not have enough traffic to produce reliable results, especially for lower-volume ASINs."
-        }
-    ]
-}
-,
-
-# ─────────────────────────────────────────────────────────────
-{
-    "id": "6.6",
-    "number": "Module 6.6",
-    "title": "Kitna Milega — Profitability Calculator & Margin Mastery",
+    "title": "FBA Management",
     "difficulty": "Intermediate",
     "time": "45 mins",
-    "overview": """<p>"Kitna Milega" literally means "How much will I get?" — and it is Amazon India's official FBA Revenue Calculator. This module goes beyond the tool: it teaches the complete Amazon profitability framework, all 6 fee components, the impact of the March 2026 Zero Referral Fee expansion, and how to engineer your pricing strategy for maximum margin across every product category.</p>""",
-    "content": """
-        <h3>1. The Kitna Milega Tool</h3>
-        <p>Amazon India's FBA Revenue Calculator (nicknamed "Kitna Milega" — Hindi for "How much will I get?") is the official seller tool for comparing FBA vs. FBM profitability side-by-side. Access it at <strong>sellercentral.amazon.in/fba/profitabilitycalculator</strong>.</p>
-        <div class='callout pro-tip'><div><strong>What the Calculator Does:</strong><br>
-        ✅ Compares FBA vs. FBM (self-ship) side-by-side<br>
-        ✅ Auto-calculates all Amazon fees (referral, weight handling, fulfillment)<br>
-        ✅ Shows your net revenue per order<br>
-        ✅ Helps decide whether to switch from FBM to FBA for each product<br>
-        ⚠️ Does NOT include COGS, advertising costs, or storage fees — you must add those manually.</div></div>
-
-        <h3>2. The 6 Fee Components Every Seller Must Know</h3>
-        <table class='data-table'>
-            <thead><tr><th>#</th><th>Fee</th><th>Rate / Basis</th><th>Tip</th></tr></thead>
-            <tbody>
-                <tr><td>1</td><td><strong>Referral Fee</strong></td><td>0–24% of selling price (category-dependent)</td><td>ZERO for ≤₹1,000 in 1,800+ categories (Mar 2026)</td></tr>
-                <tr><td>2</td><td><strong>Closing Fee</strong></td><td>₹5–₹6 flat per order</td><td>Applies to all orders regardless of fulfillment method</td></tr>
-                <tr><td>3</td><td><strong>Weight Handling Fee</strong></td><td>₹73–₹200+ based on weight slab</td><td>FBA only; check chargeable weight (actual vs. volumetric)</td></tr>
-                <tr><td>4</td><td><strong>Monthly Storage Fee</strong></td><td>₹50/cu.ft/month (Nov 2025+)</td><td>Higher during Oct–Dec peak season</td></tr>
-                <tr><td>5</td><td><strong>Aged Inventory Surcharge</strong></td><td>Monthly billing from 271+ days</td><td>Set removal alerts at 250 days</td></tr>
-                <tr><td>6</td><td><strong>GST on Fees</strong></td><td>18% applied to all fees (1–5 above)</td><td>Multiply every fee by 1.18 for true cost</td></tr>
-            </tbody>
-        </table>
-
-        <h3>3. The SMEMinds Profitability Formula</h3>
-        <div class='callout success'><div><strong>Net Profit per Unit = </strong><br>
-        Selling Price<br>
-        − Referral Fee × 1.18 (if applicable)<br>
-        − Closing Fee × 1.18<br>
-        − Weight Handling Fee × 1.18 (FBA only)<br>
-        − Monthly Storage Cost allocation<br>
-        − Cost of Goods Sold (COGS)<br>
-        − Advertising Cost (ACoS allocation)<br>
-        − Returns Provision (category return rate × average return cost)<br>
-        <strong>= Net Profit (₹) | Net Margin (%)</strong></div></div>
-
-        <h3>4. Three Scenarios — Worked Examples</h3>
-        <table class='data-table'>
-            <thead><tr><th>Scenario</th><th>Selling Price</th><th>Category</th><th>COGS</th><th>Weight</th><th>Net Profit</th><th>Margin</th></tr></thead>
-            <tbody>
-                <tr><td><strong>Budget Hero</strong></td><td>₹599</td><td>Apparel (≤₹1k → 0% ref)</td><td>₹180</td><td>300g (₹73)</td><td>₹326</td><td>54.4%</td></tr>
-                <tr><td><strong>Mid-Range</strong></td><td>₹1,499</td><td>Fashion (10% ref)</td><td>₹450</td><td>600g (₹98)</td><td>₹703</td><td>46.9%</td></tr>
-                <tr><td><strong>Premium</strong></td><td>₹3,999</td><td>Electronics (8% ref)</td><td>₹1,800</td><td>1.2kg (₹131)</td><td>₹1,560</td><td>39.0%</td></tr>
-            </tbody>
-        </table>
-        <p style="font-size:12px;color:var(--text-muted)">*All examples include 18% GST on fees. Storage and advertising costs not included — add ~₹30–₹80 per unit for complete picture.</p>
-
-        <h3>5. Price Point Engineering — The ₹1,000 Threshold Strategy</h3>
-        <div class='callout pro-tip'><div><strong>The Zero Fee Sweet Spot (Mar 2026+):</strong><br>
-        Products priced ≤₹1,000 now attract ZERO referral fees in 1,800+ categories.<br><br>
-        <strong>Example: Apparel product</strong><br>
-        At ₹999: Referral Fee = ₹0 → Net higher by ₹70–₹140 vs. pricing at ₹1,099<br>
-        At ₹1,099: Referral Fee = 7–10% = ₹77–₹110 → Margin drops 7–10%<br><br>
-        <strong>Action:</strong> Model your price elasticity. If demand doesn't meaningfully increase at ₹999 vs. ₹1,099, price at ₹999 and pocket the referral fee saving.</div></div>
-
-        <h3>6. Chargeable Weight — The Hidden Fee Multiplier</h3>
-        <p>Amazon uses the <strong>higher</strong> of actual weight vs. volumetric weight for FBA fee calculation.</p>
-        <p><strong>Volumetric Weight Formula:</strong> (Length × Breadth × Height in cm) ÷ 5,000 = Volumetric Weight in kg</p>
-        <div class='callout warning'><div><strong>Example:</strong> A product weighs 400g but is in a large box (40×30×15cm).<br>
-        Volumetric weight = (40×30×15) ÷ 5,000 = 3.6 kg → Amazon charges 3.6 kg slab (₹200+ fee, not ₹73).<br>
-        <strong>Fix:</strong> Reduce packaging size. Right-size your boxes — packaging that's too large costs you ₹127+ extra per unit in weight handling alone.</div></div>
-
-        <h3>7. FBA vs FBM Decision Framework</h3>
-        <table class='data-table'>
-            <thead><tr><th>Factor</th><th>Use FBA</th><th>Use FBM</th></tr></thead>
-            <tbody>
-                <tr><td>Order volume</td><td>&gt;50 orders/day</td><td>&lt;20 orders/day</td></tr>
-                <tr><td>Product weight</td><td>&lt;2 kg (low weight handling fee)</td><td>&gt;5 kg (high weight fee erodes margin)</td></tr>
-                <tr><td>Inventory turnover</td><td>Fast-moving (&lt;60 days)</td><td>Slow-moving (storage fees mount for FBA)</td></tr>
-                <tr><td>Buy Box priority</td><td>FBA wins Buy Box more easily</td><td>FBM needs compensating low price</td></tr>
-                <tr><td>Peak season</td><td>FBA handles scale automatically</td><td>FBM requires operational capacity surge</td></tr>
-            </tbody>
-        </table>
-
-        <div class='bookmarks-inline'>
-            <strong>Tools &amp; Resources:</strong><br>
-            <a class='btn-sc' href='https://sellercentral.amazon.in/fba/profitabilitycalculator/index?lang=en_IN' target='_blank'>Kitna Milega — Official Calculator</a>
-            <a class='btn-sc' href='https://sell.amazon.in/fees-and-pricing' target='_blank'>Amazon India Fee Schedule</a>
-            <a class='pill-sc' href='https://www.aboutamazon.in/news/small-business/amazon-seller-fee-reduction-zero-referral-march-2026' target='_blank'>Zero Fee Announcement</a>
-            <a class='pill' href='https://rekonsile.com/amazon-india-fee-revision-september-2025-complete-guide' target='_blank'>Sep 2025 Fee Revision Guide</a>
-            <a class='pill' href='https://rekonsile.com/amazon-india-shipping-fees-2025-complete-guide-of-fba-fbm-and-weight-handling-charges' target='_blank'>Shipping Fees Complete Guide 2025</a>
-        </div>
-
-        <div class='pain-point-section'>
-            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>
-            <div class='pain-point-body'>
-                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>Seller sells 1,000 units/month at ₹1,049 price point — paying 10% referral fee (₹1,04,900/month in fees alone). Post-March 2026, moving to ₹999 price point eliminates referral fee entirely, saving ₹99,000/month — more than their marketing budget.</p></div>
-                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Strategic Solution</div><p>Audit every ASIN priced ₹1,001–₹1,500. For each one: model impact of pricing at ₹999 vs. current price. Factor in demand elasticity and margin impact. Most fashion/lifestyle products should move to ≤₹1,000 pricing.</p></div>
-                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Pro Insight</div><p>The "hidden" fee killer is oversized packaging. A seller shipping a 500g product in a large box pays ₹200+ weight handling instead of ₹73 — an extra ₹127 per unit × 1,000 units/month = ₹1,27,000 wasted. Right-size your packaging before scaling.</p></div>
-            </div>
-        </div>
-    """,
+    "overview": "<p>Fulfilled by Amazon (FBA) is the single most powerful operational decision an Amazon India seller can make — it unlocks Prime badge, Buy Box preference, and Amazon's world-class logistics. This module covers FBA enrollment, inbound shipment SOP, IPI monitoring, LTSF avoidance (charges apply from 180+ days), removal orders, and profitability calculation.</p>",
+    "content": "\n        <h3>1. FBA Enrollment Eligibility & Fee Analysis</h3>\n        <div class='callout pro-tip'>\n            <div><strong>FBA Eligibility Check:</strong><br>\n            ✓ ASIN not on FBA restricted list<br>\n            ✓ Product weight + dimensions meet FBA limits<br>\n            ✓ Product is non-hazmat (or enrolled in FBA Hazmat programme for eligible items)<br>\n            ✓ Net profit after FBA fees is positive<br><br>\n            <strong>Enroll here:</strong> <a class='btn-sc' href='https://sellercentral.amazon.in/fba/enrollment/index.html' target='_blank'>FBA Enrollment</a><br>\n            <strong>FBA Training:</strong> <a class='btn-sc' href='https://sell.amazon.in/seller-university/fba' target='_blank'>FBA Seller University</a></div>\n        </div>\n        <table class='data-table'>\n            <thead><tr><th>Fee Type</th><th>Basis</th><th>Rate (India)</th></tr></thead>\n            <tbody>\n                <tr><td>Referral fee</td><td>% of selling price (5–15% by category)</td><td>Varies — check SC Fee Schedule</td></tr>\n                <tr><td>FBA fulfilment fee</td><td>Weight + size tier</td><td>Per ASIN via FBA Calculator</td></tr>\n                <tr><td>Monthly storage fee</td><td>Volume × monthly rate</td><td>₹38/cubic foot (standard)</td></tr>\n                <tr><td>LTSF (6–12 months)</td><td>Units stored 180–365 days</td><td>₹425/cubic foot/month</td></tr>\n                <tr><td>LTSF (12+ months)</td><td>Units stored &gt;365 days</td><td>₹850/cubic foot/month</td></tr>\n            </tbody>\n        </table>\n\n        <h3>2. FBA Inbound Shipment Creation SOP (Bulk Flat File Method)</h3>\n        <ol>\n            <li>SC → Inventory → Manage FBA Shipments → Upload Shipping Plan File</li>\n            <li>Download the shipping plan template; fill product details; save as Tab-Delimited Text (.txt)</li>\n            <li>Upload completed flat file — converts your SKUs to FNSKU format automatically</li>\n            <li>Generate and print FNSKU labels: SC → Manage FBA Inventory → Print Item Labels</li>\n            <li>Prepare MRP label per Legal Metrology Act (product name, quantity, MRP incl. taxes, manufacturer address, country of origin)</li>\n            <li>Attach STN (Stock Transfer Note) / Tax Invoice with each shipment — FC will reject without it</li>\n            <li>Book FC appointment via FCAS (FC Appointment System) before dispatching</li>\n            <li>Track via: <a class='btn-sc' href='https://sellercentral.amazon.in/gp/fba/inbound-shipment-workflow/index.html' target='_blank'>Manage FBA Shipments</a></li>\n            <li>Reconcile every shipment within 30 days of close — file discrepancy case within 9 months if units are missing</li>\n        </ol>\n        <div class='callout pro-tip'>\n            <div><strong>Restock+ Programme:</strong> Follow Amazon's restock recommendations and ship within 14 days of recommended ship date (7 days for ATS shipments) to earn zero storage fees, guaranteed storage, and free removals via Seller Reward Credits.<br><br>\n            Configure restock settings: Reorder Frequency (default 8 weeks), Supplier Lead Time, MOQ, and Coverage Period (recommend 4-week start).<br>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/restockinventory/suggestions' target='_blank'>Restock Inventory Dashboard</a></div>\n        </div>\n\n        <h3>3. Inventory Performance Index (IPI)</h3>\n        <div class='callout success'>\n            <div><strong>IPI Score — Target &gt;400 (hard operational threshold):</strong><br>\n            IPI is a composite score of: excess inventory ratio, stranded inventory %, FBA sell-through rate, and in-stock rate.<br><br>\n            <strong>IPI &lt;400 → Amazon restricts your FBA storage limits</strong> — you cannot send new inventory until score improves. This is a critical constraint during peak seasons (GIF, Prime Day).<br><br>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/inventory-performance/dashboard' target='_blank'>IPI Dashboard</a></div>\n        </div>\n        <table class='data-table'>\n            <thead><tr><th>IPI Driver</th><th>Threshold</th><th>Improvement Action</th></tr></thead>\n            <tbody>\n                <tr><td>Excess inventory</td><td>&gt;90 days cover</td><td>Create Lightning Deal or Coupon to sell down</td></tr>\n                <tr><td>Stranded inventory</td><td>Any stranded units</td><td>Relist via SC → Fix Stranded Inventory</td></tr>\n                <tr><td>Low sell-through rate</td><td>&lt;5% weekly</td><td>Increase PPC, improve listing, reduce price</td></tr>\n                <tr><td>In-stock rate</td><td>&lt;80%</td><td>Improve restock forecasting; use Restock+ recommendations</td></tr>\n            </tbody>\n        </table>\n\n        <h3>4. Long-Term Storage Fee (LTSF) Avoidance</h3>\n        <div class='callout warning'>\n            <div><strong>LTSF is charged on the last day of EVERY month</strong> (not just Feb/Aug anymore):<br>\n            • 6–12 months: ₹425/cubic foot<br>\n            • 12+ months: ₹850/cubic foot<br>\n            • One unit of any ASIN is EXEMPT if at least one unit of that ASIN has been at the FC for &lt;6 months<br>\n            • FIFO (First In, First Out) basis — oldest units charged first<br><br>\n            <strong>Enable Automated Long-Term Storage Removals:</strong> Settings → Fulfilment by Amazon → Automated Long-Term Storage Removals → Enable<br><br>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/reportcentral/LTSF/1' target='_blank'>LTSF Report</a>\n            &nbsp;<a class='btn-sc' href='https://sellercentral.amazon.in/inventoryplanning/manageinventoryhealth' target='_blank'>Manage Inventory Health</a></div>\n        </div>\n        <table class='data-table'>\n            <thead><tr><th>LTSF Prevention Strategy</th><th>When to Use</th><th>Expected Outcome</th></tr></thead>\n            <tbody>\n                <tr><td>Lightning Deal / Coupon on aged stock</td><td>60–90 days before LTSF threshold</td><td>Fastest velocity boost — clear in 7–14 days</td></tr>\n                <tr><td>Recommended Removal Report</td><td>Week 3 of each month</td><td>Pre-populated removal order for LTSF-eligible units</td></tr>\n                <tr><td>FBA Removal Order</td><td>When LTSF &gt; removal fee + resell value</td><td>Recover 100% of stock to resell via other channel</td></tr>\n                <tr><td>FBA Liquidations</td><td>Bulk aged stock with low unit value</td><td>Recover 5–40% of unit value; avoid LTSF entirely</td></tr>\n                <tr><td>Automated LTSF Removal (enabled in settings)</td><td>Always-on safety net</td><td>Auto-removes inventory before LTSF triggers</td></tr>\n            </tbody>\n        </table>\n\n        <h3>5. FBA Grade &amp; Resell / Liquidations</h3>\n        <table class='data-table'>\n            <thead><tr><th>Option</th><th>Recovery Rate</th><th>Best For</th></tr></thead>\n            <tbody>\n                <tr><td>Grade &amp; Resell</td><td>Customer prices (Amazon grades and relists)</td><td>Returned electronics, appliances</td></tr>\n                <tr><td>FBA Liquidations</td><td>5–40% of unit value</td><td>Bulk excess clearance when LTSF imminent</td></tr>\n                <tr><td>Removal Order (Return)</td><td>100% recovery — you resell via other channel</td><td>High-value products; resell offline</td></tr>\n                <tr><td>Removal Order (Dispose)</td><td>Zero recovery — cheapest option</td><td>Damaged/expired low-value items</td></tr>\n            </tbody>\n        </table>\n\n        <h3>6. FBA Reimbursements — Recovering Lost/Damaged Inventory</h3>\n        <ul>\n            <li>Amazon FCs occasionally receive fewer units than sent, or damage inventory in storage/transit</li>\n            <li><strong>Window to file:</strong> Within 9 months of shipment creation — do not miss this deadline</li>\n            <li><strong>Path:</strong> SC → Inventory → Shipments → Select shipment → Report Problem</li>\n            <li><strong>Evidence needed:</strong> Supplier invoice, packing list with quantities, courier tracking</li>\n            <li>Use the Inventory Reconciliation Report and Inventory Adjustments Report to identify all discrepancies</li>\n            <li>Amazon reimburses at average selling price if discrepancy is confirmed as Amazon's fault</li>\n            <li><strong>Best practice:</strong> Reconcile every shipment within 30 days of \"shipment closed\" status</li>\n        </ul>\n\n        <div class='bookmarks-inline'>\n            <strong>Key Links:</strong><br>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/fba/enrollment/index.html' target='_blank'>FBA Enrollment</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/inventory-performance/dashboard' target='_blank'>IPI Dashboard</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/reportcentral/LTSF/1' target='_blank'>LTSF Report</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/inventoryplanning/manageinventoryhealth' target='_blank'>Inventory Health</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/restockinventory/suggestions' target='_blank'>Restock Dashboard</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/inventory?viewId=STRANDED' target='_blank'>Stranded Inventory</a>\n            <a class='pill-sc' href='https://sell.amazon.in/seller-university/fba' target='_blank'>FBA Training</a>\n        </div>\n\n        <div class='pain-point-section'>\n            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>\n            <div class='pain-point-body'>\n                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>Sellers are shocked to find thousands of rupees deducted from their account as LTSF charges. \"I had no idea my products had been sitting in the warehouse for so long — by the time I noticed, it was too late to remove them before the last day of the month.\"</p></div>\n                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Solution</div><p>Enable Automated Long-Term Storage Removals in FBA Settings immediately. Then set a weekly calendar reminder to review the Inventory Age View for units approaching 180 days. Download the Recommended Removal Report in week 3 of each month and action every flagged ASIN — either run a Lightning Deal to sell through or create a removal order before the last day of the month.</p></div>\n                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Strategic Insight</div><p>IPI score above 400 is not just a metric — it is your FBA storage access card. Sellers who maintain IPI &gt;550 consistently unlock expanded storage limits and are never storage-constrained during peak events like Prime Day and Great Indian Festival. Treat IPI like a weekly KPI: review excess inventory, clear stranded stock every Monday, and keep sell-through rate healthy year-round.</p></div>\n            </div>\n        </div>\n    ",
+    "process_flow": "\n        <div class='svg-wrapper'>\n            <svg viewBox=\"0 0 900 120\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;\">\n                <defs><marker id=\"arr_s1\" markerWidth=\"8\" markerHeight=\"6\" refX=\"8\" refY=\"3\" orient=\"auto\"><polygon points=\"0 0,8 3,0 6\" fill=\"#1e3a5f\"/></marker></defs>\n                <text x=\"450\" y=\"65\" class=\"svg-watermark\" transform=\"rotate(-12,450,65)\">© SMEMinds | smeminds.com</text>\n                <rect x=\"10\"  y=\"35\" width=\"120\" height=\"50\" rx=\"8\" class=\"flow-step\"/><text x=\"70\"  y=\"62\" class=\"flow-text\">Enrol</text><text x=\"70\"  y=\"76\" class=\"flow-text\">ASIN in FBA</text>\n                <line x1=\"130\" y1=\"60\" x2=\"160\" y2=\"60\" stroke=\"#1e3a5f\" stroke-width=\"2\" marker-end=\"url(#arr_s1)\"/>\n                <rect x=\"160\" y=\"35\" width=\"120\" height=\"50\" rx=\"8\" class=\"flow-step\"/><text x=\"220\" y=\"62\" class=\"flow-text\">Create</text><text x=\"220\" y=\"76\" class=\"flow-text\">Shipment</text>\n                <line x1=\"280\" y1=\"60\" x2=\"310\" y2=\"60\" stroke=\"#1e3a5f\" stroke-width=\"2\" marker-end=\"url(#arr_s1)\"/>\n                <rect x=\"310\" y=\"35\" width=\"120\" height=\"50\" rx=\"8\" class=\"flow-step\"/><text x=\"370\" y=\"62\" class=\"flow-text\">Label &amp;</text><text x=\"370\" y=\"76\" class=\"flow-text\">Pack + STN</text>\n                <line x1=\"430\" y1=\"60\" x2=\"460\" y2=\"60\" stroke=\"#1e3a5f\" stroke-width=\"2\" marker-end=\"url(#arr_s1)\"/>\n                <rect x=\"460\" y=\"35\" width=\"120\" height=\"50\" rx=\"8\" class=\"flow-step\"/><text x=\"520\" y=\"62\" class=\"flow-text\">FC Check-in</text><text x=\"520\" y=\"76\" class=\"flow-text\">Confirmed</text>\n                <line x1=\"580\" y1=\"60\" x2=\"610\" y2=\"60\" stroke=\"#1e3a5f\" stroke-width=\"2\" marker-end=\"url(#arr_s1)\"/>\n                <rect x=\"610\" y=\"35\" width=\"120\" height=\"50\" rx=\"8\" class=\"flow-step\"/><text x=\"670\" y=\"62\" class=\"flow-text\">Monitor IPI</text><text x=\"670\" y=\"76\" class=\"flow-text\">&amp; LTSF</text>\n                <line x1=\"730\" y1=\"60\" x2=\"760\" y2=\"60\" stroke=\"#1e3a5f\" stroke-width=\"2\" marker-end=\"url(#arr_s1)\"/>\n                <rect x=\"760\" y=\"35\" width=\"120\" height=\"50\" rx=\"8\" class=\"flow-step\" style=\"fill:#ff6b35;\"/><text x=\"820\" y=\"62\" class=\"flow-text\" style=\"fill:#fff\">Restock</text><text x=\"820\" y=\"76\" class=\"flow-text\" style=\"fill:#fff\">in Time</text>\n            </svg>\n        </div>\n    ",
+    "tools": "",
+    "videos": [],
     "checklist": [
-        "Ran Kitna Milega calculator for every active ASIN",
-        "All 6 fee components included in profitability model (not just referral fee)",
-        "Audited all ASINs priced ₹1,001–₹1,500 for ₹999 pricing opportunity",
-        "Calculated chargeable weight (actual vs. volumetric) for all FBA products",
-        "Right-sized packaging for top 10 ASINs by volume",
-        "Set storage removal alerts at 250-day mark for all FBA inventory",
-        "Built Google Sheet P&L model including advertising cost and returns provision"
+      "FBA fee calculated and margin positive for all FBA-enrolled ASINs",
+      "Inbound shipment SOP documented and followed by operations team",
+      "IPI score &gt;400 maintained",
+      "Stranded inventory = 0 (weekly check)",
+      "Aged inventory (&gt;150 days) actioned before LTSF charges",
+      "Automated LTSF removal enabled in FBA Settings",
+      "Every shipment reconciled within 30 days of close",
+      "FBA Calculator run on every new ASIN before launch"
     ],
     "quiz": [
-        {
-            "question": "'Kitna Milega' translates to and is officially used for:",
-            "options": ["'Best Price' — Amazon's dynamic pricing tool", "'How much will I get?' — Amazon India's FBA Revenue Calculator", "'Guaranteed Delivery' — Amazon India's shipping SLA tool", "'Smart Pricing' — Amazon's automated repricing system"],
-            "answer": "'How much will I get?' — Amazon India's FBA Revenue Calculator",
-            "explanation": "'Kitna Milega' means 'How much will I get?' in Hindi and is the colloquial name for Amazon India's official FBA Revenue Calculator. It compares FBA vs. FBM profitability side-by-side and calculates all Amazon deductions automatically."
-        },
-        {
-            "question": "A product has actual weight 400g but box dimensions of 40×30×15cm. What chargeable weight does Amazon use?",
-            "options": ["400g (actual weight)", "3.6 kg (volumetric weight — higher)", "1 kg (rounded up)", "500g (standard slab)"],
-            "answer": "3.6 kg (volumetric weight — higher)",
-            "explanation": "Volumetric weight = (40×30×15) ÷ 5,000 = 3.6 kg. Amazon uses the HIGHER of actual vs. volumetric weight. Since 3.6 kg > 400g, you pay the 3.6 kg fee slab — costing ₹200+ vs. ₹73 for the 0–500g slab. Right-sizing the box saves ₹127+ per unit."
-        }
+      {
+        "question": "What happens if your IPI score falls below 400?",
+        "options": [
+          "Amazon removes your FBA privileges",
+          "Amazon restricts your FBA storage limits",
+          "FBA fees increase by 50%",
+          "Your listings are suppressed"
+        ],
+        "answer": "Amazon restricts your FBA storage limits",
+        "explanation": "An IPI score below 400 triggers Amazon to restrict your FBA storage limit, preventing you from sending new inventory — a critical constraint during peak sales periods."
+      },
+      {
+        "question": "What is the fastest way to clear aged FBA inventory before long-term storage fees?",
+        "options": [
+          "Increase the selling price",
+          "Create a Lightning Deal or Coupon on the aged ASIN",
+          "File a removal order immediately",
+          "Pause all advertising"
+        ],
+        "answer": "Create a Lightning Deal or Coupon on the aged ASIN",
+        "explanation": "Lightning Deals and Coupons provide the fastest velocity boost to clear stock. FBA Removal is the backup if the deal doesn't move enough units in time."
+      }
     ]
-},
-
-# ─────────────────────────────────────────────────────────────
-{
-    "id": "6.7",
-    "number": "Module 6.7",
-    "title": "Subscribe & Save, MOQ & AUR Strategy",
+  },
+  {
+    "id": "6.2",
+    "pillar": "p6",
+    "number": "Module 6.2",
+    "title": "FBM & Easy Ship",
     "difficulty": "Intermediate",
     "time": "35 mins",
-    "overview": """<p>Three underutilised Amazon India tools — Subscribe &amp; Save, Minimum Order Quantity (MOQ), and Average Unit Revenue (AUR) optimisation — can dramatically improve your revenue quality without increasing ad spend. This module covers all three with implementation SOPs and the strategic context for when each works best.</p>""",
-    "content": """
-        <h3>1. Subscribe &amp; Save — Recurring Revenue on Amazon India</h3>
-        <p>Subscribe &amp; Save (SNS) lets customers subscribe to regular deliveries (monthly, bi-monthly, etc.) at a discounted price. Sellers fund the discount; Amazon manages the recurring order logistics.</p>
-
-        <h3>2. SNS Eligibility &amp; Setup</h3>
-        <ul>
-            <li>Available for: FMCG, grocery, personal care, health supplements, pet food, household products</li>
-            <li>Requires: FBA fulfillment (SNS not available for FBM)</li>
-            <li>Requires: Professional Seller Plan + consistent inventory availability</li>
-            <li>Typical seller discount: 5–10% (Amazon may add additional platform discount)</li>
-        </ul>
-        <ol>
-            <li>Go to <strong>Advertising → Subscribe &amp; Save</strong> in Seller Central</li>
-            <li>Select eligible ASINs to enroll</li>
-            <li>Set your seller discount % (minimum 0%, typically 5%)</li>
-            <li>Maintain consistent inventory (SNS requires &gt;30 days stock at all times)</li>
-            <li>Monitor SNS subscriber count and revenue in SNS dashboard</li>
-        </ol>
-
-        <h3>3. SNS Business Value</h3>
-        <table class='data-table'>
-            <thead><tr><th>Metric</th><th>Without SNS</th><th>With SNS</th></tr></thead>
-            <tbody>
-                <tr><td>Revenue predictability</td><td>Variable month-to-month</td><td>Recurring base revenue locked in</td></tr>
-                <tr><td>Customer acquisition cost</td><td>Full ad spend per order</td><td>Zero ad cost on renewals</td></tr>
-                <tr><td>Inventory planning</td><td>Demand forecasting required</td><td>Predictable demand from subscribers</td></tr>
-                <tr><td>Customer LTV</td><td>Single purchase</td><td>12–24 month subscriber lifecycle</td></tr>
-            </tbody>
-        </table>
-
-        <h3>4. Minimum Order Quantity (MOQ) Strategy</h3>
-        <p>MOQ allows B2B sellers to set minimum quantities that business buyers must purchase. This is particularly powerful for bulk consumables, packaging materials, and commodity products.</p>
-        <ul>
-            <li>Navigate to <strong>Inventory → Business Settings → MOQ Settings</strong></li>
-            <li>Set MOQ per ASIN (e.g., minimum 5 units per order for a 10-pack tissue)</li>
-            <li>MOQ applies only to B2B buyers — consumer orders are unaffected</li>
-            <li>Combine with B2B bulk pricing tiers for maximum impact</li>
-        </ul>
-
-        <h3>5. Average Unit Revenue (AUR) Optimisation</h3>
-        <p>AUR = Total Revenue ÷ Total Units Sold. Increasing AUR without proportional increase in costs is the fastest path to margin improvement.</p>
-        <div class='callout success'><div><strong>5 Ways to Increase AUR:</strong><br>
-        1. <strong>Bundle creation:</strong> 2-pack or 3-pack at premium price vs. singles<br>
-        2. <strong>Premium variant introduction:</strong> Add a "Pro" version at 30–50% premium<br>
-        3. <strong>Price architecture:</strong> Remove your lowest-priced variant, push customers to mid/high<br>
-        4. <strong>Cross-sell via Virtual Bundles:</strong> Pair complementary products<br>
-        5. <strong>Upsell via A+ content:</strong> Compare table showing premium option benefits</div></div>
-
-        <h3>6. AUR Tracker — Weekly Review</h3>
-        <ol>
-            <li>Go to <strong>Reports → Sales → Sales by ASIN</strong></li>
-            <li>Export weekly sales data (units + revenue)</li>
-            <li>Calculate AUR per ASIN: Revenue ÷ Units</li>
-            <li>Identify ASINs with declining AUR (price erosion signal)</li>
-            <li>Identify ASINs where bundle/premium variant could increase AUR</li>
-            <li>Set AUR target per category: target 10% improvement per quarter</li>
-        </ol>
-
-        <div class='bookmarks-inline'>
-            <strong>Key Links:</strong><br>
-            <a class='btn-sc' href='https://sellercentral.amazon.in/sns/manage' target='_blank'>Subscribe &amp; Save Dashboard</a>
-            <a class='btn-sc' href='https://sellercentral.amazon.in/business/reports' target='_blank'>B2B Reports</a>
-            <a class='pill-sc' href='https://sellercentral.amazon.in/gp/help/external/G201664430' target='_blank'>SNS Help Guide</a>
-        </div>
-
-        <div class='pain-point-section'>
-            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>
-            <div class='pain-point-body'>
-                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>Seller in personal care category spends ₹80,000/month on PPC to acquire buyers — but has zero Subscribe &amp; Save enrollment, so every customer is a one-time acquisition with full ad cost attached.</p></div>
-                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Strategic Solution</div><p>Enroll all FMCG/consumable ASINs in SNS immediately. Even 200 SNS subscribers × ₹500 AOV = ₹1,00,000 in monthly recurring revenue with zero incremental ad cost. One-time customer acquisition pays for itself on repeat orders.</p></div>
-                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Pro Insight</div><p>AUR optimisation is more powerful than volume growth. Increasing AUR from ₹450 to ₹550 (+22%) on 1,000 units/month = ₹1,00,000 extra monthly revenue with identical operations, ad spend, and FBA costs.</p></div>
-            </div>
-        </div>
-    """,
+    "overview": "<p>Fulfilled by Merchant (FBM) and Amazon Easy Ship give sellers fulfilment flexibility, especially for heavy/bulky items or products requiring special handling. This module covers Easy Ship SLA compliance, Easy Ship Guaranteed Delivery (GD) and Seller Fulfilled Prime (SFP) eligibility, Seller Flex setup, and the critical performance metrics sellers must maintain to avoid account action.</p>",
+    "content": "\n        <h3>1. Easy Ship Overview & Order Management</h3>\n        <div class='callout pro-tip'>\n            <div><strong>Amazon Easy Ship:</strong> Amazon's courier picks up from your doorstep and delivers to the customer. You pack and label — Amazon ships.<br><br>\n            <strong>Benefits:</strong><br>\n            • Amazon-badged logistics — customer trusts the delivery<br>\n            • Trackable with Amazon tracking system<br>\n            • No carrier negotiation needed<br>\n            • Prime eligibility possible via Easy Ship Guaranteed Delivery → Seller Fulfilled Prime pathway<br><br>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/gp/ssof/shipping-queue.html' target='_blank'>Easy Ship Orders Queue</a></div>\n        </div>\n\n        <h3>2. Easy Ship Guaranteed Delivery (GD) Programme</h3>\n        <div class='callout success'>\n            <div><strong>GD Programme — Eligibility Requirements:</strong><br>\n            ✓ Active Easy Ship seller with clean performance metrics<br>\n            ✓ Your pick-up pin code covered under GD locations<br>\n            ✓ Minimum 30 Easy Ship orders/month<br>\n            ✓ Late Dispatch Rate ≤ 1.5%<br>\n            ✓ Cancellation Rate ≤ 1.5%<br>\n            ✓ Package limits: max 50cm × 35cm × 30cm, weight ≤ 9 kg<br><br>\n            <strong>Only ONE pickup slot for GD orders: 1:00 PM – 4:00 PM daily</strong><br>\n            Order cutoff: 12:00 PM same day. Schedule pickup by 12:45 PM.<br>\n            Sundays are excluded from ESD (Estimated Ship Date) calculations.</div>\n        </div>\n        <table class='data-table'>\n            <thead><tr><th>Order Time</th><th>Pickup Window</th><th>Action Required</th></tr></thead>\n            <tbody>\n                <tr><td>1DD / 2DD orders by 12:00 PM</td><td>1:00 PM – 4:00 PM same day</td><td>Schedule pickup by 12:45 PM; pack &amp; ready by 1 PM</td></tr>\n                <tr><td>Standard Easy Ship orders</td><td>Multiple slots as per Amazon</td><td>Mark ready as per pickup slot confirmation</td></tr>\n                <tr><td>After Saturday 12:00 PM</td><td>Monday (Sunday excluded)</td><td>ESD automatically set to Monday by Amazon</td></tr>\n            </tbody>\n        </table>\n\n        <h3>3. Seller Fulfilled Prime (SFP / Easy Ship Prime)</h3>\n        <div class='callout warning'>\n            <div><strong>SFP Eligibility (Stricter than GD):</strong><br>\n            • Must complete 30 days in GD Programme first with at least 1 GD order fulfilled<br>\n            • LDR ≤ 1.0% and Cancellation Rate ≤ 1.0% for BOTH standard and GD orders<br>\n            • Free shipping must be offered on all SKUs in the GD programme<br>\n            • All orders must ship same-day or next-day<br><br>\n            <strong>Prime badge benefit:</strong> Significantly boosts CTR, Buy Box win rate, and search ranking.<br>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/seller-fulfilled-prime/registration/index.html' target='_blank'>Apply for Seller Fulfilled Prime</a></div>\n        </div>\n\n        <h3>4. Seller Flex — Your Own Warehouse as Prime FC</h3>\n        <ul>\n            <li><strong>What it is:</strong> Your warehouse operates as an Amazon-integrated Flex Site with Prime eligibility</li>\n            <li><strong>IT requirements:</strong> Laptop (min 2 GB RAM), barcode scanner, Zebra label printer, dedicated broadband &gt;4 Mbps with backup link from different ISP</li>\n            <li><strong>Performance thresholds (strict):</strong> Cancellation Rate &lt;0.05%, Late Shipment Rate &lt;0.05%, Late Handover &lt;0.05%</li>\n            <li><strong>Order processing deadline:</strong> All orders must be processed before CPT (2 PM cutoff)</li>\n            <li>Manage via: <a class='btn-sc' href='https://sellerflex.amazon.in' target='_blank'>Seller Flex Portal</a></li>\n        </ul>\n\n        <h3>5. FBM Performance Metrics — Account Health Thresholds</h3>\n        <div class='callout warning'>\n            <div><strong>Critical FBM Metrics:</strong><br>\n            • <strong>Order Defect Rate (ODR):</strong> Target &lt;1% | Suspension: &gt;1%<br>\n            • <strong>Late Dispatch Rate (LDR):</strong> Target &lt;4% | Alert: &gt;4% | Suspension: &gt;8%<br>\n            • <strong>Pre-Fulfillment Cancellation Rate:</strong> Target &lt;2.5% | Suspension: &gt;5%<br>\n            • <strong>Valid Tracking Rate (VTR):</strong> Target &gt;95% | Alert: &lt;90%<br>\n            • <strong>Easy Ship GD Programme LDR:</strong> Target ≤ 1.5% (standard) / ≤ 1.0% (SFP)</div>\n        </div>\n\n        <h3>6. Self-Ship (MFN) Carrier Selection</h3>\n        <ul>\n            <li><strong>Tier-1 cities:</strong> Delhivery, Bluedart, DTDC — 1–2 day delivery</li>\n            <li><strong>Tier-2/3 cities:</strong> India Post, Ekart — reliable but slower</li>\n            <li><strong>Negotiation leverage:</strong> Volume commitments (500+ shipments/month) unlock 20–40% rate discounts</li>\n            <li>Always use carriers that provide real-time tracking (impacts VTR metric)</li>\n        </ul>\n\n        <h3>7. Customer Return SOP for FBM</h3>\n        <ol>\n            <li>Receive return request in SC → Orders → Manage Returns</li>\n            <li>Approve within 24 hours</li>\n            <li>Issue pre-paid return label (Amazon Logistics or self-arranged)</li>\n            <li>Process refund within 2 days of receiving returned item</li>\n            <li>Inspect returned item — categorise as: Resellable / Damaged / Defective</li>\n        </ol>\n\n        <div class='bookmarks-inline'>\n            <strong>Key Links:</strong><br>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/gp/ssof/shipping-queue.html' target='_blank'>Easy Ship Orders</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/seller-fulfilled-prime/registration/index.html' target='_blank'>SFP Registration</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/account-health' target='_blank'>Account Health</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/returns/list' target='_blank'>Manage Returns</a>\n        </div>\n\n        <div class='pain-point-section'>\n            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>\n            <div class='pain-point-body'>\n                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>Easy Ship sellers miss the GD programme pickup deadline — orders are not packed and marked ready by 12:45 PM, causing Late Dispatch Rate to spike above 1.5%, disqualifying them from the Guaranteed Delivery programme and losing the Prime badge eligibility pathway.</p></div>\n                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Solution</div><p>Set internal alerts at 11:30 AM to trigger order packing. Pre-pack all expected orders the previous evening for next-day delivery. For SKUs with stock shortages, opt them out of GD immediately via email to ez-guaranteed-delivery@amazon.com (include ASIN and SKU ID) to protect your LDR. Monitor LDR daily in Seller Central Account Health dashboard.</p></div>\n                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Strategic Insight</div><p>The Easy Ship Prime pathway (GD Programme → SFP) is one of the most underutilised growth levers for FBM sellers in India. Sellers with Prime badge on Easy Ship listings typically see 20–35% higher conversion rates vs. non-Prime FBM. The 30-day qualification period is a short investment for a long-term competitive advantage — especially for heavy or bulky products that cannot go to FBA.</p></div>\n            </div>\n        </div>\n    ",
+    "process_flow": "",
+    "tools": "",
+    "videos": [],
     "checklist": [
-        "Enrolled all eligible FMCG/consumable ASINs in Subscribe & Save",
-        "Maintained 30+ days FBA inventory for all SNS-enrolled ASINs",
-        "Set SNS discount at 5–7% (competitive but margin-safe)",
-        "B2B MOQ set for bulk-eligible ASINs",
-        "AUR tracking added to weekly review (Revenue ÷ Units by ASIN)",
-        "Bundle creation roadmap drafted for top 5 ASINs by volume",
-        "A+ content comparison table created showing premium variant benefits"
+      "Easy Ship GD pickup scheduled daily — orders packed and ready by 12:45 PM",
+      "Late Dispatch Rate &lt;1.5% for GD programme; &lt;4% for standard Easy Ship",
+      "Cancellation Rate &lt;1.5% for GD; &lt;2.5% for standard FBM",
+      "Valid Tracking Rate &gt;95%",
+      "All FBM returns processed within 24 hours of request",
+      "GD programme eligibility reviewed — SFP application submitted after 30 days qualifying",
+      "ODR &lt;1% — checked weekly"
     ],
     "quiz": [
-        {
-            "question": "Subscribe & Save on Amazon India is available for which fulfillment method?",
-            "options": ["FBM only", "FBA only", "Both FBA and FBM", "Easy Ship only"],
-            "answer": "FBA only",
-            "explanation": "Subscribe & Save requires FBA fulfillment. FBM sellers cannot enroll in SNS. Products must be eligible for FBA and maintain consistent inventory availability for recurring subscription deliveries."
-        },
-        {
-            "question": "A seller has ₹10 lakh monthly revenue selling 2,000 units. AUR = ₹500. To improve AUR to ₹600 without volume change, monthly revenue becomes:",
-            "options": ["₹10 lakh (unchanged)", "₹11 lakh", "₹12 lakh", "₹14 lakh"],
-            "answer": "₹12 lakh",
-            "explanation": "AUR improvement to ₹600 on 2,000 units = ₹12,00,000 monthly revenue — a 20% revenue increase with zero additional units, ads, or operational changes. This is the power of AUR optimisation."
-        }
+      {
+        "question": "What is the maximum allowed Late Dispatch Rate before account suspension?",
+        "options": [
+          "2.5%",
+          "4%",
+          "8%",
+          "10%"
+        ],
+        "answer": "8%",
+        "explanation": "Amazon alerts at &gt;4% LDR and can suspend the account at &gt;8% LDR. The target is &lt;4% consistently. Any single week above 8% puts the account at severe risk."
+      },
+      {
+        "question": "What must you complete before applying for Seller Fulfilled Prime (Easy Ship Prime)?",
+        "options": [
+          "Send 100 Easy Ship orders in a week",
+          "Complete 30 days in Easy Ship Guaranteed Delivery Programme with at least 1 GD order",
+          "Enrol in FBA for at least 6 months",
+          "Achieve ODR below 0.5%"
+        ],
+        "answer": "Complete 30 days in Easy Ship Guaranteed Delivery Programme with at least 1 GD order",
+        "explanation": "SFP eligibility requires completing 30 days in the Easy Ship GD programme first. Only after this qualifying period can you apply for the Prime badge via the SFP registration page."
+      }
     ]
-},
-
-# ─────────────────────────────────────────────────────────────
-{
-    "id": "6.8",
-    "number": "Module 6.8",
-    "title": "LTSF & Inventory Age Management",
+  },
+  {
+    "id": "6.3",
+    "pillar": "p6",
+    "number": "Module 6.3",
+    "title": "Inventory Planning",
+    "difficulty": "Advanced",
+    "time": "40 mins",
+    "overview": "<p>Running out of stock is the fastest way to lose BSR rank, organic keyword position, and Buy Box status — all at once. This module covers demand forecasting, the Reorder Point (ROP) formula, Out-of-Stock (OOS) rate measurement, OOS prevention using the STEP Dashboard, safety stock calculation, seasonal build-up, and working capital optimisation.</p>",
+    "content": "\n        <h3>1. Out-of-Stock (OOS) Rate — Definition & Formula</h3>\n        <div class='callout warning'>\n            <div><strong>OOS Rate Formula:</strong><br>\n            <code>OOS Rate = (OOS Customer Views ÷ Total Customer Views) × 100</code><br><br>\n            <strong>Important:</strong> Only counts ASINs where you have won Buy Box ≥30% AND sold &gt;5 units in the last 15 days.<br><br>\n            <strong>Example:</strong> 100 OOS views ÷ 1,000 total views = 10% OOS Rate<br><br>\n            <strong>OOS Impact Cascade:</strong><br>\n            • BSR rank drops within 24–48 hours of going OOS<br>\n            • Organic keyword rank drops within 72 hours<br>\n            • Buy Box is lost immediately<br>\n            • Recovery takes 2–4 weeks after restocking<br><br>\n            Monitor via: <a class='btn-sc' href='https://sellercentral.amazon.in/seller-performance/dashboard' target='_blank'>STEP Dashboard</a></div>\n        </div>\n\n        <h3>2. Reorder Point (ROP) Calculation</h3>\n        <div class='callout pro-tip'>\n            <div><strong>ROP Formula (from Amazon Inventory Guide):</strong><br>\n            <code>ROP = (Average Daily Sales × Lead Time Days) + Safety Stock</code><br><br>\n            <strong>Example:</strong> 20 units/day × 21 days lead time + 100 safety stock = <strong>520 units ROP</strong><br><br>\n            When your FBA stock hits 520 units → trigger reorder immediately.<br><br>\n            <strong>Days of Cover:</strong> <code>FBA Stock ÷ Avg Daily Sales</code><br>\n            Example: 300 units ÷ 20/day = 15 days cover — dangerously low!</div>\n        </div>\n        <table class='data-table'>\n            <thead><tr><th>Metric</th><th>Formula</th><th>Example</th></tr></thead>\n            <tbody>\n                <tr><td>Reorder Point (ROP)</td><td>(Avg Daily Sales × Lead Time) + Safety Stock</td><td>(20 × 21) + 100 = 520 units</td></tr>\n                <tr><td>Safety Stock</td><td>(Max Daily Sales − Avg Daily Sales) × Max Lead Time</td><td>(30 − 20) × 30 = 300 units</td></tr>\n                <tr><td>Days of Cover</td><td>FBA Stock ÷ Avg Daily Sales</td><td>300 ÷ 20 = 15 days (danger zone)</td></tr>\n                <tr><td>Total Lead Time</td><td>Production + Transit + FC Receiving</td><td>2 + 3 + 1 week = 6 weeks typical</td></tr>\n            </tbody>\n        </table>\n\n        <h3>3. OOS Prevention Protocol — Weekly Actions</h3>\n        <table class='data-table'>\n            <thead><tr><th>Day</th><th>Action</th><th>Tool/Report</th></tr></thead>\n            <tbody>\n                <tr><td>Monday</td><td>Review Inventory Health Report — check 'Weeks of Cover' for all ASINs</td><td>Inventory Health Report (SC → Reports → Fulfillment)</td></tr>\n                <tr><td>Wednesday</td><td>Check inbound shipment status; reconcile closed shipments</td><td>Manage FBA Shipments + Received Inventory Report</td></tr>\n                <tr><td>Friday</td><td>Review daily velocity; update demand forecasts; plan next replenishment</td><td>Daily Inventory History + Business Reports</td></tr>\n                <tr><td>Monthly</td><td>Seasonal trend analysis; year-over-year comparison for GIF/Prime Day planning</td><td>Monthly Inventory History Report</td></tr>\n            </tbody>\n        </table>\n        <div class='callout success'>\n            <div><strong>Set Low Inventory Alerts:</strong><br>\n            SC → Inventory → Manage FBA Inventory → Settings → Low Inventory Threshold<br>\n            Set threshold at your ROP value — get email notification before stock hits danger zone.<br><br>\n            <strong>STEP Dashboard OOS Metric:</strong> Check your OOS % weekly in the Supply Chain &amp; Fulfilment section to monitor improvement trend.<br>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/seller-performance/dashboard' target='_blank'>STEP Dashboard</a>\n            &nbsp;<a class='btn-sc' href='https://sellercentral.amazon.in/inventory' target='_blank'>Manage Inventory</a></div>\n        </div>\n\n        <h3>4. Safety Stock Formula</h3>\n        <p><code>Safety Stock = (Max Daily Sales − Avg Daily Sales) × Max Lead Time</code></p>\n        <p>For <strong>high-velocity ASINs:</strong> maintain 14–21 days safety stock in FBA at all times.<br>\n        For <strong>festive season:</strong> stock at least 90 days of cover before any major sale event.</p>\n\n        <h3>5. Seasonal Inventory Build-Up Calendar</h3>\n        <table class='data-table'>\n            <thead><tr><th>Event</th><th>Velocity Multiplier</th><th>Build-Up Starts</th><th>Action</th></tr></thead>\n            <tbody>\n                <tr><td>Great Indian Festival (Oct)</td><td>5–10× normal</td><td>August (12 weeks before)</td><td>Check last year's Daily Inventory History for velocity spike</td></tr>\n                <tr><td>Prime Day (typically July)</td><td>3–5× normal</td><td>May (10 weeks before)</td><td>Deal submissions require stock confirmation 4 weeks prior</td></tr>\n                <tr><td>Navratri/Diwali/Dussehra</td><td>2–3× normal</td><td>September (6 weeks before)</td><td>Build to 90 days of cover before event</td></tr>\n            </tbody>\n        </table>\n\n        <h3>6. Working Capital &amp; Cash Flow Optimisation</h3>\n        <div class='callout success'>\n            <div><strong>Cash-to-Inventory Ratio Rules:</strong><br>\n            • Keep 40–60 days of inventory in FBA (sweet spot)<br>\n            • Below 30 days = OOS risk zone<br>\n            • Above 90 days = capital trapped + LTSF risk zone<br><br>\n            <strong>Disbursement alignment:</strong> Amazon pays every 14 days — plan inventory purchase orders against disbursement schedule to avoid cash gaps.<br><br>\n            <strong>70/30 Rule for omnichannel sellers:</strong> 70% of stock committed to FBA, 30% for offline/other channels. Shift to 80/20 during peak Amazon seasons (Oct–Dec).</div>\n        </div>\n\n        <div class='bookmarks-inline'>\n            <strong>Key Links:</strong><br>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/seller-performance/dashboard' target='_blank'>STEP Dashboard</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/inventory-planning/restock-inventory' target='_blank'>Restock Inventory</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/reportcentral/FORECAST/1' target='_blank'>Demand Forecast Report</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/inventory-performance/dashboard' target='_blank'>IPI Dashboard</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/inventory' target='_blank'>Manage Inventory</a>\n        </div>\n\n        <div class='pain-point-section'>\n            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>\n            <div class='pain-point-body'>\n                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>\"During the Great Indian Festival, my bestselling product went out of stock. My ranking dropped from #5 to #50 in the category and it took 3 weeks to recover. I didn't have enough data to forecast demand properly — and I underestimated how long Amazon takes to receive and process my inbound shipment.\"</p></div>\n                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Solution</div><p>Calculate your true total lead time: production time + transit to Amazon FC + FC receiving time (typically 3–6 weeks total). Use the ROP formula to set your reorder trigger. Download last year's Daily Inventory History report to identify your exact velocity spike during festive season. Start building GIF inventory in August — not September. Enable low inventory email alerts in Manage FBA Inventory settings at your ROP threshold.</p></div>\n                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Strategic Insight</div><p>OOS rate is tracked on the STEP Dashboard and directly affects your seller tier and eligibility for Amazon promotions. Sellers who maintain OOS rate below 5% consistently are eligible for more deal slots and platform incentives. The best-performing Amazon India sellers treat their Weeks of Cover report like a financial dashboard — reviewed every Monday with a fixed reorder workflow that runs regardless of how busy the team is.</p></div>\n            </div>\n        </div>\n    ",
+    "process_flow": "",
+    "tools": "",
+    "videos": [],
+    "checklist": [
+      "12-week rolling demand forecast maintained for all hero ASINs",
+      "Reorder point (ROP) calculated and low inventory alerts set in SC",
+      "Safety stock = 14–21 days for high-velocity ASINs",
+      "Days of Cover tracked weekly — no ASIN below 21 days cover",
+      "Seasonal inventory build-up started at correct lead time (12 weeks for GIF)",
+      "STEP Dashboard OOS rate checked weekly — target below 5%",
+      "Working capital cycle aligned with Amazon 14-day disbursement schedule"
+    ],
+    "quiz": [
+      {
+        "question": "How quickly does BSR rank start dropping when an ASIN goes out of stock?",
+        "options": [
+          "Instantly when OOS",
+          "Within 24–48 hours",
+          "After 1 week",
+          "Only after 30 days"
+        ],
+        "answer": "Within 24–48 hours",
+        "explanation": "Amazon's algorithm detects OOS and immediately reduces the ASIN's BSR contribution and search rank. Organic keyword positions drop within 72 hours, and recovery takes 2–4 weeks."
+      },
+      {
+        "question": "Using the ROP formula, what is the Reorder Point for an ASIN with 20 units/day avg sales, 21-day lead time, and 100 units safety stock?",
+        "options": [
+          "420 units",
+          "520 units",
+          "300 units",
+          "600 units"
+        ],
+        "answer": "520 units",
+        "explanation": "ROP = (20 units/day × 21 days) + 100 safety stock = 420 + 100 = 520 units. When FBA stock hits 520 units, trigger the reorder to ensure you never go OOS during lead time."
+      }
+    ]
+  },
+  {
+    "id": "6.4",
+    "pillar": "p6",
+    "number": "Module 6.4",
+    "title": "Account Health & SLA",
+    "difficulty": "Advanced",
+    "time": "40 mins",
+    "overview": "<p>Your Amazon account is a business-critical asset worth protecting above everything else. This module covers all key account health metrics, common listing upload error codes (8572, 8541, 8007, 8575), A-to-Z claim management, chargeback prevention, and writing a Plan of Action (POA) if the worst happens.</p>",
+    "content": "\n        <h3>1. Order Defect Rate (ODR) — Most Critical Metric</h3>\n        <div class='callout warning'>\n            <div><strong>ODR Target: &lt;1% | Suspension Threshold: &gt;1%</strong><br><br>\n            ODR = (Negative Seller Feedback + A-to-Z Claims Granted + Credit Card Chargebacks) ÷ Total Orders<br><br>\n            Calculated over a 60-day rolling period on FBM orders.<br><br>\n            Check: <a class='btn-sc' href='https://sellercentral.amazon.in/account-health' target='_blank'>Account Health Dashboard</a></div>\n        </div>\n        <table class='data-table'>\n            <thead><tr><th>Metric</th><th>Target</th><th>Alert Level</th><th>Suspension Risk</th></tr></thead>\n            <tbody>\n                <tr><td>Order Defect Rate (ODR)</td><td>&lt;1%</td><td>&gt;0.75%</td><td>&gt;1%</td></tr>\n                <tr><td>Late Dispatch Rate (LDR)</td><td>&lt;4%</td><td>&gt;4%</td><td>&gt;8%</td></tr>\n                <tr><td>Pre-Fulfillment Cancel Rate</td><td>&lt;2.5%</td><td>&gt;2.5%</td><td>&gt;5%</td></tr>\n                <tr><td>Valid Tracking Rate (VTR)</td><td>&gt;95%</td><td>&lt;95%</td><td>&lt;90%</td></tr>\n            </tbody>\n        </table>\n\n        <h3>2. Common Flat File Upload Errors — Quick Reference</h3>\n        <div class='callout pro-tip'>\n            <div><strong>These errors appear in your Upload Status report after flat file uploads:</strong></div>\n        </div>\n        <table class='data-table'>\n            <thead><tr><th>Error Code</th><th>Error Type</th><th>Primary Fix</th></tr></thead>\n            <tbody>\n                <tr><td><strong>8560</strong></td><td>Missing Standard Product ID / Mandatory Attributes</td><td>Add/correct EAN/UPC; use Mandatory-Data Macro Tool to find missing fields</td></tr>\n                <tr><td><strong>8541</strong></td><td>SKU Data Mismatch with Amazon Catalog</td><td>Match your data exactly to the existing ASIN catalog entry; check part_number field</td></tr>\n                <tr><td><strong>8007</strong></td><td>Parent SKU Not Found</td><td>Fix variation theme and parent-child data; ensure parent row has relationship_type = 'Parent'</td></tr>\n                <tr><td><strong>8575</strong></td><td>Listing Creation Privilege Temporarily Removed</td><td>Contact Seller Support immediately; review ASIN Creation Policy</td></tr>\n                <tr><td><strong>99003</strong></td><td>Missing Required Value for Variation Theme</td><td>Fill size_name and color_name for all child SKUs under SizeName-ColorName theme</td></tr>\n                <tr><td><strong>20013</strong></td><td>Image File Size Exceeds Maximum</td><td>Resize at bulkresizephotos.com/en; keep below 10 MB; min 1000px longest side</td></tr>\n                <tr><td><strong>90111</strong></td><td>Invalid Decimal Value in Field</td><td>Replace text values with numbers (e.g. '38' not 'Large'); check Valid Values tab</td></tr>\n            </tbody>\n        </table>\n        <div class='callout success'>\n            <div><strong>Flat File Best Practices (SMEMinds):</strong><br>\n            • Always download the latest template from SC before uploading<br>\n            • Fix errors in batch — never upload one SKU at a time<br>\n            • Wait 15–30 minutes after correction before re-uploading<br>\n            • Download the error report from Upload Status page immediately after upload<br>\n            • Validate all EAN/UPC codes before entry</div>\n        </div>\n\n        <h3>3. A-to-Z Claim Management</h3>\n        <div class='callout success'>\n            <div><strong>A-to-Z Claim Prevention SOP:</strong><br>\n            1. Reply to all buyer messages within 24 hours<br>\n            2. Issue refunds proactively for missing/damaged orders before claim is filed<br>\n            3. If claim is filed: respond within 72 hours with tracking + proof of delivery<br>\n            4. Accepted claims count toward ODR — fight only with strong evidence (tracking, delivery confirmation, photos)</div>\n        </div>\n\n        <h3>4. Account Suspension Prevention Checklist</h3>\n        <ul>\n            <li>Monitor Account Health daily: <a class='btn-sc' href='https://sellercentral.amazon.in/account-health' target='_blank'>Account Health Dashboard</a></li>\n            <li>All metrics in green — no yellow or red warnings</li>\n            <li>No policy warnings or IP infringement notices</li>\n            <li>All communication from Amazon responded to within 72 hours</li>\n            <li>No listing policy violations (review manipulation, prohibited claims, false certifications)</li>\n            <li>All required certifications (BIS, FSSAI, etc.) uploaded and current</li>\n            <li>Monitor Performance Notifications: <a class='btn-sc' href='https://sellercentral.amazon.in/performance/notifications' target='_blank'>Performance Notifications</a></li>\n        </ul>\n\n        <h3>5. Plan of Action (POA) Writing SOP</h3>\n        <div class='callout pro-tip'>\n            <div><strong>POA Structure (3 required sections):</strong><br>\n            <ol>\n                <li><strong>Root Cause:</strong> What exactly caused the violation — be honest, specific, and factual. Never blame customers or Amazon.</li>\n                <li><strong>Immediate Actions Taken:</strong> What you have already done to fix the problem (completed actions, not future promises).</li>\n                <li><strong>Preventive Actions:</strong> Specific SOPs, processes, and systems you are implementing to ensure it never recurs — with timelines.</li>\n            </ol>\n            Keep POA to 1–2 pages maximum. Amazon reviewers read hundreds of POAs. Be specific and concrete — \"I will try to improve\" results in POA rejection. Show exact processes implemented.</div>\n        </div>\n\n        <div class='bookmarks-inline'>\n            <strong>Key Links:</strong><br>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/account-health' target='_blank'>Account Health Dashboard</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/performance/notifications' target='_blank'>Performance Notifications</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/performance/feedback' target='_blank'>Feedback Manager</a>\n        </div>\n\n        <div class='pain-point-section'>\n            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>\n            <div class='pain-point-body'>\n                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>Sellers receive an account suspension notice after a sudden spike in A-to-Z claims during festive season. Bulk orders from the same period have multiple \"item not received\" claims, pushing ODR above 1%. The seller does not have a POA ready and wastes 3–5 days trying to write one under pressure, extending the suspension period.</p></div>\n                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Solution</div><p>Maintain a POA template ready at all times with your business details, SOPs, and processes pre-filled. Check ODR daily during peak sales events — not weekly. When ODR exceeds 0.75% (the alert threshold), proactively contact buyers with tracking details and offer refunds before they escalate to A-to-Z claims. Use SC → Manage Orders to filter orders with no tracking scans older than 5 days and reach out immediately.</p></div>\n                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Strategic Insight</div><p>Account health metrics and flat file error codes are two sides of the same operational discipline coin. Sellers who maintain spotless account health (ODR &lt;0.5%, LDR &lt;2%) AND upload error-free flat files consistently are the ones who scale fastest on Amazon India — because they spend zero time firefighting and 100% of their energy on growth activities like new product launches and advertising optimisation.</p></div>\n            </div>\n        </div>\n    ",
+    "process_flow": "",
+    "tools": "",
+    "videos": [],
+    "checklist": [
+      "ODR &lt;1% — checked daily",
+      "VTR &gt;95% for FBM orders",
+      "Cancellation Rate &lt;2.5%",
+      "LDR &lt;4%",
+      "All A-to-Z claims responded to within 72 hours",
+      "Account Health dashboard checked daily — all metrics green",
+      "POA template prepared and kept ready in case of notification",
+      "Flat file uploads error-checked using Mandatory-Data Macro Tool before submission"
+    ],
+    "quiz": [
+      {
+        "question": "What three components make up the Order Defect Rate (ODR)?",
+        "options": [
+          "Returns + cancellations + chargebacks",
+          "Negative feedback + A-to-Z claims + chargebacks",
+          "Late shipments + OOS + returns",
+          "Negative reviews + customer complaints + IPI"
+        ],
+        "answer": "Negative feedback + A-to-Z claims + chargebacks",
+        "explanation": "ODR = (Negative Seller Feedback + A-to-Z Claims Granted + Credit Card Chargebacks) ÷ Total Orders in the period. All three components directly count against the 1% threshold."
+      },
+      {
+        "question": "What is the most important element in a Plan of Action (POA)?",
+        "options": [
+          "A detailed history of your business",
+          "Apologising to Amazon for the violation",
+          "Specific root cause + concrete preventive actions",
+          "List of all your products"
+        ],
+        "answer": "Specific root cause + concrete preventive actions",
+        "explanation": "Amazon's review team looks for specificity — exact root cause, exact actions taken, exact processes implemented. Generic answers like 'we will improve' result in POA rejection."
+      },
+      {
+        "question": "Which error code appears when your uploaded flat file SKU data conflicts with an existing ASIN in the Amazon catalog?",
+        "options": [
+          "Error 8007",
+          "Error 8575",
+          "Error 8541",
+          "Error 99003"
+        ],
+        "answer": "Error 8541",
+        "explanation": "Error 8541 means the product ID (EAN/UPC) matches an existing ASIN in the catalog, but other data fields (like part_number) differ. Fix by matching your flat file data exactly to the existing catalog entry."
+      }
+    ]
+  },
+  {
+    "id": "6.5",
+    "pillar": "p6",
+    "number": "Module 6.5",
+    "title": "Easy Ship Prime & Guaranteed Delivery Programme",
     "difficulty": "Intermediate",
     "time": "30 mins",
-    "overview": """<p>Long-Term Storage Fees (now called Aged Inventory Surcharges) switched to monthly billing in 2025 — meaning slow-moving inventory silently drains profitability every single month. This module covers the current surcharge structure, how to read your Inventory Age View, the removal order SOP, and how to keep your IPI score healthy.</p>""",
-    "content": """
-        <h3>1. The 2025 Billing Change — Monthly AIS</h3>
-        <div class='callout warning'><div><strong>Important Change:</strong> From 2025, Amazon shifted from twice-yearly LTSF billing (February &amp; August) to <strong>monthly Aged Inventory Surcharge (AIS)</strong>. Inventory aged 271+ days now incurs ongoing monthly charges — not a once-yearly penalty. This makes early action critical.</div></div>
-
-        <h3>2. Current Aged Inventory Surcharge Structure</h3>
-        <table class='data-table'>
-            <thead><tr><th>Inventory Age</th><th>AIS Rate</th><th>Action</th></tr></thead>
-            <tbody>
-                <tr><td>0–270 days</td><td>No surcharge</td><td>Monitor sell-through rate</td></tr>
-                <tr><td>271–365 days</td><td>Surcharge applies monthly</td><td>Run promotions, reduce price</td></tr>
-                <tr><td>365+ days</td><td>₹15.65/cu.ft or ₹15/unit (whichever higher)</td><td>Create removal order immediately</td></tr>
-            </tbody>
-        </table>
-
-        <h3>3. Inventory Age View — How to Read It</h3>
-        <ol>
-            <li>Go to <strong>Inventory → Inventory Planning → Inventory Age</strong></li>
-            <li>View age breakdown per ASIN: 0–90 | 91–180 | 181–270 | 271–365 | 365+ days</li>
-            <li>Filter by "271+ days" to see all at-risk inventory</li>
-            <li>Sort by "Estimated Storage Fee" to prioritize by cost impact</li>
-            <li>Set a weekly calendar alert to review this report every Monday</li>
-        </ol>
-
-        <h3>4. Removing Aged Inventory (SOP)</h3>
-        <ol>
-            <li>Go to <strong>Inventory → Manage FBA Inventory → Create Removal Order</strong></li>
-            <li>Select ASINs aged 250+ days (act before 271 to avoid first surcharge)</li>
-            <li>Choose removal method: Return to Address OR Dispose</li>
-            <li>For returnable products: return to warehouse and attempt liquidation on other channels</li>
-            <li>For unsellable/damaged: dispose at Amazon's facility (lower cost than return)</li>
-            <li>Removal SLA: 14–21 days processing</li>
-        </ol>
-
-        <h3>5. IPI Score — Inventory Performance Index</h3>
-        <table class='data-table'>
-            <thead><tr><th>IPI Score</th><th>Status</th><th>Impact</th></tr></thead>
-            <tbody>
-                <tr><td>550+</td><td>Excellent</td><td>Unlimited FBA storage</td></tr>
-                <tr><td>400–549</td><td>Good</td><td>Standard storage limits</td></tr>
-                <tr><td>350–399</td><td>At Risk</td><td>Reduced storage limits</td></tr>
-                <tr><td>Below 350</td><td>Critical</td><td>Severe storage restrictions</td></tr>
-            </tbody>
-        </table>
-
-        <h3>6. IPI Improvement Actions</h3>
-        <ul>
-            <li>✅ Maintain sell-through rate &gt;2 units/week per ASIN</li>
-            <li>✅ Keep in-stock rate &gt;98% for top-selling ASINs</li>
-            <li>✅ Keep excess inventory &lt;10% of total stock</li>
-            <li>✅ Reduce unfulfillable units (create removal orders for damaged stock)</li>
-            <li>✅ Use Sponsored Products to accelerate sell-through on aging ASINs</li>
-            <li>✅ Use coupons (5–10% off) to move inventory before the 271-day mark</li>
-        </ul>
-
-        <div class='bookmarks-inline'>
-            <strong>Key Links:</strong><br>
-            <a class='btn-sc' href='https://sellercentral.amazon.in/inventory-planning/inventory-age' target='_blank'>Inventory Age View</a>
-            <a class='btn-sc' href='https://sellercentral.amazon.in/inventory-planning/stranded-inventory' target='_blank'>Inventory Health Dashboard</a>
-            <a class='pill-sc' href='https://sellercentral.amazon.in/gp/help/external/200725880' target='_blank'>Aged Inventory Surcharge Help</a>
-        </div>
-
-        <div class='pain-point-section'>
-            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>
-            <div class='pain-point-body'>
-                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>Seller sends 1,000 units of a slow-moving product to FBA. After 12 months, ₹15/unit × 1,000 units = ₹15,000/month in AIS charges — on top of ₹50/cu.ft monthly storage. Total cost: ₹25,000+/month for inventory that sells at 5 units/month.</p></div>
-                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Strategic Solution</div><p>Set a "250-day alert" calendar for every FBA ASIN. At 250 days, run a 15% coupon and Sponsored Products boost for 30 days. At 270 days, if still aging, create removal order. Never let inventory hit 365 days — the surcharge at that point exceeds the product value for many SKUs.</p></div>
-                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Pro Insight</div><p>The IPI score is a leading indicator of hidden costs. An IPI below 400 means Amazon is signaling you have too much slow-moving stock. Fix it proactively — removal orders + sell-through campaigns — before Amazon imposes storage limits that prevent you from sending new inventory during peak season.</p></div>
-            </div>
-        </div>
-    """,
+    "overview": "<p>Easy Ship Prime (Seller Fulfilled Prime) gives you the Prime badge without moving inventory to Amazon FCs — but it demands near-perfect operational discipline. This module covers the GD Programme enrollment, daily dispatch SOP, SFP eligibility path, and performance thresholds that keep your Prime badge active.</p>",
+    "content": "\n        <h3>1. Programme Hierarchy</h3>\n        <table class='data-table'>\n            <thead><tr><th>Programme</th><th>Delivery Promise</th><th>Prime Badge</th><th>Requirement</th></tr></thead>\n            <tbody>\n                <tr><td>Easy Ship Standard</td><td>3–5 days</td><td>❌</td><td>Basic Easy Ship</td></tr>\n                <tr><td>Easy Ship GD (Fast Track)</td><td>1–2 days</td><td>❌</td><td>GD Programme enrollment</td></tr>\n                <tr><td>Seller Fulfilled Prime (SFP)</td><td>1–2 days</td><td>✅ Prime</td><td>30 days in GD + metrics thresholds</td></tr>\n            </tbody>\n        </table>\n\n        <h3>2. Enrolling in Easy Ship Guaranteed Delivery (GD)</h3>\n        <ol>\n            <li>Check eligibility: pin code coverage, seller account performance metrics</li>\n            <li>Log in to Seller Central India</li>\n            <li>Navigate to <strong>Shipping Settings → Easy Ship Settings</strong></li>\n            <li>Enable Two-Day (2DD) and One-Day (1DD) Delivery options</li>\n            <li>Settings activate within 3–4 hours</li>\n            <li>Complete enrollment confirmation survey</li>\n        </ol>\n\n        <h3>3. Daily Operational Checklist (Non-Negotiable)</h3>\n        <table class='data-table'>\n            <thead><tr><th>Time</th><th>Action</th></tr></thead>\n            <tbody>\n                <tr><td><strong>By 12:00 PM</strong></td><td>Process all orders received — pick, pack, label</td></tr>\n                <tr><td><strong>By 12:45 PM</strong></td><td>Schedule Easy Ship pickup</td></tr>\n                <tr><td><strong>By 1:00 PM</strong></td><td>Orders ready for handover to logistics partner</td></tr>\n                <tr><td>1:00–4:00 PM</td><td>LSP pickup window (only slot for GD)</td></tr>\n                <tr><td>After Saturday 12 PM</td><td>ESD set to Monday (Sundays excluded)</td></tr>\n            </tbody>\n        </table>\n        <div class='callout warning'><div><strong>Sunday Rule:</strong> Sundays are excluded from ESD (Expected Ship Date) calculations. Orders received after Saturday 12:00 PM have ESD set to Monday. Many sellers miss this and get Late Dispatch Rate violations over the weekend.</div></div>\n\n        <h3>4. GD Performance Thresholds</h3>\n        <table class='data-table'>\n            <thead><tr><th>Metric</th><th>Easy Ship GD Threshold</th><th>SFP Threshold</th></tr></thead>\n            <tbody>\n                <tr><td>Late Dispatch Rate (LDR)</td><td>≤1.5%</td><td>≤1.0%</td></tr>\n                <tr><td>Cancellation Rate</td><td>≤1.5%</td><td>≤1.0%</td></tr>\n                <tr><td>Minimum Orders</td><td>≥30/month</td><td>—</td></tr>\n                <tr><td>Free Shipping</td><td>Not required</td><td>Mandatory on all SFP SKUs</td></tr>\n            </tbody>\n        </table>\n\n        <h3>5. Applying for Seller Fulfilled Prime (SFP)</h3>\n        <ol>\n            <li>Complete 30 days in GD Programme with ≥1 fulfilled GD order</li>\n            <li>Ensure all metrics meet SFP thresholds (LDR ≤1.0%, cancellation ≤1.0%)</li>\n            <li>Apply via <strong>sellercentral.amazon.in/seller-fulfilled-prime</strong></li>\n            <li>Offer free shipping on all SFP SKUs (mandatory)</li>\n            <li>Same-day/next-day shipping required for all SFP orders</li>\n        </ol>\n\n        <h3>6. Package Limits for GD Programme</h3>\n        <ul>\n            <li>Maximum Dimensions: 50 cm × 35 cm × 30 cm</li>\n            <li>Maximum Weight: 9 kg</li>\n            <li>Fulfillment Method: Amazon Easy Ship only</li>\n        </ul>\n\n        <div class='bookmarks-inline'>\n            <strong>Key Links:</strong><br>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/shipping-settings/easy-ship' target='_blank'>Easy Ship Settings</a>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/seller-fulfilled-prime' target='_blank'>Seller Fulfilled Prime</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/performance/dashboard' target='_blank'>Performance Dashboard</a>\n        </div>\n\n        <div class='pain-point-section'>\n            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>\n            <div class='pain-point-body'>\n                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>Seller misses Saturday 12:00 PM cutoff — 15 orders dispatched Monday, all counted as Late. LDR spikes to 4%, triggering GD programme suspension. Prime badge lost for 30 days.</p></div>\n                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Strategic Solution</div><p>Set Saturday orders cut-off alert at 11:30 AM. Designate a dedicated GD processing station. Add buffer: process GD orders first before SFP or standard orders every day.</p></div>\n                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Pro Insight</div><p>SFP with Prime badge gives a Buy Box advantage comparable to FBA — without the complexity of inbounding to FCs. For sellers with consistent 200–500 orders/day warehouse operations, SFP often outperforms FBA on margin.</p></div>\n            </div>\n        </div>\n    ",
+    "process_flow": "",
+    "tools": "",
+    "videos": [],
     "checklist": [
-        "Inventory Age View reviewed weekly (filter: 271+ days)",
-        "Removal orders created for all inventory aged 250+ days",
-        "IPI score monitored monthly (target 550+)",
-        "Sell-through rate above 2 units/week for all FBA ASINs",
-        "In-stock rate above 98% for top-selling products",
-        "Excess inventory below 10% of total FBA stock",
-        "Coupon or Lightning Deal planned for ASINs approaching 270 days"
+      "Enabled Two-Day and One-Day delivery in Easy Ship Settings",
+      "Daily: all orders processed and pickup scheduled by 12:45 PM",
+      "Saturday: extra alert set for 11:30 AM to catch weekend orders",
+      "LDR monitored daily in Performance Dashboard (target ≤1.5% for GD, ≤1.0% for SFP)",
+      "Cancellation rate maintained below threshold (≤1.5% GD, ≤1.0% SFP)",
+      "Free shipping enabled on all SFP SKUs (mandatory requirement)",
+      "Package dimensions and weight within GD limits (50×35×30cm, ≤9kg)"
     ],
     "quiz": [
-        {
-            "question": "When did Amazon India switch from twice-yearly LTSF billing to monthly Aged Inventory Surcharge?",
-            "options": ["2022", "2023", "2024", "2025"],
-            "answer": "2025",
-            "explanation": "In 2025, Amazon shifted from twice-yearly LTSF billing (February & August) to monthly Aged Inventory Surcharge (AIS). Inventory aged 271+ days now incurs ongoing monthly charges, making early action critical."
-        },
-        {
-            "question": "At what inventory age should sellers proactively create removal orders to avoid the first AIS charge?",
-            "options": ["180 days", "200 days", "250 days", "300 days"],
-            "answer": "250 days",
-            "explanation": "AIS charges begin at 271 days. Creating a removal order at 250 days gives 14–21 days processing time, ensuring inventory is removed before the first monthly surcharge kicks in at 271 days."
-        }
+      {
+        "question": "What is the Late Dispatch Rate (LDR) threshold for Easy Ship Guaranteed Delivery?",
+        "options": [
+          "≤5%",
+          "≤3%",
+          "≤1.5%",
+          "≤0.5%"
+        ],
+        "answer": "≤1.5%",
+        "explanation": "Easy Ship GD Programme requires LDR ≤1.5% and Cancellation Rate ≤1.5%. Seller Fulfilled Prime (SFP) has stricter thresholds: LDR ≤1.0% and Cancellation Rate ≤1.0%."
+      },
+      {
+        "question": "What happens to orders received on Saturday after 12:00 PM in the GD Programme?",
+        "options": [
+          "Must be dispatched same day",
+          "ESD set to Sunday",
+          "ESD set to Monday (Sundays excluded)",
+          "Automatically cancelled"
+        ],
+        "answer": "ESD set to Monday (Sundays excluded)",
+        "explanation": "Sundays are excluded from GD calculations. Orders received after Saturday 12:00 PM have their Expected Ship Date (ESD) automatically set to Monday, not Sunday."
+      }
     ]
-}
-
+  },
+  {
+    "id": "6.6",
+    "pillar": "p6",
+    "number": "Module 6.6",
+    "title": "Seller Flex — Ship from Your Warehouse",
+    "difficulty": "Advanced",
+    "time": "45 mins",
+    "overview": "<p>Seller Flex lets you ship Prime orders directly from your own warehouse using Amazon's carrier network — giving you Prime badge eligibility, inventory control, and lower storage costs versus FBA. This module covers Flex site setup, IT infrastructure, manpower planning, peak season preparation, and the return processing SOP.</p>",
+    "content": "\n        <h3>1. What is Amazon Seller Flex?</h3>\n        <p>Seller Flex is an Amazon program where your warehouse becomes a mini-fulfillment center. Amazon provides the carrier network; you provide the storage, packing, and handover operations. Eligible sellers can display the Prime badge on Flex-fulfilled orders.</p>\n        <div class='callout success'><div><strong>Key Benefits:</strong> Prime badge without sending inventory to Amazon FCs | Inventory stays in your control | Lower storage costs vs. FBA | Pan-India delivery via Amazon logistics</div></div>\n\n        <h3>2. IT Infrastructure Requirements</h3>\n        <table class='data-table'>\n            <thead><tr><th>Equipment</th><th>Minimum Specification</th></tr></thead>\n            <tbody>\n                <tr><td>Laptops / PCs</td><td>2 minimum | 2GB RAM | Windows 7+</td></tr>\n                <tr><td>Barcode Scanners</td><td>USB or Bluetooth (1 per pack station)</td></tr>\n                <tr><td>Shipping Label Printer</td><td>Zebra GX 430T recommended</td></tr>\n                <tr><td>Gift Wrap Printer</td><td>Zebra GC 420T recommended</td></tr>\n                <tr><td>Invoice Printer</td><td>PDF-enabled laser printer</td></tr>\n                <tr><td>Internet (Primary)</td><td>&gt;4 Mbps fixed broadband</td></tr>\n                <tr><td>Internet (Secondary)</td><td>&gt;4 Mbps (different ISP from primary)</td></tr>\n                <tr><td>Power Backup</td><td>2+ hours UPS/DG/Inverter</td></tr>\n            </tbody>\n        </table>\n\n        <h3>3. Manpower Planning by Volume</h3>\n        <table class='data-table'>\n            <thead><tr><th>Daily Volume</th><th>Shifts</th><th>Pack Stations</th><th>Staff Required</th></tr></thead>\n            <tbody>\n                <tr><td>Up to 500 units/day</td><td>1</td><td>1</td><td>3</td></tr>\n                <tr><td>501–1,000 units/day</td><td>1</td><td>2</td><td>5</td></tr>\n                <tr><td>1,001–1,500 units/day</td><td>1</td><td>3</td><td>6</td></tr>\n                <tr><td>1,500+ units/day</td><td>2</td><td>4+</td><td>8+</td></tr>\n            </tbody>\n        </table>\n\n        <h3>4. Performance Thresholds (Non-Negotiable)</h3>\n        <table class='data-table'>\n            <thead><tr><th>Metric</th><th>Threshold</th></tr></thead>\n            <tbody>\n                <tr><td>Cancellation Rate</td><td>&lt;0.05%</td></tr>\n                <tr><td>Late Shipment Rate (ExSD Miss)</td><td>&lt;0.05%</td></tr>\n                <tr><td>Late Handover to DA</td><td>&lt;0.05%</td></tr>\n            </tbody>\n        </table>\n        <div class='callout warning'><div><strong>The Golden Rule of Seller Flex:</strong> Pack EVERY order before 2:00 PM (CPT — Carrier Pickup Time). Any order not ready at 2:00 PM will miss the pickup window and count as a late shipment. Three strikes on metrics = site suspension.</div></div>\n\n        <h3>5. Peak Season Preparation Checklist (10 Steps)</h3>\n        <ol>\n            <li>Increase order processing capacity (add shifts, hire temp staff 4 weeks before)</li>\n            <li>Monitor performance daily (cancellation rate + LSR)</li>\n            <li>Monitor order backlog continuously (catch it before it becomes unmanageable)</li>\n            <li>Avoid emergency holidays (apply 5 days in advance, ship pending orders first)</li>\n            <li>Ensure ALL orders packed before 2:00 PM CPT (test with trial run pre-peak)</li>\n            <li>Test power backup (UPS/DG) and secondary internet link</li>\n            <li>Stock packaging materials 4 weeks early (boxes, polybags, labels, tape, gift wrap)</li>\n            <li>Recalibrate all printers (test shipping label + invoice quality)</li>\n            <li>Update contact details in User Management (add 2+ alternate contacts)</li>\n            <li>Know your escalation path before peak starts</li>\n        </ol>\n\n        <h3>6. Returns Processing via CRET Portal</h3>\n        <ol>\n            <li>Access CRET Portal: eu-amazon-creturns.com/prepClassification/new</li>\n            <li>Login: username = (sitecode)s001, password = (sitecode)s001@SITECODE</li>\n            <li>Inspect returned units and classify:<br>\n            Grade A = Like New | Grade B = Good | Grade C = Acceptable | Unsellable</li>\n            <li>Update classification in CRET portal within specified timeline</li>\n        </ol>\n\n        <div class='bookmarks-inline'>\n            <strong>Key Links:</strong><br>\n            <a class='btn-sc' href='https://sellerflex.amazon.in' target='_blank'>Seller Flex Portal</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/cu/contact-us' target='_blank'>Seller Support</a>\n        </div>\n\n        <div class='pain-point-section'>\n            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>\n            <div class='pain-point-body'>\n                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>Power goes out during peak Diwali packing window — no backup power. Internet also down. 300 orders miss 2:00 PM CPT. LSR spikes to 12%. Seller Flex site suspended during peak season.</p></div>\n                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Strategic Solution</div><p>Test UPS/DG and secondary internet 4 weeks before every major sale event. Document backup procedure: if primary internet fails → switch to secondary within 5 mins. If power fails → UPS kicks in for 2+ hours.</p></div>\n                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Pro Insight</div><p>Seller Flex is most profitable for sellers with 500–2,000 orders/day who have stable warehouse operations. Below 200 orders/day, FBA is usually more cost-effective (lower overhead). Above 2,000/day, consider a dedicated 3PL partner to supplement Flex capacity.</p></div>\n            </div>\n        </div>\n    ",
+    "process_flow": "",
+    "tools": "",
+    "videos": [],
+    "checklist": [
+      "IT infrastructure set up: 2 laptops, barcode scanners, label printer, dual internet",
+      "Power backup installed and tested (2+ hours minimum)",
+      "Staff trained and assigned to roles (Site Manager, Pack Station, Inbound, Returns)",
+      "Daily: all orders packed and ready before 2:00 PM CPT",
+      "Peak season: temp staff hired 4 weeks before event",
+      "Packaging materials stocked 4 weeks before peak",
+      "CRET portal credentials confirmed and return processing workflow trained"
+    ],
+    "quiz": [
+      {
+        "question": "What is the CPT (Carrier Pickup Time) golden rule for Seller Flex?",
+        "options": [
+          "Pack all orders before 12:00 PM",
+          "Pack all orders before 2:00 PM",
+          "Ship all orders before 5:00 PM",
+          "Pack 80% of orders before 2:00 PM"
+        ],
+        "answer": "Pack all orders before 2:00 PM",
+        "explanation": "The golden rule of Seller Flex: every order must be packed and ready before 2:00 PM (CPT — Carrier Pickup Time). Any order not ready at 2:00 PM misses the pickup window and counts as a late shipment."
+      },
+      {
+        "question": "What is the Late Shipment Rate (LSR) threshold for Seller Flex?",
+        "options": [
+          "<5%",
+          "<2%",
+          "<0.5%",
+          "<0.05%"
+        ],
+        "answer": "<0.05%",
+        "explanation": "Seller Flex performance thresholds are extremely strict: Cancellation Rate <0.05%, Late Shipment Rate <0.05%, and Late Handover to DA <0.05%. Three strikes on these metrics leads to site suspension."
+      }
+    ]
+  },
+  {
+    "id": "6.7",
+    "pillar": "p6",
+    "number": "Module 6.7",
+    "title": "IXD Programme — Pan-India Inventory Placement",
+    "difficulty": "Advanced",
+    "time": "35 mins",
+    "overview": "<p>The IXD (Inventory Placement / Ship Cross Dock) Programme lets you send a single consolidated shipment to one Receive Centre and have Amazon distribute it across 13–14 fulfillment centers pan-India. This eliminates the cost and complexity of managing multiple FC shipments — but requires APoB registration in multiple states. This module covers eligibility, enrollment, network structure, and the Restock Inventory dashboard.</p>",
+    "content": "\n        <h3>1. How IXD Works</h3>\n        <p>Without IXD: You must create separate FBA shipments to each Amazon FC region → 5–6 shipments to cover India.<br>\n        With IXD: You ship to your nearest <strong>Receive Centre (RC)</strong> once → Amazon distributes to 13–14 destination FCs automatically.</p>\n        <div class='callout success'><div><strong>Key Benefits:</strong> Single shipment (vs. multiple regional shipments) | Lower freight cost (one logistics partner, one destination) | Pan-India coverage without multi-state logistics complexity | Amazon's IXD flat fee based on weight slab</div></div>\n\n        <h3>2. IXD Eligibility Criteria</h3>\n        <ul>\n            <li>✅ GST registration in at least 3 states (with APoB — Additional Place of Business)</li>\n            <li>✅ APoB registered in at least 1 IXD FC per state</li>\n            <li>✅ Non-sort (oversize) ASINs &lt;20% of total inventory</li>\n            <li>❌ Heavy &amp; Bulky items ineligible (LxBxH &gt; 29×23×18 inches)</li>\n            <li>❌ Fragile or oversize items excluded</li>\n            <li>✅ FSSAI license active across all FCs (for food sellers)</li>\n        </ul>\n\n        <h3>3. IXD Receive Centre Network</h3>\n        <table class='data-table'>\n            <thead><tr><th>Region</th><th>Receive Centre</th><th>Serves</th></tr></thead>\n            <tbody>\n                <tr><td>North (Delhi/NCR/Haryana)</td><td>DED3 / DEL8</td><td>North India FCs</td></tr>\n                <tr><td>West (Gujarat/Maharashtra)</td><td>ISK3 / BOM6</td><td>West India FCs</td></tr>\n                <tr><td>South (Karnataka/Telangana)</td><td>BLR4</td><td>South India FCs</td></tr>\n            </tbody>\n        </table>\n\n        <h3>4. IXD Enrollment Process</h3>\n        <ol>\n            <li>Verify GST + APoB registration in minimum 3 states</li>\n            <li>Verify APoB in at least 1 IXD FC per required state</li>\n            <li>Check product catalog: non-sort ASINs &lt;20%</li>\n            <li>Contact Amazon Seller Account Manager or raise a case in Seller Central</li>\n            <li>Once approved, create a single shipment to your nearest Receive Centre</li>\n            <li>Amazon distributes inventory to destination FCs automatically</li>\n        </ol>\n\n        <h3>5. Using the Restock Inventory (RIM) Dashboard</h3>\n        <ol>\n            <li>Go to <strong>Inventory → Inventory Planning → Restock Inventory</strong></li>\n            <li>View per-FC quantity recommendations</li>\n            <li>Filter by ASIN, FC, or days of supply</li>\n            <li>Accept recommendation or customize quantity</li>\n            <li>Create inbound shipment to nearest RC</li>\n            <li>Track distribution status per destination FC</li>\n        </ol>\n\n        <h3>6. IXD Fees</h3>\n        <p>IXD charges a flat shipping fee based on product weight slab (₹3–₹40 per unit typically). This fee applies only to outbound customer orders — not inter-FC transfers. No IXD fee for Seller Flex fulfillment.</p>\n\n        <div class='callout info'><div><strong>APoB Registration Support:</strong> GetMyCA Consultants (mentioned in Amazon's own IXD guide) provides pan-India APoB registration services. Sellers without CA support should engage a chartered accountant in each state where FC registration is required.</div></div>\n\n        <div class='bookmarks-inline'>\n            <strong>Key Links:</strong><br>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/inventory-planning/restock-inventory' target='_blank'>Restock Inventory Dashboard</a>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/gp/ssof/shipping-queue.html' target='_blank'>Manage FBA Shipments</a>\n        </div>\n\n        <div class='pain-point-section'>\n            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>\n            <div class='pain-point-body'>\n                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>Seller not enrolled in IXD manages 6 separate FC shipments — different freight partners, different STNs, different appointment slots, different reconciliations. Operational overhead consumes 3 staff days/week.</p></div>\n                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Strategic Solution</div><p>Enroll in IXD as soon as APoB registrations are in place. ROI: reducing 6 shipments to 1 cuts freight complexity by 80% and frees staff bandwidth for higher-value work. Engage a CA firm for pan-India APoB registration upfront.</p></div>\n                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Pro Insight</div><p>Use the RIM (Restock Inventory Management) dashboard to plan IXD quantities — it shows per-FC demand forecast so you know exactly how much Amazon will distribute to each region. Match your send quantity to RIM recommendations for optimal coverage.</p></div>\n            </div>\n        </div>\n    ",
+    "process_flow": "",
+    "tools": "",
+    "videos": [],
+    "checklist": [
+      "GST + APoB registration verified in minimum 3 states",
+      "Non-sort ASINs confirmed below 20% of total inventory",
+      "No Heavy & Bulky items in catalogue (ineligible for IXD)",
+      "FSSAI license active across all FCs (food sellers only)",
+      "IXD enrollment completed via Seller Account Manager or Support case",
+      "Nearest Receive Centre identified and logistics partner confirmed",
+      "RIM dashboard reviewed weekly for per-FC quantity recommendations"
+    ],
+    "quiz": [
+      {
+        "question": "How many states must a seller have APoB registration in to be eligible for IXD Programme?",
+        "options": [
+          "1 state",
+          "2 states",
+          "At least 3 states",
+          "All 28 states"
+        ],
+        "answer": "At least 3 states",
+        "explanation": "IXD eligibility requires GST registration and APoB (Additional Place of Business) in at least 3 states, with APoB in at least 1 IXD FC per state. This enables Amazon to legally distribute inventory across state lines."
+      },
+      {
+        "question": "What percentage of non-sort (oversize) ASINs is the maximum for IXD eligibility?",
+        "options": [
+          "5%",
+          "10%",
+          "20%",
+          "35%"
+        ],
+        "answer": "20%",
+        "explanation": "For IXD eligibility, non-sort ASINs must be less than 20% of your total inventory. Heavy & Bulky items (LxBxH > 29×23×18 inches) are entirely ineligible for IXD."
+      }
+    ]
+  }
 ]

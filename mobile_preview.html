@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mobile Preview — SMEMinds Playbook</title>
+<style>
+  :root{ --dw:390px; --dh:844px; }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+    background:radial-gradient(circle at 50% 0%, #1b2433, #0c1018 60%);
+    color:#e7ecf3; min-height:100vh; padding:26px 16px 60px;
+  }
+  .hdr{ text-align:center; margin-bottom:18px; }
+  .hdr h1{ font-size:20px; margin:0 0 4px; font-weight:800; }
+  .hdr p{ margin:0; color:#9aa7b8; font-size:13.5px; }
+  .bar{
+    display:flex; flex-wrap:wrap; gap:8px; justify-content:center;
+    margin:0 auto 22px; max-width:760px;
+  }
+  .bar button, .bar a{
+    background:#1c2735; color:#dce6f2; border:1px solid #2c3a4d;
+    border-radius:99px; padding:8px 15px; font-size:13px; font-weight:600;
+    cursor:pointer; text-decoration:none; transition:all .15s;
+  }
+  .bar button:hover, .bar a:hover{ background:#26344a; border-color:#3a4d66; }
+  .bar button.active{ background:#ff6b35; border-color:#ff6b35; color:#fff; }
+  .stage{ display:flex; justify-content:center; }
+  /* Phone frame */
+  .device{
+    position:relative; width:var(--dw);
+    padding:14px; background:linear-gradient(160deg,#161b22,#0d1117);
+    border-radius:52px;
+    box-shadow:0 40px 80px -24px rgba(0,0,0,.7), inset 0 0 0 2px #2a3340, 0 0 0 1px #000;
+  }
+  .device::before{ /* notch */
+    content:''; position:absolute; top:20px; left:50%; transform:translateX(-50%);
+    width:130px; height:26px; background:#0d1117; border-radius:0 0 16px 16px; z-index:3;
+  }
+  .screen{
+    position:relative; width:100%; height:var(--dh);
+    border-radius:40px; overflow:hidden; background:#fff;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);
+  }
+  .screen iframe{ width:100%; height:100%; border:0; display:block; background:#fff; }
+  .device .side{ position:absolute; right:-3px; background:#2a3340; border-radius:2px; }
+  .device .side.pwr{ top:150px; width:3px; height:64px; }
+  .device .side.vol-up{ left:-3px; top:120px; width:3px; height:42px; }
+  .device .side.vol-dn{ left:-3px; top:172px; width:3px; height:42px; }
+  .hint{ text-align:center; color:#8493a6; font-size:12.5px; margin-top:16px; max-width:var(--dw); margin-left:auto; margin-right:auto; }
+  .dim{ color:#67768a; }
+</style>
+</head>
+<body>
+  <div class="hdr">
+    <h1>📱 SMEMinds Playbook — Mobile Preview</h1>
+    <p>The real <span class="dim">index.html</span> in a phone-sized frame. Resize triggers the live mobile layout.</p>
+  </div>
+
+  <div class="bar" id="devbar">
+    <button data-w="375" data-h="667">iPhone SE · 375</button>
+    <button data-w="390" data-h="844" class="active">iPhone 14 · 390</button>
+    <button data-w="412" data-h="915">Pixel 7 · 412</button>
+    <button data-w="430" data-h="932">14 Pro Max · 430</button>
+    <button data-w="768" data-h="1024">Tablet · 768</button>
+    <button id="reload" title="Reload the app">↻ Reload</button>
+    <a href="index.html" target="_blank">Open full ↗</a>
+  </div>
+
+  <div class="stage">
+    <div class="device" id="device">
+      <span class="side vol-up"></span><span class="side vol-dn"></span><span class="side pwr"></span>
+      <div class="screen">
+        <iframe id="app" src="index.html" title="SMEMinds Playbook"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <p class="hint">Tip: tap the <strong>☰</strong> button in the app's top bar to slide out the navigation drawer. If the login screen shows, sign in with the demo account <strong>demo@smeminds.com</strong> / <strong>DemoPreview@2026</strong> (premium, all modules unlocked).</p>
+
+<script>
+  var root = document.documentElement, frame = document.getElementById('app');
+  document.getElementById('devbar').addEventListener('click', function(e){
+    var b = e.target.closest('button[data-w]');
+    if(!b) return;
+    document.querySelectorAll('#devbar button[data-w]').forEach(function(x){ x.classList.remove('active'); });
+    b.classList.add('active');
+    root.style.setProperty('--dw', b.dataset.w + 'px');
+    root.style.setProperty('--dh', b.dataset.h + 'px');
+  });
+  document.getElementById('reload').addEventListener('click', function(){
+    frame.contentWindow.location.reload();
+  });
+</script>
+</body>
+</html>

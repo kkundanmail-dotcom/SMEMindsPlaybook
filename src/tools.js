@@ -12,7 +12,6 @@ function calcFeeTool() {
     const refFee = Math.max(price * cat, 10);
     const closingFee = (ftype === 'self') ? 17 : (ftype === 'easy' ? 17 : 0);
     let fulfillFee = 0;
-    const wSlabs = Math.ceil(weight / 500);
 
     if (ftype === 'fba') {
         const packFee = 20;
@@ -99,6 +98,13 @@ function calcPricing() {
     const feeRate = (parseFloat(document.getElementById('ps_fee').value) || 10) / 100;
     const targetMargin = (parseFloat(document.getElementById('ps_margin').value) || 20) / 100;
 
+    const el0 = document.getElementById('ps_res');
+    if (feeRate + targetMargin >= 1) {
+        el0.style.display = 'block';
+        el0.innerHTML = '<p style="color:var(--danger,#ef4444);font-weight:600">Fee % + target margin % must total under 100% — there is no selling price that satisfies both.</p>';
+        return;
+    }
+
     const minSP = cogs / (1 - feeRate - targetMargin);
     const discount = mrp > 0 ? ((mrp - minSP) / mrp * 100) : 0;
     const actualMargin = minSP > 0 ? ((minSP - cogs - minSP * feeRate) / minSP * 100) : 0;
@@ -138,16 +144,22 @@ function lookupError() {
     const q = document.getElementById('err_input').value.trim().toLowerCase();
     const el = document.getElementById('err_res');
     if (!q) { el.innerHTML = '<p style="color:var(--text-muted)">Type an error code or keyword above.</p>'; return; }
+    if (q.length < 3) { el.innerHTML = '<p style="color:var(--text-muted)">Keep typing — at least 3 characters.</p>'; return; }
 
-    let found = null;
-    for (const [key, val] of Object.entries(ERROR_DB)) {
-        if (q === key || q.includes(key) || key.includes(q)) { found = val; break; }
-    }
+    // Exact match wins; otherwise list every prefix/substring match instead of
+    // confidently showing the first partial hit (e.g. "85" matching 8572)
+    const entries = Object.entries(ERROR_DB);
+    let matches = entries.filter(([key]) => key === q);
+    if (!matches.length) matches = entries.filter(([key]) => key.startsWith(q) || q.includes(key));
+    if (!matches.length) matches = entries.filter(([key]) => key.includes(q));
 
-    if (found) {
-        el.innerHTML = `<div style="margin-bottom:8px"><strong style="color:var(--primary)">${found.title}</strong></div><p style="font-size:14px;color:var(--text-dark)">${found.fix}</p>`;
+    if (matches.length) {
+        el.innerHTML = matches.map(([key, val]) =>
+            `<div style="margin-bottom:14px"><div style="margin-bottom:6px"><strong style="color:var(--primary)">${key.toUpperCase()} — ${val.title}</strong></div><p style="font-size:14px;color:var(--text-dark)">${val.fix}</p></div>`
+        ).join('');
     } else {
-        el.innerHTML = `<p style="color:var(--text-muted)">No match found for "<strong>${q}</strong>". Try searching: 8572, 8541, 8006, 5461, 8565, 8200, 8558, image, barcode, node, suppressed.</p>`;
+        const safeQ = q.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+        el.innerHTML = `<p style="color:var(--text-muted)">No match found for "<strong>${safeQ}</strong>". Try searching: 8572, 8541, 8006, 5461, 8565, 8200, 8558, image, barcode, node, suppressed.</p>`;
     }
 }
 

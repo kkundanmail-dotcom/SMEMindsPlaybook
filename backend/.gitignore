@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+smeminds.db
+smeminds.db-journal
+smeminds.db-wal
+smeminds.db-shm
+smeminds.db.bak-*
+.env
+.jwt_secret
+.admin_key
+.tts_cache/

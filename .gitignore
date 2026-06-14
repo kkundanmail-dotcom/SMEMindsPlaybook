@@ -1,2 +1,13 @@
 __pycache__/
 *.pyc
+src/outro_video_b64.txt
+
+# Generated / heavy assets (regenerable — never push)
+exports/
+node_modules/
+backend/.tts_cache/
+backend/*.db.bak*
+tools/render/_work/
+tools/render/_captmp/
+*.log
+.claude_*/

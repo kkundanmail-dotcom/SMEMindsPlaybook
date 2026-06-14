@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amazon Account Management Playbook — SMEMinds</title>
+    <meta name="description" content="63 expert modules across 9 growth pillars — the SMEMinds Amazon India account management playbook, built by ex-Amazonians.">
+    <link rel="icon" type="image/png" href="{{ FAVICON_B64 }}">
+    <link rel="shortcut icon" type="image/png" href="{{ FAVICON_B64 }}">
+    <link rel="apple-touch-icon" href="{{ AI_ICON_B64 }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!-- Razorpay checkout.js is lazy-loaded by app.js when checkout starts -->
     <style>{{ CSS }}</style>
 </head>
 <body oncontextmenu="return false;">
@@ -17,63 +21,145 @@
 <!-- ══════════════════════════════════════════
      SSO LOGIN OVERLAY
 ══════════════════════════════════════════ -->
-<div id="login-overlay">
-    <div class="login-card">
-        <div class="login-logo-wrap">
-            <img src="{{ LOGO_B64 }}" alt="SMEMinds" onerror="this.style.display='none'">
+<div id="login-overlay" class="auth-shell" data-view="signin">
+    <!-- ░░ LEFT — brand hero ░░ -->
+    <aside class="auth-hero">
+        <div class="auth-hero-top"><img class="brand-logo auth-hero-logo" alt="SMEMinds"></div>
+        <div class="auth-hero-body">
+            <h1 class="auth-hero-title">Master Amazon Growth<br>Like Top Brands</h1>
+            <p class="auth-hero-sub">Access proven Amazon account-management frameworks, templates, certifications, and growth strategies used by leading ecommerce brands.</p>
+            <div class="auth-hero-art" aria-hidden="true">
+                <div class="aha-card aha-chart">
+                    <div class="aha-card-h"><span></span><b>Revenue Growth</b></div>
+                    <svg viewBox="0 0 240 90" preserveAspectRatio="none">
+                        <defs><linearGradient id="ahaG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff8a4d" stop-opacity=".55"/><stop offset="1" stop-color="#ff6b35" stop-opacity="0"/></linearGradient></defs>
+                        <path d="M0 78 L34 64 L70 70 L104 44 L140 52 L176 26 L210 30 L240 8 L240 90 L0 90 Z" fill="url(#ahaG)"/>
+                        <path d="M0 78 L34 64 L70 70 L104 44 L140 52 L176 26 L210 30 L240 8" fill="none" stroke="#ff6b35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="aha-card aha-stat"><b>4.9★</b><span>Seller Rating</span></div>
+                <div class="aha-card aha-mod"><i></i><div><b>Module 12 complete</b><span>Catalogue & Listings</span></div><em>100%</em></div>
+            </div>
+            <ul class="auth-trust">
+                <li><b>5,000+</b><span>Sellers Trained</span></li>
+                <li><b>100+</b><span>Learning Modules</span></li>
+                <li><b>Expert</b><span>Industry Led</span></li>
+                <li><b>Secure</b><span>Encrypted Access</span></li>
+            </ul>
         </div>
-        <span class="login-tagline">Amazon Account Management Playbook</span>
-        <button class="btn-google" onclick="triggerGoogleLogin()">
-            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-            Continue with Google
-        </button>
-        <div class="login-divider">or sign in with email</div>
-        <div class="auth-tabs">
-            <button id="tab-signin" class="auth-tab active" onclick="switchAuthTab('signin')">Sign In</button>
-            <button id="tab-signup" class="auth-tab" onclick="switchAuthTab('signup')">Sign Up</button>
+    </aside>
+
+    <!-- ░░ RIGHT — auth card ░░ -->
+    <main class="auth-panel">
+        <div class="auth-card">
+
+            <!-- ── SIGN IN ── -->
+            <section class="auth-view" id="view-signin">
+                <img class="brand-logo auth-card-logo" alt="SMEMinds">
+                <h2 class="auth-h">Welcome back</h2>
+                <p class="auth-p">Sign in to continue learning</p>
+                <div class="auth-social">
+                    <button type="button" class="auth-soc" onclick="authSocial('Google')"><svg viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>Continue with Google</button>
+                    <button type="button" class="auth-soc" onclick="authSocial('LinkedIn')"><svg viewBox="0 0 24 24" fill="#0A66C2"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.75V21h-4v-5.3c0-1.26-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21h-4z"/></svg>Continue with LinkedIn</button>
+                    <button type="button" class="auth-soc" onclick="authSocial('Microsoft')"><svg viewBox="0 0 24 24"><path fill="#F25022" d="M3 3h8.5v8.5H3z"/><path fill="#7FBA00" d="M12.5 3H21v8.5h-8.5z"/><path fill="#00A4EF" d="M3 12.5h8.5V21H3z"/><path fill="#FFB900" d="M12.5 12.5H21V21h-8.5z"/></svg>Continue with Microsoft</button>
+                </div>
+                <div class="auth-or"><span>or</span></div>
+                <form id="form-signin" onsubmit="handleSignIn(event)">
+                    <div class="auth-field"><label for="si-email">Email address</label><input id="si-email" type="email" autocomplete="email" placeholder="you@company.com" required></div>
+                    <div class="auth-field"><label for="si-pass">Password</label><input id="si-pass" type="password" autocomplete="current-password" placeholder="••••••••" required></div>
+                    <div class="auth-err" id="si-error"></div>
+                    <button type="submit" class="auth-primary">Sign in</button>
+                </form>
+                <div class="auth-alt">
+                    <button type="button" class="auth-ghost" onclick="authOtp()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>Login with Mobile OTP</button>
+                    <button type="button" class="auth-textlink" onclick="authShow('forgot')">Forgot password?</button>
+                </div>
+                <p class="auth-switch">New to SMEMinds? <a onclick="authShow('signup')">Create your account</a></p>
+                <p class="auth-legal">By continuing you agree to our <a>Terms</a> &amp; <a>Privacy Policy</a>.</p>
+            </section>
+
+            <!-- ── SIGN UP (multi-step) ── -->
+            <section class="auth-view" id="view-signup" hidden>
+                <div class="auth-steps" id="auth-steps">
+                    <span class="auth-dot is-on" data-s="1"><i>1</i><em>Account</em></span>
+                    <span class="auth-dot" data-s="2"><i>2</i><em>Profile</em></span>
+                    <span class="auth-dot" data-s="3"><i>3</i><em>Business</em></span>
+                    <span class="auth-dot" data-s="4"><i>4</i><em>Plan</em></span>
+                </div>
+
+                <div class="auth-step" data-step="1">
+                    <h2 class="auth-h">Create your account</h2>
+                    <p class="auth-p">Start your Amazon growth journey</p>
+                    <div class="auth-social">
+                        <button type="button" class="auth-soc" onclick="authSocial('Google')"><svg viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>Sign up with Google</button>
+                    </div>
+                    <div class="auth-or"><span>or with email</span></div>
+                    <div class="auth-field"><label for="su-name">Full name</label><input id="su-name" type="text" autocomplete="name" placeholder="Your name" required></div>
+                    <div class="auth-field"><label for="su-email">Email address</label><input id="su-email" type="email" autocomplete="email" placeholder="you@company.com" required></div>
+                    <div class="auth-field"><label for="su-pass">Password</label><input id="su-pass" type="password" autocomplete="new-password" placeholder="At least 8 characters" minlength="8" required><span class="auth-hint">Use 8+ characters with a mix of letters & numbers.</span></div>
+                    <div class="auth-err" id="su-error"></div>
+                    <button type="button" class="auth-primary" id="su-btn-1" onclick="suStep1()">Continue</button>
+                    <p class="auth-switch">Already have an account? <a onclick="authShow('signin')">Sign in</a></p>
+                </div>
+
+                <div class="auth-step" data-step="2" hidden>
+                    <h2 class="auth-h">Tell us about your business</h2>
+                    <p class="auth-p">We'll tailor your learning path</p>
+                    <div class="auth-field"><label for="su-company">Company name</label><input id="su-company" type="text" placeholder="Your company" autocomplete="organization"></div>
+                    <div class="auth-field"><label for="su-btype">Business type</label><select id="su-btype">
+                        <option value="">Select type…</option><option>Amazon Seller</option><option>Amazon Vendor</option><option>Brand Owner</option><option>Agency</option><option>Consultant</option><option>Ecommerce Manager</option></select></div>
+                    <div class="auth-field"><label for="su-market">Primary marketplace</label><select id="su-market">
+                        <option value="">Select marketplace…</option><option>Amazon India</option><option>Amazon Global (US/UK/EU/UAE)</option><option>Flipkart</option><option>Myntra</option><option>Multiple Marketplaces</option><option>Other</option></select></div>
+                    <div class="auth-err" id="su-error-2"></div>
+                    <div class="auth-row"><button type="button" class="auth-back" onclick="suGo(1)">Back</button><button type="button" class="auth-primary" onclick="suStep2()">Continue</button></div>
+                </div>
+
+                <div class="auth-step" data-step="3" hidden>
+                    <h2 class="auth-h">A few more details</h2>
+                    <p class="auth-p">Helps us recommend the right modules</p>
+                    <div class="auth-field"><label for="su-gst">GST number <span class="auth-opt">optional</span></label><input id="su-gst" type="text" placeholder="22AAAAA0000A1Z5"></div>
+                    <div class="auth-field"><label for="su-rev">Annual revenue range</label><select id="su-rev">
+                        <option value="">Select range…</option><option>Pre-launch / ₹0</option><option>Under ₹25 Lakh</option><option>₹25 Lakh – ₹1 Cr</option><option>₹1 Cr – ₹5 Cr</option><option>₹5 Cr – ₹25 Cr</option><option>₹25 Cr+</option></select></div>
+                    <div class="auth-field"><label for="su-exp">Marketplace experience</label><select id="su-exp">
+                        <option value="">Select experience…</option><option>Just starting out</option><option>Less than 1 year</option><option>1–3 years</option><option>3–5 years</option><option>5+ years</option></select></div>
+                    <div class="auth-row"><button type="button" class="auth-back" onclick="suGo(2)">Back</button><button type="button" class="auth-primary" onclick="suStep3()">Continue</button></div>
+                </div>
+
+                <div class="auth-step" data-step="4" hidden>
+                    <h2 class="auth-h">Choose your plan</h2>
+                    <p class="auth-p">Start free, upgrade anytime</p>
+                    <div class="auth-cycle"><button type="button" id="cyc-monthly" class="is-on" onclick="setCycle('monthly')">Monthly</button><button type="button" id="cyc-yearly" onclick="setCycle('yearly')">Yearly <span class="auth-save">Up to 3 months free</span></button></div>
+                    <div class="auth-plans" id="su-plans"></div>
+                    <div class="auth-err" id="su-plan-error"></div>
+                    <div class="auth-row"><button type="button" class="auth-back" onclick="suGo(3)">Back</button><button type="button" class="auth-primary" id="su-finish" onclick="suFinish()">Create account</button></div>
+                </div>
+            </section>
+
+            <!-- ── FORGOT PASSWORD ── -->
+            <section class="auth-view" id="view-forgot" hidden>
+                <img class="brand-logo auth-card-logo" alt="SMEMinds">
+                <h2 class="auth-h">Reset your password</h2>
+                <p class="auth-p">Enter your email and we'll send a secure reset link.</p>
+                <div class="auth-field"><label for="fp-email">Email address</label><input id="fp-email" type="email" placeholder="you@company.com"></div>
+                <div class="auth-err" id="fp-error"></div>
+                <div class="auth-note" id="fp-note" hidden></div>
+                <button type="button" class="auth-primary" onclick="handleForgot()">Send reset link</button>
+                <p class="auth-switch"><a onclick="authShow('signin')">← Back to sign in</a></p>
+            </section>
+
+            <!-- ── SUCCESS ── -->
+            <section class="auth-view auth-success-view" id="view-success" hidden>
+                <div class="auth-success-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+                <h2 class="auth-h">Congratulations! 🎉</h2>
+                <p class="auth-p">Your Amazon growth journey starts now.</p>
+                <div class="auth-success-plan" id="su-success-plan"></div>
+                <button type="button" class="auth-primary" onclick="enterApp('home')">Access Playbook</button>
+                <button type="button" class="auth-ghost" onclick="enterApp('modules')">Explore Learning Modules</button>
+                <button type="button" class="auth-textlink" onclick="enterApp('home')">Join the Community →</button>
+            </section>
+
         </div>
-        <form class="login-form" id="form-signin" onsubmit="handleEmailSignIn(event)">
-            <div class="form-group">
-                <label for="si-email">Email</label>
-                <input type="email" id="si-email" class="form-control" placeholder="you@company.com" required style="user-select:text">
-            </div>
-            <div class="form-group">
-                <label for="si-pass">Password</label>
-                <input type="password" id="si-pass" class="form-control" placeholder="••••••••" required style="user-select:text">
-            </div>
-            <button type="submit" class="btn-login">Sign In →</button>
-            <div class="login-error" id="si-error"></div>
-        </form>
-        <form class="login-form" id="form-signup" onsubmit="handleEmailSignUp(event)" style="display:none">
-            <div class="form-group">
-                <label for="su-name">Full Name</label>
-                <input type="text" id="su-name" class="form-control" placeholder="Your name" required style="user-select:text">
-            </div>
-            <div class="form-group">
-                <label for="su-email">Work Email</label>
-                <input type="email" id="su-email" class="form-control" placeholder="you@company.com" required style="user-select:text">
-            </div>
-            <div class="form-group">
-                <label for="su-pass">Password</label>
-                <input type="password" id="su-pass" class="form-control" placeholder="Min 6 characters" minlength="6" required style="user-select:text">
-            </div>
-            <div class="form-group">
-                <label for="su-role">Your Role</label>
-                <select id="su-role" class="form-control">
-                    <option value="">Select role...</option>
-                    <option>Account Manager</option>
-                    <option>Brand Owner / Seller</option>
-                    <option>Consultant</option>
-                    <option>Operations</option>
-                    <option>Other</option>
-                </select>
-            </div>
-            <button type="submit" class="btn-login">Create Account →</button>
-            <div class="login-error" id="su-error"></div>
-            <div class="login-success" id="su-success"></div>
-        </form>
-        <p class="login-footer-note">🔒 Data stored locally in your browser only.<br>Authorised SMEMinds users only.</p>
-    </div>
+    </main>
 </div>
 
 <!-- ══════════════════════════════════════════
@@ -86,7 +172,7 @@
 
         <!-- Logo + Collapse -->
         <div class="sidebar-header">
-            <img src="{{ LOGO_B64 }}" alt="SMEMinds" class="sidebar-logo-img" onerror="this.style.display='none'">
+            <img class="sidebar-logo-img brand-logo" alt="SMEMinds">
             <button class="sidebar-collapse-btn" onclick="toggleSidebar()" title="Collapse sidebar" aria-label="Toggle sidebar">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
             </button>
@@ -119,12 +205,12 @@
                 Dashboard
             </button>
 
-            <!-- Pillar 1 — Selection -->
+            <!-- Pillar 1 — Account Management & Compliance -->
             <div class="nav-group open" id="group-p1">
                 <button class="nav-group-header" onclick="toggleNav('nav-p1','group-p1')">
                     <div class="nav-group-left">
-                        <span class="nav-group-icon p1-icon">📦</span>
-                        <span class="nav-group-title">Selection</span>
+                        <span class="nav-group-icon p1-icon">🧭</span>
+                        <span class="nav-group-title">Account Mgmt</span>
                     </div>
                     <div class="nav-group-right">
                         <span class="nav-group-count" id="count-p1">0/8</span>
@@ -134,109 +220,124 @@
                 <ul class="nav-list open" id="nav-p1"></ul>
             </div>
 
-            <!-- Pillar 2 — Efficiency -->
+            <!-- Pillar 2 — Selection -->
             <div class="nav-group" id="group-p2">
                 <button class="nav-group-header" onclick="toggleNav('nav-p2','group-p2')">
                     <div class="nav-group-left">
-                        <span class="nav-group-icon p2-icon">⚡</span>
-                        <span class="nav-group-title">Efficiency</span>
+                        <span class="nav-group-icon p2-icon">📦</span>
+                        <span class="nav-group-title">Selection</span>
                     </div>
                     <div class="nav-group-right">
-                        <span class="nav-group-count" id="count-p2">0/7</span>
+                        <span class="nav-group-count" id="count-p2">0/8</span>
                         <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
                     </div>
                 </button>
                 <ul class="nav-list" id="nav-p2"></ul>
             </div>
 
-            <!-- Pillar 3 — Traffic -->
+            <!-- Pillar 3 — Efficiency -->
             <div class="nav-group" id="group-p3">
                 <button class="nav-group-header" onclick="toggleNav('nav-p3','group-p3')">
                     <div class="nav-group-left">
-                        <span class="nav-group-icon p3-icon">🚦</span>
-                        <span class="nav-group-title">Traffic</span>
+                        <span class="nav-group-icon p3-icon">⚡</span>
+                        <span class="nav-group-title">Efficiency</span>
                     </div>
                     <div class="nav-group-right">
-                        <span class="nav-group-count" id="count-p3">0/6</span>
+                        <span class="nav-group-count" id="count-p3">0/7</span>
                         <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
                     </div>
                 </button>
                 <ul class="nav-list" id="nav-p3"></ul>
             </div>
 
-            <!-- Pillar 4 — Conversion -->
+            <!-- Pillar 4 — Traffic -->
             <div class="nav-group" id="group-p4">
                 <button class="nav-group-header" onclick="toggleNav('nav-p4','group-p4')">
                     <div class="nav-group-left">
-                        <span class="nav-group-icon p4-icon">🎯</span>
-                        <span class="nav-group-title">Conversion</span>
+                        <span class="nav-group-icon p4-icon">🚦</span>
+                        <span class="nav-group-title">Traffic</span>
                     </div>
                     <div class="nav-group-right">
-                        <span class="nav-group-count" id="count-p4">0/5</span>
+                        <span class="nav-group-count" id="count-p4">0/6</span>
                         <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
                     </div>
                 </button>
                 <ul class="nav-list" id="nav-p4"></ul>
             </div>
 
-            <!-- Pillar 5 — Speed -->
+            <!-- Pillar 5 — Conversion -->
             <div class="nav-group" id="group-p5">
                 <button class="nav-group-header" onclick="toggleNav('nav-p5','group-p5')">
                     <div class="nav-group-left">
-                        <span class="nav-group-icon p5-icon">🚀</span>
-                        <span class="nav-group-title">Speed</span>
+                        <span class="nav-group-icon p5-icon">🎯</span>
+                        <span class="nav-group-title">Conversion</span>
                     </div>
                     <div class="nav-group-right">
-                        <span class="nav-group-count" id="count-p5">0/7</span>
+                        <span class="nav-group-count" id="count-p5">0/5</span>
                         <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
                     </div>
                 </button>
                 <ul class="nav-list" id="nav-p5"></ul>
             </div>
 
-            <!-- Pillar 6 — Tools -->
+            <!-- Pillar 6 — Speed -->
             <div class="nav-group" id="group-p6">
                 <button class="nav-group-header" onclick="toggleNav('nav-p6','group-p6')">
                     <div class="nav-group-left">
-                        <span class="nav-group-icon p6-icon">🧰</span>
-                        <span class="nav-group-title">Tools</span>
+                        <span class="nav-group-icon p6-icon">🚀</span>
+                        <span class="nav-group-title">Speed</span>
                     </div>
                     <div class="nav-group-right">
-                        <span class="nav-group-count" id="count-p6">0/8</span>
+                        <span class="nav-group-count" id="count-p6">0/7</span>
                         <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
                     </div>
                 </button>
                 <ul class="nav-list" id="nav-p6"></ul>
             </div>
 
-            <!-- Pillar 7 — Brand Registry -->
+            <!-- Pillar 7 — Tools -->
             <div class="nav-group" id="group-p7">
                 <button class="nav-group-header" onclick="toggleNav('nav-p7','group-p7')">
                     <div class="nav-group-left">
-                        <span class="nav-group-icon p7-icon">🪪</span>
-                        <span class="nav-group-title">Brand Registry</span>
+                        <span class="nav-group-icon p7-icon">🧰</span>
+                        <span class="nav-group-title">Tools</span>
                     </div>
                     <div class="nav-group-right">
-                        <span class="nav-group-count" id="count-p7">0/6</span>
+                        <span class="nav-group-count" id="count-p7">0/8</span>
                         <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
                     </div>
                 </button>
                 <ul class="nav-list" id="nav-p7"></ul>
             </div>
 
-            <!-- Pillar 8 — Brand Protection -->
+            <!-- Pillar 8 — Brand Registry -->
             <div class="nav-group" id="group-p8">
                 <button class="nav-group-header" onclick="toggleNav('nav-p8','group-p8')">
                     <div class="nav-group-left">
-                        <span class="nav-group-icon p8-icon">🔐</span>
-                        <span class="nav-group-title">Brand Protection</span>
+                        <span class="nav-group-icon p8-icon">🪪</span>
+                        <span class="nav-group-title">Brand Registry</span>
                     </div>
                     <div class="nav-group-right">
-                        <span class="nav-group-count" id="count-p8">0/8</span>
+                        <span class="nav-group-count" id="count-p8">0/6</span>
                         <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
                     </div>
                 </button>
                 <ul class="nav-list" id="nav-p8"></ul>
+            </div>
+
+            <!-- Pillar 9 — Brand Protection -->
+            <div class="nav-group" id="group-p9">
+                <button class="nav-group-header" onclick="toggleNav('nav-p9','group-p9')">
+                    <div class="nav-group-left">
+                        <span class="nav-group-icon p9-icon">🔐</span>
+                        <span class="nav-group-title">Brand Protection</span>
+                    </div>
+                    <div class="nav-group-right">
+                        <span class="nav-group-count" id="count-p9">0/8</span>
+                        <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                </button>
+                <ul class="nav-list" id="nav-p9"></ul>
             </div>
 
         </nav>
@@ -254,6 +355,9 @@
         </div>
     </aside>
 
+    <!-- Scrim behind the off-canvas sidebar on phones (tap to close) -->
+    <div class="sidebar-scrim" id="sidebar-scrim" onclick="toggleSidebar()" aria-hidden="true"></div>
+
     <!-- ── MAIN CONTENT ──────────────────────────────── -->
     <main class="main-content" id="main-content">
 
@@ -264,19 +368,36 @@
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
                 </button>
                 <nav class="breadcrumb" id="breadcrumb" aria-label="breadcrumb">
-                    <span class="bc-home" onclick="showDashboard()">Home</span>
+                    <span class="bc-home" onclick="showDashboard()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showDashboard()}" tabindex="0" role="button">Home</span>
                     <span class="bc-sep">›</span>
                     <span class="bc-current" id="bc-current">Dashboard</span>
                 </nav>
             </div>
+            <button class="header-kbar" onclick="focusGlobalSearch()" title="Search modules (Ctrl/⌘ + K)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                <span>Search modules, SOPs…</span>
+                <kbd class="kbd">⌘K</kbd>
+            </button>
             <div class="header-right">
+                <button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle theme" aria-label="Toggle theme">
+                    <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                </button>
                 <button class="header-action-btn" onclick="showBookmarks()" title="SC Bookmarks">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
                 </button>
                 <button class="header-action-btn" onclick="showGlobalFeedback()" title="My Progress">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                 </button>
-                <div class="user-badge" id="user-badge" onclick="handleLogout()" title="Sign out">
+                <button class="header-action-btn" onclick="showCertificate()" title="Certificate">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5L17 21l-5-3-5 3 1.5-7.5"/></svg>
+                </button>
+                <button class="upgrade-btn" id="upgrade-btn" onclick="openPaywall()" title="Upgrade your plan">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <span id="upgrade-btn-label">Upgrade</span>
+                </button>
+                <span class="plan-pill" id="plan-pill" style="display:none">Free</span>
+                <div class="user-badge" id="user-badge" onclick="handleLogout()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();handleLogout()}" tabindex="0" role="button" title="Sign out" aria-label="Sign out">
                     <div class="user-avatar" id="user-avatar-el">?</div>
                     <span id="user-name-el">User</span>
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="opacity:0.5"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
@@ -295,10 +416,10 @@
                         <div class="hero-content">
                             <div class="hero-eyebrow">
                                 <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
-                                Amazon India &nbsp;·&nbsp; Ex-Amazonians Built &nbsp;·&nbsp; 400+ Brands
+                                <span id="hero-eyebrow-text">Amazon India &nbsp;·&nbsp; Ex-Amazonians Built &nbsp;·&nbsp; 400+ Brands</span>
                             </div>
-                            <h1>Your Complete Amazon<br><span class="hero-accent">Growth Playbook</span></h1>
-                            <p>Master every growth lever on Amazon India. 40 expert modules across 8 pillars — from selection strategy to brand protection, powered by SMEMinds AI.</p>
+                            <h1><span id="hero-title">Your Complete Amazon</span><br><span class="hero-accent" id="hero-accent">Growth Playbook</span></h1>
+                            <p id="hero-subtitle">Master every growth lever on Amazon India. 63 expert modules across 9 pillars — from selection strategy to account management, compliance &amp; brand protection, powered by SMEMinds AI.</p>
                             <div class="hero-features">
                                 <span class="hero-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>200+ SOPs &amp; Checklists</span>
                                 <span class="hero-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Quizzes &amp; Progress Tracking</span>
@@ -309,32 +430,21 @@
                                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                                     Start Learning
                                 </button>
+                                <button class="hero-btn-ghost" onclick="openOverviewVideo()">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
+                                    Watch 3-min overview
+                                </button>
                                 <button class="hero-btn-ghost" onclick="showGlobalFeedback()">
                                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                                     My Progress
                                 </button>
                             </div>
                         </div>
-                        <div class="hero-visual">
-                            <div class="hv-card hv-c1">
-                                <div class="hv-val">40</div>
-                                <div class="hv-label">Expert Modules</div>
-                                <div class="hv-icon">📚</div>
-                            </div>
-                            <div class="hv-card hv-c2">
-                                <div class="hv-val">200+</div>
-                                <div class="hv-label">SOPs Inside</div>
-                                <div class="hv-icon">📋</div>
-                            </div>
-                            <div class="hv-card hv-c3">
-                                <div class="hv-val">8</div>
-                                <div class="hv-label">Growth Pillars</div>
-                                <div class="hv-icon">🏛️</div>
-                            </div>
-                            <div class="hv-card hv-c4">
-                                <div class="hv-val">400+</div>
-                                <div class="hv-label">Brands Managed</div>
-                                <div class="hv-icon">🏷️</div>
+                        <div class="hero-media">
+                            <div class="hero-player" id="overview-video-host"></div>
+                            <div class="hero-player-meta">
+                                <span class="ov-eyebrow">▶ 3-MINUTE OVERVIEW</span>
+                                <span>The whole Playbook in 3 minutes — narrated by SMEMinds AI</span>
                             </div>
                         </div>
                     </div>
@@ -368,128 +478,44 @@
                     </div>
                 </div>
 
-                <!-- ── PILLARS SECTION ────────────────────────── -->
+                <!-- ── CERTIFICATION STATUS ──────────────────── -->
+                <div class="cert-status-card" id="cert-status-card" data-state="locked">
+                    <div class="cert-status-icon" id="cert-status-icon">🎓</div>
+                    <div class="cert-status-body">
+                        <div class="cert-status-eyebrow" id="cert-status-eyebrow">CERTIFICATION</div>
+                        <div class="cert-status-title" id="cert-status-title">Sign in to track your progress</div>
+                        <div class="cert-status-track">
+                            <div class="cert-status-fill" id="cert-status-fill"></div>
+                        </div>
+                        <div class="cert-status-meta" id="cert-status-meta">Visit 80% of modules (50/63) to qualify for your SMEMinds Certificate of Completion.</div>
+                    </div>
+                    <div class="cert-status-actions">
+                        <div class="cert-status-percent" id="cert-status-percent">0%</div>
+                        <button id="cert-status-btn" class="cert-status-btn" onclick="showCertificate()">View Details</button>
+                    </div>
+                </div>
+
+                <!-- ── AMAZON GROWTH JOURNEY ──────────────────── -->
                 <div class="dash-section-header">
                     <div class="dash-sh-left">
-                        <span class="dash-sh-eyebrow">Complete Curriculum</span>
-                        <h2 class="dash-sh-title">8 Growth Pillars</h2>
+                        <span class="dash-sh-eyebrow" id="journey-eyebrow">The Growth Operating System</span>
+                        <h2 class="dash-sh-title" id="journey-title">Amazon Growth Journey</h2>
                     </div>
-                    <span class="dash-sh-meta">40 Modules &nbsp;·&nbsp; 200+ SOPs</span>
+                    <span class="dash-sh-meta">Account setup → Brand protection</span>
                 </div>
-                <div class="pillar-grid-v">
-                    <div class="pgv-card p1" onclick="navToModule('1.1')">
-                        <div class="pgv-top">
-                            <span class="pgv-num">01</span>
-                            <span class="pgv-icon">📦</span>
-                        </div>
-                        <div class="pgv-body">
-                            <h3>Selection</h3>
-                            <p>Catalogue strategy, ASIN creation, health &amp; India-specific localisation.</p>
-                        </div>
-                        <div class="pgv-foot">
-                            <span class="pgv-tag">4 Modules</span>
-                            <span class="pgv-arrow">→</span>
-                        </div>
-                    </div>
-                    <div class="pgv-card p2" onclick="navToModule('2.1')">
-                        <div class="pgv-top">
-                            <span class="pgv-num">02</span>
-                            <span class="pgv-icon">⚡</span>
-                        </div>
-                        <div class="pgv-body">
-                            <h3>Efficiency</h3>
-                            <p>Listing quality, image optimisation, pricing strategy &amp; A+ content.</p>
-                        </div>
-                        <div class="pgv-foot">
-                            <span class="pgv-tag">5 Modules</span>
-                            <span class="pgv-arrow">→</span>
-                        </div>
-                    </div>
-                    <div class="pgv-card p3" onclick="navToModule('3.1')">
-                        <div class="pgv-top">
-                            <span class="pgv-num">03</span>
-                            <span class="pgv-icon">🚦</span>
-                        </div>
-                        <div class="pgv-body">
-                            <h3>Traffic</h3>
-                            <p>Sponsored Ads, DSP, external traffic, organic SEO &amp; deals planning.</p>
-                        </div>
-                        <div class="pgv-foot">
-                            <span class="pgv-tag">5 Modules</span>
-                            <span class="pgv-arrow">→</span>
-                        </div>
-                    </div>
-                    <div class="pgv-card p4" onclick="navToModule('4.1')">
-                        <div class="pgv-top">
-                            <span class="pgv-num">04</span>
-                            <span class="pgv-icon">🎯</span>
-                        </div>
-                        <div class="pgv-body">
-                            <h3>Conversion</h3>
-                            <p>Detail page CRO, promotions, social proof &amp; cross-sell strategy.</p>
-                        </div>
-                        <div class="pgv-foot">
-                            <span class="pgv-tag">5 Modules</span>
-                            <span class="pgv-arrow">→</span>
-                        </div>
-                    </div>
-                    <div class="pgv-card p5" onclick="navToModule('5.1')">
-                        <div class="pgv-top">
-                            <span class="pgv-num">05</span>
-                            <span class="pgv-icon">🚀</span>
-                        </div>
-                        <div class="pgv-body">
-                            <h3>Speed</h3>
-                            <p>FBA &amp; FBM management, inventory planning &amp; account health SLAs.</p>
-                        </div>
-                        <div class="pgv-foot">
-                            <span class="pgv-tag">4 Modules</span>
-                            <span class="pgv-arrow">→</span>
-                        </div>
-                    </div>
-                    <div class="pgv-card p6" onclick="navToModule('6.1')">
-                        <div class="pgv-top">
-                            <span class="pgv-num">06</span>
-                            <span class="pgv-icon">🧰</span>
-                        </div>
-                        <div class="pgv-body">
-                            <h3>Tools</h3>
-                            <p>Seller Central, Brand Analytics, Ad Console &amp; 3P tools mastery.</p>
-                        </div>
-                        <div class="pgv-foot">
-                            <span class="pgv-tag">5 Modules</span>
-                            <span class="pgv-arrow">→</span>
-                        </div>
-                    </div>
-                    <div class="pgv-card p7" onclick="navToModule('7.1')">
-                        <div class="pgv-top">
-                            <span class="pgv-num">07</span>
-                            <span class="pgv-icon">🪪</span>
-                        </div>
-                        <div class="pgv-body">
-                            <h3>Brand Registry</h3>
-                            <p>Enrolment, Brand Store, A+ content, Sponsored Brands &amp; Vine.</p>
-                        </div>
-                        <div class="pgv-foot">
-                            <span class="pgv-tag">6 Modules</span>
-                            <span class="pgv-arrow">→</span>
-                        </div>
-                    </div>
-                    <div class="pgv-card p8" onclick="navToModule('8.1')">
-                        <div class="pgv-top">
-                            <span class="pgv-num">08</span>
-                            <span class="pgv-icon">🔐</span>
-                        </div>
-                        <div class="pgv-body">
-                            <h3>Brand Protection</h3>
-                            <p>IP &amp; trademark, Transparency, Project Zero &amp; hijacking defence.</p>
-                        </div>
-                        <div class="pgv-foot">
-                            <span class="pgv-tag">6 Modules</span>
-                            <span class="pgv-arrow">→</span>
-                        </div>
-                    </div>
+
+                <!-- Curriculum stat strip (animated counters) -->
+                <div class="curriculum-stats" id="curriculum-stats">
+                    <div class="cstat"><span class="cstat-val" data-count="63">0</span><span class="cstat-label">Modules</span></div>
+                    <div class="cstat"><span class="cstat-val" data-count="250" data-suffix="+">0</span><span class="cstat-label">SOPs</span></div>
+                    <div class="cstat"><span class="cstat-val" data-count="100" data-suffix="+">0</span><span class="cstat-label">Templates</span></div>
+                    <div class="cstat"><span class="cstat-val" data-count="50" data-suffix="+">0</span><span class="cstat-label">Checklists</span></div>
+                    <div class="cstat"><span class="cstat-val" data-count="20" data-suffix="+">0</span><span class="cstat-label">Calculators</span></div>
+                    <div class="cstat cstat-accent"><span class="cstat-val">★</span><span class="cstat-label">Certification</span></div>
                 </div>
+
+                <!-- Interactive journey timeline (rendered by renderJourney()) -->
+                <div class="journey" id="journey"></div>
 
                 <!-- ── QUICK ACTIONS ──────────────────────────── -->
                 <div class="dash-section-header" style="margin-top:8px">
@@ -499,35 +525,35 @@
                     </div>
                 </div>
                 <div class="quick-actions-row">
-                    <button class="qa-card qa-ads" onclick="navToModule('3.1')">
+                    <button class="qa-card qa-ads" onclick="navToModule('4.1')">
                         <span class="qa-icon">📈</span>
                         <div class="qa-text">
                             <span class="qa-title">Sponsored Ads</span>
-                            <span class="qa-sub">Traffic · Pillar 3</span>
+                            <span class="qa-sub">Traffic Pillar</span>
                         </div>
                         <span class="qa-arr">→</span>
                     </button>
-                    <button class="qa-card qa-fba" onclick="navToModule('5.1')">
+                    <button class="qa-card qa-fba" onclick="navToModule('6.1')">
                         <span class="qa-icon">📦</span>
                         <div class="qa-text">
                             <span class="qa-title">FBA Guide</span>
-                            <span class="qa-sub">Speed · Pillar 5</span>
+                            <span class="qa-sub">Speed Pillar</span>
                         </div>
                         <span class="qa-arr">→</span>
                     </button>
-                    <button class="qa-card qa-cro" onclick="navToModule('4.1')">
+                    <button class="qa-card qa-cro" onclick="navToModule('5.1')">
                         <span class="qa-icon">🎯</span>
                         <div class="qa-text">
                             <span class="qa-title">CRO Guide</span>
-                            <span class="qa-sub">Conversion · Pillar 4</span>
+                            <span class="qa-sub">Conversion Pillar</span>
                         </div>
                         <span class="qa-arr">→</span>
                     </button>
-                    <button class="qa-card qa-brand" onclick="navToModule('7.1')">
+                    <button class="qa-card qa-brand" onclick="navToModule('8.1')">
                         <span class="qa-icon">🪪</span>
                         <div class="qa-text">
                             <span class="qa-title">Brand Registry</span>
-                            <span class="qa-sub">Registry · Pillar 7</span>
+                            <span class="qa-sub">Brand Registry Pillar</span>
                         </div>
                         <span class="qa-arr">→</span>
                     </button>
@@ -543,7 +569,15 @@
                         <span class="qa-icon">📊</span>
                         <div class="qa-text">
                             <span class="qa-title">My Progress</span>
-                            <span class="qa-sub">All 40 Modules</span>
+                            <span class="qa-sub">All 63 Modules</span>
+                        </div>
+                        <span class="qa-arr">→</span>
+                    </button>
+                    <button class="qa-card qa-tools" onclick="showToolsLibrary()">
+                        <span class="qa-icon">🛠</span>
+                        <div class="qa-text">
+                            <span class="qa-title">Tools Library</span>
+                            <span class="qa-sub">9 Calculators</span>
                         </div>
                         <span class="qa-arr">→</span>
                     </button>
@@ -553,7 +587,18 @@
 
             <!-- ═══ MODULES ════════════════════════════════ -->
             <div id="modules-container">{{ MODULES }}</div>
-            <div id="tools-library" style="display:none;">{{ TOOLS }}</div>
+
+            <!-- ═══ TOOLS LIBRARY MODAL ════════════════════ -->
+            <div id="tools-modal" class="modal">
+                <div class="modal-content" style="max-width:960px">
+                    <div class="modal-header">
+                        <h2>🛠 Tools Library</h2>
+                        <button class="modal-close" onclick="closeToolsLibrary()">✕</button>
+                    </div>
+                    <p class="text-muted">Nine interactive calculators — fees, ads, Buy Box, pricing, inventory, deals &amp; compliance.</p>
+                    <div id="tools-library">{{ TOOLS }}</div>
+                </div>
+            </div>
 
             <!-- ═══ BOOKMARKS MODAL ════════════════════════ -->
             <div id="bookmarks-modal" class="modal">
@@ -630,6 +675,145 @@
             </div>
 
             <!-- ═══ PROGRESS & FEEDBACK MODAL ═════════════ -->
+            <!-- ═══ CERTIFICATE MODAL ═════════════════════════ -->
+            <div id="certificate-modal" class="modal">
+                <div class="modal-content cert-modal-content">
+                    <div class="modal-header">
+                        <h2>🎓 Certificate of Completion</h2>
+                        <button class="modal-close" onclick="closeCertificate()">✕</button>
+                    </div>
+
+                    <!-- Eligibility / claim state -->
+                    <div id="cert-state-eligibility">
+                        <p style="color:var(--text-muted);margin-bottom:14px">
+                            Complete the playbook to earn your <strong>SMEMinds Certificate of Completion</strong>.
+                            Visit at least <strong id="cert-threshold-pct">80%</strong> of modules to qualify.
+                        </p>
+                        <div class="cert-eligibility-card">
+                            <div class="cert-progress-row">
+                                <div>
+                                    <div class="cert-eligibility-label">Modules visited</div>
+                                    <div class="cert-eligibility-value">
+                                        <span id="cert-visited-count">0</span> / <span id="cert-total-count">63</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="cert-eligibility-label">Quizzes attempted</div>
+                                    <div class="cert-eligibility-value"><span id="cert-quiz-count">0</span></div>
+                                </div>
+                                <div>
+                                    <div class="cert-eligibility-label">Threshold</div>
+                                    <div class="cert-eligibility-value"><span id="cert-threshold-count">50</span> modules</div>
+                                </div>
+                            </div>
+                            <div class="cert-progress-bar">
+                                <div class="cert-progress-fill" id="cert-progress-fill"></div>
+                            </div>
+                            <div id="cert-eligibility-msg" style="margin-top:14px;font-size:13.5px"></div>
+                            <div style="margin-top:18px;text-align:center">
+                                <button id="cert-claim-btn" class="btn btn-primary" onclick="claimCertificate()" disabled>
+                                    🎓 Claim My Certificate
+                                </button>
+                            </div>
+                        </div>
+                        <p style="font-size:12px;color:var(--text-muted);margin-top:14px;text-align:center">
+                            Certificates are issued by SMEMinds and verifiable by the unique certificate ID.
+                        </p>
+                    </div>
+
+                    <!-- Issued certificate state -->
+                    <div id="cert-state-issued" style="display:none">
+                        <div id="certificate-printable">
+                            <div class="certificate cert-classic">
+                                <span class="cert-texture" aria-hidden="true"></span>
+                                <div class="cert-frame">
+                                    <span class="cert-corner tl" aria-hidden="true"></span>
+                                    <span class="cert-corner tr" aria-hidden="true"></span>
+                                    <span class="cert-corner bl" aria-hidden="true"></span>
+                                    <span class="cert-corner br" aria-hidden="true"></span>
+                                    <div class="cert-body">
+                                        <img class="cert-logo brand-logo" alt="SMEMinds">
+                                        <div class="cert-eyebrow">SMEMinds LLP &nbsp;·&nbsp; Amazon India</div>
+                                        <h2 class="cert-title">Certificate <em>of Completion</em></h2>
+                                        <div class="cert-divider" aria-hidden="true"><span></span><i></i><span></span></div>
+                                        <p class="cert-presented">This certificate is proudly awarded to</p>
+                                        <div class="cert-name" id="cert-recipient-name">—</div>
+                                        <div class="cert-rule" aria-hidden="true"></div>
+                                        <p class="cert-presented">for successfully completing the</p>
+                                        <div class="cert-course-name">Amazon India Account Management Playbook</div>
+                                        <p class="cert-description">
+                                            covering <strong><span id="cert-pillars-count">9</span> strategic pillars</strong> and
+                                            <strong><span id="cert-modules-count">63</span> modules</strong>
+                                            of professional Amazon seller training — from catalogue selection through brand protection.
+                                        </p>
+                                        <div class="cert-chips">
+                                            <span class="cert-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>9 Pillars</span>
+                                            <span class="cert-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>63 Modules</span>
+                                            <span class="cert-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Verified Credential</span>
+                                        </div>
+                                        <div class="cert-foot">
+                                            <div class="cert-sign">
+                                                <div class="cert-sign-line"></div>
+                                                <div class="cert-foot-strong">SMEMinds LLP</div>
+                                                <div class="cert-foot-label">Authorised Signatory</div>
+                                            </div>
+                                            <div class="cert-seal" aria-hidden="true">
+                                                <svg class="cert-seal-svg" viewBox="0 0 130 152" xmlns="http://www.w3.org/2000/svg">
+                                                    <defs>
+                                                        <linearGradient id="csGold" x1="0" y1="0" x2="0.5" y2="1">
+                                                            <stop offset="0" stop-color="#f6da8b"/><stop offset=".45" stop-color="#d7a838"/><stop offset="1" stop-color="#a3741c"/>
+                                                        </linearGradient>
+                                                        <path id="csArcTop" d="M 27 65 a 38 38 0 0 1 76 0" fill="none"/>
+                                                        <path id="csArcBot" d="M 29 65 a 36 36 0 0 0 72 0" fill="none"/>
+                                                    </defs>
+                                                    <path d="M49 96 L41 140 L54 130 L61 140 L64 101 Z" fill="#15365b"/>
+                                                    <path d="M81 96 L89 140 L76 130 L69 140 L66 101 Z" fill="#0e2a49"/>
+                                                    <circle cx="65" cy="65" r="47" fill="none" stroke="url(#csGold)" stroke-width="3.2" stroke-dasharray="1.4 4.1" stroke-linecap="round"/>
+                                                    <circle cx="65" cy="65" r="40" fill="url(#csGold)"/>
+                                                    <circle cx="65" cy="65" r="40" fill="none" stroke="#fff4d6" stroke-width="1" opacity=".55"/>
+                                                    <circle cx="65" cy="65" r="33" fill="none" stroke="#7c5a16" stroke-width="1" opacity=".5"/>
+                                                    <text class="cert-seal-arc"><textPath href="#csArcTop" startOffset="50%" text-anchor="middle">SMEMINDS · CERTIFIED</textPath></text>
+                                                    <text class="cert-seal-arc"><textPath href="#csArcBot" startOffset="50%" text-anchor="middle">AMAZON INDIA</textPath></text>
+                                                    <path d="M53 65 l9 9 17 -19" fill="none" stroke="#fff8e8" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                            <div class="cert-meta">
+                                                <div class="cert-meta-row"><span class="cert-foot-label">Issued On</span><span class="cert-foot-strong" id="cert-date">—</span></div>
+                                                <div class="cert-meta-row"><span class="cert-foot-label">Credential ID</span><span class="cert-foot-strong cert-id-value" id="cert-id-display">—</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="cert-verify">Verify at <span id="cert-verify-url">—</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cert-share">
+                            <div class="cert-share-title">🎉 Share your achievement</div>
+                            <div class="cert-share-sub">Show your network you've unlocked Amazon e-commerce fundamentals.</div>
+                            <div class="cert-share-btns">
+                                <button class="cert-share-btn csb-linkedin" onclick="shareLinkedIn()" title="Add to your LinkedIn profile">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.75V21h-4v-5.3c0-1.26-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21h-4z"/></svg>LinkedIn
+                                </button>
+                                <button class="cert-share-btn csb-facebook" onclick="shareFacebook()" title="Share on Facebook">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.87.27-1.46 1.5-1.46h1.6V3.97c-.28-.04-1.24-.12-2.36-.12-2.33 0-3.93 1.43-3.93 4.04V10H7.6v3h2.7v8z"/></svg>Facebook
+                                </button>
+                                <button class="cert-share-btn csb-instagram" onclick="shareInstagram()" title="Download image for Instagram">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2zm0 1.8c-3.15 0-3.5.01-4.74.07-.9.04-1.39.2-1.71.32-.43.17-.74.37-1.06.7-.32.32-.53.63-.7 1.06-.12.32-.28.81-.32 1.71C3.21 8.5 3.2 8.85 3.2 12s.01 3.5.07 4.74c.04.9.2 1.39.32 1.71.17.43.38.74.7 1.06.32.32.63.53 1.06.7.32.12.81.28 1.71.32 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c.9-.04 1.39-.2 1.71-.32.43-.17.74-.38 1.06-.7.32-.32.53-.63.7-1.06.12-.32.28-.81.32-1.71.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.04-.9-.2-1.39-.32-1.71a2.85 2.85 0 0 0-.7-1.06 2.85 2.85 0 0 0-1.06-.7c-.32-.12-.81-.28-1.71-.32C15.5 4.01 15.15 4 12 4zm0 3.06A4.94 4.94 0 1 1 7.06 12 4.94 4.94 0 0 1 12 7.06zm0 1.8A3.14 3.14 0 1 0 15.14 12 3.14 3.14 0 0 0 12 8.86zM17.13 6a1.15 1.15 0 1 1-1.15 1.15A1.15 1.15 0 0 1 17.13 6z"/></svg>Instagram
+                                </button>
+                                <button class="cert-share-btn csb-copy" onclick="copyCertLink()" title="Copy verification link">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.5-1.5"/></svg>Copy link
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cert-actions">
+                            <button class="btn btn-primary" onclick="printCertificate()">🖨 Print / Save as PDF</button>
+                            <button class="btn btn-accent" onclick="downloadCertImage()">⬇ Download Image</button>
+                            <button class="btn btn-accent" onclick="closeCertificate()">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div id="global-feedback-modal" class="modal">
                 <div class="modal-content" style="max-width:820px">
                     <div class="modal-header">
@@ -643,18 +827,90 @@
                 </div>
             </div>
 
+            <!-- ═══ PAYWALL / SUBSCRIPTION MODAL ═══════════ -->
+            <div id="paywall-modal" class="modal paywall-modal">
+                <div class="modal-content paywall-content">
+                    <button class="modal-close paywall-close" onclick="closePaywall()">✕</button>
+                    <div class="paywall-grid">
+                        <!-- LEFT: benefits -->
+                        <div class="paywall-left">
+                            <div class="paywall-eyebrow">SMEMinds Premium</div>
+                            <h2 class="paywall-headline" id="paywall-headline">Unlock the complete Amazon Growth Playbook</h2>
+                            <p class="paywall-sub" id="paywall-sub">Access all modules, templates, SOPs, calculators, and expert resources built by ex-Amazonians.</p>
+                            <ul class="paywall-benefits">
+                                <li>Learn Amazon Growth, end to end</li>
+                                <li>Avoid suspension &amp; account risk</li>
+                                <li>PPC &amp; Sponsored Ads mastery</li>
+                                <li>Catalog optimization &amp; Listing SEO</li>
+                                <li>Brand Registry &amp; protection</li>
+                                <li>Profitability tracking &amp; calculators</li>
+                                <li>Certification on completion</li>
+                            </ul>
+                            <div class="paywall-trust">
+                                <span>🔒 Secure checkout</span>
+                                <span>↩ 7-day money-back</span>
+                                <span>⚡ Instant access</span>
+                            </div>
+                        </div>
+                        <!-- RIGHT: plans -->
+                        <div class="paywall-right">
+                            <div class="billing-toggle">
+                                <button class="billing-opt active" id="bt-monthly" onclick="setBillingCycle('monthly')">Monthly</button>
+                                <button class="billing-opt" id="bt-yearly" onclick="setBillingCycle('yearly')">Yearly <span class="save-badge">Up to 3 months free</span></button>
+                            </div>
+                            <div class="plan-cards" id="plan-cards"><!-- injected by renderPlans() --></div>
+                            <p class="paywall-foot" id="paywall-foot"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <footer class="footer">
-                <img src="{{ LOGO_B64 }}" alt="SMEMinds" style="height:44px;width:auto;border-radius:6px;margin-bottom:14px;display:block;margin-left:auto;margin-right:auto;" onerror="this.style.display='none'">
-                <p><strong>© 2025–2026 SMEMinds Consulting. All rights reserved.</strong></p>
+                <img class="brand-logo" alt="SMEMinds" style="height:44px;width:auto;border-radius:6px;margin-bottom:14px;display:block;margin-left:auto;margin-right:auto;">
+                <p><strong>© 2025–2026 SMEMinds LLP. All rights reserved.</strong></p>
                 <p>Built by Ex-Amazonians &nbsp;|&nbsp; <a href="https://www.smeminds.com" target="_blank">www.smeminds.com</a> &nbsp;|&nbsp; support@smeminds.com</p>
                 <p>Certified Amazon Advertising Partner &nbsp;|&nbsp; 400+ Brands Scaled Globally</p>
-                <p style="margin-top:10px;font-size:11px;color:rgba(255,255,255,0.3)">Confidential — authorised SMEMinds users only.</p>
+                <p style="margin-top:10px;font-size:11px;color:rgba(255,255,255,0.72)">Confidential — authorised SMEMinds users only.</p>
             </footer>
 
         </div><!-- /content-scrollable -->
     </main>
+
+    <!-- ═══ AI LEARNING ASSISTANT ══════════════════════ -->
+    <button class="ai-fab" id="ai-fab" onclick="toggleAI()" title="SMEMinds AI Assistant" aria-label="AI Assistant">
+        <img class="ai-bot-img" src="{{ AI_ICON_B64 }}" alt="SMEMinds AI" draggable="false">
+        <span class="ai-fab-pulse"></span>
+    </button>
+    <div class="ai-panel" id="ai-panel" aria-hidden="true">
+        <div class="ai-head">
+            <div class="ai-head-id">
+                <div class="ai-head-avatar">
+                    <img class="ai-bot-img" src="{{ AI_ICON_B64 }}" alt="SMEMinds AI" draggable="false">
+                </div>
+                <div>
+                    <div class="ai-head-name">SMEMinds AI</div>
+                    <div class="ai-head-sub"><span class="ai-dot"></span>Your Amazon growth co-pilot</div>
+                </div>
+            </div>
+            <button class="ai-close" onclick="toggleAI()" aria-label="Close">✕</button>
+        </div>
+        <div class="ai-body" id="ai-body"></div>
+        <div class="ai-input-row">
+            <input type="text" id="ai-input" placeholder="Ask about SOPs, modules, Amazon terms…" onkeydown="if(event.key==='Enter')askAI()">
+            <button class="ai-send" onclick="askAI()" aria-label="Send">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+            </button>
+        </div>
+    </div>
 </div><!-- /main-app -->
 
-<script>{{ JS }}</script>
+<script>
+// Single shared logo embed — all .brand-logo images get their src from here
+var SMEMINDS_LOGO = "{{ LOGO_B64 }}";
+// SMEMinds AI Assistant brand icon (used in chat bubbles)
+var SMEMINDS_AI_ICON = "{{ AI_ICON_B64 }}";
+// SMEMinds Studio module-film scripts (id -> {title, number, tagline, scenes, cta})
+var VIDEO_SCRIPTS = {{ VIDEO_SCRIPTS }};
+{{ JS }}</script>
 </body>
 </html>

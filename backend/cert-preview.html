@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SMEMinds Certificate — Sample</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/jpeg" href="/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family:'Inter',system-ui,sans-serif; color:#0f172a; min-height:100vh; padding:30px 24px;
+    background:linear-gradient(135deg,#f8fafc 0%,#fff7f0 100%); }
+
+.controls { max-width:1040px; margin:0 auto 22px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px; }
+.controls h1 { font-family:'Outfit',sans-serif; font-size:21px; color:#1E3A5F; display:flex; align-items:center; gap:11px; }
+.controls h1 .badge { background:#FF6B35; color:#fff; padding:3px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; }
+.controls .actions { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+.controls input { padding:8px 12px; border:1px solid #E5E7EB; border-radius:8px; font-size:13px; font-family:inherit; }
+.controls button, .controls a { background:#1E3A5F; color:#fff; border:0; padding:9px 15px; border-radius:8px; font-size:13px; font-weight:600;
+    cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; font-family:'Outfit',sans-serif; }
+.controls .b-ghost { background:#fff; color:#1E3A5F; border:1px solid #cbd5e1; }
+.controls .b-primary { background:#FF6B35; }
+.note { max-width:1040px; margin:0 auto 22px; font-size:13px; color:#64748B; line-height:1.6; }
+.note code { background:#eef2f7; padding:1px 6px; border-radius:5px; font-size:12px; }
+
+#cert-frame { max-width:1040px; margin:0 auto; }
+
+/* ── premium classic certificate (mirrors the playbook) ── */
+.certificate { --cert-ink:#16314f; --cert-gold:#c8962f; --cert-gold-d:#9a6f1d; --cert-orange:#e0531f; --cert-mut:#6b7a90; --cert-body:#3a4a5f;
+    position:relative; border-radius:8px; overflow:hidden; color:var(--cert-ink); background:#fffdf7; container-type:inline-size;
+    box-shadow:0 30px 60px -26px rgba(16,38,63,.45); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+.cert-texture { position:absolute; inset:0; pointer-events:none; opacity:.6;
+    background:radial-gradient(120% 80% at 50% -12%, rgba(200,150,47,.12), transparent 58%),
+      radial-gradient(80% 65% at 50% 118%, rgba(22,49,79,.06), transparent 60%),
+      repeating-radial-gradient(circle at 50% 44%, rgba(200,150,47,.045) 0 1px, transparent 1px 10px); }
+.cert-frame { position:relative; z-index:1; margin:2.6cqw; border:2px solid var(--cert-gold); border-radius:4px;
+    box-shadow:inset 0 0 0 1px rgba(200,150,47,.4), inset 0 0 0 6px #fffdf7, inset 0 0 0 7px rgba(200,150,47,.6); }
+.cert-corner { position:absolute; width:4.6cqw; height:4.6cqw; max-width:62px; max-height:62px; }
+.cert-corner.tl { top:2.1cqw; left:2.1cqw; border-top:2px solid var(--cert-gold); border-left:2px solid var(--cert-gold); }
+.cert-corner.tr { top:2.1cqw; right:2.1cqw; border-top:2px solid var(--cert-gold); border-right:2px solid var(--cert-gold); }
+.cert-corner.bl { bottom:2.1cqw; left:2.1cqw; border-bottom:2px solid var(--cert-gold); border-left:2px solid var(--cert-gold); }
+.cert-corner.br { bottom:2.1cqw; right:2.1cqw; border-bottom:2px solid var(--cert-gold); border-right:2px solid var(--cert-gold); }
+.cert-body { position:relative; display:flex; flex-direction:column; align-items:center; text-align:center; padding:4.6cqw 7.5cqw 4cqw; }
+.cert-logo { width:auto; height:auto; max-height:6.4cqw; max-width:34%; margin-bottom:1.3cqw; }
+.cert-eyebrow { font-family:'Outfit',sans-serif; font-size:clamp(8px,1.5cqw,12px); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--cert-gold-d); margin-bottom:1.5cqw; }
+.cert-title { font-family:Georgia,'Times New Roman',serif; font-weight:700; color:var(--cert-ink); font-size:clamp(22px,5.2cqw,44px); line-height:1.04; margin:0; letter-spacing:.004em; }
+.cert-title em { font-style:italic; font-weight:400; }
+.cert-divider { display:flex; align-items:center; justify-content:center; gap:9px; width:36%; max-width:290px; margin:1.2cqw 0 1.8cqw; }
+.cert-divider span { flex:1; height:1.4px; background:linear-gradient(90deg,transparent,var(--cert-gold)); }
+.cert-divider span:last-child { background:linear-gradient(90deg,var(--cert-gold),transparent); }
+.cert-divider i { width:9px; height:9px; flex:none; background:var(--cert-gold); transform:rotate(45deg); box-shadow:0 0 0 2px #fffdf7,0 0 0 3px rgba(200,150,47,.5); }
+.cert-presented { font-family:'Inter',sans-serif; font-style:italic; font-size:clamp(9px,1.55cqw,14px); color:var(--cert-mut); margin:0; }
+.cert-name { font-family:Georgia,'Times New Roman',serif; font-weight:700; font-size:clamp(26px,6cqw,54px); line-height:1.02; margin:.8cqw 0 .2cqw;
+    color:var(--cert-orange); background:linear-gradient(100deg,#ff7a45,#e0531f 55%,#c2410c); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+.cert-rule { width:32%; max-width:270px; height:2px; margin:.2cqw 0 1.4cqw; background:linear-gradient(90deg,transparent,var(--cert-gold),transparent); }
+.cert-course-name { font-family:'Outfit',sans-serif; font-size:clamp(13px,2.4cqw,22px); font-weight:800; color:var(--cert-ink); margin:.4cqw 0 0; line-height:1.2; }
+.cert-description { font-family:'Inter',sans-serif; font-size:clamp(9px,1.55cqw,14px); color:var(--cert-body); line-height:1.5; margin:.9cqw auto 0; max-width:78%; }
+.cert-chips { display:flex; gap:7px; justify-content:center; flex-wrap:wrap; margin-top:1.7cqw; }
+.cert-chip { display:inline-flex; align-items:center; gap:5px; font-family:'Outfit',sans-serif; font-weight:700; font-size:clamp(8px,1.4cqw,12px);
+    color:var(--cert-ink); padding:.5cqw 1.4cqw; border-radius:999px; background:rgba(200,150,47,.08); border:1px solid rgba(200,150,47,.45); }
+.cert-chip svg { width:1.4cqw; height:1.4cqw; max-width:14px; max-height:14px; color:var(--cert-gold-d); flex-shrink:0; }
+.cert-foot { margin-top:2.6cqw; width:100%; display:flex; align-items:flex-end; justify-content:space-between; gap:10px; }
+.cert-sign { text-align:left; flex:1 1 0; min-width:0; }
+.cert-sign-line { width:84%; max-width:200px; height:1.5px; background:var(--cert-ink); margin-bottom:6px; opacity:.85; }
+.cert-foot-strong { font-family:'Outfit',sans-serif; font-weight:700; font-size:clamp(10px,1.75cqw,14px); color:var(--cert-ink); white-space:nowrap; }
+.cert-foot-label { font-family:'Outfit',sans-serif; font-size:clamp(7px,1.25cqw,10px); font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--cert-mut); }
+.cert-seal { flex:none; display:flex; justify-content:center; }
+.cert-seal-svg { width:13.5cqw; max-width:132px; min-width:76px; height:auto; filter:drop-shadow(0 6px 13px rgba(140,90,20,.4)); }
+.cert-seal-arc { font-family:'Outfit',sans-serif; font-size:7.4px; font-weight:800; letter-spacing:1.1px; fill:#5a4310; }
+.cert-meta { flex:1 1 0; min-width:0; display:flex; flex-direction:column; gap:1.2cqw; align-items:flex-end; text-align:right; }
+.cert-meta-row { display:flex; flex-direction:column; gap:1px; align-items:flex-end; }
+.cert-id-value { font-family:ui-monospace,'Consolas',monospace; font-weight:600; letter-spacing:.01em; font-size:clamp(9px,1.5cqw,13px); }
+.cert-verify { font-family:ui-monospace,'Consolas',monospace; font-size:clamp(7px,1.2cqw,10px); color:var(--cert-mut); margin-top:1.8cqw; word-break:break-all; line-height:1.4; }
+.cert-verify span { color:var(--cert-gold-d); }
+
+@media print {
+    @page { size:A4 landscape; margin:6mm; }
+    body * { visibility:hidden !important; }
+    #cert-frame, #cert-frame * { visibility:visible !important; }
+    #cert-frame { position:absolute !important; top:0 !important; left:0 !important; width:100% !important; margin:0 !important; }
+    .certificate { box-shadow:none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="controls">
+    <h1>SMEMinds Certificate <span class="badge">Sample Preview</span></h1>
+    <div class="actions">
+        <input type="text" id="lookup-id" placeholder="SME-2026-00001" title="Or look up a real cert">
+        <button class="b-ghost" onclick="lookupCert()">Look up</button>
+        <button class="b-primary" onclick="window.print()">🖨 Print / Save as PDF</button>
+        <a href="/admin">← Back to admin</a>
+    </div>
+</div>
+
+<div class="note">
+    This is a visual sample of the certificate the playbook issues. Names, dates, and IDs are placeholder values.
+    Real certificates are signed by your backend at <code>/api/certificate/issue</code> and verifiable via
+    <code>/api/certificate/verify/{cert_id}</code>. Enter a real cert ID above to view it instead.
+</div>
+
+<div id="cert-frame">
+    <div class="certificate">
+        <span class="cert-texture" aria-hidden="true"></span>
+        <div class="cert-frame">
+            <span class="cert-corner tl"></span><span class="cert-corner tr"></span>
+            <span class="cert-corner bl"></span><span class="cert-corner br"></span>
+            <div class="cert-body">
+                <img class="cert-logo" src="/logo.jpg" alt="SMEMinds" onerror="this.style.display='none'">
+                <div class="cert-eyebrow">SMEMinds LLP &nbsp;·&nbsp; Amazon India</div>
+                <h1 class="cert-title">Certificate <em>of Completion</em></h1>
+                <div class="cert-divider"><span></span><i></i><span></span></div>
+                <p class="cert-presented">This certificate is proudly awarded to</p>
+                <div class="cert-name" id="cert-recipient-name">Priya Sharma</div>
+                <div class="cert-rule"></div>
+                <p class="cert-presented">for successfully completing the</p>
+                <div class="cert-course-name">Amazon India Account Management Playbook</div>
+                <p class="cert-description">
+                    covering <strong>9 strategic pillars</strong> and
+                    <strong><span id="cert-modules-count">63</span> modules</strong>
+                    of professional Amazon seller training — from catalogue selection through brand protection.
+                </p>
+                <div class="cert-chips">
+                    <span class="cert-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>9 Pillars</span>
+                    <span class="cert-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span id="cert-modules-chip">63</span>&nbsp;Modules</span>
+                    <span class="cert-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Verified Credential</span>
+                </div>
+                <div class="cert-foot">
+                    <div class="cert-sign">
+                        <div class="cert-sign-line"></div>
+                        <div class="cert-foot-strong">SMEMinds LLP</div>
+                        <div class="cert-foot-label">Authorised Signatory</div>
+                    </div>
+                    <div class="cert-seal" aria-hidden="true">
+                        <svg class="cert-seal-svg" viewBox="0 0 130 152" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="csGold" x1="0" y1="0" x2="0.5" y2="1">
+                                    <stop offset="0" stop-color="#f6da8b"/><stop offset=".45" stop-color="#d7a838"/><stop offset="1" stop-color="#a3741c"/>
+                                </linearGradient>
+                                <path id="csArcTop" d="M 27 65 a 38 38 0 0 1 76 0" fill="none"/>
+                                <path id="csArcBot" d="M 29 65 a 36 36 0 0 0 72 0" fill="none"/>
+                            </defs>
+                            <path d="M49 96 L41 140 L54 130 L61 140 L64 101 Z" fill="#15365b"/>
+                            <path d="M81 96 L89 140 L76 130 L69 140 L66 101 Z" fill="#0e2a49"/>
+                            <circle cx="65" cy="65" r="47" fill="none" stroke="url(#csGold)" stroke-width="3.2" stroke-dasharray="1.4 4.1" stroke-linecap="round"/>
+                            <circle cx="65" cy="65" r="40" fill="url(#csGold)"/>
+                            <circle cx="65" cy="65" r="40" fill="none" stroke="#fff4d6" stroke-width="1" opacity=".55"/>
+                            <circle cx="65" cy="65" r="33" fill="none" stroke="#7c5a16" stroke-width="1" opacity=".5"/>
+                            <text class="cert-seal-arc"><textPath href="#csArcTop" startOffset="50%" text-anchor="middle">SMEMINDS · CERTIFIED</textPath></text>
+                            <text class="cert-seal-arc"><textPath href="#csArcBot" startOffset="50%" text-anchor="middle">AMAZON INDIA</textPath></text>
+                            <path d="M53 65 l9 9 17 -19" fill="none" stroke="#fff8e8" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="cert-meta">
+                        <div class="cert-meta-row"><span class="cert-foot-label">Issued On</span><span class="cert-foot-strong" id="cert-date">26 May 2026</span></div>
+                        <div class="cert-meta-row"><span class="cert-foot-label">Credential ID</span><span class="cert-foot-strong cert-id-value" id="cert-id-display">SME-2026-SAMPLE</span></div>
+                    </div>
+                </div>
+                <div class="cert-verify">Verify at <span id="cert-verify-url">http://127.0.0.1:8000/api/certificate/verify/SME-2026-SAMPLE</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+async function lookupCert() {
+    const id = document.getElementById('lookup-id').value.trim();
+    if (!id) return;
+    try {
+        const r = await fetch('/api/certificate/verify/' + encodeURIComponent(id));
+        if (!r.ok) { alert('Certificate not found: ' + id); return; }
+        const d = await r.json();
+        document.getElementById('cert-recipient-name').textContent = d.name || '—';
+        document.getElementById('cert-id-display').textContent = d.cert_id || '—';
+        const dt = d.issued_at ? new Date(d.issued_at * 1000).toLocaleDateString('en-IN', {year:'numeric',month:'long',day:'numeric'}) : '—';
+        document.getElementById('cert-date').textContent = dt;
+        document.getElementById('cert-verify-url').textContent = location.origin + '/api/certificate/verify/' + d.cert_id;
+        const parts = (d.modules_completed || '').split('/');
+        if (parts.length === 2) {
+            document.getElementById('cert-modules-count').textContent = parts[1];
+            const mc = document.getElementById('cert-modules-chip'); if (mc) mc.textContent = parts[1];
+        }
+    } catch (e) { alert('Lookup failed: ' + e.message); }
+}
+document.getElementById('lookup-id').addEventListener('keypress', e => { if (e.key === 'Enter') lookupCert(); });
+const params = new URLSearchParams(location.search);
+if (params.get('cert_id')) { document.getElementById('lookup-id').value = params.get('cert_id'); lookupCert(); }
+</script>
+
+</body>
+</html>

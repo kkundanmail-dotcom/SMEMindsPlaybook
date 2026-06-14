@@ -1,673 +1,323 @@
-# ══════════════════════════════════════════════════════════════
-# PILLAR 7 — BRAND REGISTRY  (6 Modules)
-# ══════════════════════════════════════════════════════════════
+# ==============================================================
+# PILLAR 7 — TOOLS  (8 Modules)
+# Auto-generated from the backend DB by _renumber.py.
+# Edit modules in the admin panel (source of truth = smeminds.db).
+# ==============================================================
 
 pillar7_modules = [
-
-{
+  {
     "id": "7.1",
+    "pillar": "p7",
     "number": "Module 7.1",
-    "title": "BR Enrolment",
-    "difficulty": "Intermediate",
+    "title": "Seller Central",
+    "difficulty": "Beginner",
     "time": "35 mins",
-    "overview": """<p>Amazon Brand Registry (BR) is the gateway to Amazon's most powerful seller tools — A+ Content, Brand Store, Sponsored Brands, Manage Your Experiments, Vine, and brand protection capabilities. This module covers the complete enrolment process, trademark requirements, and the IP Accelerator shortcut for pending trademarks.</p>""",
-    "content": """
-        <h3>1. Brand Registry Eligibility & Trademark Requirements</h3>
-        <div class='callout pro-tip'>
-            <div><strong>Amazon India Brand Registry — Mandatory Eligibility Criteria:</strong><br>
-            ✓ Government-registered trademark (Word Mark — not design-only) from IP India, USPTO, EUIPO or other recognised offices<br>
-            ✓ Trademark must be a Standard Character Mark (Mark Drawing Type 4 or 1 for USPTO)<br>
-            ✓ Brand name must appear <em>physically printed</em> on your products or packaging<br>
-            ✓ You must be the trademark owner or authorised agent<br>
-            ✓ Active Amazon Seller Central or Vendor Central account<br>
-            ✓ Design-only marks (logos without words) alone do NOT qualify — a Word Mark is required</div>
-        </div>
-        <table class='data-table'>
-            <thead><tr><th>Trademark Status</th><th>BR Eligibility</th><th>Workaround</th></tr></thead>
-            <tbody>
-                <tr><td>Registered (® symbol)</td><td>Immediate eligibility — apply directly</td><td>N/A</td></tr>
-                <tr><td>Pending (™ symbol)</td><td>Not directly eligible</td><td>IP Accelerator programme</td></tr>
-                <tr><td>No trademark filed</td><td>Not eligible</td><td>File Form TM-A at ipindiaonline.gov.in immediately</td></tr>
-            </tbody>
-        </table>
-
-        <h3>2. Trademark Application Process in India (IP India)</h3>
-        <ol>
-            <li>Search for conflicting marks: <strong>ipindia.gov.in → Trademarks → Public Search</strong></li>
-            <li>Select trademark class (Nice Classification, 45 classes) — Class 3 cosmetics, Class 5 pharma, Class 9 electronics, Class 25 apparel, Class 35 retail services</li>
-            <li>Prepare and file Form TM-A at <strong>ipindiaonline.gov.in</strong></li>
-            <li>Government fee: ₹9,000 per class (individuals/startups); ₹4,500 with legal assistance</li>
-            <li>Receive TM Application Number — this is your TM Number for records</li>
-            <li>Examination by Trademark Examiner: 6–12 months</li>
-            <li>Publication in Trademark Journal → 4 months opposition period</li>
-            <li>Full registration certificate issued if no opposition (total: 18–36 months)</li>
-        </ol>
-        <div class='callout info'>
-            <div><strong>Documents you need for BR enrolment:</strong> Trademark Registration Number (Principal Mark), official trademark certificate, high-resolution brand logo (min 500×500px on white/transparent bg), product images showing brand name on product, packaging images, list of Amazon product categories, manufacturing countries, and your trademark agent contact details for the verification code step.</div>
-        </div>
-
-        <h3>3. IP Accelerator Programme</h3>
-        <div class='callout success'>
-            <div><strong>IP Accelerator</strong> is Amazon's programme to grant Brand Registry access to sellers with pending trademarks, via Amazon-vetted IP attorneys.<br><br>
-            Path: <strong>brandservices.amazon.in → IP Accelerator</strong><br><br>
-            The IP law firm expedites your trademark filing and notifies Amazon — you get Brand Registry access <em>before</em> the trademark is fully registered. This is the fastest legitimate path if your trademark is still pending.<br><br>
-            Cost: IP firm fees (typically ₹15,000–₹30,000) + government trademark filing fees (₹9,000 per class).</div>
-        </div>
-
-        <h3>4. Brand Registry Enrolment SOP (Step by Step)</h3>
-        <ol>
-            <li><strong>Step 1:</strong> Visit <strong>brandregistry.amazon.in/brand/enroll</strong> → Sign in with your Seller Central credentials → Accept Terms &amp; Conditions</li>
-            <li><strong>Step 2:</strong> Enter brand name <em>exactly as it appears on trademark certificate</em> (case-sensitive, no extra spaces)</li>
-            <li><strong>Step 3:</strong> Upload brand logo (min 500×500px), product images showing brand name on product, packaging images</li>
-            <li><strong>Step 4:</strong> Enter Government Trademark Registration Number → Select trademark office (IP India / USPTO / EUIPO etc.) → Confirm Mark Drawing Type</li>
-            <li><strong>Step 5:</strong> Amazon sends a verification code to the trademark's registered agent/attorney email on file with the trademark office → Retrieve code from your trademark attorney</li>
-            <li><strong>Step 6:</strong> Enter verification code → Brand Registry activated (typically 3–5 business days)</li>
-            <li><strong>Post-enrolment:</strong> Access Brand Registry dashboard at brandregistry.amazon.in → Set up brand guidelines → Begin using A+ Content, Brand Store, and protection tools</li>
-        </ol>
-
-        <h3>5. Common Rejection Reasons & Fixes</h3>
-        <table class='data-table'>
-            <thead><tr><th>Issue</th><th>Fix</th></tr></thead>
-            <tbody>
-                <tr><td>Trademark not accepted</td><td>Ensure it's a Word Mark (not design-only). For USPTO confirm Mark Drawing Type 4 or 1. Must be Registered status, not pending.</td></tr>
-                <tr><td>Verification code not received</td><td>Code goes to trademark attorney/agent email — contact your attorney to retrieve it</td></tr>
-                <tr><td>Brand name mismatch</td><td>Brand name entered must exactly match trademark registration including capitalisation and spacing</td></tr>
-                <tr><td>Images rejected</td><td>Brand name must be clearly visible on product/packaging in high-res images (min 500×500px, no watermarks)</td></tr>
-            </tbody>
-        </table>
-
-        <h3>6. Multi-Country Brand Registry</h3>
-        <p>If selling on Amazon US, UK, UAE — register your trademark in those regions and apply for Brand Registry per marketplace. Amazon India BR covers amazon.in only. All major trademark offices are accepted: IP India, USPTO, EUIPO, CIPO, IPO UK, JPO.</p>
-
-        <div class='bookmarks-inline'>
-            <strong>Key Links:</strong><br>
-            <a class='pill-sc' href='https://brandregistry.amazon.in/brand/enroll' target='_blank'>Brand Registry Enrollment</a>
-            <a class='pill-sc' href='https://brandregistry.amazon.in' target='_blank'>Brand Registry Portal</a>
-            <a class='pill-sc' href='https://brandservices.amazon.in' target='_blank'>Brand Services India</a>
-            <a class='pill-sc' href='https://sellercentral.amazon.in/brands/enrollment' target='_blank'>BR Enrollment via SC</a>
-            <a class='pill-sc' href='https://ipindia.gov.in' target='_blank'>IP India Portal</a>
-        </div>
-
-        <div class='pain-point-section'>
-            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>
-            <div class='pain-point-body'>
-                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>My trademark is still pending at IP India — it's been 8 months and I can't enrol in Brand Registry. Competitors are hijacking my listings while I wait.</p></div>
-                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Solution</div><p>Engage an Amazon IP Accelerator-vetted attorney immediately via brandservices.amazon.in → IP Accelerator. The attorney notifies Amazon of your pending trademark application — you receive Brand Registry access within days, not months. Cost is ₹15,000–₹30,000 in attorney fees, but you unlock all BR tools at once.</p></div>
-                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Strategic Insight</div><p>Brand Registry is not just protection — it's a revenue multiplier. The day BR activates, you unlock A+ Content (average +8% CVR uplift), Brand Store (no competitor ads), Sponsored Brands (highest-visibility ad format), and Vine (review acceleration). Every month without BR is compounding lost revenue. Treat BR enrolment as Priority 1, not a nice-to-have.</p></div>
-            </div>
-        </div>
-    """,
-    "process_flow": """
-        <div class='svg-wrapper'>
-            <svg viewBox="0 0 820 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
-                <defs><marker id="arr_b1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1e3a5f"/></marker></defs>
-                <text x="410" y="65" class="svg-watermark" transform="rotate(-12,410,65)">© SMEMinds | smeminds.com</text>
-                <rect x="10"  y="35" width="130" height="50" rx="8" class="flow-step"/><text x="75"  y="62" class="flow-text">File</text><text x="75"  y="76" class="flow-text">Trademark</text>
-                <line x1="140" y1="60" x2="175" y2="60" stroke="#1e3a5f" stroke-width="2" marker-end="url(#arr_b1)"/>
-                <rect x="175" y="35" width="130" height="50" rx="8" class="flow-step"/><text x="240" y="62" class="flow-text">IP Accelerator</text><text x="240" y="76" class="flow-text">(if pending)</text>
-                <line x1="305" y1="60" x2="340" y2="60" stroke="#1e3a5f" stroke-width="2" marker-end="url(#arr_b1)"/>
-                <rect x="340" y="35" width="130" height="50" rx="8" class="flow-step"/><text x="405" y="62" class="flow-text">Submit BR</text><text x="405" y="76" class="flow-text">Application</text>
-                <line x1="470" y1="60" x2="505" y2="60" stroke="#1e3a5f" stroke-width="2" marker-end="url(#arr_b1)"/>
-                <rect x="505" y="35" width="130" height="50" rx="8" class="flow-step"/><text x="570" y="62" class="flow-text">Verification</text><text x="570" y="76" class="flow-text">Code</text>
-                <line x1="635" y1="60" x2="670" y2="60" stroke="#1e3a5f" stroke-width="2" marker-end="url(#arr_b1)"/>
-                <rect x="670" y="35" width="130" height="50" rx="8" class="flow-step" style="fill:#ff6b35;"/><text x="735" y="62" class="flow-text" style="fill:#fff">BR Active</text><text x="735" y="76" class="flow-text" style="fill:#fff">→ Tools Unlocked</text>
-            </svg>
-        </div>
-    """,
+    "overview": "<p>Seller Central is your Amazon command centre. This module covers the essential setup — user permissions, the reports you must pull weekly, Business Reports setup, inventory reporting automation, payment reconciliation, and FBA discrepancy resolution — giving your team a structured operating rhythm.</p>",
+    "content": "\n        <h3>1. Seller Central Dashboard Setup & User Permissions</h3>\n        <div class='callout pro-tip'>\n            <div><strong>User Permissions by Role (SC → Settings → User Permissions):</strong><br>\n            • <strong>Account Manager:</strong> Full access except banking<br>\n            • <strong>Catalogue Manager:</strong> Inventory + listings only<br>\n            • <strong>Finance:</strong> Reports + payments view only<br>\n            • <strong>PPC Manager:</strong> Advertising console only<br>\n            • <strong>CS Team:</strong> Orders + messaging only<br><br>\n            Use principle of least privilege — give each user only what they need.</div>\n        </div>\n\n        <h3>2. Core Reports Library — What to Pull & When</h3>\n        <table class='data-table'>\n            <thead><tr><th>Report</th><th>Frequency</th><th>Path in SC</th></tr></thead>\n            <tbody>\n                <tr><td>Business Reports (Detail Page)</td><td>Daily</td><td>Reports → Business Reports → By ASIN</td></tr>\n                <tr><td>Search Term Report (PPC)</td><td>Weekly</td><td>Advertising → Reports → Search Term</td></tr>\n                <tr><td>Search Query Performance</td><td>Weekly</td><td>Brand Analytics → SQP</td></tr>\n                <tr><td>Inventory Ledger Report</td><td>Monthly</td><td>Reports → Fulfilment → Inventory Ledger</td></tr>\n                <tr><td>Transaction View</td><td>Weekly</td><td>Reports → Payments → Transaction View</td></tr>\n                <tr><td>A-to-Z Claims</td><td>Daily</td><td>Performance → A-to-Z Guarantee Claims</td></tr>\n            </tbody>\n        </table>\n\n        <h3>3. Business Reports Setup</h3>\n        <ul>\n            <li><strong>Detail Page Sales and Traffic:</strong> Sessions, pageviews, Buy Box %, Unit Session %</li>\n            <li><strong>Sales and Traffic by ASIN:</strong> Revenue per ASIN, sessions, conversion</li>\n            <li><strong>Brand Analytics Reports:</strong> Search Query Performance, Market Basket, Demographics</li>\n        </ul>\n        <p>Pro tip: Download weekly to Excel and build a running tracker to see trends. Trends matter more than any single data point.</p>\n\n        <h3>4. Payment & Disbursement Reconciliation</h3>\n        <div class='callout success'>\n            <div><strong>Weekly reconciliation SOP:</strong><br>\n            SC → Reports → Payments → Transaction View<br>\n            1. Export all transactions for the period<br>\n            2. Cross-check total sales vs. total disbursed<br>\n            3. Flag: unexpected fee charges, missing reimbursements, damaged inventory claims<br>\n            4. File SC case for any discrepancy &gt;₹500</div>\n        </div>\n\n        <h3>5. FBA Shipment Discrepancy Resolution</h3>\n        <ul>\n            <li>Amazon FCs occasionally receive fewer units than sent (discrepancy)</li>\n            <li>Window to file: within 9 months of shipment creation</li>\n            <li>Path: SC → Inventory → Shipments → Select shipment → Report Problem</li>\n            <li>Evidence needed: Supplier invoice, packing list with quantities</li>\n            <li>Amazon reimburses at average selling price if discrepancy confirmed</li>\n        </ul>\n\n        <div class='bookmarks-inline'>\n            <strong>Key Links:</strong><br>\n            <a class='pill' href='https://sellercentral.amazon.in/gp/account-manager/home.html' target='_blank'>User Permissions</a>\n            <a class='pill' href='https://sellercentral.amazon.in/gp/site-metrics/report.html' target='_blank'>Business Reports</a>\n            <a class='pill' href='https://sellercentral.amazon.in/reportcentral' target='_blank'>Reports Library</a>\n            <a class='pill' href='https://sellercentral.amazon.in/payments/summary/ref=xx_payments_dnav_xx' target='_blank'>Payments</a>\n        </div>\n    ",
+    "process_flow": "",
     "tools": "",
-    "videos": [],
+    "videos": [
+      {
+        "id": "GGLI_aIUO0M",
+        "title": "Amazon Seller Central — Complete Navigation Guide"
+      },
+      {
+        "id": "y4icIWo5ciY",
+        "title": "Essential Amazon Reports Every Seller Must Track"
+      }
+    ],
     "checklist": [
-        "Trademark application filed in India (ipindiaonline.gov.in — Form TM-A)",
-        "IP Accelerator engaged if trademark is pending (brandservices.amazon.in)",
-        "Brand Registry application submitted on brandregistry.amazon.in/brand/enroll",
-        "Brand name entered exactly as on trademark certificate (case-sensitive)",
-        "Product images uploaded showing brand name clearly on product/packaging (min 500×500px)",
-        "Verification code retrieved from trademark attorney and entered",
-        "Brand Registry status: Active (confirmed in brandregistry.amazon.in dashboard)",
-        "All brand ASINs linked to Brand Registry"
+      "User permissions set correctly for all team members",
+      "Weekly reports calendar established and followed by team",
+      "Business Reports dashboard bookmarked and checked daily",
+      "Payment reconciliation completed weekly",
+      "FBA shipment discrepancies reviewed and filed within 9 months",
+      "Transaction View exported and reconciled monthly"
     ],
     "quiz": [
-        {
-            "question": "What is the IP Accelerator programme used for?",
-            "options": [
-                "Fast-track FBA inbound shipping",
-                "Get Brand Registry access while trademark is pending",
-                "Expedite A+ Content approval",
-                "Speed up listing creation"
-            ],
-            "answer": "Get Brand Registry access while trademark is pending",
-            "explanation": "IP Accelerator connects sellers with Amazon-vetted IP attorneys. The attorney expedites the trademark filing and notifies Amazon, granting Brand Registry access before the trademark is fully registered."
-        }
+      {
+        "question": "What is the deadline to file an FBA shipment discrepancy claim?",
+        "options": [
+          "30 days",
+          "90 days",
+          "9 months",
+          "12 months"
+        ],
+        "answer": "9 months",
+        "explanation": "Amazon allows up to 9 months from shipment creation to file a discrepancy claim. After this window, the claim is not eligible for investigation or reimbursement."
+      }
     ]
-},
-
-{
+  },
+  {
     "id": "7.2",
+    "pillar": "p7",
     "number": "Module 7.2",
-    "title": "Brand Store",
-    "difficulty": "Intermediate",
-    "time": "35 mins",
-    "overview": """<p>Your Amazon Brand Store is a free, multi-page brand website within Amazon — with no competitor ads. It's your best tool for brand building, basket expansion, and capturing the 30%+ of customers who want to discover more from your brand. This module covers store templates, tile types, asset specifications, live Indian brand examples, and analytics.</p>""",
-    "content": """
-        <h3>1. Brand Store Architecture & Templates</h3>
-        <div class='callout pro-tip'>
-            <div><strong>Three Core Store Templates:</strong><br>
-            • <strong>Marquee</strong> — Large hero image/video with product tiles below. Best for lifestyle brands (e.g., Bacca Bucci, Zink London)<br>
-            • <strong>Product Grid</strong> — Clean grid layout showcasing multiple products. Best for large catalogues (e.g., Urban Platter)<br>
-            • <strong>Showcase</strong> — Alternating image and product layout. Best for storytelling brands<br><br>
-            Recommended structure: Home → [Category Page 1] → [Category Page 2] → [New Arrivals] → [Best Sellers] → [Bundles/Kits]<br>
-            Each page = one customer intent. Don't crowd everything on the home page.</div>
-        </div>
-        <table class='data-table'>
-            <thead><tr><th>Page</th><th>Content</th><th>Goal</th></tr></thead>
-            <tbody>
-                <tr><td>Home</td><td>Hero banner + top categories + featured products</td><td>First impression + navigation</td></tr>
-                <tr><td>Category Page</td><td>All products in that category, filterable</td><td>Discovery, deeper browse</td></tr>
-                <tr><td>Best Sellers</td><td>Top 5–10 ASINs by sales</td><td>Social proof-driven upsell</td></tr>
-                <tr><td>New Arrivals</td><td>Latest launches</td><td>Repeat visits, trial of new products</td></tr>
-                <tr><td>Bundles</td><td>Virtual bundles and kit recommendations</td><td>Higher AOV</td></tr>
-            </tbody>
-        </table>
-
-        <h3>2. Tile Types</h3>
-        <table class='data-table'>
-            <thead><tr><th>Tile Type</th><th>Purpose</th><th>Notes</th></tr></thead>
-            <tbody>
-                <tr><td>Product Tile</td><td>Links directly to a product detail page or collection</td><td>Core tile — use for all ASINs</td></tr>
-                <tr><td>Image Tile</td><td>Decorative/brand-building image with optional click-through</td><td>Use for lifestyle brand imagery</td></tr>
-                <tr><td>Text Tile</td><td>Short brand messages, taglines, descriptions</td><td>Keep minimal — let images do storytelling</td></tr>
-                <tr><td>Video Tile</td><td>Embedded brand video, product demo, unboxing</td><td>MP4, H.264, max 500MB, 15 sec–3 min</td></tr>
-                <tr><td>Best Seller Tile</td><td>Automatically pulls your best-selling ASINs</td><td>Place prominently on home page</td></tr>
-                <tr><td>Featured Deals Tile</td><td>Highlights current deals and promotions</td><td>Update for Prime Day &amp; GIF</td></tr>
-            </tbody>
-        </table>
-
-        <h3>3. Creative Asset Specifications</h3>
-        <div class='callout success'>
-            <div><strong>Amazon India Creative Asset Requirements:</strong><br>
-            • Hero/Banner Image: <strong>min 1500×300px</strong> — no pricing, promotional text, or time-sensitive claims<br>
-            • Background Image: <strong>min 1500×600px</strong><br>
-            • Brand Logo: <strong>min 400×400px</strong> (PNG, white/transparent background)<br>
-            • Product Images: Must already be approved on product listings<br>
-            • Videos: MP4, H.264 encoding; max 500MB; 15 seconds to 3 minutes<br>
-            • Text: No ALL CAPS (except acronyms); no unsubstantiated claims like '#1 brand'</div>
-        </div>
-
-        <h3>4. Building the Brand Store — Step by Step</h3>
-        <p>Path: <strong>SC → Stores → Manage Stores → Create Store</strong></p>
-        <ol>
-            <li>Select your brand → Choose store template (Marquee / Product Grid / Showcase)</li>
-            <li>Set up homepage: upload hero banner (1500×300px), brand logo (400×400px), introductory headline</li>
-            <li>Add sub-pages: create category pages, Best Sellers, New Arrivals pages</li>
-            <li>Add tiles: product tiles (linked to ASINs), image tiles, video tile on homepage</li>
-            <li>Preview on mobile before submitting — over 60% of Amazon India traffic is mobile</li>
-            <li>Submit for Amazon review → 24–72 hours → receive email once approved</li>
-            <li>Publish → Your store goes live at <strong>www.amazon.in/[YourBrandName]</strong></li>
-        </ol>
-
-        <h3>5. Live Indian Brand Store Examples</h3>
-        <ul>
-            <li><strong>Urban Platter</strong> (<a href='https://www.amazon.in/urbanplatter' target='_blank'>amazon.in/urbanplatter</a>) — Product Grid template, large catalogue, category-focused navigation</li>
-            <li><strong>Bacca Bucci</strong> (<a href='https://www.amazon.in/baccabucci' target='_blank'>amazon.in/baccabucci</a>) — Marquee template, lifestyle imagery, strong hero banner</li>
-            <li><strong>Zink London</strong> (<a href='https://www.amazon.in/zinklondon' target='_blank'>amazon.in/zinklondon</a>) — Marquee template, fashion-forward, seasonal updates</li>
-        </ul>
-
-        <h3>6. Brand Store Analytics</h3>
-        <p>Path: <strong>SC → Stores → Manage Stores → Insights tab</strong></p>
-        <table class='data-table'>
-            <thead><tr><th>Metric</th><th>What It Tells You</th><th>Target</th></tr></thead>
-            <tbody>
-                <tr><td>Daily Visitors</td><td>Unique visitors per day to your Brand Store</td><td>Growing MoM</td></tr>
-                <tr><td>Page Views</td><td>Total views across all store pages</td><td>Growing MoM</td></tr>
-                <tr><td>Sales per Visitor</td><td>Average revenue per store visit</td><td>&gt;₹800 for most categories</td></tr>
-                <tr><td>Traffic Sources</td><td>Breakdown: Sponsored Brands, direct, organic, external</td><td>Diversified mix</td></tr>
-                <tr><td>Average Time on Page</td><td>Engagement with each store page</td><td>&gt;60 seconds on home page</td></tr>
-            </tbody>
-        </table>
-
-        <h3>7. Seasonal Store Refresh</h3>
-        <div class='callout success'>
-            <div><strong>Refresh schedule (submit 2 weeks before each event):</strong><br>
-            • Prime Day (July): Hero with Prime Day deals, bold orange/Prime colors<br>
-            • Great Indian Festival (Oct): Festive theme, gold/maroon, gifting bundles page<br>
-            • Diwali (Oct/Nov): Diwali gifting page, hamper sets<br>
-            • Republic Day (Jan): Patriotic theme, clearance sale page<br>
-            • End of Season Sale (Jan/Jul): Clearance category page</div>
-        </div>
-
-        <div class='bookmarks-inline'>
-            <strong>Key Links:</strong><br>
-            <a class='pill-sc' href='https://sellercentral.amazon.in/storefronts/dashboard' target='_blank'>Brand Store Dashboard</a>
-            <a class='pill-sc' href='https://sellercentral.amazon.in/stores/manage' target='_blank'>Manage Stores</a>
-            <a class='pill-sc' href='https://sell.amazon.in/seller-university' target='_blank'>Seller University</a>
-        </div>
-
-        <div class='pain-point-section'>
-            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>
-            <div class='pain-point-body'>
-                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>I built a Brand Store but it gets very little traffic — the analytics show fewer than 50 visitors per day. I'm not sure if it's worth maintaining.</p></div>
-                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Solution</div><p>A Brand Store with no traffic investment delivers no results. The fastest fix: create a Sponsored Brands "Store Spotlight" ad that drives all your branded keyword traffic directly to your store homepage (not individual product pages). This single change typically multiplies store traffic 10x and is where brands like Urban Platter generate their multi-ASIN basket growth.</p></div>
-                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Strategic Insight</div><p>Your Brand Store URL (amazon.in/yourbrand) is a permanent asset. Share it on Instagram bio, email signatures, WhatsApp business, and packaging inserts. Every external click that lands on your store is a competitor-free environment — no sponsored competitor ads can appear. This is the only place on Amazon where you have 100% share of customer attention.</p></div>
-            </div>
-        </div>
-    """,
+    "title": "Brand Analytics",
+    "difficulty": "Advanced",
+    "time": "40 mins",
+    "overview": "<p>Brand Analytics is Amazon's most powerful data intelligence tool — available exclusively to Brand Registered sellers. This module covers all five Brand Analytics reports: Search Query Performance, Market Basket, Repeat Purchase Behaviour, Demographics, and Item Comparison — and how to turn each into action.</p>",
+    "content": "\n        <h3>1. Search Query Performance (SQP) Report</h3>\n        <div class='callout pro-tip'>\n            <div><strong>SQP shows you:</strong><br>\n            • Total search volume for any query<br>\n            • Your ASIN's Impression Share, Click Share, and Conversion Share vs. top 3 results<br><br>\n            <strong>Use it to:</strong><br>\n            1. Identify keywords where you get impressions but lose clicks → fix title/image<br>\n            2. Find keywords where competitors dominate → increase bid on SP<br>\n            3. Discover new high-volume keywords to add to listings</div>\n        </div>\n\n        <h3>2. Market Basket Analysis</h3>\n        <p>Shows top 3 products purchased alongside each of your ASINs in the same transaction.</p>\n        <p><strong>Actions:</strong></p>\n        <ul>\n            <li>Create Virtual Bundles from top FBT pairs</li>\n            <li>Target FBT products with Sponsored Display</li>\n            <li>Add cross-sell module to A+ Content showing FBT products</li>\n        </ul>\n\n        <h3>3. Repeat Purchase Behaviour Report</h3>\n        <p>Shows what percentage of your customers are repeat buyers and their purchase frequency.</p>\n        <div class='callout success'>\n            <div><strong>Repeat Purchase Actions:</strong><br>\n            High repeat rate ASIN: Enrol in Subscribe &amp; Save → lock in recurring revenue<br>\n            Low repeat rate: Investigate — poor product experience? Better alternatives available?</div>\n        </div>\n\n        <h3>4. Demographics Report</h3>\n        <p>Shows your customer profile: age range, household income, education, gender, marital status, geography.</p>\n        <p>Use to:</p>\n        <ul>\n            <li>Refine DSP and Sponsored Display audience targeting</li>\n            <li>Inform product development (what income/age bracket buys you?)</li>\n            <li>Tailor creative (lifestyle images, tone of voice) to actual buyer profile</li>\n        </ul>\n\n        <h3>5. Item Comparison & Alternate Purchase Report</h3>\n        <p>Shows which products customers view when they view yours — and what they ultimately buy instead.</p>\n        <div class='callout info'>\n            <div><strong>Two use cases:</strong><br>\n            1. <strong>Item Comparison:</strong> What customers view alongside your ASIN = competitor map<br>\n            2. <strong>Alternate Purchase:</strong> What they buy instead = your actual competition for conversion<br><br>\n            Target alternate purchase ASINs with Sponsored Display product targeting.</div>\n        </div>\n\n        <div class='bookmarks-inline'>\n            <strong>Key Links:</strong><br>\n            <a class='pill' href='https://sellercentral.amazon.in/brand-analytics' target='_blank'>Brand Analytics Dashboard</a>\n        </div>\n    ",
     "process_flow": "",
     "tools": "",
     "videos": [],
     "checklist": [
-        "Brand Store live with minimum 5 pages (Home + 3 category + Best Sellers)",
-        "Hero banner prepared at 1500×300px — no pricing or promo text",
-        "Brand logo uploaded at min 400×400px (PNG, transparent/white background)",
-        "Brand video added to homepage tile (MP4, H.264, max 500MB)",
-        "Mobile preview checked before submitting — 60%+ India traffic is mobile",
-        "Store URL (amazon.in/yourbrand) shared on all brand channels",
-        "Sponsored Brands Store Spotlight ad running to drive store traffic",
-        "Brand Store analytics reviewed weekly (visitors, sales per visitor, traffic sources)",
-        "Seasonal refresh completed 2 weeks before each major event",
-        "New-to-Brand orders tracked from store — target &gt;30%"
+      "SQP report reviewed weekly for top 50 ASINs",
+      "Market Basket pairs identified and actioned (bundles + SD targeting)",
+      "Repeat Purchase rate tracked monthly — S&S enrolment for high-repeat ASINs",
+      "Demographics report used to inform A+ Content creative and DSP targeting",
+      "Alternate Purchase report reviewed monthly — top competitors targeted via SD"
     ],
     "quiz": [
-        {
-            "question": "What is the key advantage of sending traffic to a Brand Store vs. directly to a product page?",
-            "options": [
-                "Brand Store pages rank in Google",
-                "No competitor ads appear in the Brand Store",
-                "Brand Store has lower FBA fees",
-                "Brand Store products get automatic Prime badge"
-            ],
-            "answer": "No competitor ads appear in the Brand Store",
-            "explanation": "The Brand Store is a competitor-free zone on Amazon. When customers visit your store, they only see your products — no sponsored competitor ads, no 'Customers also viewed' competitor ASINs."
-        }
+      {
+        "question": "What does the Alternate Purchase report show you?",
+        "options": [
+          "What customers buy alongside your product",
+          "What customers ultimately buy instead of your product",
+          "Your top performing keywords",
+          "Your customer's geographic location"
+        ],
+        "answer": "What customers ultimately buy instead of your product",
+        "explanation": "The Alternate Purchase report shows the products customers buy when they view your ASIN but don't purchase. These are your direct conversion competitors — ideal targets for Sponsored Display product targeting."
+      }
     ]
-},
-
-{
+  },
+  {
     "id": "7.3",
+    "pillar": "p7",
     "number": "Module 7.3",
-    "title": "A+ Content (BR)",
+    "title": "Advertising Console",
+    "difficulty": "Advanced",
+    "time": "40 mins",
+    "overview": "<p>The Amazon Advertising Console is your central hub for all paid media on Amazon India. This module covers campaign structure best practices, naming conventions, bulk operations, Amazon Attribution setup, and integration with third-party tools — everything needed to run a professional advertising operation at scale.</p>",
+    "content": "\n        <h3>1. Campaign Structure & Naming Convention</h3>\n        <div class='callout pro-tip'>\n            <div><strong>Campaign Naming Convention:</strong><br>\n            <code>[Brand]_[Ad Type]_[ASIN/Category]_[Match Type]_[Objective]_[YYYYMM]</code><br><br>\n            Examples:<br>\n            • SMEMinds_SP_B09XYZ_Exact_Harvest_202601<br>\n            • SMEMinds_SB_Kitchen_Brand_Awareness_202601<br>\n            • SMEMinds_SD_Retarget_ASIN_Viewers_202601</div>\n        </div>\n        <table class='data-table'>\n            <thead><tr><th>Ad Type</th><th>Abbreviation</th><th>Best Structure</th></tr></thead>\n            <tbody>\n                <tr><td>Sponsored Products</td><td>SP</td><td>1 ASIN per ad group, separate match types</td></tr>\n                <tr><td>Sponsored Brands</td><td>SB</td><td>1 campaign per brand story / collection</td></tr>\n                <tr><td>Sponsored Display</td><td>SD</td><td>1 targeting type per campaign</td></tr>\n                <tr><td>Sponsored Brands Video</td><td>SBV</td><td>1 video per campaign, test thumbnails</td></tr>\n            </tbody>\n        </table>\n\n        <h3>2. Bulk Operations</h3>\n        <p>Bulk operations allow editing thousands of bids, budgets, and keywords at once:</p>\n        <ol>\n            <li>Advertising Console → Bulk Operations → Download report</li>\n            <li>Edit in Excel: bid adjustments, pause/enable, budget changes</li>\n            <li>Upload modified file</li>\n            <li>Changes apply within 1–4 hours</li>\n        </ol>\n        <p>Use for: weekly bid optimisation across 100+ keywords, event budget increases, new negative keyword additions at scale.</p>\n\n        <h3>3. Amazon Attribution Dashboard</h3>\n        <p>Track how external traffic converts on Amazon:</p>\n        <ul>\n            <li>SC → Advertising → Amazon Attribution → Create tag → Copy URL</li>\n            <li>Use unique tag per channel (Meta, Google, Email, Influencer)</li>\n            <li>Dashboard shows: Clicks, DPV (Detail Page Views), Add-to-Carts, Purchases, Revenue</li>\n            <li>Unlocks Brand Referral Bonus (~10% credit on external-driven new customer purchases)</li>\n        </ul>\n\n        <h3>4. 3P PPC Tools Integration</h3>\n        <div class='callout info'>\n            <div><strong>When to consider 3P tools:</strong><br>\n            &gt;50 campaigns or &gt;1,000 keywords → manual optimisation becomes inefficient<br><br>\n            <strong>Options:</strong><br>\n            • <strong>SellerApp:</strong> India-focused, SC integration, ACOS optimisation<br>\n            • <strong>Helium 10 Adtomic:</strong> Keyword bid automation, dayparting<br>\n            • <strong>Pacvue / Perpetua:</strong> Enterprise-grade, algorithmic bidding<br>\n            • <strong>Scale Insights:</strong> Automated rules with granular controls</div>\n        </div>\n\n        <div class='bookmarks-inline'>\n            <strong>Key Links:</strong><br>\n            <a class='pill' href='https://advertising.amazon.in' target='_blank'>Amazon Advertising Console</a>\n            <a class='pill' href='https://sellercentral.amazon.in/attribution/overview' target='_blank'>Amazon Attribution</a>\n            <a class='pill' href='https://advertising.amazon.in/tools/bulk-operations' target='_blank'>Bulk Operations</a>\n        </div>\n    ",
+    "process_flow": "",
+    "tools": "",
+    "videos": [],
+    "checklist": [
+      "All campaigns follow consistent naming convention",
+      "Campaigns structured: 1 ASIN or 1 targeting type per ad group",
+      "Bulk operations used weekly for bid optimisation",
+      "Amazon Attribution tags live for all external channels",
+      "Brand Referral Bonus enrolled",
+      "3P advertising tool evaluated if managing &gt;50 campaigns"
+    ],
+    "quiz": [
+      {
+        "question": "What is the recommended campaign structure for Sponsored Products?",
+        "options": [
+          "All ASINs in one campaign",
+          "1 ASIN per ad group, separate campaigns per match type",
+          "All match types in one ad group",
+          "1 brand per campaign"
+        ],
+        "answer": "1 ASIN per ad group, separate campaigns per match type",
+        "explanation": "This structure gives granular budget control and performance visibility per ASIN, and separates exact/phrase/broad match types to allow different bid strategies."
+      }
+    ]
+  },
+  {
+    "id": "7.4",
+    "pillar": "p7",
+    "number": "Module 7.4",
+    "title": "3P Tools",
+    "difficulty": "Intermediate",
+    "time": "35 mins",
+    "overview": "<p>Third-party tools extend Amazon's native capabilities in keyword research, competitor intelligence, inventory management, and review management. This module covers the key tools used by top Amazon India sellers and when to invest in each.</p>",
+    "content": "\n        <h3>1. Keyword Research Tools</h3>\n        <table class='data-table'>\n            <thead><tr><th>Tool</th><th>Best For</th><th>India-Specific?</th></tr></thead>\n            <tbody>\n                <tr><td>Helium 10 Cerebro</td><td>Reverse ASIN lookup — find competitor keywords</td><td>Partial (India data improving)</td></tr>\n                <tr><td>DataHawk</td><td>India-specific keyword rank tracking</td><td>Yes — India focused</td></tr>\n                <tr><td>SellerApp</td><td>India keyword research + BSR tracking</td><td>Yes — India built</td></tr>\n                <tr><td>Jungle Scout</td><td>Product/keyword opportunity research</td><td>Limited India data</td></tr>\n            </tbody>\n        </table>\n        <div class='callout pro-tip'>\n            <div><strong>For Amazon India specifically,</strong> DataHawk and SellerApp have the best local data quality. Helium 10 is excellent for global benchmarking but India search volume data is less reliable than US data.</div>\n        </div>\n\n        <h3>2. Competitor Intelligence Tools</h3>\n        <ul>\n            <li><strong>Keepa (India):</strong> Price history, BSR history, review history over time — essential for competitive analysis</li>\n            <li><strong>Jungle Scout Cobalt:</strong> Market share, competitive landscape, new product launches</li>\n            <li><strong>SellerApp Competitor Intelligence:</strong> India-specific competitor ASIN tracking</li>\n        </ul>\n        <p>Use Keepa weekly to monitor: competitor pricing strategies, inventory gaps (when a competitor goes OOS = opportunity to increase ad bids).</p>\n\n        <h3>3. Inventory Management Tools</h3>\n        <table class='data-table'>\n            <thead><tr><th>Tool</th><th>Use Case</th></tr></thead>\n            <tbody>\n                <tr><td>Unicommerce</td><td>India's leading OMS — multi-channel inventory sync for omnichannel sellers</td></tr>\n                <tr><td>Linnworks</td><td>Multi-warehouse, multi-channel inventory for scaling brands</td></tr>\n                <tr><td>Browntape</td><td>India-focused multi-channel order &amp; inventory management</td></tr>\n            </tbody>\n        </table>\n\n        <h3>4. Review Management Tools</h3>\n        <ul>\n            <li><strong>FeedbackWhiz:</strong> Automated review request sequences (compliant with Amazon ToS), negative review alerts</li>\n            <li><strong>Jungle Scout Alerts:</strong> Real-time review monitoring across all ASINs</li>\n            <li><strong>SellerApp Review Automation:</strong> India-optimised review request timing</li>\n        </ul>\n\n        <h3>5. PPC Automation Platforms</h3>\n        <div class='callout info'>\n            <div><strong>For brands with 50+ campaigns:</strong><br>\n            • <strong>Pacvue:</strong> Enterprise, dayparting, portfolio bidding<br>\n            • <strong>Perpetua:</strong> AI-driven bid optimisation, stream-optimised<br>\n            • <strong>Scale Insights:</strong> Rule-based automation with granular control<br>\n            • <strong>SellerApp Ads:</strong> India-native, most cost-effective for local brands</div>\n        </div>\n\n        <div class='bookmarks-inline'>\n            <strong>Key Links:</strong><br>\n            <a class='pill' href='https://www.helium10.com' target='_blank'>Helium 10</a>\n            <a class='pill' href='https://www.datahawk.co' target='_blank'>DataHawk</a>\n            <a class='pill' href='https://www.sellerapp.com' target='_blank'>SellerApp</a>\n            <a class='pill' href='https://www.keepa.com' target='_blank'>Keepa</a>\n            <a class='pill' href='https://www.unicommerce.com' target='_blank'>Unicommerce</a>\n        </div>\n    ",
+    "process_flow": "",
+    "tools": "",
+    "videos": [],
+    "checklist": [
+      "Keyword research tool selected and integrated into weekly workflow",
+      "Competitor ASINs tracked in Keepa for price/BSR history",
+      "Inventory management tool implemented if selling on 2+ channels",
+      "Review automation tool set up (FeedbackWhiz or SellerApp)",
+      "PPC automation evaluated if managing &gt;50 campaigns"
+    ],
+    "quiz": [
+      {
+        "question": "Which tool provides the most accurate Amazon India keyword and BSR data?",
+        "options": [
+          "Helium 10",
+          "Jungle Scout",
+          "DataHawk / SellerApp (India-focused)",
+          "Google Keyword Planner"
+        ],
+        "answer": "DataHawk / SellerApp (India-focused)",
+        "explanation": "DataHawk and SellerApp are built with Amazon India as a primary market. They have local data crawlers that provide more accurate India-specific keyword volume and BSR data than US-first tools."
+      }
+    ]
+  },
+  {
+    "id": "7.5",
+    "pillar": "p7",
+    "number": "Module 7.5",
+    "title": "Manage Your Experiments",
+    "difficulty": "Advanced",
+    "time": "30 mins",
+    "overview": "<p>Manage Your Experiments (MYE) is Amazon's native A/B testing tool for Brand Registered sellers. Split traffic between two versions of your title, main image, or A+ Content — and let data decide which converts better. This module covers MYE setup, test design, results interpretation, and rollout.</p>",
+    "content": "\n        <h3>1. MYE Eligibility Requirements</h3>\n        <div class='callout pro-tip'>\n            <div><strong>Eligibility checklist:</strong><br>\n            ✓ Brand Registry enrolled and approved<br>\n            ✓ ASIN has sufficient traffic (Amazon typically requires 30+ sessions/week)<br>\n            ✓ You are the brand owner (not a reseller) on the ASIN<br>\n            ✓ A+ Content published on the ASIN (for A+ testing)<br><br>\n            Path: SC → Growth → Manage Your Experiments</div>\n        </div>\n\n        <h3>2. What You Can Test</h3>\n        <table class='data-table'>\n            <thead><tr><th>Experiment Type</th><th>Elements</th><th>Primary Metric</th></tr></thead>\n            <tbody>\n                <tr><td>Product Title</td><td>Title text (both versions must be policy-compliant)</td><td>Sales / session</td></tr>\n                <tr><td>Main Image</td><td>Two different main images</td><td>Click-through rate</td></tr>\n                <tr><td>A+ Content</td><td>Two different A+ modules/layouts</td><td>Conversion rate</td></tr>\n                <tr><td>Bullet Points</td><td>Different benefit ordering</td><td>Conversion rate</td></tr>\n            </tbody>\n        </table>\n\n        <h3>3. Test Design Best Practices</h3>\n        <ul>\n            <li><strong>One variable at a time:</strong> Don't change title AND image in the same experiment</li>\n            <li><strong>Hypothesis-driven:</strong> Define expected outcome before launching (\"We expect Version B to increase CVR by 5% because benefit-first bullets\")</li>\n            <li><strong>Minimum duration:</strong> 4 weeks (Amazon recommends 4–8 weeks for significance)</li>\n            <li><strong>Don't run during deals:</strong> Promotions skew conversion data</li>\n        </ul>\n\n        <h3>4. Interpreting & Rolling Out Results</h3>\n        <div class='callout success'>\n            <div><strong>MYE Results Reading:</strong><br>\n            • <strong>Statistically significant winner:</strong> Roll out immediately to 100% of traffic<br>\n            • <strong>Inconclusive result:</strong> Extend test duration or redesign more differentiated versions<br>\n            • <strong>Surprising loser:</strong> Investigate — could be device-type split (mobile vs desktop)</div>\n        </div>\n        <p>Keep a test log: what was tested, hypothesis, result, action taken. Over 12 months, this compound learning is a competitive moat.</p>\n\n        <div class='bookmarks-inline'>\n            <strong>Key Links:</strong><br>\n            <a class='pill' href='https://sellercentral.amazon.in/manage-your-experiments' target='_blank'>Manage Your Experiments</a>\n        </div>\n    ",
+    "process_flow": "",
+    "tools": "",
+    "videos": [],
+    "checklist": [
+      "MYE eligibility confirmed — Brand Registry active",
+      "At least 1 active experiment running on top 5 ASINs at all times",
+      "Tests run for minimum 4 weeks (no deals during test period)",
+      "One variable changed per experiment",
+      "Test log maintained with hypothesis, result, and rollout action",
+      "Winners rolled out to 100% within 1 week of significance"
+    ],
+    "quiz": [
+      {
+        "question": "What is the minimum recommended duration for a Manage Your Experiments test?",
+        "options": [
+          "1 week",
+          "2 weeks",
+          "4 weeks",
+          "8 weeks"
+        ],
+        "answer": "4 weeks",
+        "explanation": "Amazon recommends 4–8 weeks minimum for statistical significance. Tests shorter than 4 weeks may not have enough traffic to produce reliable results, especially for lower-volume ASINs."
+      }
+    ]
+  },
+  {
+    "id": "7.6",
+    "pillar": "p7",
+    "number": "Module 7.6",
+    "title": "Kitna Milega — Profitability Calculator & Margin Mastery",
+    "difficulty": "Intermediate",
+    "time": "45 mins",
+    "overview": "<p>\"Kitna Milega\" literally means \"How much will I get?\" — and it is Amazon India's official FBA Revenue Calculator. This module goes beyond the tool: it teaches the complete Amazon profitability framework, all 6 fee components, the impact of the March 2026 Zero Referral Fee expansion, and how to engineer your pricing strategy for maximum margin across every product category.</p>",
+    "content": "\n        <h3>1. The Kitna Milega Tool</h3>\n        <p>Amazon India's FBA Revenue Calculator (nicknamed \"Kitna Milega\" — Hindi for \"How much will I get?\") is the official seller tool for comparing FBA vs. FBM profitability side-by-side. Access it at <strong>sellercentral.amazon.in/fba/profitabilitycalculator</strong>.</p>\n        <div class='callout pro-tip'><div><strong>What the Calculator Does:</strong><br>\n        ✅ Compares FBA vs. FBM (self-ship) side-by-side<br>\n        ✅ Auto-calculates all Amazon fees (referral, weight handling, fulfillment)<br>\n        ✅ Shows your net revenue per order<br>\n        ✅ Helps decide whether to switch from FBM to FBA for each product<br>\n        ⚠️ Does NOT include COGS, advertising costs, or storage fees — you must add those manually.</div></div>\n\n        <h3>2. The 6 Fee Components Every Seller Must Know</h3>\n        <table class='data-table'>\n            <thead><tr><th>#</th><th>Fee</th><th>Rate / Basis</th><th>Tip</th></tr></thead>\n            <tbody>\n                <tr><td>1</td><td><strong>Referral Fee</strong></td><td>0–24% of selling price (category-dependent)</td><td>ZERO for ≤₹1,000 in 1,800+ categories (Mar 2026)</td></tr>\n                <tr><td>2</td><td><strong>Closing Fee</strong></td><td>₹5–₹6 flat per order</td><td>Applies to all orders regardless of fulfillment method</td></tr>\n                <tr><td>3</td><td><strong>Weight Handling Fee</strong></td><td>₹73–₹200+ based on weight slab</td><td>FBA only; check chargeable weight (actual vs. volumetric)</td></tr>\n                <tr><td>4</td><td><strong>Monthly Storage Fee</strong></td><td>₹50/cu.ft/month (Nov 2025+)</td><td>Higher during Oct–Dec peak season</td></tr>\n                <tr><td>5</td><td><strong>Aged Inventory Surcharge</strong></td><td>Monthly billing from 271+ days</td><td>Set removal alerts at 250 days</td></tr>\n                <tr><td>6</td><td><strong>GST on Fees</strong></td><td>18% applied to all fees (1–5 above)</td><td>Multiply every fee by 1.18 for true cost</td></tr>\n            </tbody>\n        </table>\n\n        <h3>3. The SMEMinds Profitability Formula</h3>\n        <div class='callout success'><div><strong>Net Profit per Unit = </strong><br>\n        Selling Price<br>\n        − Referral Fee × 1.18 (if applicable)<br>\n        − Closing Fee × 1.18<br>\n        − Weight Handling Fee × 1.18 (FBA only)<br>\n        − Monthly Storage Cost allocation<br>\n        − Cost of Goods Sold (COGS)<br>\n        − Advertising Cost (ACoS allocation)<br>\n        − Returns Provision (category return rate × average return cost)<br>\n        <strong>= Net Profit (₹) | Net Margin (%)</strong></div></div>\n\n        <h3>4. Three Scenarios — Worked Examples</h3>\n        <table class='data-table'>\n            <thead><tr><th>Scenario</th><th>Selling Price</th><th>Category</th><th>COGS</th><th>Weight</th><th>Net Profit</th><th>Margin</th></tr></thead>\n            <tbody>\n                <tr><td><strong>Budget Hero</strong></td><td>₹599</td><td>Apparel (≤₹1k → 0% ref)</td><td>₹180</td><td>300g (₹73)</td><td>₹326</td><td>54.4%</td></tr>\n                <tr><td><strong>Mid-Range</strong></td><td>₹1,499</td><td>Fashion (10% ref)</td><td>₹450</td><td>600g (₹98)</td><td>₹703</td><td>46.9%</td></tr>\n                <tr><td><strong>Premium</strong></td><td>₹3,999</td><td>Electronics (8% ref)</td><td>₹1,800</td><td>1.2kg (₹131)</td><td>₹1,560</td><td>39.0%</td></tr>\n            </tbody>\n        </table>\n        <p style=\"font-size:12px;color:var(--text-muted)\">*All examples include 18% GST on fees. Storage and advertising costs not included — add ~₹30–₹80 per unit for complete picture.</p>\n\n        <h3>5. Price Point Engineering — The ₹1,000 Threshold Strategy</h3>\n        <div class='callout pro-tip'><div><strong>The Zero Fee Sweet Spot (Mar 2026+):</strong><br>\n        Products priced ≤₹1,000 now attract ZERO referral fees in 1,800+ categories.<br><br>\n        <strong>Example: Apparel product</strong><br>\n        At ₹999: Referral Fee = ₹0 → Net higher by ₹70–₹140 vs. pricing at ₹1,099<br>\n        At ₹1,099: Referral Fee = 7–10% = ₹77–₹110 → Margin drops 7–10%<br><br>\n        <strong>Action:</strong> Model your price elasticity. If demand doesn't meaningfully increase at ₹999 vs. ₹1,099, price at ₹999 and pocket the referral fee saving.</div></div>\n\n        <h3>6. Chargeable Weight — The Hidden Fee Multiplier</h3>\n        <p>Amazon uses the <strong>higher</strong> of actual weight vs. volumetric weight for FBA fee calculation.</p>\n        <p><strong>Volumetric Weight Formula:</strong> (Length × Breadth × Height in cm) ÷ 5,000 = Volumetric Weight in kg</p>\n        <div class='callout warning'><div><strong>Example:</strong> A product weighs 400g but is in a large box (40×30×15cm).<br>\n        Volumetric weight = (40×30×15) ÷ 5,000 = 3.6 kg → Amazon charges 3.6 kg slab (₹200+ fee, not ₹73).<br>\n        <strong>Fix:</strong> Reduce packaging size. Right-size your boxes — packaging that's too large costs you ₹127+ extra per unit in weight handling alone.</div></div>\n\n        <h3>7. FBA vs FBM Decision Framework</h3>\n        <table class='data-table'>\n            <thead><tr><th>Factor</th><th>Use FBA</th><th>Use FBM</th></tr></thead>\n            <tbody>\n                <tr><td>Order volume</td><td>&gt;50 orders/day</td><td>&lt;20 orders/day</td></tr>\n                <tr><td>Product weight</td><td>&lt;2 kg (low weight handling fee)</td><td>&gt;5 kg (high weight fee erodes margin)</td></tr>\n                <tr><td>Inventory turnover</td><td>Fast-moving (&lt;60 days)</td><td>Slow-moving (storage fees mount for FBA)</td></tr>\n                <tr><td>Buy Box priority</td><td>FBA wins Buy Box more easily</td><td>FBM needs compensating low price</td></tr>\n                <tr><td>Peak season</td><td>FBA handles scale automatically</td><td>FBM requires operational capacity surge</td></tr>\n            </tbody>\n        </table>\n\n        <div class='bookmarks-inline'>\n            <strong>Tools &amp; Resources:</strong><br>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/fba/profitabilitycalculator/index?lang=en_IN' target='_blank'>Kitna Milega — Official Calculator</a>\n            <a class='btn-sc' href='https://sell.amazon.in/fees-and-pricing' target='_blank'>Amazon India Fee Schedule</a>\n            <a class='pill-sc' href='https://www.aboutamazon.in/news/small-business/amazon-seller-fee-reduction-zero-referral-march-2026' target='_blank'>Zero Fee Announcement</a>\n            <a class='pill' href='https://rekonsile.com/amazon-india-fee-revision-september-2025-complete-guide' target='_blank'>Sep 2025 Fee Revision Guide</a>\n            <a class='pill' href='https://rekonsile.com/amazon-india-shipping-fees-2025-complete-guide-of-fba-fbm-and-weight-handling-charges' target='_blank'>Shipping Fees Complete Guide 2025</a>\n        </div>\n\n        <div class='pain-point-section'>\n            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>\n            <div class='pain-point-body'>\n                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>Seller sells 1,000 units/month at ₹1,049 price point — paying 10% referral fee (₹1,04,900/month in fees alone). Post-March 2026, moving to ₹999 price point eliminates referral fee entirely, saving ₹99,000/month — more than their marketing budget.</p></div>\n                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Strategic Solution</div><p>Audit every ASIN priced ₹1,001–₹1,500. For each one: model impact of pricing at ₹999 vs. current price. Factor in demand elasticity and margin impact. Most fashion/lifestyle products should move to ≤₹1,000 pricing.</p></div>\n                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Pro Insight</div><p>The \"hidden\" fee killer is oversized packaging. A seller shipping a 500g product in a large box pays ₹200+ weight handling instead of ₹73 — an extra ₹127 per unit × 1,000 units/month = ₹1,27,000 wasted. Right-size your packaging before scaling.</p></div>\n            </div>\n        </div>\n    ",
+    "process_flow": "",
+    "tools": "",
+    "videos": [],
+    "checklist": [
+      "Ran Kitna Milega calculator for every active ASIN",
+      "All 6 fee components included in profitability model (not just referral fee)",
+      "Audited all ASINs priced ₹1,001–₹1,500 for ₹999 pricing opportunity",
+      "Calculated chargeable weight (actual vs. volumetric) for all FBA products",
+      "Right-sized packaging for top 10 ASINs by volume",
+      "Set storage removal alerts at 250-day mark for all FBA inventory",
+      "Built Google Sheet P&L model including advertising cost and returns provision"
+    ],
+    "quiz": [
+      {
+        "question": "'Kitna Milega' translates to and is officially used for:",
+        "options": [
+          "'Best Price' — Amazon's dynamic pricing tool",
+          "'How much will I get?' — Amazon India's FBA Revenue Calculator",
+          "'Guaranteed Delivery' — Amazon India's shipping SLA tool",
+          "'Smart Pricing' — Amazon's automated repricing system"
+        ],
+        "answer": "'How much will I get?' — Amazon India's FBA Revenue Calculator",
+        "explanation": "'Kitna Milega' means 'How much will I get?' in Hindi and is the colloquial name for Amazon India's official FBA Revenue Calculator. It compares FBA vs. FBM profitability side-by-side and calculates all Amazon deductions automatically."
+      },
+      {
+        "question": "A product has actual weight 400g but box dimensions of 40×30×15cm. What chargeable weight does Amazon use?",
+        "options": [
+          "400g (actual weight)",
+          "3.6 kg (volumetric weight — higher)",
+          "1 kg (rounded up)",
+          "500g (standard slab)"
+        ],
+        "answer": "3.6 kg (volumetric weight — higher)",
+        "explanation": "Volumetric weight = (40×30×15) ÷ 5,000 = 3.6 kg. Amazon uses the HIGHER of actual vs. volumetric weight. Since 3.6 kg > 400g, you pay the 3.6 kg fee slab — costing ₹200+ vs. ₹73 for the 0–500g slab. Right-sizing the box saves ₹127+ per unit."
+      }
+    ]
+  },
+  {
+    "id": "7.7",
+    "pillar": "p7",
+    "number": "Module 7.7",
+    "title": "Subscribe & Save, MOQ & AUR Strategy",
+    "difficulty": "Intermediate",
+    "time": "35 mins",
+    "overview": "<p>Three underutilised Amazon India tools — Subscribe &amp; Save, Minimum Order Quantity (MOQ), and Average Unit Revenue (AUR) optimisation — can dramatically improve your revenue quality without increasing ad spend. This module covers all three with implementation SOPs and the strategic context for when each works best.</p>",
+    "content": "\n        <h3>1. Subscribe &amp; Save — Recurring Revenue on Amazon India</h3>\n        <p>Subscribe &amp; Save (SNS) lets customers subscribe to regular deliveries (monthly, bi-monthly, etc.) at a discounted price. Sellers fund the discount; Amazon manages the recurring order logistics.</p>\n\n        <h3>2. SNS Eligibility &amp; Setup</h3>\n        <ul>\n            <li>Available for: FMCG, grocery, personal care, health supplements, pet food, household products</li>\n            <li>Requires: FBA fulfillment (SNS not available for FBM)</li>\n            <li>Requires: Professional Seller Plan + consistent inventory availability</li>\n            <li>Typical seller discount: 5–10% (Amazon may add additional platform discount)</li>\n        </ul>\n        <ol>\n            <li>Go to <strong>Advertising → Subscribe &amp; Save</strong> in Seller Central</li>\n            <li>Select eligible ASINs to enroll</li>\n            <li>Set your seller discount % (minimum 0%, typically 5%)</li>\n            <li>Maintain consistent inventory (SNS requires &gt;30 days stock at all times)</li>\n            <li>Monitor SNS subscriber count and revenue in SNS dashboard</li>\n        </ol>\n\n        <h3>3. SNS Business Value</h3>\n        <table class='data-table'>\n            <thead><tr><th>Metric</th><th>Without SNS</th><th>With SNS</th></tr></thead>\n            <tbody>\n                <tr><td>Revenue predictability</td><td>Variable month-to-month</td><td>Recurring base revenue locked in</td></tr>\n                <tr><td>Customer acquisition cost</td><td>Full ad spend per order</td><td>Zero ad cost on renewals</td></tr>\n                <tr><td>Inventory planning</td><td>Demand forecasting required</td><td>Predictable demand from subscribers</td></tr>\n                <tr><td>Customer LTV</td><td>Single purchase</td><td>12–24 month subscriber lifecycle</td></tr>\n            </tbody>\n        </table>\n\n        <h3>4. Minimum Order Quantity (MOQ) Strategy</h3>\n        <p>MOQ allows B2B sellers to set minimum quantities that business buyers must purchase. This is particularly powerful for bulk consumables, packaging materials, and commodity products.</p>\n        <ul>\n            <li>Navigate to <strong>Inventory → Business Settings → MOQ Settings</strong></li>\n            <li>Set MOQ per ASIN (e.g., minimum 5 units per order for a 10-pack tissue)</li>\n            <li>MOQ applies only to B2B buyers — consumer orders are unaffected</li>\n            <li>Combine with B2B bulk pricing tiers for maximum impact</li>\n        </ul>\n\n        <h3>5. Average Unit Revenue (AUR) Optimisation</h3>\n        <p>AUR = Total Revenue ÷ Total Units Sold. Increasing AUR without proportional increase in costs is the fastest path to margin improvement.</p>\n        <div class='callout success'><div><strong>5 Ways to Increase AUR:</strong><br>\n        1. <strong>Bundle creation:</strong> 2-pack or 3-pack at premium price vs. singles<br>\n        2. <strong>Premium variant introduction:</strong> Add a \"Pro\" version at 30–50% premium<br>\n        3. <strong>Price architecture:</strong> Remove your lowest-priced variant, push customers to mid/high<br>\n        4. <strong>Cross-sell via Virtual Bundles:</strong> Pair complementary products<br>\n        5. <strong>Upsell via A+ content:</strong> Compare table showing premium option benefits</div></div>\n\n        <h3>6. AUR Tracker — Weekly Review</h3>\n        <ol>\n            <li>Go to <strong>Reports → Sales → Sales by ASIN</strong></li>\n            <li>Export weekly sales data (units + revenue)</li>\n            <li>Calculate AUR per ASIN: Revenue ÷ Units</li>\n            <li>Identify ASINs with declining AUR (price erosion signal)</li>\n            <li>Identify ASINs where bundle/premium variant could increase AUR</li>\n            <li>Set AUR target per category: target 10% improvement per quarter</li>\n        </ol>\n\n        <div class='bookmarks-inline'>\n            <strong>Key Links:</strong><br>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/sns/manage' target='_blank'>Subscribe &amp; Save Dashboard</a>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/business/reports' target='_blank'>B2B Reports</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/gp/help/external/G201664430' target='_blank'>SNS Help Guide</a>\n        </div>\n\n        <div class='pain-point-section'>\n            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>\n            <div class='pain-point-body'>\n                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>Seller in personal care category spends ₹80,000/month on PPC to acquire buyers — but has zero Subscribe &amp; Save enrollment, so every customer is a one-time acquisition with full ad cost attached.</p></div>\n                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Strategic Solution</div><p>Enroll all FMCG/consumable ASINs in SNS immediately. Even 200 SNS subscribers × ₹500 AOV = ₹1,00,000 in monthly recurring revenue with zero incremental ad cost. One-time customer acquisition pays for itself on repeat orders.</p></div>\n                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Pro Insight</div><p>AUR optimisation is more powerful than volume growth. Increasing AUR from ₹450 to ₹550 (+22%) on 1,000 units/month = ₹1,00,000 extra monthly revenue with identical operations, ad spend, and FBA costs.</p></div>\n            </div>\n        </div>\n    ",
+    "process_flow": "",
+    "tools": "",
+    "videos": [],
+    "checklist": [
+      "Enrolled all eligible FMCG/consumable ASINs in Subscribe & Save",
+      "Maintained 30+ days FBA inventory for all SNS-enrolled ASINs",
+      "Set SNS discount at 5–7% (competitive but margin-safe)",
+      "B2B MOQ set for bulk-eligible ASINs",
+      "AUR tracking added to weekly review (Revenue ÷ Units by ASIN)",
+      "Bundle creation roadmap drafted for top 5 ASINs by volume",
+      "A+ content comparison table created showing premium variant benefits"
+    ],
+    "quiz": [
+      {
+        "question": "Subscribe & Save on Amazon India is available for which fulfillment method?",
+        "options": [
+          "FBM only",
+          "FBA only",
+          "Both FBA and FBM",
+          "Easy Ship only"
+        ],
+        "answer": "FBA only",
+        "explanation": "Subscribe & Save requires FBA fulfillment. FBM sellers cannot enroll in SNS. Products must be eligible for FBA and maintain consistent inventory availability for recurring subscription deliveries."
+      },
+      {
+        "question": "A seller has ₹10 lakh monthly revenue selling 2,000 units. AUR = ₹500. To improve AUR to ₹600 without volume change, monthly revenue becomes:",
+        "options": [
+          "₹10 lakh (unchanged)",
+          "₹11 lakh",
+          "₹12 lakh",
+          "₹14 lakh"
+        ],
+        "answer": "₹12 lakh",
+        "explanation": "AUR improvement to ₹600 on 2,000 units = ₹12,00,000 monthly revenue — a 20% revenue increase with zero additional units, ads, or operational changes. This is the power of AUR optimisation."
+      }
+    ]
+  },
+  {
+    "id": "7.8",
+    "pillar": "p7",
+    "number": "Module 7.8",
+    "title": "LTSF & Inventory Age Management",
     "difficulty": "Intermediate",
     "time": "30 mins",
-    "overview": """<p>A+ Content (Enhanced Brand Content) via Brand Registry unlocks rich content capabilities on your product detail pages. This module covers exact module image dimensions, alt-text requirements, prohibited content rules, Premium A+ unlock criteria, and performance measurement — based on Amazon India's official EBC guidelines.</p>""",
-    "content": """
-        <h3>1. A+ Content Eligibility & Access</h3>
-        <div class='callout pro-tip'>
-            <div><strong>Requirements:</strong><br>
-            ✓ Active Brand Registry enrolment<br>
-            ✓ Professional Seller account on Seller Central India<br>
-            ✓ Registered trademark (Indian or internationally recognised)<br><br>
-            Path: <strong>SC → Advertising → Enhanced Brand Content (A+ Content Manager)</strong><br>
-            Enter the SKU (case-sensitive) for the ASIN you want to enhance → A+ is available for all your brand ASINs once BR is active.</div>
-        </div>
-
-        <h3>2. A+ Module Image Specifications (Exact Dimensions)</h3>
-        <table class='data-table'>
-            <thead><tr><th>Module</th><th>Image Size</th><th>Image Count</th><th>Best Use</th></tr></thead>
-            <tbody>
-                <tr><td>Header Image (Full)</td><td>970×600px</td><td>1</td><td>First impression hero — strong brand visual</td></tr>
-                <tr><td>Header 6 (Wide) / Image &amp; Light Text Overlay</td><td>970×300px</td><td>1</td><td>Full-width banner, lifestyle imagery</td></tr>
-                <tr><td>Feature 2 (3-image line)</td><td>300×300px each</td><td>3</td><td>3 key product features</td></tr>
-                <tr><td>Four Image Highlights</td><td>300×300px each</td><td>4</td><td>4 key benefits / use cases</td></tr>
-                <tr><td>Header 4/5 (Image Left/Right)</td><td>300×300px</td><td>1</td><td>Feature with adjacent text</td></tr>
-                <tr><td>Feature 1 (4-image line)</td><td>220×220px each</td><td>4</td><td>4 product variants or features</td></tr>
-                <tr><td>Feature 3 (Grid)</td><td>135×135px each</td><td>4</td><td>Compact feature grid</td></tr>
-                <tr><td>Comparison Chart</td><td>150×300px each</td><td>5</td><td>Product range cross-sell (within brand only)</td></tr>
-                <tr><td>Brand Logo</td><td>600×180px</td><td>1</td><td>Brand identity module</td></tr>
-                <tr><td>Premium Video (Premium A+ only)</td><td>1920×1080px</td><td>1</td><td>Autoplay product video</td></tr>
-            </tbody>
-        </table>
-
-        <h3>3. Alt-Text — Mandatory for Every Image</h3>
-        <div class='callout success'>
-            <div><strong>Alt-text is mandatory for every image uploaded.</strong> It serves two purposes: accessibility (screen reader support) and SEO benefits for your listing.<br><br>
-            <strong>Best practices:</strong><br>
-            • Write a clear, descriptive sentence: "Stainless steel water bottle with black lid on a wooden table next to hiking gear"<br>
-            • Include relevant keywords naturally — do not keyword-stuff<br>
-            • Keep between 50–150 characters<br>
-            • Describe what the image <em>shows</em>, not what you want customers to think<br>
-            • Alt-text does NOT appear on the detail page but improves search visibility</div>
-        </div>
-
-        <h3>4. Prohibited Content — Common Rejection Causes</h3>
-        <table class='data-table'>
-            <thead><tr><th>Prohibited Element</th><th>Fix</th></tr></thead>
-            <tbody>
-                <tr><td>Promotional language: 'best price', 'buy now', 'affordable', 'free', 'bonus'</td><td>Remove all pricing/promo language — focus on features</td></tr>
-                <tr><td>Copyright/trademark symbols (©, ™, ®) in text</td><td>Remove all symbols — they are not permitted in A+ text fields</td></tr>
-                <tr><td>Competitor brand comparisons in charts</td><td>Comparison charts allowed ONLY within your own brand portfolio</td></tr>
-                <tr><td>Health claims without FSSAI certification</td><td>Remove health claims or add certified FSSAI approval number</td></tr>
-                <tr><td>Third-party logos (Apple, ISO, Made in India, Google Play)</td><td>Remove all third-party logos from images</td></tr>
-                <tr><td>Images without alt-text</td><td>Add descriptive alt-text to every image before submitting</td></tr>
-                <tr><td>Blurry/low-res images</td><td>Use JPEG/PNG, sRGB, minimum required dimensions per module</td></tr>
-                <tr><td>Brand Story only submission</td><td>Brand Story must be combined with product description modules</td></tr>
-            </tbody>
-        </table>
-
-        <h3>5. Premium A+ Unlock Criteria</h3>
-        <div class='callout pro-tip'>
-            <div><strong>Premium A+ Unlock Requirements:</strong><br>
-            ✓ Brand Story published and approved<br>
-            ✓ Minimum 5 approved A+ Basic content pages<br>
-            ✓ Brand Registry in good standing<br><br>
-            Once unlocked: Premium A+ appears as an option in the A+ Content Manager. Premium A+ adds interactive hotspots, carousel modules, Q&amp;A modules, and autoplay video — significantly higher engagement than Basic A+.</div>
-        </div>
-
-        <h3>6. Submission Timeline & Re-Review</h3>
-        <ul>
-            <li>Review time: up to <strong>7 business days</strong> (longer during festive peak periods)</li>
-            <li>Post-approval live time: up to 24 hours to appear on detail page</li>
-            <li>If rejected: SC → Advertising → A+ Content Manager → find 'Not Approved' ASIN → click 'Edit' → read specific rejection reasons → fix → resubmit</li>
-        </ul>
-
-        <div class='bookmarks-inline'>
-            <strong>Key Links:</strong><br>
-            <a class='pill-sc' href='https://sellercentral.amazon.in/enhanced-content/aplus' target='_blank'>A+ Content Manager</a>
-            <a class='pill-sc' href='https://sell.amazon.in/seller-university' target='_blank'>Seller University — A+ Courses</a>
-        </div>
-
-        <div class='pain-point-section'>
-            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>
-            <div class='pain-point-body'>
-                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>My A+ Content keeps getting rejected. I've resubmitted 3 times and each time a different reason is given. It's been 3 weeks and I still have no A+ on my hero ASIN.</p></div>
-                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Solution</div><p>The most common hidden rejection causes are: (1) images below exact pixel dimensions — resize to exactly 970×300px or 300×300px etc. — not approximately; (2) alt-text missing from even one image; (3) any trademark symbol (™, ®) in text fields; (4) health claims without FSSAI. Run through the Section 6 prohibited content list systematically before each resubmission rather than guessing which field is the issue.</p></div>
-                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Strategic Insight</div><p>A+ Content is one of the highest-ROI investments in your listing. Amazon data shows A+ Content increases conversion rates by an average of 3–10% on Basic A+ and higher on Premium A+. Prioritise your top 10 ASINs by sales volume first — the conversion uplift on your bestsellers pays back the design investment within weeks. Then build towards 5 approved Basic A+ pages to unlock Premium A+ on hero products.</p></div>
-            </div>
-        </div>
-    """,
+    "overview": "<p>Long-Term Storage Fees (now called Aged Inventory Surcharges) switched to monthly billing in 2025 — meaning slow-moving inventory silently drains profitability every single month. This module covers the current surcharge structure, how to read your Inventory Age View, the removal order SOP, and how to keep your IPI score healthy.</p>",
+    "content": "\n        <h3>1. The 2025 Billing Change — Monthly AIS</h3>\n        <div class='callout warning'><div><strong>Important Change:</strong> From 2025, Amazon shifted from twice-yearly LTSF billing (February &amp; August) to <strong>monthly Aged Inventory Surcharge (AIS)</strong>. Inventory aged 271+ days now incurs ongoing monthly charges — not a once-yearly penalty. This makes early action critical.</div></div>\n\n        <h3>2. Current Aged Inventory Surcharge Structure</h3>\n        <table class='data-table'>\n            <thead><tr><th>Inventory Age</th><th>AIS Rate</th><th>Action</th></tr></thead>\n            <tbody>\n                <tr><td>0–270 days</td><td>No surcharge</td><td>Monitor sell-through rate</td></tr>\n                <tr><td>271–365 days</td><td>Surcharge applies monthly</td><td>Run promotions, reduce price</td></tr>\n                <tr><td>365+ days</td><td>₹15.65/cu.ft or ₹15/unit (whichever higher)</td><td>Create removal order immediately</td></tr>\n            </tbody>\n        </table>\n\n        <h3>3. Inventory Age View — How to Read It</h3>\n        <ol>\n            <li>Go to <strong>Inventory → Inventory Planning → Inventory Age</strong></li>\n            <li>View age breakdown per ASIN: 0–90 | 91–180 | 181–270 | 271–365 | 365+ days</li>\n            <li>Filter by \"271+ days\" to see all at-risk inventory</li>\n            <li>Sort by \"Estimated Storage Fee\" to prioritize by cost impact</li>\n            <li>Set a weekly calendar alert to review this report every Monday</li>\n        </ol>\n\n        <h3>4. Removing Aged Inventory (SOP)</h3>\n        <ol>\n            <li>Go to <strong>Inventory → Manage FBA Inventory → Create Removal Order</strong></li>\n            <li>Select ASINs aged 250+ days (act before 271 to avoid first surcharge)</li>\n            <li>Choose removal method: Return to Address OR Dispose</li>\n            <li>For returnable products: return to warehouse and attempt liquidation on other channels</li>\n            <li>For unsellable/damaged: dispose at Amazon's facility (lower cost than return)</li>\n            <li>Removal SLA: 14–21 days processing</li>\n        </ol>\n\n        <h3>5. IPI Score — Inventory Performance Index</h3>\n        <table class='data-table'>\n            <thead><tr><th>IPI Score</th><th>Status</th><th>Impact</th></tr></thead>\n            <tbody>\n                <tr><td>550+</td><td>Excellent</td><td>Unlimited FBA storage</td></tr>\n                <tr><td>400–549</td><td>Good</td><td>Standard storage limits</td></tr>\n                <tr><td>350–399</td><td>At Risk</td><td>Reduced storage limits</td></tr>\n                <tr><td>Below 350</td><td>Critical</td><td>Severe storage restrictions</td></tr>\n            </tbody>\n        </table>\n\n        <h3>6. IPI Improvement Actions</h3>\n        <ul>\n            <li>✅ Maintain sell-through rate &gt;2 units/week per ASIN</li>\n            <li>✅ Keep in-stock rate &gt;98% for top-selling ASINs</li>\n            <li>✅ Keep excess inventory &lt;10% of total stock</li>\n            <li>✅ Reduce unfulfillable units (create removal orders for damaged stock)</li>\n            <li>✅ Use Sponsored Products to accelerate sell-through on aging ASINs</li>\n            <li>✅ Use coupons (5–10% off) to move inventory before the 271-day mark</li>\n        </ul>\n\n        <div class='bookmarks-inline'>\n            <strong>Key Links:</strong><br>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/inventory-planning/inventory-age' target='_blank'>Inventory Age View</a>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/inventory-planning/stranded-inventory' target='_blank'>Inventory Health Dashboard</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/gp/help/external/200725880' target='_blank'>Aged Inventory Surcharge Help</a>\n        </div>\n\n        <div class='pain-point-section'>\n            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>\n            <div class='pain-point-body'>\n                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>Seller sends 1,000 units of a slow-moving product to FBA. After 12 months, ₹15/unit × 1,000 units = ₹15,000/month in AIS charges — on top of ₹50/cu.ft monthly storage. Total cost: ₹25,000+/month for inventory that sells at 5 units/month.</p></div>\n                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Strategic Solution</div><p>Set a \"250-day alert\" calendar for every FBA ASIN. At 250 days, run a 15% coupon and Sponsored Products boost for 30 days. At 270 days, if still aging, create removal order. Never let inventory hit 365 days — the surcharge at that point exceeds the product value for many SKUs.</p></div>\n                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Pro Insight</div><p>The IPI score is a leading indicator of hidden costs. An IPI below 400 means Amazon is signaling you have too much slow-moving stock. Fix it proactively — removal orders + sell-through campaigns — before Amazon imposes storage limits that prevent you from sending new inventory during peak season.</p></div>\n            </div>\n        </div>\n    ",
     "process_flow": "",
     "tools": "",
     "videos": [],
     "checklist": [
-        "A+ Content live on 100% of Brand Registered ASINs",
-        "All images resized to exact module pixel dimensions (970×600, 970×300, 300×300, 220×220 etc.)",
-        "Alt-text added to every image (50–150 chars, descriptive, keyword-natural)",
-        "No prohibited content: no promo language, no ™/®/© symbols, no competitor comparisons",
-        "Brand Story published (prerequisite for Premium A+)",
-        "5 A+ Basic pages approved (prerequisite for Premium A+)",
-        "Premium A+ enabled and applied to hero ASINs",
-        "A+ Performance metrics reviewed monthly (conversion rate before vs. after)",
-        "Comparison chart module added to all hero ASINs (within-brand only)"
+      "Inventory Age View reviewed weekly (filter: 271+ days)",
+      "Removal orders created for all inventory aged 250+ days",
+      "IPI score monitored monthly (target 550+)",
+      "Sell-through rate above 2 units/week for all FBA ASINs",
+      "In-stock rate above 98% for top-selling products",
+      "Excess inventory below 10% of total FBA stock",
+      "Coupon or Lightning Deal planned for ASINs approaching 270 days"
     ],
     "quiz": [
-        {
-            "question": "What two things are required to unlock Premium A+ Content?",
-            "options": [
-                "100+ reviews + Brand Registry",
-                "Brand Story published + 5 approved A+ Basic pages",
-                "500+ monthly sales + Active FBA",
-                "DSP active + 12 months on Amazon"
-            ],
-            "answer": "Brand Story published + 5 approved A+ Basic pages",
-            "explanation": "Amazon requires both a published Brand Story and at least 5 approved A+ Basic pages to unlock the Premium A+ tier for your brand."
-        }
+      {
+        "question": "When did Amazon India switch from twice-yearly LTSF billing to monthly Aged Inventory Surcharge?",
+        "options": [
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "answer": "2025",
+        "explanation": "In 2025, Amazon shifted from twice-yearly LTSF billing (February & August) to monthly Aged Inventory Surcharge (AIS). Inventory aged 271+ days now incurs ongoing monthly charges, making early action critical."
+      },
+      {
+        "question": "At what inventory age should sellers proactively create removal orders to avoid the first AIS charge?",
+        "options": [
+          "180 days",
+          "200 days",
+          "250 days",
+          "300 days"
+        ],
+        "answer": "250 days",
+        "explanation": "AIS charges begin at 271 days. Creating a removal order at 250 days gives 14–21 days processing time, ensuring inventory is removed before the first monthly surcharge kicks in at 271 days."
+      }
     ]
-},
-
-{
-    "id": "7.4",
-    "number": "Module 7.4",
-    "title": "Sponsored Brands",
-    "difficulty": "Advanced",
-    "time": "35 mins",
-    "overview": """<p>Sponsored Brands ads are the most visible format on Amazon — appearing at the very top of search results with your logo, headline, and products. This module covers eligibility, custom image and video ads, New-to-Brand (NTB) metric tracking, Sponsored Brands Video (SBV) specs, and brand follow audiences.</p>""",
-    "content": """
-        <h3>1. Sponsored Brands Eligibility</h3>
-        <div class='callout pro-tip'>
-            <div><strong>Requirements:</strong><br>
-            ✓ Amazon Brand Registry enrolled and active<br>
-            ✓ Professional selling account in good standing<br>
-            ✓ Minimum budget: ₹100/day<br>
-            ✓ At least 3 active ASINs to feature in the ad</div>
-        </div>
-
-        <h3>2. Sponsored Brands Ad Formats</h3>
-        <table class='data-table'>
-            <thead><tr><th>Format</th><th>Placement</th><th>Best For</th></tr></thead>
-            <tbody>
-                <tr><td>Product Collection</td><td>Top of search + right rail</td><td>3-ASIN showcase, category domination</td></tr>
-                <tr><td>Store Spotlight</td><td>Top of search</td><td>Drive traffic to Brand Store — preferred format for brand building</td></tr>
-                <tr><td>Video (SBV)</td><td>In-search, auto-plays</td><td>Highest CTR format, product demo, NTB acquisition</td></tr>
-                <tr><td>Custom Image</td><td>Top of search</td><td>Lifestyle brand storytelling</td></tr>
-            </tbody>
-        </table>
-
-        <h3>3. New-to-Brand (NTB) Metrics</h3>
-        <div class='callout success'>
-            <div><strong>New-to-Brand metrics measure customer acquisition — available exclusively on Sponsored Brands:</strong><br>
-            • <strong>NTB Orders:</strong> First-time purchases of your brand on Amazon (last 12 months)<br>
-            • <strong>NTB Order Rate:</strong> NTB Orders ÷ Total Orders from this campaign<br>
-            • <strong>NTB Order Revenue:</strong> Revenue from first-time brand buyers<br>
-            • <strong>Cost per NTB Customer:</strong> Ad spend ÷ NTB Orders — your paid acquisition cost<br><br>
-            Target: &gt;30% NTB rate on SB campaigns<br>
-            Track NTB cost-per-customer alongside ACOS — NTB customers have higher LTV than repeat buyers, so a slightly higher ACOS on NTB campaigns is acceptable.</div>
-        </div>
-
-        <h3>4. Sponsored Brands Video (SBV) Creative Brief</h3>
-        <ul>
-            <li><strong>Duration:</strong> 6–45 seconds (15–30 sec optimal)</li>
-            <li><strong>Format:</strong> 16:9 landscape, MP4, 1920×1080px</li>
-            <li><strong>Sound:</strong> Must work with no sound — add subtitles/captions</li>
-            <li><strong>Amazon's rule:</strong> Brand/product must appear within the first 5 seconds</li>
-            <li><strong>Bidding:</strong> CPC — typically 20–40% lower CPC than Sponsored Products for top-of-search placement</li>
-            <li><strong>Why SBV wins:</strong> Auto-plays in search results — the only moving content on the page. Average CTR 2–5x higher than static SB ads for many categories</li>
-        </ul>
-
-        <h3>5. Brand Follow & Audience Building</h3>
-        <p>Customers who "Follow" your brand see your Posts in their feed and receive branded notifications about new products and deals.</p>
-        <ul>
-            <li>Run SB Store Spotlight campaigns driving to Brand Store → encourages follows</li>
-            <li>Brand Followers = warm first-party audience for new product launches</li>
-            <li>Amazon Posts (SC → Advertising → Posts) — free content that links to Brand Store or ASIN, builds follower base</li>
-        </ul>
-
-        <div class='bookmarks-inline'>
-            <strong>Key Links:</strong><br>
-            <a class='pill-sc' href='https://advertising.amazon.in/solutions/products/sponsored-brands' target='_blank'>Sponsored Brands</a>
-            <a class='pill-sc' href='https://sellercentral.amazon.in/storefronts/dashboard' target='_blank'>Brand Store Dashboard</a>
-        </div>
-
-        <div class='pain-point-section'>
-            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>
-            <div class='pain-point-body'>
-                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>My Sponsored Brands ads are running but ACOS is very high — over 50%. I'm spending a lot on Sponsored Brands but not seeing proportional sales. My agency says it's "brand awareness" but I can't justify the spend.</p></div>
-                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Solution</div><p>Separate your SB campaigns by objective: (1) Brand defence — bid on your own brand name keywords, typically low CPC and very high ROAS; (2) Category attack — bid on competitor and category keywords with Store Spotlight or SBV format; (3) Retargeting — Sponsored Display to bring back store visitors. Measure NTB metrics separately. Your "brand awareness" spend should be measured by NTB Order Rate and Cost per NTB Customer, not just ACOS.</p></div>
-                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Strategic Insight</div><p>Sponsored Brands Video (SBV) consistently delivers the highest CTR of all Amazon ad formats in most categories. A well-produced 15–20 second video showing the product being used, with captions, and the brand visible in the first 3 seconds, can achieve 3–5x the CTR of a standard SB banner. The production cost of one good SBV pays back within weeks via lower effective CPC from higher CTR.</p></div>
-            </div>
-        </div>
-    """,
-    "process_flow": "",
-    "tools": "",
-    "videos": [],
-    "checklist": [
-        "Sponsored Brands campaign live for all key search terms",
-        "Sponsored Brands Video (SBV) campaign live with quality 15–30 sec video",
-        "Video: product visible within first 5 seconds, captions added, 1920×1080px MP4",
-        "Store Spotlight ad driving traffic to Brand Store",
-        "New-to-Brand metrics tracked weekly (NTB Order Rate, Cost per NTB Customer)",
-        "NTB Order Rate &gt;30% target set for SB campaigns",
-        "Brand Follow count monitored monthly",
-        "Amazon Posts publishing schedule: 3–5 posts per week"
-    ],
-    "quiz": [
-        {
-            "question": "What is the recommended video duration for Sponsored Brands Video ads?",
-            "options": ["60–90 seconds", "30–60 seconds", "6–45 seconds (15–30 sec optimal)", "45–90 seconds"],
-            "answer": "6–45 seconds (15–30 sec optimal)",
-            "explanation": "Amazon requires SBV videos to be 6–45 seconds. The 15–30 second range is optimal — long enough to convey the key message but short enough to maintain engagement in an auto-play context."
-        }
-    ]
-},
-
-{
-    "id": "7.5",
-    "number": "Module 7.5",
-    "title": "MYE via Brand Registry",
-    "difficulty": "Advanced",
-    "time": "25 mins",
-    "overview": """<p>Manage Your Experiments (MYE) is exclusively available through Brand Registry — it's the scientific edge that separates data-driven sellers from guess-driven ones. This module covers accessing MYE through Brand Registry, setting up title and image experiments, and building a systematic test roadmap.</p>""",
-    "content": """
-        <h3>1. MYE Access via Brand Registry</h3>
-        <div class='callout pro-tip'>
-            <div><strong>MYE Unlock Path:</strong><br>
-            Brand Registry Active → <strong>SC → Growth → Manage Your Experiments</strong><br><br>
-            If you don't see MYE in your SC navigation: verify Brand Registry status in SC → Brands → Brand Overview. MYE unlocks automatically with active BR.<br><br>
-            <strong>Eligible experiment types:</strong> Product Title, Main Image, A+ Content, Bullet Points</div>
-        </div>
-
-        <h3>2. Title A/B Test Setup</h3>
-        <ol>
-            <li>SC → Growth → Manage Your Experiments → Create Experiment → Title</li>
-            <li>Enter Version A (current title) and Version B (test title)</li>
-            <li>Both versions must comply with Amazon's title policy (character limits, no promotional language)</li>
-            <li>Set duration: 4–8 weeks minimum for statistical significance</li>
-            <li>Amazon splits traffic 50/50 between versions automatically</li>
-            <li>Primary metric: <strong>Sales per session</strong> (conversion rate × session value)</li>
-        </ol>
-
-        <h3>3. Main Image A/B Test Setup</h3>
-        <ul>
-            <li>Same process as title — select "Main Image" as experiment type</li>
-            <li>Both images must meet Amazon's main image compliance (pure white BG, product fills 85% of frame, no text/logos)</li>
-            <li>Primary metric: <strong>Click-through rate</strong> (customers seeing search result → clicking)</li>
-            <li>Do not run image tests during promotions, deals, or Prime Day — skews data</li>
-            <li>Test one change at a time — never change title and image simultaneously on the same ASIN</li>
-        </ul>
-
-        <h3>4. Building a Test Roadmap</h3>
-        <div class='callout success'>
-            <div><strong>Recommended test order (by conversion impact):</strong><br>
-            1. <strong>Main Image</strong> → biggest CTR impact (search impressions → clicks)<br>
-            2. <strong>Title</strong> → CTR + CVR impact<br>
-            3. <strong>A+ Content</strong> → CVR impact (product page → add to cart)<br>
-            4. <strong>Bullet Points</strong> → CVR (smaller but measurable)<br><br>
-            Run tests sequentially on each ASIN. Build a test calendar — 40+ tests per year is achievable. Each winning variant compounds your conversion advantage permanently.</div>
-        </div>
-
-        <div class='bookmarks-inline'>
-            <strong>Key Links:</strong><br>
-            <a class='pill-sc' href='https://sellercentral.amazon.in/manage-your-experiments' target='_blank'>Manage Your Experiments</a>
-        </div>
-
-        <div class='pain-point-section'>
-            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>
-            <div class='pain-point-body'>
-                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>I run MYE tests but they never reach "statistically significant" status. After 4 weeks the dashboard still shows "Insufficient data" and I can't tell which version is winning.</p></div>
-                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Solution</div><p>Statistical significance requires enough traffic to detect a real difference. For MYE to reach significance, your ASIN typically needs at least 200–500 sessions per week. If your ASIN has low traffic, prioritise driving more Sponsored Products traffic to it before running MYE. Alternatively, run experiments for 8 weeks minimum rather than stopping at 4 — low-traffic ASINs simply need more time to accumulate data.</p></div>
-                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Strategic Insight</div><p>MYE is the closest thing Amazon sellers have to a controlled scientific experiment. Most sellers make listing changes based on intuition — sellers who run systematic MYE tests make changes based on real customer data. Over 12 months, a seller running 20–30 experiments typically improves their top ASIN's conversion rate by 15–30% through compounding small wins. This conversion improvement reduces your effective ad cost on every single click you buy.</p></div>
-            </div>
-        </div>
-    """,
-    "process_flow": "",
-    "tools": "",
-    "videos": [],
-    "checklist": [
-        "MYE access confirmed via Brand Registry (SC → Growth → Manage Your Experiments)",
-        "Minimum 1 active experiment on each hero ASIN",
-        "Test roadmap documented for next 6 months (image first, then title, then A+)",
-        "Tests never run during promotions/deals/Prime Day periods",
-        "Each test runs minimum 4–8 weeks for statistical significance",
-        "Winner rolled out within 1 week of statistical significance",
-        "Test log maintained: ASIN tested, element tested, result, action taken"
-    ],
-    "quiz": [
-        {
-            "question": "Which element should you test first with MYE for maximum impact?",
-            "options": ["Bullet points", "Product description", "Main image", "A+ Content"],
-            "answer": "Main image",
-            "explanation": "Main image has the highest single-element impact on CTR (click-through rate in search). A better main image means more clicks from the same impressions — amplifying the impact of all other optimisation efforts."
-        }
-    ]
-},
-
-{
-    "id": "7.6",
-    "number": "Module 7.6",
-    "title": "Vine Programme",
-    "difficulty": "Intermediate",
-    "time": "25 mins",
-    "overview": """<p>Amazon Vine is the most reliable compliant review acquisition programme on Amazon — connecting your products with Amazon's top reviewers (Vine Voices) for honest, detailed reviews. This module covers enrolment eligibility, cost, strategy, the ₹0 fee threshold for India, and review monitoring.</p>""",
-    "content": """
-        <h3>1. Vine Enrolment Criteria & Cost</h3>
-        <div class='callout pro-tip'>
-            <div><strong>Vine Eligibility Checklist:</strong><br>
-            ✓ Brand Registry active<br>
-            ✓ ASIN has &lt;30 existing reviews<br>
-            ✓ ASIN is FBA (stock must be available at Amazon FC)<br>
-            ✓ ASIN is not an adult product or hazmat<br>
-            ✓ ASIN must have an active listing in good standing<br><br>
-            Path: <strong>SC → Advertising → Amazon Vine → Enrol a Product</strong><br><br>
-            <strong>Cost (Amazon India — verify current pricing in SC):</strong><br>
-            • Products priced under ₹3,000: <strong>₹0 enrollment fee</strong> (confirm in SC at time of enrolment)<br>
-            • Higher-priced products: check current India pricing in SC → Amazon Vine dashboard</div>
-        </div>
-
-        <h3>2. Vine Strategy</h3>
-        <ul>
-            <li><strong>Best timing:</strong> Enrol within 72 hours of product launch — before any organic reviews accumulate</li>
-            <li><strong>Units to send:</strong> 2–30 units (send 10–15 for best coverage and review volume)</li>
-            <li><strong>Review timeline:</strong> Most Vine reviews appear within 4–8 weeks of enrolment</li>
-            <li><strong>Product selection priority:</strong> Hero products and new launches — Vine is most impactful going from 0 → 15+ reviews</li>
-        </ul>
-        <div class='callout success'>
-            <div><strong>Vine review impact:</strong> Products with 15+ reviews convert significantly better than products with 0–4 reviews. Getting the first 15 reviews via Vine is the fastest <em>legitimate</em> launch accelerator on Amazon. Vine reviews tend to be detailed and thorough — they also contain valuable product improvement feedback.</div>
-        </div>
-
-        <h3>3. Vine Review Monitoring & Response</h3>
-        <ul>
-            <li>Vine reviews cannot be removed or edited by the seller — they are Vine-protected</li>
-            <li>Monitor via: <strong>SC → Advertising → Amazon Vine → Dashboard</strong></li>
-            <li>If a Vine review is negative: respond professionally via the public review response (publicly visible to all buyers)</li>
-            <li>Vine reviewers tend to be thorough — negative reviews often contain specific product improvement insights worth acting on before the next production run</li>
-        </ul>
-        <div class='callout warning'>
-            <div><strong>Critical ToS Rule:</strong> You cannot influence, contact, or incentivise Vine reviewers in any way. Vine Voices receive your product for free and review completely independently. Any seller communication attempting to guide or influence the review content is a serious Terms of Service violation — potential account suspension.</div>
-        </div>
-
-        <h3>4. Vine vs. Other Review Methods</h3>
-        <table class='data-table'>
-            <thead><tr><th>Method</th><th>Compliant?</th><th>Cost</th><th>Best For</th></tr></thead>
-            <tbody>
-                <tr><td>Amazon Vine</td><td>✅ Fully compliant</td><td>₹0 (sub-₹3k products)</td><td>New launches, 0–30 review ASINs</td></tr>
-                <tr><td>Request a Review button</td><td>✅ Fully compliant</td><td>Free</td><td>Post-purchase review requests to all buyers</td></tr>
-                <tr><td>Seller feedback emails</td><td>✅ If Amazon-approved template</td><td>Free</td><td>Drives seller feedback (not product reviews)</td></tr>
-                <tr><td>Incentivised reviews</td><td>❌ Banned — account risk</td><td>N/A</td><td>DO NOT USE</td></tr>
-            </tbody>
-        </table>
-
-        <div class='bookmarks-inline'>
-            <strong>Key Links:</strong><br>
-            <a class='pill-sc' href='https://sellercentral.amazon.in/vine/dashboard' target='_blank'>Amazon Vine Dashboard</a>
-        </div>
-
-        <div class='pain-point-section'>
-            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>
-            <div class='pain-point-body'>
-                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>I enrolled my product in Vine and got several 3-star reviews. My star rating dropped and sales fell. I feel Vine made things worse, not better.</p></div>
-                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Solution</div><p>Vine Voices are Amazon's most thorough reviewers — if they found real issues (packaging, product quality, sizing), those are genuine product problems that organic buyers would also encounter. Use Vine reviews as free quality control feedback: fix the product/packaging issues identified, then enrol again on the improved version. A 3-star Vine review is much better than 10 organic 1-star reviews later. Respond professionally to each Vine review publicly — this shows future buyers you take feedback seriously.</p></div>
-                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Strategic Insight</div><p>For products priced under ₹3,000, Amazon Vine is essentially free market research combined with review acquisition. Enrol every new product launch immediately — the review data you get in weeks would cost lakhs through traditional consumer research. At zero cost, there is no reason not to enrol every FBA launch with fewer than 30 reviews.</p></div>
-            </div>
-        </div>
-    """,
-    "process_flow": "",
-    "tools": "",
-    "videos": [],
-    "checklist": [
-        "All new FBA launches enrolled in Vine within 72 hours (before organic reviews)",
-        "Review count confirmed &lt;30 before enrolment — Vine requires fewer than 30 reviews",
-        "10–15 units sent per Vine enrolment for best review coverage",
-        "Vine enrollment fee confirmed (₹0 for products under ₹3,000 — verify in SC)",
-        "Vine review timeline tracked (reviews expected 4–8 weeks post-enrolment)",
-        "Vine dashboard monitored weekly for new reviews",
-        "Negative Vine reviews responded to professionally and root cause addressed in next production run",
-        "Vine reviewer contact/influence strictly avoided — ToS violation risk"
-    ],
-    "quiz": [
-        {
-            "question": "How many reviews should an ASIN have before Vine enrollment is no longer eligible?",
-            "options": ["10 reviews", "20 reviews", "30 reviews", "50 reviews"],
-            "answer": "30 reviews",
-            "explanation": "Amazon Vine is available for ASINs with fewer than 30 reviews. Once an ASIN reaches 30+ organic reviews, it's no longer eligible for Vine enrollment."
-        }
-    ]
-}
-
+  }
 ]

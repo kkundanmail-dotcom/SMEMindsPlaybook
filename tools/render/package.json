@@ -1,0 +1,9 @@
+{
+  "name": "smeminds-render",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Headless renderer: captures each module film + narration into MP4",
+  "dependencies": {
+    "playwright": "^1.48.0"
+  }
+}

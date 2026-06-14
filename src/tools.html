@@ -141,3 +141,13 @@
     <button class='btn btn-primary' onclick='checkImageCompliance()'>Check Compliance</button>
     <div id='img_res' class='tool-result' style='display:none;'></div>
 </div>
+
+<!-- TOOL 10: Title Character Counter -->
+<div id="tool_title" class="tool-container">
+    <h3>Title Character Counter</h3>
+    <div class='form-group'>
+        <label>Paste your product title</label>
+        <input type='text' id='tcc_input' class='form-control' placeholder='e.g. BrandName Stainless Steel Water Bottle 1L, Leak-Proof, BPA-Free' oninput='checkTitle()' style='user-select:text'>
+    </div>
+    <div id='tcc_res' class='tool-result'><p style='color:var(--text-muted)'>Type or paste a title above to check length and policy compliance.</p></div>
+</div>

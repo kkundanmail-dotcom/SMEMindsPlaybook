@@ -1,0 +1,468 @@
+[?] THE AMAZON INDIA
+[?] ACCOUNT MANAGEMENT PLAYBOOK
+[?] A complete, plain-English guide to the tools, programs and
+[?] playbooks inside Amazon Seller Central — built for Indian sellers
+[?] Every chapter answers three questions:
+[?] What is the tool?   •   What root problem does it solve?   •   How do I use it?
+[?] Marketplace edition reflecting the March 2026 fee revision and current Seller Central feature set
+[?] Prepared as an educational reference — verify live figures in your own Seller Central account
+[Heading 1] How to use this playbook
+[?] This book is organised as a sequence, not a dictionary. If you are brand new, read Parts 1 to 3 in order — they take you from “I have nothing” to “my first orders are flowing.” If you are already selling, jump to the chapter matching the problem in front of you; each one is self-contained.
+[?] Three recurring elements appear in every chapter. A Root cause this solves box names the underlying business problem — because a tool you don’t understand the purpose of is a tool you will misuse. A Pain points & solutions table maps the real complaints sellers voice to the specific lever that fixes them. And a References list points to Amazon’s own pages so you always work from the source of truth.
+[?] A word on accuracy. Amazon changes fees, thresholds and feature names frequently. The numbers here reflect the fee structure published for the period beginning 16 March 2026 and are indicative. Before pricing a product or making a fulfilment decision, confirm the live rate inside Seller Central (Help → Fee schedule, or the Revenue Calculator). Treat this playbook as the map; treat Seller Central as the territory.
+[Heading 1] Contents
+[?] Part 1 — Foundations
+[?] 1.  The Amazon India marketplace, and why account management matters
+[?] 2.  Account setup, registration and selling plans
+[?] 3.  Understanding Seller Central: the console and its tools
+[?] Part 2 — Catalogue & Discoverability
+[?] 4.  Listing and catalogue management
+[?] 5.  The Featured Offer (Buy Box) and pricing
+[?] 6.  Brand Registry, A+ Content and Stores
+[?] Part 3 — Fulfilment & Operations
+[?] 7.  Fulfilment options: FBA, Easy Ship, Self Ship, Seller Flex, MCF
+[?] 8.  Inventory management
+[?] 9.  Returns, refunds, reimbursements and reconciliation
+[?] Part 4 — Performance, Compliance & Risk
+[?] 10.  Account Health and performance metrics
+[?] 11.  Account suspension and appeals
+[?] 12.  Tax and compliance: GST, TDS and TCS
+[?] Part 5 — Growth
+[?] 13.  Advertising: Sponsored Products, Brands, Display and DSP
+[?] 14.  Promotions, deals and events
+[?] 15.  Reports and analytics: Business Reports and Brand Analytics
+[?] 16.  Programs to scale: Amazon Business, Global Selling, SAS, Seller University
+[?] Part 6 — Quick Reference
+[?] 17.  Fee and economics reference
+[?] 18.  Master pain-point → solution map
+[?] 19.  Official links directory
+[?] PART 1
+[?] Foundations
+[?] Setting up correctly so nothing has to be unwound later.
+[Heading 1] 1. The Amazon India marketplace, and why account management matters
+[?] Root cause this solves   
+Most sellers treat Amazon as a place to “list and wait.” The real problem is that Amazon is a managed system with rules, scores and levers; sellers who don’t actively manage the account lose the Featured Offer, leak margin to avoidable fees, and discover policy problems only after a suspension. Account management converts a passive listing into a deliberately run business.
+[?] Amazon.in is India’s largest third-party marketplace, where independent sellers list alongside Amazon’s own retail. For a seller, the entire business runs through one console: Seller Central. Listings, orders, inventory, advertising, payments, performance scores and customer messages all live there.
+[?] “Account management” simply means working that console with intent rather than reacting to it. A well-managed account does five things continuously: it keeps performance scores in the safe zone, keeps the catalogue accurate and discoverable, chooses the cheapest fulfilment route per product, invests advertising where it pays back, and reconciles money so Amazon’s fees and reimbursements are correct. This playbook is structured around those five jobs.
+[Heading 2] Who can sell, and what you must have before you start
+[?] Two things are effectively mandatory for taxable goods in India:
+[List Paragraph] GSTIN (GST registration). Selling through an e-commerce operator generally requires GST registration regardless of turnover — the usual ₹20–40 lakh threshold does not apply. The only common exception is a catalogue made up entirely of GST-exempt goods (for example certain books), where a PAN-based exemption may be allowed.
+[List Paragraph] PAN and a bank account in the name of the registered business, plus identity and address proof. Registration now includes a short video verification where you show your PAN and GST documents on camera.
+[?] Both individuals (sole proprietors using a personal PAN) and registered entities (LLP, partnership, private limited, etc.) can sell. Whatever structure you register under for GST must match what you enter in Seller Central — a mismatch is one of the most common onboarding rejections.
+[Heading 3] Pain points & solutions
+--- TABLE ---
+Pain point | Practical solution & Seller Central tool
+“I listed products but get no orders for weeks.” | New accounts commonly take time to gain traction. Treat the first 90 days as a launch: complete brand and catalogue setup, win the Featured Offer on a few SKUs, and seed early sales with a small advertising budget rather than waiting passively.
+“I don’t know where anything is in Seller Central.” | Learn the five tabs that matter: Catalogue, Inventory, Pricing, Orders, and Performance. Bookmark the Account Health dashboard and the Payments report. Chapter 3 maps the console.
+“I keep being surprised by deductions.” | You are not managing fees as a system. Chapter 17 is a fee reference; reconcile every settlement (Chapter 9).
+--- END TABLE ---
+[Heading 3] References
+[List Paragraph] Start selling on Amazon India (registration)  —  https://sell.amazon.in
+[List Paragraph] Amazon Seller Central India (the console)  —  https://sellercentral.amazon.in
+[List Paragraph] Seller Central Help home  —  https://sellercentral.amazon.in/help/hub
+[Heading 1] 2. Account setup, registration and selling plans
+[?] Root cause this solves   
+Errors made at registration — wrong entity type, GST mismatch, weak documents, the wrong selling plan — surface later as rejected listings, blocked categories, or fee leakage. Getting the foundation right removes a whole class of problems before they can start.
+[?] Registration itself takes roughly 15–30 minutes if your documents are ready; verification typically takes one to three business days, and restricted categories can add several more.
+[Heading 2] The setup sequence
+[List Paragraph] Go to sell.amazon.in and start a seller account (or sign in with an existing Amazon account).
+[List Paragraph] Enter your legal business name exactly as it appears on your GST certificate.
+[List Paragraph] Add GSTIN and PAN, then your pickup address and a bank account in the business name.
+[List Paragraph] Complete video verification — have the PAN card, GST certificate and address proof in good lighting.
+[List Paragraph] Choose categories. Some (jewellery, grocery, automotive, certain electronics) need extra approval and may ask for brand authorisation or quality certificates.
+[List Paragraph] List your first product, set your fulfilment method, and confirm tax settings.
+[Heading 2] Individual vs Professional selling — what it means in India
+[?] Amazon’s global “Individual” (pay-per-item) and “Professional” (monthly subscription) plans are often quoted in US dollars; in India the practical reality for most sellers is that there is no monthly subscription fee to maintain a basic seller account, and you pay per transaction through referral, closing and shipping fees (Chapter 17). The strategic decision in India is therefore less about plan tier and more about fulfilment method and whether you enrol in Brand Registry.
+[Heading 3] Pain points & solutions
+--- TABLE ---
+Pain point | Practical solution & Seller Central tool
+“My registration was rejected.” | Almost always a document mismatch: business name not matching GST, blurry uploads, or address proof that doesn’t match the pickup address. Re-submit clean, matching documents.
+“I can’t list in my category.” | It is gated. Open Catalogue → Add a Product, check the approval requirements, and submit the requested invoices/authorisations. Build account health first; gated categories open more readily for healthy accounts.
+“Video verification keeps failing.” | Use a steady, well-lit setup; show original physical documents, not photocopies; complete it within the deadline given to avoid restarting.
+--- END TABLE ---
+[Heading 3] References
+[List Paragraph] Register and onboarding steps  —  https://sell.amazon.in/sell-online
+[List Paragraph] GST registration portal (Government of India)  —  https://www.gst.gov.in
+[List Paragraph] Seller Central Help – account configuration  —  https://sellercentral.amazon.in/help/hub
+[Heading 1] 3. Understanding Seller Central: the console and its tools
+[?] Root cause this solves   
+Sellers waste enormous time hunting for the right screen, and miss critical alerts buried in tabs they never open. Knowing the layout turns Seller Central from a maze into a cockpit — every lever has a known location.
+[?] Seller Central groups everything under a handful of menus. The tools that do the heavy lifting:
+--- TABLE ---
+Area | What lives here | Why it matters
+Catalogue | Add a Product, Manage Inventory listing edits, bulk upload via flat files | Where discoverability and conversion are won or lost
+Inventory | Manage Inventory, Manage FBA Inventory, Shipments, Restock recommendations | Prevents stockouts and storage bleed
+Pricing | Pricing dashboard, Automate Pricing, Featured Offer (Buy Box) eligibility | Controls the single biggest sales lever
+Orders | Manage Orders, Returns, Buyer–Seller Messaging | Operational heartbeat; affects health metrics
+Advertising | Campaign Manager, Sponsored Products/Brands/Display, coupons, deals | Paid demand generation
+Reports | Business Reports, Payments, Fulfilment, Brand Analytics, Tax | The data you manage by
+Performance | Account Health, Feedback, A-to-z Guarantee claims, Voice of the Customer | Keeps selling privileges intact
+Brands | Brand Registry tools, A+ Content Manager, Stores, Manage Your Experiments | Brand-only growth and protection levers
+--- END TABLE ---
+[?] Two habits separate managed accounts from neglected ones: open the Account Health dashboard daily, and read every Performance Notification. Most catastrophic suspensions began as a notification someone ignored.
+[Heading 3] Pain points & solutions
+--- TABLE ---
+Pain point | Practical solution & Seller Central tool
+“I edit a listing and nothing changes.” | Edits can be overridden by another contributor to the same ASIN, or held for review. Check who “owns” the listing; if you own the brand, enrol in Brand Registry (Chapter 6) to control content.
+“I miss important alerts.” | Turn on notification preferences and assign someone to clear Performance Notifications daily. Treat the Account Health page as a homepage.
+“Bulk changes take forever one by one.” | Use flat-file/bulk upload templates under Catalogue, and Automate Pricing rules instead of manual repricing.
+--- END TABLE ---
+[Heading 3] References
+[List Paragraph] Seller Central dashboard  —  https://sellercentral.amazon.in
+[List Paragraph] Seller University (free training)  —  https://sell.amazon.in/seller-university
+[List Paragraph] Seller Central Help hub  —  https://sellercentral.amazon.in/help/hub
+[?] PART 2
+[?] Catalogue & Discoverability
+[?] Being found, and being chosen, on a crowded shelf.
+[Heading 1] 4. Listing and catalogue management
+[?] Root cause this solves   
+A product that exists but cannot be found, or is found but not believed, makes no sales. The listing is simultaneously your search-ranking signal and your sales pitch; weak listings cause the invisible failure of low traffic and low conversion that sellers wrongly blame on “no demand.”
+[?] Amazon’s search engine ranks products on relevance and on how well they convert. Every field in a listing therefore does double duty — it tells the algorithm what you sell and persuades the shopper to buy.
+[Heading 2] The anatomy of a strong listing
+[List Paragraph] Title. Lead with the primary keyword written naturally, then brand, key attributes (size, material, quantity, colour). Readable first, keyword-stuffed never.
+[List Paragraph] Bullet points. Five benefit-led lines. Translate features into outcomes (“1.5L capacity — boils enough for four cups at once”), and pre-empt the questions that drive returns.
+[List Paragraph] Images. A clean white-background main image plus lifestyle, scale, and infographic shots. Images carry most of the conversion weight on mobile.
+[List Paragraph] Backend search terms. Hidden keyword fields for synonyms, regional terms and misspellings you can’t fit in the title. No repetition, no competitor brands.
+[List Paragraph] A+ Content. Rich image-and-text modules and comparison charts for brand-registered sellers (Chapter 6); typically lifts conversion meaningfully.
+[Heading 2] Tools in Seller Central
+[?] Add a Product (single listing), flat-file bulk uploads (catalogues at scale), the listing quality / suppressed-listing dashboard (fixes the errors that hide a product from search), and — for brands — Manage Your Experiments to A/B test titles, images and A+ content with real traffic.
+[Heading 3] Pain points & solutions
+--- TABLE ---
+Pain point | Practical solution & Seller Central tool
+“My product doesn’t show up in search.” | Check for a suppressed listing (missing image, invalid attribute) in the listing-quality dashboard, then improve keyword coverage in title and backend terms.
+“Traffic is fine but nobody buys.” | A conversion problem: weak images, thin bullets, no reviews, or uncompetitive price. Strengthen images and A+ first; they move conversion fastest.
+“Someone changed my listing content.” | On shared ASINs any seller can contribute. Own your brand’s content via Brand Registry, which locks editing rights to you.
+“High returns with ‘not as described’.” | Your listing over-promises or omits a key spec. Add accurate dimensions, materials and clear photos; this directly lowers your Order Defect Rate (Chapter 10).
+--- END TABLE ---
+[Heading 3] References
+[List Paragraph] Seller University – listing best practices  —  https://sell.amazon.in/seller-university
+[List Paragraph] Manage Your Experiments (A/B testing)  —  https://sellercentral.amazon.in
+[List Paragraph] Listing/Help reference  —  https://sellercentral.amazon.in/help/hub
+[Heading 1] 5. The Featured Offer (Buy Box) and pricing
+[?] Root cause this solves   
+On a product page sold by several sellers, one offer wins the “Buy Now” / “Add to Cart” button — the Featured Offer. The overwhelming majority of sales go to that one offer. Sellers who don’t understand what wins it compete blindly, usually by cutting price when the real driver is a mix of price, fulfilment and reliability.
+[?] The Featured Offer (long called the Buy Box) is awarded by Amazon to the offer judged best for the customer. Price matters, but so do fulfilment method (FBA and Prime-eligible offers are favoured), in-stock reliability, shipping speed, and your account health. A healthy FBA seller can win the Featured Offer at a higher price than an unhealthy self-ship competitor.
+[Heading 2] Pricing tools
+[List Paragraph] Automate Pricing. Rules that adjust your price within limits you set — e.g. “match the Featured Offer but never below ₹X.” Protects margin while keeping you competitive without manual watching.
+[List Paragraph] Pricing dashboard & alerts. Flags listings priced above the Featured Offer or off-marketplace, and shows potential Featured Offer you’re missing.
+[List Paragraph] Revenue / fee calculator. Model referral, closing and fulfilment fees per SKU before you set a price, so you never sell below true breakeven.
+[?] Set a hard price floor in any automated rule. The classic mistake is a race to the bottom against an algorithm that is also racing to the bottom; a floor turns automation from a margin-destroyer into a margin-protector.
+[Heading 3] Pain points & solutions
+--- TABLE ---
+Pain point | Practical solution & Seller Central tool
+“I keep losing the Buy Box despite a low price.” | Price isn’t the only factor. Move the SKU to FBA/Prime, fix any account-health flags, and keep it reliably in stock.
+“Automated repricing crushed my margin.” | Set a minimum price floor in the rule and base it on the fee calculator’s true breakeven, not guesswork.
+“Nobody owns the Buy Box on my listing.” | Often a pricing or eligibility issue. Check the pricing dashboard for “ineligible” flags and resolve health or fulfilment gaps.
+--- END TABLE ---
+[Heading 3] References
+[List Paragraph] Automate Pricing & pricing tools (in Seller Central)  —  https://sellercentral.amazon.in
+[List Paragraph] Fee/Revenue calculator (Seller Central)  —  https://sellercentral.amazon.in/revcal
+[List Paragraph] Featured Offer help  —  https://sellercentral.amazon.in/help/hub
+[Heading 1] 6. Brand Registry, A+ Content and Stores
+[?] Root cause this solves   
+Without registered brand ownership, three problems compound: you can’t fully control your own listing content, you can’t access the strongest growth tools, and you have almost no leverage against hijackers and counterfeiters. Brand Registry is the single unlock that fixes all three.
+[?] Amazon Brand Registry is free, but it requires a registered or pending trademark filed with the Indian trademark office (IP India). Enrolment distinguishes genuine brand owners from resellers and switches on a suite of tools that ordinary sellers cannot use.
+[Heading 2] What Brand Registry unlocks
+[List Paragraph] A+ Content — rich modules and comparison charts on the product page (Basic), with Premium A+ adding interactive elements; both typically lift conversion.
+[List Paragraph] Stores — a multi-page branded storefront on Amazon, free of competitor ads, to showcase your full range.
+[List Paragraph] Sponsored Brands and Sponsored Display — premium ad formats (logo + headline banners, retargeting) reserved for brand owners (Chapter 13).
+[List Paragraph] Brand Analytics — customer search terms, repeat-purchase behaviour and competitive benchmarks (Chapter 15).
+[List Paragraph] Protection tools — report violations, and on eligible programs use automated counterfeit removal (e.g. Project Zero) and Transparency serialisation.
+[?] Practical sequence: file the trademark with IP India → enrol in Brand Registry once you have a registered or pending mark → build A+ Content on your top SKUs → launch a Store → layer Sponsored Brands on top. Each step compounds the previous one.
+[Heading 3] Pain points & solutions
+--- TABLE ---
+Pain point | Practical solution & Seller Central tool
+“Other sellers piggyback on my listing / sell fakes.” | Enrol in Brand Registry, then use its reporting and protection tools (and Transparency/Project Zero where eligible) to remove infringers.
+“My enrolment was rejected.” | Usually the brand name on the trademark doesn’t match your packaging/listings, or the mark lapsed. Align them exactly and ensure the IP India application is live.
+“My conversion is stuck.” | Add A+ Content and a Store; brand-registered listings with rich content typically convert better than plain ones.
+--- END TABLE ---
+[Heading 3] References
+[List Paragraph] Amazon Brand Registry (India)  —  https://brandservices.amazon.in
+[List Paragraph] IP India – trademark filing  —  https://ipindia.gov.in
+[List Paragraph] A+ Content & Stores (in Seller Central → Brands)  —  https://sellercentral.amazon.in
+[?] PART 3
+[?] Fulfilment & Operations
+[?] Choosing how product reaches the customer — and protecting the money behind it.
+[Heading 1] 7. Fulfilment options: FBA, Easy Ship, Self Ship, Seller Flex, MCF
+[?] Root cause this solves   
+Using one fulfilment method for every product is how margins quietly die. Fast movers parked in self-ship lose the Prime badge and sales; slow movers parked in FBA bleed storage fees. The root problem is treating fulfilment as a one-time setting rather than a per-SKU decision.
+[?] Amazon India offers several ways to get a product from you to the buyer. The right answer is usually a mix, decided SKU by SKU on margin, velocity and size.
+--- TABLE ---
+Method | Who does what | Best for
+Fulfilment by Amazon (FBA) | You ship stock to Amazon; Amazon stores, picks, packs, ships, handles returns and customer service. Prime-eligible. | Fast-moving SKUs where the Prime badge and conversion lift outweigh storage + pick/pack fees.
+Easy Ship | You store and pack; Amazon picks up from you and delivers. Prime-eligible on eligible orders. | Sellers wanting Amazon logistics without warehousing inventory at Amazon.
+Self Ship | You handle storage, packing and delivery via your own/3rd-party courier. | Bulky, low-velocity, regional, or multi-channel items; maximum control.
+Seller Flex | Invite-only: your warehouse becomes an Amazon-approved node; you pack to FBA standards, Amazon Logistics delivers, listing keeps the Fulfilled-by-Amazon/Prime badge. | High-volume / regional sellers wanting Prime speed while keeping inventory in-house.
+Multi-Channel Fulfilment (MCF) | Amazon fulfils orders from your other channels (your website, etc.) out of FBA stock. | Brands selling on Amazon and off-Amazon who want one inventory pool.
+--- END TABLE ---
+[?] A simple rule of thumb: FBA for your fast movers, Easy Ship or Self Ship for slow movers, and revisit the split every quarter as velocity changes. The fee calculator (Chapter 17) lets you compare the true landed cost per method before you commit a SKU.
+[Heading 2] The fee traps to watch
+[List Paragraph] FBA storage — especially long-term storage on stock that sits for many months — can turn a healthy gross margin into a negative net margin without you noticing. Watch the inventory age report.
+[List Paragraph] Self Ship metrics risk — your Valid Tracking Rate and Late Shipment Rate depend entirely on your courier. One bad courier can damage account health (Chapter 10).
+[Heading 3] Pain points & solutions
+--- TABLE ---
+Pain point | Practical solution & Seller Central tool
+“FBA fees are eating my profit.” | Move slow movers out of FBA to Easy Ship/Self Ship, remove or liquidate aged stock, and right-size shipments to avoid long-term storage.
+“I lose sales without the Prime badge.” | Put your bestsellers on FBA or Easy Ship; consider Seller Flex if volume justifies turning your own warehouse into a Prime node.
+“My account health drops on self-shipped orders.” | Use a reliable courier with valid tracking, confirm dispatch on time, and consider Easy Ship so Amazon controls the delivery leg.
+--- END TABLE ---
+[Heading 3] References
+[List Paragraph] Fulfilment by Amazon (FBA) India  —  https://sell.amazon.in/fulfillment-by-amazon
+[List Paragraph] Fulfilment options overview  —  https://sell.amazon.in/sell-online
+[List Paragraph] Manage FBA inventory & shipments (Seller Central)  —  https://sellercentral.amazon.in
+[Heading 1] 8. Inventory management
+[?] Root cause this solves   
+Stockouts and overstock are two faces of one root cause: no forecast linking sales velocity to lead time. A stockout loses the sale and the hard-won search ranking; overstock locks up cash and racks up storage fees. Inventory management is really demand forecasting plus replenishment discipline.
+[?] Inventory is where ranking and cash flow meet. Run out of a ranked product and you lose both the sale and the organic position that took months to build; over-order and you fund Amazon’s warehouse instead of your growth.
+[Heading 2] Tools in Seller Central
+[List Paragraph] Manage Inventory / Manage FBA Inventory — live stock by SKU and location.
+[List Paragraph] Restock recommendations & inventory age reports — Amazon suggests reorder quantities and flags aging FBA stock before long-term fees bite.
+[List Paragraph] Inventory performance / health views — surface excess and slow-moving units to remove or discount.
+[List Paragraph] Removal / liquidation orders — pull dead stock out of FBA before storage fees exceed the goods’ value.
+[?] The core habit is simple: for each SKU know your average daily sales and your supplier lead time, and reorder before stock falls below (daily sales × lead time) plus a safety buffer. High-velocity SKUs in FBA, slow ones lean.
+[Heading 3] Pain points & solutions
+--- TABLE ---
+Pain point | Practical solution & Seller Central tool
+“My bestseller went out of stock and lost ranking.” | Set reorder points using velocity × lead time + buffer; act on restock recommendations early, especially before festival peaks.
+“Old FBA stock is costing me storage fees.” | Use the inventory age report; create removal or liquidation orders, and run a clearance promotion (Chapter 14) on slow movers.
+“I oversold across channels.” | Sync stock with an inventory tool or MCF so one pool feeds Amazon and your other channels without double-selling.
+--- END TABLE ---
+[Heading 3] References
+[List Paragraph] Manage Inventory & restock (Seller Central)  —  https://sellercentral.amazon.in
+[List Paragraph] FBA inventory & removals help  —  https://sellercentral.amazon.in/help/hub
+[Heading 1] 9. Returns, refunds, reimbursements and reconciliation
+[?] Root cause this solves   
+Two distinct money leaks hide here. First, returns and refunds erode margin and can spike the Order Defect Rate. Second — and more insidious — Amazon’s own fees and FBA handling contain errors (lost/damaged units, wrong fee charges) that go unclaimed unless someone reconciles. Both are silent, recurring, and recoverable.
+[?] Returns are part of e-commerce, but uncontrolled returns and unreconciled settlements quietly remove a large share of profit. Managed well, this chapter is where money is recovered rather than lost.
+[Heading 2] Two jobs that look similar but aren’t
+[List Paragraph] Returns & refunds management. Reduce the return rate at the source (accurate listings, correct sizing, sturdy packaging), and handle each return promptly so it doesn’t become a negative review or A-to-z claim that hurts account health.
+[List Paragraph] Reconciliation & FBA reimbursements. Compare your records against Amazon’s: units lost or damaged in the fulfilment centre, returns not returned to inventory, over-charged weight/dimension fees, and missing reimbursements. Eligible discrepancies can be claimed back.
+[Heading 2] Tools in Seller Central
+[?] Manage Returns, the Payments report and settlement statements, the FBA reimbursements and inventory-adjustment reports, and Voice of the Customer (which flags products generating complaints so you can fix the root cause).
+[Heading 3] Pain points & solutions
+--- TABLE ---
+Pain point | Practical solution & Seller Central tool
+“Returns are killing my margin.” | Attack the cause: fix sizing/spec accuracy, improve packaging, and use Voice of the Customer to find the offending SKUs. Fewer ‘not as described’ returns also protect your ODR.
+“I suspect Amazon owes me for lost/damaged stock.” | Reconcile settlements against inventory adjustments; file FBA reimbursement claims for eligible lost, damaged or wrongly-charged units within the allowed window.
+“My deductions never match my expectations.” | Download settlement reports each cycle and reconcile per order. Recurring mismatches usually trace to fee category or weight/dimension errors you can dispute.
+--- END TABLE ---
+[Heading 3] References
+[List Paragraph] Payments & reports (Seller Central)  —  https://sellercentral.amazon.in
+[List Paragraph] FBA reimbursements & inventory help  —  https://sellercentral.amazon.in/help/hub
+[List Paragraph] Voice of the Customer (Seller Central)  —  https://sellercentral.amazon.in
+[?] PART 4
+[?] Performance, Compliance & Risk
+[?] Keeping the right to sell — the part that ends businesses overnight when ignored.
+[Heading 1] 10. Account Health and performance metrics
+[?] Root cause this solves   
+Selling privileges are conditional, not permanent. The root cause of most deactivations is a metric that drifted past a threshold while the seller wasn’t watching. The Account Health Rating exists precisely so you can see trouble coming and act before Amazon does.
+[?] The Account Health Rating (AHR) is a single score (broadly Healthy / At Risk / Unhealthy) summarising whether you meet Amazon’s performance and policy standards. It is the most important dashboard in Seller Central because an Unhealthy account can be restricted or deactivated.
+[Heading 2] The metrics that drive it
+--- TABLE ---
+Metric | What it measures | Target
+Order Defect Rate (ODR) | Share of orders with a negative outcome: negative feedback, A-to-z claims, or chargebacks | Below 1%
+Late Shipment Rate | Orders shipped after the expected date (seller-fulfilled) | Below 4%
+Pre-fulfilment Cancellation Rate | Orders you cancel before shipping | Below 2.5%
+Valid Tracking Rate | Seller-fulfilled orders with valid tracking | As high as possible
+Policy compliance | IP complaints, restricted/unsafe product flags, listing-policy and code-of-conduct violations | Zero
+--- END TABLE ---
+[?] ODR is the metric to guard most jealously — it sits at the intersection of product quality, listing accuracy and customer service, and a spike above 1% is one of the fastest routes to restriction. Respond to buyer messages within 24 hours, ship on time with valid tracking, and resolve issues before they become claims.
+[Heading 3] Pain points & solutions
+--- TABLE ---
+Pain point | Practical solution & Seller Central tool
+“My account is suddenly ‘At Risk’.” | Open Account Health, click each flagged item to see the exact cause, fix the operational gap (shipping settings, packaging, response time), and address violations directly — often faster than a formal appeal.
+“My ODR jumped.” | Trace it to A-to-z claims, negative feedback or chargebacks. Fix the product/listing cause and resolve open issues; the metric recovers over the rolling window.
+“Late Shipment Rate is too high.” | Set realistic handling times, ship on time, and add valid tracking. If your courier is unreliable, switch to Easy Ship/FBA for affected SKUs.
+--- END TABLE ---
+[Heading 3] References
+[List Paragraph] Account Health dashboard (Seller Central → Performance)  —  https://sellercentral.amazon.in/performance/dashboard
+[List Paragraph] Performance metrics help  —  https://sellercentral.amazon.in/help/hub
+[Heading 1] 11. Account suspension and appeals
+[?] Root cause this solves   
+A suspension is rarely the real problem — it’s a symptom. The root cause is an unaddressed defect (a metric, a policy breach, an unverifiable supply chain) that Amazon’s risk system flagged. Appeals fail when sellers argue with the symptom instead of fixing and documenting the underlying system.
+[?] Amazon restricts first and investigates later: if its monitoring flags risk, it can deactivate an account or remove ASINs pending your response. Enforcement has become more automated, so suspensions are more common and faster than they used to be.
+[Heading 2] The usual causes
+[List Paragraph] Performance: ODR above 1%, Late Shipment Rate above threshold, excessive cancellations.
+[List Paragraph] Authenticity / IP: “inauthentic” or intellectual-property complaints, often from unverifiable sourcing or invoices that don’t match the brand/ASIN.
+[List Paragraph] Listing & policy: prohibited claims (medical/unapproved certifications), restricted products, variation/ASIN abuse.
+[List Paragraph] Code of conduct: review manipulation, or operating multiple related accounts without authorisation.
+[Heading 2] How to appeal: the Plan of Action
+[?] Reinstatement comes from a Plan of Action (POA) that does three things, in order:
+[List Paragraph] Root cause — state precisely what went wrong, without excuses or “we’ve always done it this way.” Amazon cares about future risk, not history.
+[List Paragraph] Immediate corrective action — what you have already done to fix this specific issue (e.g. removed the listing, corrected sourcing records).
+[List Paragraph] Preventive action — the systemic change that stops recurrence (process, supplier verification, monitoring), described so a reviewer can approve it quickly.
+[?] Before submitting anything, gather documentation — genuine invoices from authorised distributors showing a clear chain of custody, order records, and supplier details. For IP complaints, the cleanest outcome is often getting the complainant to retract. Submitting a weak appeal fast is worse than submitting a strong one a day later.
+[Heading 3] Pain points & solutions
+--- TABLE ---
+Pain point | Practical solution & Seller Central tool
+“My account was deactivated overnight.” | Separate account-level (trust) from ASIN-level (product) issues; identify the exact violation in the notification, then write a POA targeting that root cause with evidence.
+“My appeal keeps getting rejected.” | It likely argues the symptom or lacks proof. Rebuild around root cause → corrective → preventive, attach matching invoices, and keep it factual and concise.
+“An inauthentic complaint with no real basis.” | Provide authorised-distributor invoices matching the ASIN/brand and a clear supply chain; if a rights-owner complaint, seek a retraction.
+--- END TABLE ---
+[Heading 3] References
+[List Paragraph] Account Health & appeals (Seller Central)  —  https://sellercentral.amazon.in/performance/dashboard
+[List Paragraph] Policy & appeals help  —  https://sellercentral.amazon.in/help/hub
+[Heading 1] 12. Tax and compliance: GST, TDS and TCS
+[?] Root cause this solves   
+Tax mistakes on a marketplace don’t stay small — they accumulate into notices, blocked payouts and reconciliation chaos. The root cause is usually a gap between what Amazon reports to the tax system and what the seller files. Getting the mechanics right keeps cash flowing and the account clean.
+[?] This chapter is general information, not tax advice — confirm specifics with a qualified chartered accountant. The mechanics that every Amazon India seller should understand:
+[List Paragraph] GST registration is effectively mandatory for taxable goods sold via an e-commerce operator, regardless of turnover. Your GSTIN must match your Seller Central business details.
+[List Paragraph] GST on Amazon’s fees. Amazon charges GST (commonly 18%) on its own fees — referral, closing and shipping. Factor this into breakeven pricing; it is a real cost on every order.
+[List Paragraph] TCS (Tax Collected at Source). As an e-commerce operator, Amazon collects a small percentage of the net taxable value of your sales and deposits it against your GSTIN; you reconcile this in your GST returns.
+[List Paragraph] TDS where applicable, and accurate HSN codes and tax rates on every listing so the right GST is applied.
+[?] The reconciliation habit that prevents notices: each period, match Amazon’s tax reports (GST, TCS) against your filed returns and your settlement statements. The Tax Document Library and reports in Seller Central give you the source data.
+[Heading 3] Pain points & solutions
+--- TABLE ---
+Pain point | Practical solution & Seller Central tool
+“Can I sell without GST?” | Generally no for taxable goods on a marketplace. Only fully GST-exempt catalogues may qualify for a PAN-based exemption — confirm your category first.
+“My GST filings don’t match Amazon’s numbers.” | Reconcile using Amazon’s GST/TCS reports and settlement statements each period; a CA can align your returns with the operator’s filings.
+“Wrong tax is being charged on my products.” | Check the HSN code and tax rate on each listing; correct them so the right GST applies at checkout.
+--- END TABLE ---
+[Heading 3] References
+[List Paragraph] GST portal (Government of India)  —  https://www.gst.gov.in
+[List Paragraph] Tax Document Library & GST reports (Seller Central)  —  https://sellercentral.amazon.in
+[List Paragraph] Tax help & settings  —  https://sellercentral.amazon.in/help/hub
+[?] PART 5
+[?] Growth
+[?] Once the foundation is sound, the levers that scale a healthy account.
+[Heading 1] 13. Advertising: Sponsored Products, Brands, Display and DSP
+[?] Root cause this solves   
+Organic visibility alone is no longer enough on a crowded marketplace, so new and mid-tier products stall. The root cause of ‘good product, no sales’ is usually a visibility gap, not a demand gap. Advertising buys the visibility while you build the organic ranking that eventually reduces your dependence on it.
+[?] Amazon Ads is a pay-per-click system that places your products in front of shoppers actively searching. Used with discipline it is the fastest growth lever; used without targets it is the fastest way to burn cash.
+[Heading 2] The ad types
+[List Paragraph] Sponsored Products — keyword/product-targeted ads in search results and on product pages. The workhorse, available to all sellers; start here.
+[List Paragraph] Sponsored Brands — banner ads with your logo and headline at the top of search; brand-registered sellers only.
+[List Paragraph] Sponsored Display — retargeting and audience-based ads on and off Amazon; brand-registered sellers only.
+[List Paragraph] Amazon DSP — programmatic display/video for larger advertisers and brand-building at scale.
+[Heading 2] The two numbers to manage by
+[?] ACOS (Advertising Cost of Sales) is ad spend ÷ ad-attributed sales — the efficiency of a campaign. TACOS (Total ACOS) is ad spend ÷ total sales — the truer health metric, because a falling TACOS over time means advertising is building organic ranking rather than just renting sales. Set a target ACOS tied to your margin, start with tightly-themed Sponsored Products campaigns, harvest the search terms that convert, and cut or lower bids on terms that don’t.
+[Heading 3] Pain points & solutions
+--- TABLE ---
+Pain point | Practical solution & Seller Central tool
+“My ACOS is too high / ads lose money.” | Tighten targeting and add negative keywords; pause non-converting terms; ensure the listing converts before scaling spend (a great ad to a weak page wastes money).
+“I can’t run banner ads.” | Sponsored Brands/Display need Brand Registry (Chapter 6). Enrol first, then layer them on top of Sponsored Products.
+“Sales drop the moment I pause ads.” | Watch TACOS, not just ACOS. Keep a base of Sponsored Products on hero SKUs to defend ranking while organic builds.
+--- END TABLE ---
+[Heading 3] References
+[List Paragraph] Amazon Ads (India)  —  https://advertising.amazon.in
+[List Paragraph] Campaign Manager (Seller Central → Advertising)  —  https://sellercentral.amazon.in
+[Heading 1] 14. Promotions, deals and events
+[?] Root cause this solves   
+Discounting without a plan trains customers to wait for sales and erodes margin permanently. The root cause is using promotions as a reflex rather than a tool. Targeted promotions solve specific jobs — launching a product, clearing dead stock, winning the festival spike — each with a different mechanic.
+[?] Promotions are a scalpel, not a sledgehammer. Match the mechanic to the job:
+--- TABLE ---
+Tool | What it does | Best job
+Coupons | Clip-to-save discount badge on the listing/search | Launching a new product; nudging conversion on a strong listing
+Lightning & time-bound deals | Limited-time featured discount with a countdown | Driving a burst of volume and ranking, especially in events
+Promotions (percent-off, BOGO) | Configurable price/quantity offers | Clearing slow-moving or excess inventory
+Festival events (e.g. Great Indian Festival) | Sitewide traffic surge with special placements | Capturing the multi-fold traffic spike with prepared stock and ads
+--- END TABLE ---
+[?] The discipline: decide the job first, set the discount from your fee calculator so the promo is still profitable (or a deliberate, budgeted loss-leader), make sure you have stock to sustain the spike, and pair big events with advertising so the extra traffic actually finds you.
+[Heading 3] Pain points & solutions
+--- TABLE ---
+Pain point | Practical solution & Seller Central tool
+“Promotions just cut my margin without lifting sales.” | Tie each promo to a job (launch / clearance / event), price it off true breakeven, and pair it with ads so the discount reaches new shoppers.
+“I stocked out mid-event and lost ranking.” | Forecast event demand (Chapter 8) and over-prepare inventory before festival periods; restock recommendations help.
+“Customers only buy when I discount.” | Reserve deep discounts for launches/clearance; use coupons sparingly and lean on A+ content and reviews to justify full price.
+--- END TABLE ---
+[Heading 3] References
+[List Paragraph] Deals, coupons & promotions (Seller Central → Advertising)  —  https://sellercentral.amazon.in
+[List Paragraph] Seller programs & events  —  https://sell.amazon.in
+[Heading 1] 15. Reports and analytics: Business Reports and Brand Analytics
+[?] Root cause this solves   
+Decisions made on gut feel — which SKU to back, which keyword to chase, why conversion dipped — are guesses. The root cause of stalled growth is often simply not looking at the data Amazon already gives you. Reports turn the account from a black box into a set of measurable, improvable numbers.
+[?] Amazon hands you a large amount of first-party data for free. Two report families do most of the work:
+[List Paragraph] Business Reports (all sellers). Sessions, page views, unit session percentage (conversion), and sales by SKU and date. This is where you diagnose whether a problem is traffic (a listing/ads issue) or conversion (a content/price/review issue).
+[List Paragraph] Brand Analytics (brand-registered). Customer search terms and their top clicked/converted products, repeat-purchase behaviour, demographics, and competitive/market-basket insights — the data to choose keywords, find cross-sell opportunities, and benchmark against rivals.
+[?] Around these sit the Payments and Fulfilment reports (the money and operations view) and Voice of the Customer (product-quality signals). The single most useful habit: weekly, check sessions vs unit-session-percentage per hero SKU. If sessions fell, it’s a visibility problem; if conversion fell, it’s a listing/price/review problem. The fix follows from which number moved.
+[Heading 3] Pain points & solutions
+--- TABLE ---
+Pain point | Practical solution & Seller Central tool
+“Sales dropped and I don’t know why.” | Open Business Reports: if sessions fell it’s traffic (ranking/ads/price); if unit-session % fell it’s conversion (content/reviews/competitor). Fix the one that moved.
+“I’m guessing which keywords to target.” | Use Brand Analytics search-term data to target the queries your category actually converts on, then feed them into ads (Chapter 13).
+“I can’t tell which SKUs deserve investment.” | Rank SKUs by sessions, conversion and contribution margin; back the proven movers and cut the chronic underperformers.
+--- END TABLE ---
+[Heading 3] References
+[List Paragraph] Business Reports (Seller Central → Reports)  —  https://sellercentral.amazon.in
+[List Paragraph] Brand Analytics (brand-registered)  —  https://sellercentral.amazon.in
+[Heading 1] 16. Programs to scale: Amazon Business, Global Selling, SAS and Seller University
+[?] Root cause this solves   
+Sellers plateau when they’ve exhausted their current channel and don’t know which door opens next. The root cause is a missing growth roadmap. Amazon’s programs are those doors — new customer segments (B2B), new geographies (exports), expert guidance (SAS) and free upskilling (Seller University).
+[?] Once the fundamentals are running, four programs unlock the next stage of growth:
+[List Paragraph] Amazon Business (B2B). Sell to businesses with business pricing, quantity discounts and GST invoicing. Opens a large, higher-order-value buyer segment alongside your consumer sales — useful for bulk-friendly catalogues.
+[List Paragraph] Amazon Global Selling. Export to Amazon’s international marketplaces (UAE, US, UK and more) from India. Enrol via Seller Central; FBA abroad is usually the cleaner path for first-time exporters. Best for lightweight, low-brand-loyalty products with overseas demand.
+[List Paragraph] Strategic Account Services (SAS). A paid program pairing eligible sellers with a marketplace consultant who advises across fulfilment, selection expansion, advertising, and catalogue/brand optimisation. Worth it for sellers at enough scale to monetise expert, hands-on guidance.
+[List Paragraph] Seller University. Amazon’s free training — video courses and guides covering every topic in this playbook, kept current with policy. The cheapest way to keep a team’s knowledge fresh.
+[?] A sensible ladder: master the domestic account → add Amazon Business if your catalogue suits bulk → test Global Selling in one nearby marketplace → consider SAS once scale justifies paid guidance — with Seller University running continuously underneath as your training layer.
+[Heading 3] Pain points & solutions
+--- TABLE ---
+Pain point | Practical solution & Seller Central tool
+“My consumer sales have plateaued.” | Open a new segment: enable Amazon Business for B2B buyers, or test Global Selling in one export marketplace with a few proven SKUs.
+“I want expert help but don’t know who to trust.” | For eligible larger sellers, SAS provides an Amazon marketplace consultant; otherwise lean on free Seller University before paying third parties.
+“My team keeps making avoidable mistakes.” | Make Seller University courses part of onboarding; it covers listings, ads, FBA and compliance at no cost.
+--- END TABLE ---
+[Heading 3] References
+[List Paragraph] Amazon Business (B2B selling)  —  https://sell.amazon.in/grow-your-business/amazon-business
+[List Paragraph] Amazon Global Selling (exports)  —  https://sell.amazon.in/grow-your-business/amazon-global-selling
+[List Paragraph] Seller University (free training)  —  https://sell.amazon.in/seller-university
+[List Paragraph] Strategic Account Services (ask via Seller Central)  —  https://sellercentral.amazon.in
+[?] PART 6
+[?] Quick Reference
+[?] The tables to keep open beside Seller Central.
+[Heading 1] 17. Fee and economics reference
+[?] Root cause this solves   
+Pricing without knowing the full fee stack guarantees thin or negative margins on some SKUs. This reference exists so every price you set starts from true landed cost, not hope.
+[?] Indian Amazon fees are a stack, not a single number. For most sellers, total fees land somewhere around 15–25% of the selling price once everything is added. The components:
+--- TABLE ---
+Fee | What it is | Notes (indicative, March 2026)
+Referral fee | Category commission on sale price | Roughly 2–16%+ by category. From 16 Mar 2026, zero referral fee on 1,800+ categories for items priced up to ₹1,000; reduced rates on several high-demand categories above ₹1,000.
+Closing fee | Fixed fee per item by price band & fulfilment | Reduced self-ship closing fees retained for 2026 (e.g. from ₹45→₹20 under ₹300; ₹35→₹26 for ₹300–500).
+Weight handling / shipping | Delivery cost by weight, dimensions, zone, method | Applies on FBA/Easy Ship; on Self Ship you pay your own courier instead.
+FBA pick & pack + storage | Per-unit fulfilment plus monthly (and long-term) storage | Storage on aged stock is the silent margin killer — watch inventory age.
+GST on fees | GST (commonly 18%) on Amazon’s fees | A real per-order cost; include in breakeven.
+--- END TABLE ---
+[?] Always verify live. These figures are indicative and change. Confirm the exact rate for your category, price band, fulfilment method and delivery zone in Seller Central (Help → Fee schedule) and model each SKU in the Revenue Calculator before pricing.
+[?] Quick breakeven check: Selling price − (referral + closing + shipping/fulfilment + GST on fees) − product cost = contribution. If that’s negative, the SKU loses money on every sale — re-price, change fulfilment, or drop it.
+[Heading 3] References
+[List Paragraph] Pricing & fee information  —  https://sell.amazon.in/sell-online/pricing
+[List Paragraph] Fee schedule (Seller Central Help)  —  https://sellercentral.amazon.in/help/hub
+[List Paragraph] Revenue / fee calculator  —  https://sellercentral.amazon.in/revcal
+[Heading 1] 18. Master pain-point → solution map
+[?] The recurring complaints of Amazon India sellers, each mapped to the chapter and lever that resolves it.
+--- TABLE ---
+Pain point | Root cause | Where to fix it
+No orders / slow start | Visibility + setup gaps, not no demand | Ch 1, 4, 13
+Can’t be found in search | Suppressed listing / weak keywords | Ch 4
+Traffic but no sales | Conversion: images, content, reviews, price | Ch 4, 5, 6
+Losing the Buy Box | Over-indexing on price; fulfilment/health gaps | Ch 5, 7, 10
+Listing hijacked / counterfeits | No brand ownership control | Ch 6
+FBA fees eating profit | Wrong fulfilment per SKU; aged storage | Ch 7, 8, 17
+Stockouts losing ranking | No velocity×lead-time reorder point | Ch 8
+Returns destroying margin | Listing inaccuracy / packaging | Ch 9
+Amazon owes me for lost stock | No reconciliation / reimbursement claims | Ch 9
+Account ‘At Risk’ / suspended | Unaddressed metric or policy defect | Ch 10, 11
+Appeal keeps failing | Arguing symptom, not root cause + proof | Ch 11
+Tax mismatch / notices | Gap between filings and operator reports | Ch 12
+Ads losing money (high ACOS) | Loose targeting; weak landing page | Ch 13
+Sales only when discounting | Promotions used as reflex, not tool | Ch 14
+“I don’t know why sales dropped” | Not reading Business Reports | Ch 15
+Growth plateaued | No roadmap to new segments/geos | Ch 16
+--- END TABLE ---
+[Heading 1] 19. Official links directory
+[?] Bookmark these. When fees, policies or feature names change, Amazon’s own pages are the source of truth — this playbook is the map, these links are the territory.
+[List Paragraph] Start selling / registration  —  https://sell.amazon.in
+[List Paragraph] Seller Central (the console)  —  https://sellercentral.amazon.in
+[List Paragraph] Seller Central Help hub  —  https://sellercentral.amazon.in/help/hub
+[List Paragraph] Seller University (free training)  —  https://sell.amazon.in/seller-university
+[List Paragraph] Pricing & fees  —  https://sell.amazon.in/sell-online/pricing
+[List Paragraph] Revenue / fee calculator  —  https://sellercentral.amazon.in/revcal
+[List Paragraph] Fulfilment by Amazon (FBA)  —  https://sell.amazon.in/fulfillment-by-amazon
+[List Paragraph] Account Health dashboard  —  https://sellercentral.amazon.in/performance/dashboard
+[List Paragraph] Amazon Brand Registry (India)  —  https://brandservices.amazon.in
+[List Paragraph] Amazon Ads (India)  —  https://advertising.amazon.in
+[List Paragraph] Amazon Business (B2B)  —  https://sell.amazon.in/grow-your-business/amazon-business
+[List Paragraph] Amazon Global Selling (exports)  —  https://sell.amazon.in/grow-your-business/amazon-global-selling
+[List Paragraph] GST portal (Govt of India)  —  https://www.gst.gov.in
+[List Paragraph] IP India (trademark filing)  —  https://ipindia.gov.in
+[?] Closing note
+[?] A well-run Amazon account is not the sum of clever tricks; it is a handful of habits done consistently — watch account health daily, price from true cost, match fulfilment to each SKU, reconcile the money, and let data (not gut) pick where to invest. Master those, and every tool in this book starts working for you instead of against you.

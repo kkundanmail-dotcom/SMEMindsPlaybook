@@ -1,661 +1,397 @@
-# ══════════════════════════════════════════════════════════════
-# PILLAR 2 — SELECT EFFICIENCY  (5 Modules)
-# ══════════════════════════════════════════════════════════════
+# ==============================================================
+# PILLAR 2 — SELECTION  (8 Modules)
+# Auto-generated from the backend DB by _renumber.py.
+# Edit modules in the admin panel (source of truth = smeminds.db).
+# ==============================================================
 
 pillar2_modules = [
-
-# ─────────────────────────────────────────────────────────────
-{
+  {
     "id": "2.1",
+    "pillar": "p2",
     "number": "Module 2.1",
-    "title": "Listing Quality",
+    "title": "Catalogue Strategy",
     "difficulty": "Intermediate",
-    "time": "40 mins",
-    "overview": """<p>Listing quality is the single biggest lever for organic visibility on Amazon India. This module covers the Search Query Performance report, keyword mapping, title/bullet/description best practices, and the backend search terms strategy to achieve a listing completeness score above 90%.</p>""",
-    "content": """
-        <h3>1. Search Query Performance Report Analysis</h3>
-        <div class='callout pro-tip'>
-            <div><strong>SQP Report workflow (weekly):</strong><br>
-            SC → Brand Analytics → Search Query Performance<br>
-            Download for top 50 ASINs → filter by Impressions → identify queries where you have &gt;1% impression share but &lt;5% click share = optimisation opportunity.</div>
-        </div>
-
-        <h3>2. Keyword Tiering & Mapping</h3>
-        <table class='data-table'>
-            <thead><tr><th>Tier</th><th>Criteria</th><th>Placement</th></tr></thead>
-            <tbody>
-                <tr><td>Tier 1 (Primary)</td><td>Highest volume, exact match intent</td><td>Title (first 80 chars)</td></tr>
-                <tr><td>Tier 2 (Secondary)</td><td>High volume, broad relevance</td><td>Bullet points 1–2</td></tr>
-                <tr><td>Tier 3 (Long-tail)</td><td>Lower volume, high conversion</td><td>Backend search terms</td></tr>
-            </tbody>
-        </table>
-
-        <h3>3. Title Optimisation (150–200 Characters)</h3>
-        <div class='callout success'>
-            <div><strong>Title Formula:</strong><br>
-            <code>[Brand] + [Model] + [Primary Keyword] + [Key Feature] + [Size/Colour/Qty]</code><br>
-            Example: <em>Prestige IRIS 750W Mixer Grinder — 3 Stainless Steel Jars, Grey</em><br><br>
-            • Primary keyword in first 80 chars (mobile truncation point)<br>
-            • No ALL CAPS, no special characters, no promotional claims</div>
-        </div>
-
-        <h3>4. Bullet Points — 5 Bullets SOP</h3>
-        <ul>
-            <li><strong>Bullet 1:</strong> Hero benefit + top feature</li>
-            <li><strong>Bullet 2:</strong> Performance / technical specification</li>
-            <li><strong>Bullet 3:</strong> Materials / quality / certifications</li>
-            <li><strong>Bullet 4:</strong> Compatibility / use case</li>
-            <li><strong>Bullet 5:</strong> Brand guarantee or warranty</li>
-        </ul>
-
-        <h3>5. Backend Search Terms (250 Bytes)</h3>
-        <div class='callout info'>
-            <div>• Max 250 bytes (not characters — Hindi = 3 bytes/char)<br>
-            • Space-separated, no commas<br>
-            • No repeats from title/bullets<br>
-            • Include: synonyms, Hindi transliterations, common misspellings</div>
-        </div>
-
-        <h3>6. Listing Completeness Score (&gt;90%)</h3>
-        <p>Check at: <strong>SC → Inventory → Listing Quality Dashboard</strong><br>
-        Priority: images, A+ Content, product dimensions, material/fabric, target audience.</p>
-
-        <div class='bookmarks-inline'>
-            <strong>Key Links:</strong><br>
-            <a class='pill' href='https://sellercentral.amazon.in/brand-analytics' target='_blank'>SQP Report</a>
-            <a class='pill' href='https://sellercentral.amazon.in/listing/qualitydashboard' target='_blank'>Listing Quality Dashboard</a>
-        </div>
-    """,
-    "process_flow": "",
+    "time": "35 mins",
+    "overview": "<p>A winning Amazon India catalogue starts with ruthless prioritisation — identifying which categories to enter, which products to launch, and when to do it. This module covers the frameworks used by top-performing sellers to size market opportunity, analyse competitor gaps, and plan seasonal cycles so every new ASIN enters with maximum momentum.</p>",
+    "content": "\n        <h3>1. Category &amp; Sub-category Selection Framework</h3>\n        <div class='callout pro-tip'>\n            <div><strong>The 4-Filter Test:</strong> Before entering any category ask — (1) Is demand proven? (2) Can we win the Buy Box? (3) Is the margin viable after FBA fees? (4) Can we be compliant? Fail any filter → pass.</div>\n        </div>\n        <table class='data-table'>\n            <thead><tr><th>Signal</th><th>Tool</th><th>Threshold</th></tr></thead>\n            <tbody>\n                <tr><td>Search volume</td><td>Brand Analytics → Top Search Terms</td><td>&gt;10,000 monthly searches</td></tr>\n                <tr><td>BSR of top 3</td><td>Keepa / Jungle Scout</td><td>Top ASIN BSR &lt;5,000 in category</td></tr>\n                <tr><td>Review count</td><td>Competitor ASIN pages</td><td>&lt;300 reviews = opportunity</td></tr>\n                <tr><td>Price band</td><td>Seller Central search</td><td>₹500–₹3,000 sweet spot for FBA</td></tr>\n                <tr><td>Return rate</td><td>Category benchmarks</td><td>Avoid categories with &gt;15% returns</td></tr>\n            </tbody>\n        </table>\n\n        <h3>2. Market Opportunity Sizing</h3>\n        <p>Use <strong>Demand data + BSR analysis</strong> to size the prize before investing in a new product:</p>\n        <ol>\n            <li>Pull the <strong>Top Search Terms</strong> report in Brand Analytics — look at Click Share and Conversion Share for top 3 ASINs.</li>\n            <li>Track the #1 BSR ASIN's price × estimated monthly sales (BSR-to-sales conversion tables) = category monthly GMV estimate.</li>\n            <li>Apply your target market share (realistic = 5–15%) to size your revenue opportunity.</li>\n        </ol>\n\n        <h3>3. Competitor Catalogue Gap Analysis</h3>\n        <div class='callout success'>\n            <div><strong>Gap Analysis SOP:</strong><br>\n            1. List top 5 competitors by revenue<br>\n            2. Export their ASINs (use DataHawk or manual)<br>\n            3. Map to your catalogue — what are they selling that you aren't?<br>\n            4. Prioritise gaps where search volume is high but top 3 have &lt;200 reviews.</div>\n        </div>\n\n        <h3>4. New Product Launch Readiness Checklist</h3>\n        <p>A ASIN is launch-ready only when all items below are confirmed:</p>\n        <ul>\n            <li>Title written per category style guide (14–150 chars, starts with brand name)</li>\n            <li>Main image: white background, product ≥85% of frame, minimum 1,600px</li>\n            <li>Correct Browse Node verified using the <strong>Browse Tree Guide (BTG)</strong></li>\n            <li>5 bullet points written (wash care for apparel, warranty for watches)</li>\n            <li>Backend search terms populated (max 250 bytes, no repeats from title)</li>\n            <li>MRP set correctly — matches physical product packaging</li>\n            <li>Product Tax Code (PTC) assigned for correct GST rate</li>\n            <li>FBA stock inbound or available</li>\n        </ul>\n\n        <h3>5. Seasonal &amp; Festive Planning</h3>\n        <table class='data-table'>\n            <thead><tr><th>Event</th><th>Month</th><th>Lead Time</th><th>Action</th></tr></thead>\n            <tbody>\n                <tr><td>Republic Day Sale</td><td>Jan</td><td>6 weeks prior</td><td>Stock up, Lightning Deal submissions</td></tr>\n                <tr><td>Amazon Summer Sale</td><td>Apr–May</td><td>6 weeks prior</td><td>Summer-relevant SKUs, deals</td></tr>\n                <tr><td>Prime Day India</td><td>Jul–Aug</td><td>10 weeks prior</td><td>Deal submissions, inventory build</td></tr>\n                <tr><td>Great Indian Festival</td><td>Oct</td><td>12 weeks prior</td><td>Maximum inventory, Sponsored Brands push</td></tr>\n                <tr><td>Diwali / GIF Peak</td><td>Oct–Nov</td><td>12 weeks prior</td><td>Festive gifting SKUs, bundles</td></tr>\n                <tr><td>GOSF (Shopping Festival)</td><td>Dec</td><td>8 weeks prior</td><td>Year-end clearance + hero products</td></tr>\n            </tbody>\n        </table>\n        <div class='callout info'>\n            <div><strong>Deal Eligibility Note:</strong> For apparel &amp; footwear sellers — a <strong>Brand Size Chart must be approved and active</strong> before your ASINs are eligible for Lightning Deals, Best Deals, or Deals of the Day. Submit your size chart case to Seller Support at least 3–4 weeks before any deal window.</div>\n        </div>\n\n        <h3>6. Trend-Based Selection</h3>\n        <div class='callout info'>\n            <div><strong>Trend Signals to Watch Weekly:</strong><br>\n            • <strong>Google Trends India</strong> — compare your category keywords, filter to \"Shopping\" category<br>\n            • <strong>Amazon Movers &amp; Shakers</strong> — products gaining BSR fastest in 24 hrs<br>\n            • <strong>Amazon Best Sellers</strong> — top 100 by category, monitor weekly changes<br>\n            • <strong>Social Commerce</strong> — trending products on Instagram Reels India &amp; Meesho</div>\n        </div>\n\n        <div class='bookmarks-inline'>\n            <strong>Key Links:</strong><br>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/brand-analytics' target='_blank'>Brand Analytics</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/brand-analytics' target='_blank'>Brand Analytics Dashboard</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/gp/help/1661' target='_blank'>Browse Tree Guide</a>\n            <a class='pill-sc' href='https://sell.amazon.in/learn' target='_blank'>Seller University</a>\n            <a class='pill' href='https://www.amazon.in/gp/movers-and-shakers' target='_blank'>Movers &amp; Shakers</a>\n            <a class='pill' href='https://www.amazon.in/Best-Sellers/zgbs' target='_blank'>Best Sellers</a>\n            <a class='pill' href='https://trends.google.com/trends/?geo=IN' target='_blank'>Google Trends India</a>\n        </div>\n\n        <div class='pain-point-section'>\n            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>\n            <div class='pain-point-body'>\n                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>Sellers enter saturated categories without a data-backed framework — burning launch budgets on products where top competitors have 1,000+ reviews and Buy Box lock-in, making it nearly impossible to gain traction organically.</p></div>\n                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Solution</div><p>Apply the 4-Filter Test rigorously before every SKU decision. Use Brand Analytics Top Search Terms to verify demand, then check that the top 3 ASINs have fewer than 300 reviews. If competitors have &gt;500 reviews, enter only with a clear differentiation (bundle, lower price tier, or underserved variation).</p></div>\n                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Strategic Insight</div><p>The highest-ROI catalogue decisions happen 10–12 weeks before major Amazon India sale events. Sellers who plan inventory and BTG node selection during this window consistently outperform reactive launchers — seasonal timing is as important as product selection itself.</p></div>\n            </div>\n        </div>\n    ",
+    "process_flow": "\n        <div class='svg-wrapper'>\n            <svg viewBox=\"0 0 820 120\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;\">\n                <defs><marker id=\"arr_c1\" markerWidth=\"8\" markerHeight=\"6\" refX=\"8\" refY=\"3\" orient=\"auto\"><polygon points=\"0 0,8 3,0 6\" fill=\"#1e3a5f\"/></marker></defs>\n                <text x=\"410\" y=\"65\" class=\"svg-watermark\" transform=\"rotate(-12,410,65)\">© SMEMinds | smeminds.com</text>\n                <rect x=\"10\"  y=\"35\" width=\"130\" height=\"50\" rx=\"8\" class=\"flow-step\"/><text x=\"75\"  y=\"62\" class=\"flow-text\">Category</text><text x=\"75\"  y=\"76\" class=\"flow-text\">Research</text>\n                <line x1=\"140\" y1=\"60\" x2=\"175\" y2=\"60\" stroke=\"#1e3a5f\" stroke-width=\"2\" marker-end=\"url(#arr_c1)\"/>\n                <rect x=\"175\" y=\"35\" width=\"130\" height=\"50\" rx=\"8\" class=\"flow-step\"/><text x=\"240\" y=\"62\" class=\"flow-text\">Demand</text><text x=\"240\" y=\"76\" class=\"flow-text\">Sizing</text>\n                <line x1=\"305\" y1=\"60\" x2=\"340\" y2=\"60\" stroke=\"#1e3a5f\" stroke-width=\"2\" marker-end=\"url(#arr_c1)\"/>\n                <rect x=\"340\" y=\"35\" width=\"130\" height=\"50\" rx=\"8\" class=\"flow-step\"/><text x=\"405\" y=\"62\" class=\"flow-text\">Gap</text><text x=\"405\" y=\"76\" class=\"flow-text\">Analysis</text>\n                <line x1=\"470\" y1=\"60\" x2=\"505\" y2=\"60\" stroke=\"#1e3a5f\" stroke-width=\"2\" marker-end=\"url(#arr_c1)\"/>\n                <rect x=\"505\" y=\"35\" width=\"130\" height=\"50\" rx=\"8\" class=\"flow-step\"/><text x=\"570\" y=\"62\" class=\"flow-text\">Launch</text><text x=\"570\" y=\"76\" class=\"flow-text\">Readiness</text>\n                <line x1=\"635\" y1=\"60\" x2=\"670\" y2=\"60\" stroke=\"#1e3a5f\" stroke-width=\"2\" marker-end=\"url(#arr_c1)\"/>\n                <rect x=\"670\" y=\"35\" width=\"130\" height=\"50\" rx=\"8\" class=\"flow-step\" style=\"fill:#ff6b35;\"/><text x=\"735\" y=\"62\" class=\"flow-text\" style=\"fill:#fff\">Go Live</text><text x=\"735\" y=\"76\" class=\"flow-text\" style=\"fill:#fff\">&amp; Monitor</text>\n            </svg>\n        </div>\n    ",
     "tools": "",
-    "videos": [
-        {"id": "GGLI_aIUO0M", "title": "Writing High-Converting Amazon Listings"}
-    ],
+    "videos": [],
     "checklist": [
-        "SQP report downloaded and analysed weekly for top 50 ASINs",
-        "Keywords tiered (T1/T2/T3) and mapped to correct listing fields",
-        "Title 150–200 chars with primary keyword in first 80 chars",
-        "5 bullets written with benefit-first formula",
-        "Backend search terms ≤250 bytes, no repeats from title",
-        "Listing completeness score &gt;90% on all hero ASINs",
-        "Zero suppressed listings"
+      "Category researched — demand data and BSR benchmarked",
+      "4-Filter Test passed (demand / Buy Box / margin / compliance)",
+      "Top 5 competitor ASINs analysed for gaps",
+      "Seasonal calendar built for next 6 months",
+      "Google Trends India validated for target keywords",
+      "New product launch readiness checklist completed",
+      "Movers & Shakers monitored weekly"
     ],
     "quiz": [
-        {
-            "question": "Where should your highest-volume keyword appear in the listing?",
-            "options": ["Backend search terms only", "Last bullet point", "First 80 characters of the title", "Product description"],
-            "answer": "First 80 characters of the title",
-            "explanation": "The first 80 characters are shown on mobile and carry the most SEO weight with Amazon's A10 algorithm."
-        },
-        {
-            "question": "What is the maximum size of backend search terms?",
-            "options": ["250 characters", "500 bytes", "250 bytes", "1,000 characters"],
-            "answer": "250 bytes",
-            "explanation": "Amazon measures backend search terms in bytes. Hindi/Devanagari characters consume 3 bytes each."
-        }
+      {
+        "question": "What is the recommended minimum monthly search volume before entering a sub-category?",
+        "options": [
+          "1,000",
+          "5,000",
+          "10,000",
+          "50,000"
+        ],
+        "answer": "10,000",
+        "explanation": "10,000+ monthly searches indicates proven, sustainable demand worth investing in."
+      },
+      {
+        "question": "How many weeks before the Great Indian Festival should you start inventory build-up?",
+        "options": [
+          "4 weeks",
+          "6 weeks",
+          "8 weeks",
+          "12 weeks"
+        ],
+        "answer": "12 weeks",
+        "explanation": "GIF is Amazon's biggest India sale. 12 weeks allows production lead time, inbound FBA shipping, and deal submission windows."
+      },
+      {
+        "question": "Which report in Brand Analytics shows keyword Click Share and Conversion Share?",
+        "options": [
+          "Market Basket Analysis",
+          "Top Search Terms",
+          "Repeat Purchase Behaviour",
+          "Demographics"
+        ],
+        "answer": "Top Search Terms",
+        "explanation": "Top Search Terms (TST) report shows the top 1M customer search queries with Click Share and Conversion Share for top 3 ASINs."
+      }
     ]
-},
-
-# ─────────────────────────────────────────────────────────────
-{
+  },
+  {
     "id": "2.2",
+    "pillar": "p2",
     "number": "Module 2.2",
-    "title": "Image Optimisation",
-    "difficulty": "Beginner",
-    "time": "30 mins",
-    "overview": """<p>Images are the #1 conversion lever on Amazon — 83% of customers say product images are the most influential purchase factor. This module covers main image compliance, the 6–9 slot strategy, video, and the mobile-first thumb test.</p>""",
-    "content": """
-        <h3>1. Main Image Requirements</h3>
-        <div class='callout pro-tip'>
-            <div>✓ Pure white background (RGB 255,255,255)<br>
-            ✓ Product ≥85% of frame<br>
-            ✓ Minimum 1,000px on longest side (2,000px recommended)<br>
-            ✓ No text, logos, watermarks, or props<br>
-            ✓ JPEG preferred</div>
-        </div>
-
-        <h3>2. 6–9 Image Slot Strategy</h3>
-        <table class='data-table'>
-            <thead><tr><th>Slot</th><th>Content</th><th>Purpose</th></tr></thead>
-            <tbody>
-                <tr><td>1 (Main)</td><td>White BG product</td><td>Compliance + CTR</td></tr>
-                <tr><td>2</td><td>Infographic — hero features</td><td>Quick education (mobile)</td></tr>
-                <tr><td>3</td><td>Lifestyle — in use</td><td>Emotional connection</td></tr>
-                <tr><td>4</td><td>Dimensions/scale</td><td>Reduce returns</td></tr>
-                <tr><td>5</td><td>Before/after or comparison</td><td>Demonstrate value</td></tr>
-                <tr><td>6</td><td>What's in the box</td><td>Set expectations</td></tr>
-                <tr><td>7</td><td>Certifications/badges</td><td>Trust building</td></tr>
-                <tr><td>8</td><td>360°/close-up detail</td><td>Premium feel</td></tr>
-                <tr><td>9 (Video)</td><td>30–90 sec demo</td><td>Highest CVR impact</td></tr>
-            </tbody>
-        </table>
-
-        <h3>3. The Thumb Test (Mobile-First)</h3>
-        <div class='callout success'>
-            <div><strong>67% of Amazon India traffic is mobile.</strong> Shrink your main image to thumbnail size (100×100px). Can you identify the product instantly? Does it stand out vs. competitors? If not — reshoot or reframe.</div>
-        </div>
-
-        <h3>4. Video Content Strategy</h3>
-        <ul>
-            <li>Duration: 30–90 sec (45–60 sec sweet spot)</li>
-            <li>Add subtitles — 60% watch with sound off</li>
-            <li>Structure: Problem → Solution → Product demo → CTA</li>
-            <li>Resolution: 1920×1080 min, MP4 format</li>
-        </ul>
-
-        <div class='bookmarks-inline'>
-            <strong>Key Links:</strong><br>
-            <a class='pill' href='https://sellercentral.amazon.in/gp/help/G1881' target='_blank'>Image Requirements Guide</a>
-            <a class='pill' href='https://sellercentral.amazon.in/catalog' target='_blank'>Manage Listings</a>
-        </div>
-    """,
-    "process_flow": "",
+    "title": "Catalogue Building",
+    "difficulty": "Intermediate",
+    "time": "40 mins",
+    "overview": "<p>Building a high-quality catalogue is the foundation of all Amazon India success. This module covers the end-to-end process of creating ASINs — single listings, parent-child variations, bulk flat files, bundles, and virtual bundles — ensuring every attribute is complete and every ASIN is structured for maximum discoverability and conversion.</p>",
+    "content": "        <h3>1. ASIN Creation SOP — Single &amp; Variation Listings</h3>\n        <div class='callout pro-tip'>\n            <div><strong>ASIN Creation Golden Rules:</strong><br>\n            ✓ Always download the latest <strong>Product Type Definition (PTD)</strong> for your category from SC → Catalogue → Product Classifier<br>\n            ✓ Fill <strong>100% of required attributes</strong> and at least 80% of optional ones<br>\n            ✓ Use the <strong>correct Browse Tree Guide (BTG)</strong> node — wrong node = suppression<br>\n            ✓ Always download the <strong>latest flat file template</strong> from Seller Central — using outdated templates is a leading cause of upload errors</div>\n        </div>\n\n        <h3>2. Parent-Child Variation Structure</h3>\n        <p>Understanding which flat file columns belong to <strong>Parent</strong> vs <strong>Child</strong> rows is critical to error-free uploads:</p>\n        <table class='data-table'>\n            <thead><tr><th>Column</th><th>Parent Row</th><th>Child Row</th><th>Notes</th></tr></thead>\n            <tbody>\n                <tr><td>parent_child</td><td>parent</td><td>child</td><td>Required in both rows</td></tr>\n                <tr><td>variation_theme</td><td>Color / Size / Color-Size</td><td>Must match parent</td><td>Defines variation type</td></tr>\n                <tr><td>parent_sku</td><td>DO NOT FILL</td><td>Must match parent item_sku</td><td>Links child to parent</td></tr>\n                <tr><td>price / quantity</td><td>DO NOT FILL</td><td>FILL</td><td>Set at child level only</td></tr>\n                <tr><td>color_name / size_name</td><td>DO NOT FILL</td><td>FILL</td><td>Fill based on variation type</td></tr>\n                <tr><td>update_delete</td><td>Update</td><td>Partial Update</td><td>Critical — wrong value overwrites content</td></tr>\n            </tbody>\n        </table>\n        <div class='callout warning'>\n            <div><strong>Critical Rule:</strong> Never set price or quantity on the parent listing — it causes upload errors. Always create the <strong>Parent row FIRST</strong>, then add child rows.</div>\n        </div>\n\n        <h3>3. Variation Types &amp; Flat File Themes</h3>\n        <table class='data-table'>\n            <thead><tr><th>Variation Type</th><th>Use Case</th><th>Flat File Theme</th></tr></thead>\n            <tbody>\n                <tr><td>Size</td><td>Apparel, footwear, kitchenware</td><td>size_name</td></tr>\n                <tr><td>Color</td><td>Electronics accessories, home décor</td><td>color_name</td></tr>\n                <tr><td>Pack/Qty</td><td>FMCG, grocery, supplements</td><td>item_package_quantity</td></tr>\n                <tr><td>Flavor</td><td>Food &amp; beverage</td><td>flavor_name</td></tr>\n                <tr><td>Multi-theme</td><td>Combo of size + color</td><td>size_name + color_name</td></tr>\n            </tbody>\n        </table>\n        <div class='callout success'>\n            <div><strong>Variation Best Practice:</strong> Always list your best-selling variant first (highest rank among child ASINs). Amazon surfaces the parent with the most reviews — consolidating reviews is the #1 benefit of variations. Ensure the <strong>variation_theme matches exactly</strong> between parent and child rows.</div>\n        </div>\n\n        <h3>4. Flat-File Bulk Upload Workflow</h3>\n        <ol>\n            <li>Download the <strong>Inventory File Template</strong> for your category from SC → Inventory → Add Products via Upload</li>\n            <li>Fill required columns: <code>item_sku, external_product_id, external_product_id_type, item_name, brand_name, feed_product_type, update_delete</code></li>\n            <li>Set <code>update_delete = PartialUpdate</code> for price/content changes (not full Update which overwrites all content)</li>\n            <li>Save as <strong>Text (Tab Delimited) .txt</strong> format — Excel .xlsx format will be rejected</li>\n            <li>Validate with the <strong>Check My File</strong> tool before upload</li>\n            <li>Monitor Processing Report within 20 minutes for errors</li>\n        </ol>\n\n        <h3>5. Bundle &amp; Multipack Strategy</h3>\n        <ul>\n            <li><strong>Physical Bundle:</strong> 2+ products sold as one unit (e.g., shampoo + conditioner). Requires a unique EAN/UPC and new ASIN.</li>\n            <li><strong>Multipack:</strong> Same product × N units (e.g., 3-pack face wash). Use <code>item_package_quantity</code> attribute.</li>\n            <li><strong>Value Proposition:</strong> Bundles increase ASP and reduce per-unit ad cost — ideal for recurring consumable categories.</li>\n        </ul>\n\n        <h3>6. Virtual Bundle (Brand Bundle) Setup</h3>\n        <div class='callout info'>\n            <div><strong>Virtual Bundles</strong> require Brand Registry. Available at SC → Catalogue → Virtual Bundles.<br>\n            • Combine 2–5 existing FBA ASINs under one \"virtual\" product page<br>\n            • No new physical SKU needed — Amazon picks &amp; packs from existing FBA stock<br>\n            • Great for gifting sets, starter kits, and upsell combos<br>\n            • Pricing: must be lower than individual ASINs purchased separately</div>\n        </div>\n\n        <h3>7. ASIN Suppression Fix &amp; Reinstatement</h3>\n        <table class='data-table'>\n            <thead><tr><th>Suppression Reason</th><th>Fix</th></tr></thead>\n            <tbody>\n                <tr><td>Missing main image</td><td>Upload compliant main image (white BG, ≥1,600px, product ≥85% frame)</td></tr>\n                <tr><td>Price below threshold</td><td>Update price to meet category minimum</td></tr>\n                <tr><td>Missing required attribute</td><td>Edit listing, fill all required fields per PTD</td></tr>\n                <tr><td>Category restriction</td><td>Apply for category approval with required docs</td></tr>\n                <tr><td>Duplicate ASIN</td><td>Merge with existing ASIN via SC case → Catalogue → Merge Listings</td></tr>\n                <tr><td>Wrong browse node</td><td>Use Product Classifier to find correct node; submit correction via SC case</td></tr>\n            </tbody>\n        </table>\n\n        <h3>8. Stranded Inventory Resolution</h3>\n        <p>Stranded inventory occurs when FBA stock has no active listing. Fix via:</p>\n        <p><strong>SC → Inventory → Manage FBA Inventory → Stranded Inventory tab</strong></p>\n        <p>Most common fix: relist the ASIN or re-attach the listing to the existing FBA stock.</p>\n\n        <div class='bookmarks-inline'>\n            <strong>Key Links:</strong><br>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/listing/upload' target='_blank'>Flat File Upload</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/listing/classify' target='_blank'>Product Classifier</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/gp/help/1661' target='_blank'>Browse Tree Guide</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/gp/help/help-popup.html/?itemID=1641' target='_blank'>Category Style Guides</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/listing/qualitydashboard' target='_blank'>Listing Quality Dashboard</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/inventory?viewId=STRANDED' target='_blank'>Stranded Inventory</a>\n            <a class='btn-yt' href='https://youtu.be/LsN1yhmFphs' target='_blank'>Browse Tree Guide Tutorial</a>\n        </div>\n\n        <div class='pain-point-section'>\n            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>\n            <div class='pain-point-body'>\n                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>Sellers use outdated flat file templates or mix up parent/child column rules — setting price on the parent row, mismatching variation_theme values, or leaving parent_sku blank — causing upload errors, listing suppression, and hours lost in troubleshooting SC cases.</p></div>\n                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Solution</div><p>Always download a fresh flat file template from SC immediately before use. Create the parent row first with \"Update\" in update_delete, then child rows with \"Partial Update\". Never fill price, quantity, or variation-specific fields on the parent. Validate with the Check My File tool before every upload.</p></div>\n                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Strategic Insight</div><p>Variation listings consolidate reviews across all child ASINs under one parent — making every new size or colour variant instantly benefit from existing social proof. Brands that structure variations correctly from day one compound review equity faster than those who list each variant as a standalone ASIN.</p></div>\n            </div>\n        </div>\n    ",
+    "process_flow": "        <div class='svg-wrapper'>\n            <svg viewBox=\"0 0 820 120\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;\">\n                <defs><marker id=\"arr_c2\" markerWidth=\"8\" markerHeight=\"6\" refX=\"8\" refY=\"3\" orient=\"auto\"><polygon points=\"0 0,8 3,0 6\" fill=\"#1e3a5f\"/></marker></defs>\n                <text x=\"410\" y=\"65\" class=\"svg-watermark\" transform=\"rotate(-12,410,65)\">© SMEMinds | smeminds.com</text>\n                <rect x=\"10\"  y=\"35\" width=\"130\" height=\"50\" rx=\"8\" class=\"flow-step\"/><text x=\"75\"  y=\"62\" class=\"flow-text\">Download</text><text x=\"75\"  y=\"76\" class=\"flow-text\">PTD/BTG</text>\n                <line x1=\"140\" y1=\"60\" x2=\"175\" y2=\"60\" stroke=\"#1e3a5f\" stroke-width=\"2\" marker-end=\"url(#arr_c2)\"/>\n                <rect x=\"175\" y=\"35\" width=\"130\" height=\"50\" rx=\"8\" class=\"flow-step\"/><text x=\"240\" y=\"62\" class=\"flow-text\">Fill Flat</text><text x=\"240\" y=\"76\" class=\"flow-text\">File / Form</text>\n                <line x1=\"305\" y1=\"60\" x2=\"340\" y2=\"60\" stroke=\"#1e3a5f\" stroke-width=\"2\" marker-end=\"url(#arr_c2)\"/>\n                <rect x=\"340\" y=\"35\" width=\"130\" height=\"50\" rx=\"8\" class=\"flow-step\"/><text x=\"405\" y=\"62\" class=\"flow-text\">Validate</text><text x=\"405\" y=\"76\" class=\"flow-text\">&amp; Upload</text>\n                <line x1=\"470\" y1=\"60\" x2=\"505\" y2=\"60\" stroke=\"#1e3a5f\" stroke-width=\"2\" marker-end=\"url(#arr_c2)\"/>\n                <rect x=\"505\" y=\"35\" width=\"130\" height=\"50\" rx=\"8\" class=\"flow-step\"/><text x=\"570\" y=\"62\" class=\"flow-text\">Processing</text><text x=\"570\" y=\"76\" class=\"flow-text\">Report</text>\n                <line x1=\"635\" y1=\"60\" x2=\"670\" y2=\"60\" stroke=\"#1e3a5f\" stroke-width=\"2\" marker-end=\"url(#arr_c2)\"/>\n                <rect x=\"670\" y=\"35\" width=\"130\" height=\"50\" rx=\"8\" class=\"flow-step\" style=\"fill:#ff6b35;\"/><text x=\"735\" y=\"62\" class=\"flow-text\" style=\"fill:#fff\">Fix Errors</text><text x=\"735\" y=\"76\" class=\"flow-text\" style=\"fill:#fff\">&amp; Go Live</text>\n            </svg>\n        </div>\n    ",
     "tools": "",
-    "videos": [
-        {"id": "y4icIWo5ciY", "title": "Creating Converting Amazon Product Images"}
-    ],
+    "videos": [],
     "checklist": [
-        "Main image: white BG, product ≥85% frame, ≥1000px",
-        "All 6–9 slots filled with recommended content types",
-        "Product demo video uploaded (30–90 sec, subtitled)",
-        "Thumb test passed at thumbnail size",
-        "Infographic text readable on mobile (min 30pt equivalent)",
-        "All images JPEG, under 10MB"
+      "Product Type Definition (PTD) downloaded for category",
+      "Browse Tree Guide (BTG) node verified using Product Classifier",
+      "All required attributes filled (100% required, 80%+ optional)",
+      "Parent-child variation strategy defined",
+      "Parent row created first — price/quantity NOT set on parent",
+      "variation_theme matches exactly between parent and child rows",
+      "Flat file saved as .txt (Tab Delimited) before upload",
+      "Flat file validated with Check My File before upload",
+      "Processing report reviewed — zero errors",
+      "Stranded inventory count = 0",
+      "ASIN suppression count = 0 (weekly check)"
     ],
     "quiz": [
-        {
-            "question": "What percentage of the frame must the product occupy in the main image?",
-            "options": ["50%", "70%", "85%", "95%"],
-            "answer": "85%",
-            "explanation": "Amazon requires the product to fill at least 85% of the image to maximise thumbnail visibility and click-through rate."
-        },
-        {
-            "question": "What is the 'thumb test'?",
-            "options": ["Check if image passes Amazon's AI", "Verify the image at thumbnail size for mobile clarity", "Test with 5 people before publishing", "Upload to a test ASIN first"],
-            "answer": "Verify the image at thumbnail size for mobile clarity",
-            "explanation": "With 67% of Amazon India traffic from mobile, your main image must be identifiable and distinct even at 100×100px thumbnail size."
-        }
+      {
+        "question": "What is the primary benefit of grouping child ASINs under a parent variation?",
+        "options": [
+          "Lower FBA fees",
+          "Consolidated reviews across variants",
+          "Faster shipping",
+          "Priority placement in search"
+        ],
+        "answer": "Consolidated reviews across variants",
+        "explanation": "All child ASINs share reviews under the parent, giving new variants an instant social proof boost from existing reviews."
+      },
+      {
+        "question": "Virtual Bundles require which prerequisite?",
+        "options": [
+          "FBM fulfilment",
+          "Brand Registry",
+          "Prime badge",
+          "100 reviews"
+        ],
+        "answer": "Brand Registry",
+        "explanation": "Virtual Bundles are a Brand Registry feature only. You must have an approved trademark and active Brand Registry enrolment."
+      }
     ]
-},
-
-# ─────────────────────────────────────────────────────────────
-{
+  },
+  {
     "id": "2.3",
+    "pillar": "p2",
     "number": "Module 2.3",
-    "title": "Pricing Strategy",
+    "title": "Catalogue Health",
+    "difficulty": "Intermediate",
+    "time": "35 mins",
+    "overview": "<p>A healthy catalogue is a growing catalogue. This module covers the ongoing discipline of managing your ASIN portfolio across its entire lifecycle — from launch through growth, harvest, and exit. It includes image compliance, title and bullet point corrections, browse node fixes, pricing health, duplicate resolution, and portfolio rationalisation using the Amazon Catalogue Correction framework.</p>",
+    "content": "\n        <h3>1. The Six Pillars of Catalogue Correction</h3>\n        <p>According to Amazon's Catalogue Correction guidelines, poor data across these six areas is the primary cause of suppression, low organic ranking, and reduced conversion:</p>\n        <table class='data-table'>\n            <thead><tr><th>#</th><th>Area</th><th>Impact</th></tr></thead>\n            <tbody>\n                <tr><td>1</td><td><strong>Images</strong></td><td>First impression, zoom function, click-through rate</td></tr>\n                <tr><td>2</td><td><strong>Browse Nodes (RBN)</strong></td><td>Product discoverability via Amazon's browse structure</td></tr>\n                <tr><td>3</td><td><strong>Title</strong></td><td>Search ranking &amp; customer first impression</td></tr>\n                <tr><td>4</td><td><strong>Bullet Points</strong></td><td>Feature highlights that drive purchase decisions</td></tr>\n                <tr><td>5</td><td><strong>Product Description</strong></td><td>Detailed storytelling that reassures the buyer</td></tr>\n                <tr><td>6</td><td><strong>MRP &amp; SP</strong></td><td>Pricing compliance and competitiveness</td></tr>\n            </tbody>\n        </table>\n\n        <h3>2. Image Compliance Audit</h3>\n        <div class='callout pro-tip'>\n            <div><strong>Image Compliance Checklist (run monthly):</strong><br>\n            ✓ Main image: pure white background (RGB 255,255,255)<br>\n            ✓ Product occupies at least <strong>85% of the image frame</strong><br>\n            ✓ Minimum <strong>1,000px</strong> on longest side (1,600px recommended for zoom)<br>\n            ✓ No text, logos, watermarks, or inset images on main image<br>\n            ✓ No mannequins in Apparel; no kid models in baby/children's clothing<br>\n            ✓ Women's and Men's clothing: photographed on live standing model<br>\n            ✓ Kids/Baby clothing: photographed flat (off model)</div>\n        </div>\n\n        <h3>3. Title Correction Rules</h3>\n        <table class='data-table'>\n            <thead><tr><th>Rule</th><th>Requirement</th></tr></thead>\n            <tbody>\n                <tr><td>Length</td><td>Minimum 14 characters, maximum 150 characters</td></tr>\n                <tr><td>Case</td><td>Proper Case — NOT ALL CAPS</td></tr>\n                <tr><td>Start</td><td>Always begins with the Brand Name</td></tr>\n                <tr><td>Format</td><td>Brand + Department + Material + Style + Sub-Category (+ Colour + Size for child ASINs)</td></tr>\n                <tr><td>Banned content</td><td>No adjectives (beautiful, premium, best); no promotional claims; no special characters</td></tr>\n                <tr><td>Mobile target</td><td>~60 characters for optimal display in search results</td></tr>\n            </tbody>\n        </table>\n\n        <h3>4. Bullet Point Compliance</h3>\n        <div class='callout success'>\n            <div><strong>Bullet Point Mandatory Rules:</strong><br>\n            • Minimum <strong>5 bullet points</strong> strongly recommended for all listings<br>\n            • <strong>Wash care instructions are COMPULSORY</strong> for all Apparel listings<br>\n            • <strong>Warranty information is MANDATORY</strong> for all Watch listings<br>\n            • Max ~120 characters per bullet; use short, scannable phrases<br>\n            • Must NOT contain shipping, MRP, offers/discounts, or seller information</div>\n        </div>\n\n        <h3>5. Browse Node &amp; Category Correction SOP</h3>\n        <div class='callout pro-tip'>\n            <div><strong>Wrong category = invisible product.</strong> If your ASIN isn't surfacing in expected browse paths, check the node:<br>\n            SC → Inventory → Manage Inventory → Edit → Category</div>\n        </div>\n        <p>Use the <strong>Product Classifier Tool</strong> to find the correct node. Submit a correction via SC case with evidence (competitor ASIN in correct node). Rules:</p>\n        <ul>\n            <li>Do NOT add irrelevant browse nodes (e.g., do not node a bag under Wallets)</li>\n            <li>Your node must match the exact PTD — e.g., Earrings under FashionEarring, NOT FashionRing</li>\n            <li>Always use the latest BTG — download fresh from Seller Central</li>\n        </ul>\n\n        <h3>6. Product Lifecycle Management</h3>\n        <table class='data-table'>\n            <thead><tr><th>Stage</th><th>Indicators</th><th>Actions</th></tr></thead>\n            <tbody>\n                <tr><td><strong>Launch</strong></td><td>0–90 days live, &lt;10 reviews, BSR improving</td><td>Aggressive PPC, Vine enrolment, deal submissions</td></tr>\n                <tr><td><strong>Growth</strong></td><td>BSR &lt;500, CVR improving, reviews 10–100</td><td>Expand keywords, increase ad budget, launch variations</td></tr>\n                <tr><td><strong>Harvest</strong></td><td>BSR stable, reviews 100+, organic rank strong</td><td>Reduce PPC, maintain inventory, extract margin</td></tr>\n                <tr><td><strong>Exit</strong></td><td>Declining BSR, negative CM, high returns</td><td>Liquidate, FBA removals, delist</td></tr>\n            </tbody>\n        </table>\n\n        <h3>7. Pricing Health &amp; Contribution Margin</h3>\n        <table class='data-table'>\n            <thead><tr><th>Metric</th><th>Definition</th><th>Target</th></tr></thead>\n            <tbody>\n                <tr><td>Min Price</td><td>Floor price protecting CM</td><td>Cost + fees + 20% margin</td></tr>\n                <tr><td>Max Price</td><td>Cap for repricing rules</td><td>Must NOT exceed MRP (Amazon enforces this)</td></tr>\n                <tr><td>Price Parity</td><td>Amazon ≤ price on other channels</td><td>Amazon = lowest or equal</td></tr>\n                <tr><td>Product Tax Code</td><td>Maps to correct GST rate</td><td>Correct PTC assigned per category</td></tr>\n            </tbody>\n        </table>\n        <div class='callout success'>\n            <div><strong>CM Formula per unit:</strong><br>\n            <code>CM = Selling Price − Product Cost − FBA Fees − PPC Spend per unit − Returns Cost</code><br><br>\n            Any ASIN with CM &lt; 0 consistently for 90+ days is an exit candidate.</div>\n        </div>\n\n        <h3>8. SKU Rationalisation &amp; Portfolio Pruning</h3>\n        <ul>\n            <li>Run the <strong>Inventory Ledger Report</strong> quarterly</li>\n            <li>Flag ASINs with: &gt;180 days in FBA, &lt;5 units/month sales velocity, CM negative</li>\n            <li>For slow-movers: run a Lightning Deal or coupon to clear before long-term storage fees kick in</li>\n            <li>Exit via FBA Removal Order or Liquidations programme</li>\n        </ul>\n\n        <div class='bookmarks-inline'>\n            <strong>Key Links:</strong><br>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/listing/classify' target='_blank'>Product Classifier</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/gp/help/1661' target='_blank'>Browse Tree Guide</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/gp/help/help-popup.html/?itemID=1641' target='_blank'>Category Style Guides</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/gp/help/201531390' target='_blank'>Product Tax Codes (PTC)</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/inventory' target='_blank'>Manage Inventory</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/pricing/dashboard' target='_blank'>Manage Pricing</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/fba/removals' target='_blank'>FBA Removals</a>\n            <a class='btn-yt' href='https://youtu.be/LsN1yhmFphs' target='_blank'>Browse Tree Guide Tutorial</a>\n        </div>\n\n        <div class='pain-point-section'>\n            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>\n            <div class='pain-point-body'>\n                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>Sellers discover their ASINs are suppressed or invisible in browse only after weeks of zero sales — typically because of a wrong browse node, a non-compliant main image (mannequin in apparel, missing white background), or a title that exceeds 150 characters or starts with something other than the brand name.</p></div>\n                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Solution</div><p>Run a monthly Catalogue Correction audit across your top 20 ASINs using the 6-pillar checklist: Images → Browse Nodes → Titles → Bullets → Description → MRP/SP. Use the Listing Quality Dashboard in SC to identify suppressed or incomplete listings and action them within 48 hours.</p></div>\n                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Strategic Insight</div><p>Correcting catalogue data is free organic growth — it improves search ranking without any ad spend. Sellers who maintain a Listing Quality score above 90% and zero suppressed ASINs consistently outperform similar competitors by 20–35% in organic impressions, compounding over time into a durable ranking advantage.</p></div>\n            </div>\n        </div>\n    ",
+    "process_flow": "",
+    "tools": "",
+    "videos": [],
+    "checklist": [
+      "Every ASIN assigned to correct lifecycle stage (Launch/Growth/Harvest/Exit)",
+      "Zero duplicate ASINs — merge completed for any found",
+      "Browse nodes verified for all top 20 ASINs using Product Classifier",
+      "All main images: white BG, ≥85% coverage, ≥1,000px, no mannequins",
+      "All titles: Proper Case, starts with brand, 14–150 chars, no adjectives",
+      "Minimum 5 bullets on all active ASINs (wash care for apparel, warranty for watches)",
+      "Min/Max price thresholds set on all active ASINs",
+      "Price parity confirmed — Amazon ≤ all other sales channels",
+      "Correct PTC (Product Tax Code) assigned per category",
+      "Contribution margin positive for all active ASINs",
+      "Slow-movers (&gt;180 days, low velocity) actioned — deal, removal or liquidation"
+    ],
+    "quiz": [
+      {
+        "question": "Which lifecycle stage should trigger FBA removal or liquidation?",
+        "options": [
+          "Launch",
+          "Growth",
+          "Harvest",
+          "Exit"
+        ],
+        "answer": "Exit",
+        "explanation": "Exit stage is characterised by declining BSR, negative contribution margin, and high returns — the right time to clear stock and delist."
+      },
+      {
+        "question": "What is the maximum allowed character length for an Amazon India product title?",
+        "options": [
+          "80 characters",
+          "100 characters",
+          "150 characters",
+          "200 characters"
+        ],
+        "answer": "150 characters",
+        "explanation": "Amazon's Catalogue Correction Guide specifies titles must not exceed 150 characters and must be a minimum of 14 characters. Aim for ~60 characters for optimal mobile display."
+      }
+    ]
+  },
+  {
+    "id": "2.4",
+    "pillar": "p2",
+    "number": "Module 2.4",
+    "title": "Localisation",
+    "difficulty": "Intermediate",
+    "time": "30 mins",
+    "overview": "<p>India is not a monolithic market. With 22 official languages, diverse regional sizing conventions, and strict regulatory requirements, localisation is a strategic advantage — not an afterthought. This module covers Hindi &amp; regional language content, India-specific size chart compliance (mandatory for deal eligibility), BIS/ISI certification, GST/HSN mapping, and legal entity alignment per category.</p>",
+    "content": "\n        <h3>1. Hindi &amp; Regional Language Listing Content</h3>\n        <div class='callout pro-tip'>\n            <div><strong>Why localise?</strong> Amazon India shows listings in customer's preferred language. Hindi-translated titles and bullets perform 15–25% better in Tier-2/3 cities which account for 60%+ of India's online growth.</div>\n        </div>\n        <p>Steps to add Hindi content:</p>\n        <ol>\n            <li>SC → Inventory → Manage Inventory → Edit listing → <strong>\"Language\" tab</strong></li>\n            <li>Add Hindi (hi-IN) product title, bullet points, and description</li>\n            <li>Use a certified translator — machine translation errors damage brand trust</li>\n            <li>Key regional languages by region: Tamil (TN), Telugu (AP/TS), Kannada (KA), Bengali (WB)</li>\n        </ol>\n        <div class='callout info'>\n            <div><strong>Backend Search Terms Note:</strong> Hindi and Devanagari characters consume <strong>3 bytes each</strong> — not 1. With a 250-byte limit, a fully Hindi backend can hold only ~83 characters. Plan your keyword mix (English + Hindi transliterations) to maximise coverage within the byte limit.</div>\n        </div>\n\n        <h3>2. Brand Size Chart — Mandatory for Apparel &amp; Footwear Deals</h3>\n        <div class='callout warning'>\n            <div><strong>IMPORTANT:</strong> Brand Size Chart is <strong>MANDATORY</strong> to run Lightning Deals, Best Deals, and Deals of the Day on Amazon India. Without an approved size chart, your apparel/footwear ASINs are ineligible for all deal types.</div>\n        </div>\n        <p><strong>Step-by-Step Size Chart Submission:</strong></p>\n        <ol>\n            <li>Navigate to <strong>SC → Catalog → Size Chart</strong> and download the template for your product subcategory</li>\n            <li>Fill in ALL measurement fields (chest, waist, hips, etc.) for every size label (S, M, L, XL, etc.)</li>\n            <li>Open a <strong>Seller Support case</strong> with the subject line:<br>\n            <code>Request to Update Size Chart of \"[Brand Name]\" in \"[Category Name]\"</code></li>\n            <li>Include in the case: brand_name, department_name (Men/Women/Boys/Girls/Baby), recommended_browse_nodes, classification, product_type_name, and 2–3 sample live ASINs</li>\n            <li>Amazon reviews in <strong>3–7 business days</strong> — track in your Case Log</li>\n        </ol>\n        <table class='data-table'>\n            <thead><tr><th>Common Issue</th><th>Resolution</th></tr></thead>\n            <tbody>\n                <tr><td>Size chart not showing on listing</td><td>Wait 48–72 hrs after approval; raise new case if still missing</td></tr>\n                <tr><td>Case rejected — wrong template</td><td>Download fresh template — do not reuse old templates</td></tr>\n                <tr><td>Not eligible for Lightning Deals</td><td>Confirm size chart is approved AND active on all deal-eligible ASINs</td></tr>\n                <tr><td>Incorrect browse node submitted</td><td>Use BTG to find exact recommended browse node ID before submitting</td></tr>\n            </tbody>\n        </table>\n        <div class='callout success'>\n            <div><strong>SMEMinds Pro Tip:</strong> Submit one case per brand-category-department combination. Include 3–5 sample live ASINs to speed up the catalog team's review. Set a quarterly reminder to update size charts as you add new product types.</div>\n        </div>\n\n        <h3>3. India-Specific Compliance &amp; BIS/ISI Requirements</h3>\n        <table class='data-table'>\n            <thead><tr><th>Category</th><th>Certification Required</th><th>Issuing Body</th></tr></thead>\n            <tbody>\n                <tr><td>Electronics (plugs, adapters)</td><td>BIS (IS 1293)</td><td>Bureau of Indian Standards</td></tr>\n                <tr><td>Children's toys</td><td>BIS (IS 9873)</td><td>Bureau of Indian Standards</td></tr>\n                <tr><td>Helmets</td><td>ISI Mark (IS 4151)</td><td>Bureau of Indian Standards</td></tr>\n                <tr><td>Packaged food</td><td>FSSAI licence</td><td>Food Safety &amp; Standards Authority</td></tr>\n                <tr><td>Ayurvedic products</td><td>CDSCO / State licence</td><td>Central Drugs Standard Control Org</td></tr>\n                <tr><td>Electrical appliances</td><td>BIS CRS registration</td><td>Bureau of Indian Standards</td></tr>\n            </tbody>\n        </table>\n        <div class='callout warning'>\n            <div><strong>Non-compliance risk:</strong> Amazon can restrict your listing or account without notice for missing certifications. Upload all compliance docs to SC → Manage Compliance before listing restricted categories.</div>\n        </div>\n\n        <h3>4. GST &amp; HSN Code Mapping</h3>\n        <ul>\n            <li>Every product must have a correct <strong>HSN (Harmonised System of Nomenclature) code</strong> for GST filing</li>\n            <li>GST rates vary by category: 0% (essentials) → 5% → 12% → 18% → 28% (luxury)</li>\n            <li>Incorrect HSN code → GST mismatch → financial penalty during audit</li>\n            <li>Tool: <strong>GST Portal HSN Search</strong> (search.gst.gov.in) to verify codes</li>\n        </ul>\n        <table class='data-table'>\n            <thead><tr><th>Category Example</th><th>HSN</th><th>GST Rate</th></tr></thead>\n            <tbody>\n                <tr><td>Mobile phones</td><td>8517</td><td>18%</td></tr>\n                <tr><td>Apparel (&lt;₹1,000)</td><td>6109</td><td>5%</td></tr>\n                <tr><td>Apparel (&gt;₹1,000)</td><td>6109</td><td>12%</td></tr>\n                <tr><td>Books</td><td>4901</td><td>0%</td></tr>\n                <tr><td>Packaged snacks</td><td>2106</td><td>18%</td></tr>\n            </tbody>\n        </table>\n\n        <h3>5. Legal Entity &amp; Seller Profile Alignment</h3>\n        <div class='callout info'>\n            <div><strong>Some categories require specific entity types:</strong><br>\n            • Pharma / Ayurveda: registered pharmacist or drug licence holder<br>\n            • Food (FSSAI): FSSAI-registered business entity<br>\n            • Alcohol (where applicable): state-specific excise licence<br>\n            • Jewellery: Hallmarking certificate per BIS<br><br>\n            Check SC → Selling Applications → Category Approval for the latest requirements per category.</div>\n        </div>\n\n        <div class='bookmarks-inline'>\n            <strong>Key Links:</strong><br>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/gspn/index.html' target='_blank'>Manage Compliance</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/gp/sell-online/get-approved' target='_blank'>Category Approval</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/gp/help/201531390' target='_blank'>Product Tax Codes</a>\n            <a class='pill' href='https://www.bis.gov.in' target='_blank'>BIS Portal</a>\n            <a class='pill' href='https://www.fssai.gov.in' target='_blank'>FSSAI Portal</a>\n            <a class='pill' href='https://search.gst.gov.in' target='_blank'>GST HSN Search</a>\n        </div>\n\n        <div class='pain-point-section'>\n            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>\n            <div class='pain-point-body'>\n                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>Apparel sellers submit deals for their top ASINs and discover at the last minute that they are ineligible because their Brand Size Chart has not been submitted — or was submitted with an outdated template and rejected. This blocks them from the highest-traffic deal events of the year.</p></div>\n                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Solution</div><p>Submit your Brand Size Chart case at least 4 weeks before any planned deal window. Download a fresh template from SC → Catalog → Size Chart, include all size labels (S to 3XL), and open one Seller Support case per brand-category-department combination with the exact subject line format. Track your case and follow up within 3 days if no response.</p></div>\n                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Strategic Insight</div><p>Size charts reduce returns by helping customers self-select the right fit — and Amazon's algorithm rewards lower return rates with better search placement. Sellers who maintain an accurate, live size chart consistently see 10–20% lower return rates in apparel compared to sellers without one, which compounds into better account health and deal eligibility long-term.</p></div>\n            </div>\n        </div>\n    ",
+    "process_flow": "",
+    "tools": "",
+    "videos": [],
+    "checklist": [
+      "Hindi translation added to title and bullets for Tier-2/3 relevant products",
+      "Brand Size Chart submitted and approved for all apparel/footwear categories",
+      "Size chart covers all size variants (S, M, L, XL, etc.) for each department",
+      "Size chart verified live on all deal-eligible ASINs",
+      "BIS/ISI/FSSAI certification obtained and uploaded for applicable categories",
+      "GST HSN code verified and correct for every ASIN",
+      "GST rate confirmed per HSN — reflected in invoicing",
+      "Legal entity type validated against category requirements",
+      "Category Approval granted (where needed) before listing"
+    ],
+    "quiz": [
+      {
+        "question": "Which certification is required for selling children's toys on Amazon India?",
+        "options": [
+          "FSSAI",
+          "BIS (IS 9873)",
+          "CDSCO",
+          "ISI Mark (IS 4151)"
+        ],
+        "answer": "BIS (IS 9873)",
+        "explanation": "Toys for children must comply with IS 9873 under BIS (Bureau of Indian Standards) certification to be listed on Amazon India."
+      },
+      {
+        "question": "What is the impact of not having an approved Brand Size Chart for apparel sellers?",
+        "options": [
+          "Lower FBA fees",
+          "Ineligibility for Lightning Deals, Best Deals, and Deals of the Day",
+          "GST mismatch penalty",
+          "Slower delivery"
+        ],
+        "answer": "Ineligibility for Lightning Deals, Best Deals, and Deals of the Day",
+        "explanation": "Per Amazon India's Size Chart Guide, a Brand Size Chart is MANDATORY to run Lightning Deals, Best Deals, and Deals of the Day. Without approval, all deal types are blocked."
+      }
+    ]
+  },
+  {
+    "id": "2.5",
+    "pillar": "p2",
+    "number": "Module 2.5",
+    "title": "Amazon India Fee Schedule & Cost Mastery",
+    "difficulty": "Intermediate",
+    "time": "40 mins",
+    "overview": "<p>Understanding every rupee Amazon deducts is the foundation of profitability. From the landmark March 2026 Zero Referral Fee expansion to complex FBA weight-handling slabs, this module decodes the complete Amazon India fee structure so you never launch a product without knowing exactly what you will net.</p>",
+    "content": "\n        <h3>1. The Amazon India Fee Universe</h3>\n        <p>Every order attracts a combination of fees depending on <strong>category, price point, fulfillment method, product weight/size</strong>, and inventory age at FC.</p>\n        <table class='data-table'>\n            <thead><tr><th>Fee Type</th><th>Basis</th><th>Applies To</th></tr></thead>\n            <tbody>\n                <tr><td>Referral Fee</td><td>% of selling price</td><td>All sellers</td></tr>\n                <tr><td>Closing Fee</td><td>₹5–₹6 flat</td><td>All sellers</td></tr>\n                <tr><td>Weight Handling Fee</td><td>Weight slab</td><td>FBA sellers</td></tr>\n                <tr><td>Monthly Storage Fee</td><td>₹50/cu.ft/month</td><td>FBA sellers</td></tr>\n                <tr><td>Aged Inventory Surcharge</td><td>271+ days old</td><td>FBA sellers</td></tr>\n                <tr><td>GST on Fees</td><td>18% on all fees</td><td>All sellers</td></tr>\n            </tbody>\n        </table>\n\n        <h3>2. The March 2026 Game-Changer: Zero Referral Fees ≤₹1,000</h3>\n        <div class='callout success'>\n            <div><strong>Biggest-Ever Fee Cut — Effective March 16, 2026:</strong> Zero Referral Fees extended to all products priced at ₹1,000 and below across <strong>1,800+ sub-categories covering 12.5+ crore products</strong>. Sellers save up to <strong>70% in referral fees</strong>. Categories: Apparel, Shoes, Fashion Jewellery, Grocery, Home Décor, Beauty, Toys, Kitchen, Automotive, Pet Products.</div>\n        </div>\n        <div class='callout info'>\n            <div><strong>Key Fee Changes Timeline:</strong><br>\n            • Apr 2025 — Zero referral fees on products &lt;₹300 across 135+ categories<br>\n            • Sep 2025 — 3–12% reduction across 59 sub-categories (Beauty: 4.5%→2%, Shoes: 10.5%→6%)<br>\n            • Nov 2025 — Storage fee increased ₹45→₹50/cu.ft; Aged Inventory now billed monthly<br>\n            • Mar 2026 — Zero referral fees extended to ₹1,000 price point</div>\n        </div>\n\n        <h3>3. Referral Fee by Category (2025–2026)</h3>\n        <table class='data-table'>\n            <thead><tr><th>Category</th><th>Price ≤₹1,000</th><th>Price &gt;₹1,000</th></tr></thead>\n            <tbody>\n                <tr><td>Apparel, Footwear, Fashion</td><td><strong>0%</strong></td><td>7–24%</td></tr>\n                <tr><td>Beauty / Makeup</td><td><strong>0%</strong></td><td>3.5–7.5%+</td></tr>\n                <tr><td>Electronics</td><td><strong>0%</strong></td><td>5–20%</td></tr>\n                <tr><td>Home &amp; Kitchen</td><td><strong>0%</strong></td><td>3–25.5%</td></tr>\n                <tr><td>Grocery</td><td><strong>0%</strong></td><td>9%</td></tr>\n                <tr><td>Automotive Parts</td><td><strong>0%</strong></td><td>16%</td></tr>\n                <tr><td>Books</td><td>2%</td><td>2%</td></tr>\n            </tbody>\n        </table>\n\n        <h3>4. FBA Weight Handling Fees (2025 Rates)</h3>\n        <table class='data-table'>\n            <thead><tr><th>Chargeable Weight</th><th>Fee/Unit</th><th>With 18% GST</th></tr></thead>\n            <tbody>\n                <tr><td>0–500 g</td><td>₹73</td><td>₹86.14</td></tr>\n                <tr><td>501 g–1 kg</td><td>₹98</td><td>₹115.64</td></tr>\n                <tr><td>1–2 kg</td><td>₹131</td><td>₹154.58</td></tr>\n                <tr><td>2–3 kg</td><td>₹164</td><td>₹193.52</td></tr>\n                <tr><td>Above 3 kg</td><td>₹200+</td><td>₹236+</td></tr>\n            </tbody>\n        </table>\n\n        <h3>5. FBA Storage &amp; Aged Inventory Fees</h3>\n        <table class='data-table'>\n            <thead><tr><th>Fee Type</th><th>Rate (Nov 2025+)</th></tr></thead>\n            <tbody>\n                <tr><td>Monthly Storage</td><td>₹50/cu.ft/month (₹1,766/cu.m)</td></tr>\n                <tr><td>Aged Inventory 271–365 days</td><td>Surcharge applies monthly</td></tr>\n                <tr><td>Aged Inventory 365+ days</td><td>₹15.65/cu.ft or ₹15/unit — whichever higher</td></tr>\n            </tbody>\n        </table>\n        <div class='callout warning'>\n            <div><strong>Critical Change (2025):</strong> Amazon shifted from twice-yearly LTSF billing to <strong>monthly Aged Inventory Surcharge (AIS)</strong>. Inventory aged 271+ days now incurs ongoing monthly costs. Set removal alerts at 250 days to avoid surprise charges.</div>\n        </div>\n\n        <h3>6. Profit Calculation — The True Net Framework</h3>\n        <p>Net Profit = Selling Price − Referral Fee (incl. GST) − Closing Fee (incl. GST) − Weight Handling (incl. GST) − COGS − Other Costs</p>\n        <div class='callout pro-tip'>\n            <div><strong>Worked Example (₹699 product, 0–500g, category ≤₹1,000):</strong><br>\n            Selling Price: ₹699<br>\n            Referral Fee: ₹0 (zero fee ≤₹1,000)<br>\n            Weight Handling (₹73 × 1.18): −₹86.14<br>\n            Closing Fee (~₹5 × 1.18): −₹5.90<br>\n            COGS: −₹220<br>\n            <strong>Net Profit: ₹386.96 | Margin: 55.4%</strong><br><br>\n            Same product above ₹1,000 (₹1,099, 10% referral): Net drops by ₹~130 due to referral fees.</div>\n        </div>\n\n        <div class='bookmarks-inline'>\n            <strong>Official Resources:</strong><br>\n            <a class='btn-sc' href='https://sell.amazon.in/fees-and-pricing' target='_blank'>Amazon India Fees &amp; Pricing</a>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/fba/profitabilitycalculator/index?lang=en_IN' target='_blank'>Kitna Milega Calculator</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/gp/help/external/200725880' target='_blank'>Aged Inventory Surcharge Help</a>\n            <a class='pill' href='https://www.aboutamazon.in/news/small-business/amazon-seller-fee-reduction-zero-referral-march-2026' target='_blank'>Mar 2026 Fee Announcement</a>\n        </div>\n\n        <div class='pain-point-section'>\n            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>\n            <div class='pain-point-body'>\n                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>Sellers calculate profit using only referral fee, ignoring weight handling, closing fee, and 18% GST on fees — then wonder why P&amp;L shows losses despite good sales velocity.</p></div>\n                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Strategic Solution</div><p>Use the Kitna Milega calculator for every new ASIN before listing. Build a Google Sheet with all 6 fee components. Never launch without minimum 25% net margin after all fees.</p></div>\n                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Pro Insight</div><p>With zero referral fees ≤₹1,000 (Mar 2026), pricing at ₹999 vs ₹1,050 can save 7–24% referral fees. Model your price elasticity — often the lower price point nets MORE profit.</p></div>\n            </div>\n        </div>\n    ",
+    "process_flow": "",
+    "tools": "",
+    "videos": [],
+    "checklist": [
+      "Mapped all ASINs to correct categories for referral fee accuracy",
+      "Identified which ASINs qualify for Zero Referral Fee (priced ≤₹1,000)",
+      "Calculated total fees (referral + closing + weight handling + GST) for each ASIN",
+      "Used Kitna Milega calculator to validate FBA vs FBM profitability",
+      "Set minimum price floor: COGS + all fees + 25% margin",
+      "Set inventory removal alerts for items approaching 250-day mark",
+      "Reviewed fee change announcements on Seller Central news"
+    ],
+    "quiz": [
+      {
+        "question": "From March 2026, Amazon India offers zero referral fees for products priced at or below:",
+        "options": [
+          "₹300",
+          "₹500",
+          "₹1,000",
+          "₹2,000"
+        ],
+        "answer": "₹1,000",
+        "explanation": "Effective March 16, 2026, Amazon extended Zero Referral Fees to products priced ≤₹1,000 across 1,800+ sub-categories, covering 12.5+ crore products — the biggest-ever fee cut in Amazon India history."
+      },
+      {
+        "question": "An FBA seller lists a 450g product. What is the weight handling fee including 18% GST?",
+        "options": [
+          "₹45.00",
+          "₹73.00",
+          "₹86.14",
+          "₹98.00"
+        ],
+        "answer": "₹86.14",
+        "explanation": "For 0–500g weight slab, weight handling fee is ₹73. Adding 18% GST: ₹73 × 1.18 = ₹86.14 total weight handling cost."
+      }
+    ]
+  },
+  {
+    "id": "2.6",
+    "pillar": "p2",
+    "number": "Module 2.6",
+    "title": "Flat File Mastery & Bulk Upload Error Resolution",
+    "difficulty": "Advanced",
+    "time": "45 mins",
+    "overview": "<p>A single flat file error can silently block hundreds of SKUs. This module is the definitive bulk upload SOP for Amazon India — covering the 7 most common error codes with step-by-step fixes, pre-upload validation, and the workflow professionals use to launch entire catalogues without errors.</p>",
+    "content": "\n        <h3>1. Two Upload Methods — When to Use Each</h3>\n        <table class='data-table'>\n            <thead><tr><th>Method</th><th>Use Case</th></tr></thead>\n            <tbody>\n                <tr><td><strong>Listing Loader</strong></td><td>Adding your offer to an existing Amazon ASIN (you have UPC/ASIN)</td></tr>\n                <tr><td><strong>Flat File</strong></td><td>Creating brand-new ASINs not yet on Amazon</td></tr>\n                <tr><td><strong>Inventory File</strong></td><td>Updating price/quantity on your existing listings</td></tr>\n            </tbody>\n        </table>\n        <div class='callout warning'>\n            <div><strong>Critical:</strong> Always download the <strong>latest template</strong> from Seller Central before each upload session. Amazon updates templates without notice — old templates cause systematic upload failures.</div>\n        </div>\n\n        <h3>2. Mandatory Flat File Fields</h3>\n        <ul>\n            <li><code>item_sku</code> — Your unique SKU</li>\n            <li><code>external_product_id</code> + <code>external_product_id_type</code> — EAN/UPC/ASIN</li>\n            <li><code>item_name</code> — Title (proper case, 14–150 chars)</li>\n            <li><code>brand_name</code> — Exact match to brand registration</li>\n            <li><code>feed_product_type</code> — Per category template</li>\n            <li><code>update_delete</code> — Use <em>PartialUpdate</em> for edits (never Update)</li>\n            <li><code>standard_price</code>, <code>quantity</code>, <code>condition_type</code></li>\n        </ul>\n\n        <h3>3. The 7 Critical Error Codes</h3>\n        <div class='accordion'>\n            <div class='acc-item'><div class='acc-header' onclick=\"this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'\">🔴 Error 8560 — Missing Product ID / Brand Mismatch</div><div class='acc-body'><strong>Cause:</strong> EAN/UPC missing/invalid or GTIN-exempt brand name does not match exactly.<br><strong>Fix:</strong> Verify EAN/UPC in GS1 India. Ensure brand name case exactly matches GTIN exemption approval. Reapply for GTIN exemption if brand name changed.</div></div>\n            <div class='acc-item'><div class='acc-header' onclick=\"this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'\">🔴 Error 90111 — Invalid Decimal Value</div><div class='acc-body'><strong>Cause:</strong> Numeric field contains text (e.g., \"Large\" instead of \"38\").<br><strong>Fix:</strong> Review Valid Values tab. Enter only numeric values for measurement fields. Use dropdowns provided.</div></div>\n            <div class='acc-item'><div class='acc-header' onclick=\"this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'\">🔴 Error 20013 — Image File Too Large (&gt;10MB)</div><div class='acc-body'><strong>Cause:</strong> Image URL points to file exceeding 10MB.<br><strong>Fix:</strong> Resize at bulkresizephotos.com or compress with TinyPNG. Minimum 1,000px, JPEG preferred, under 10MB.</div></div>\n            <div class='acc-item'><div class='acc-header' onclick=\"this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'\">🔴 Error 8541 — SKU Data Mismatch with Catalog</div><div class='acc-body'><strong>Cause:</strong> Product ID matches existing ASIN but other data conflicts.<br><strong>Fix:</strong> Update flat file to match existing catalog. Or use a different unique SKU. If ASIN exists — add an offer instead of creating new listing.</div></div>\n            <div class='acc-item'><div class='acc-header' onclick=\"this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'\">🔴 Error 8007 — Parent SKU Not Found</div><div class='acc-body'><strong>Cause:</strong> Parent-child relationship data is inconsistent — parent row missing or child references wrong parent_sku.<br><strong>Fix:</strong> Parent row must have <code>relationship_type = Parent</code>. All children reference exact same <code>parent_sku</code>. variation_theme must match on all rows.</div></div>\n            <div class='acc-item'><div class='acc-header' onclick=\"this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'\">🔴 Error 8575 — Listing Creation Privilege Temporarily Removed</div><div class='acc-body'><strong>Cause:</strong> Too many ASIN creations in short period (ASIN Creation Policy violation).<br><strong>Fix:</strong> Contact Seller Support with justification. Review ASIN Creation Policy. Stagger large uploads across multiple days.</div></div>\n            <div class='acc-item'><div class='acc-header' onclick=\"this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'\">🔴 Error 99003 — Missing Required Value for Variation Theme</div><div class='acc-body'><strong>Cause:</strong> Variation theme set (e.g., SizeName-ColorName) but required field is empty.<br><strong>Fix:</strong> If using SizeName-ColorName, both <code>size_name</code> AND <code>color_name</code> must be filled on every child row. If SizeName only, color_name must be blank.</div></div>\n        </div>\n\n        <h3>4. Pre-Upload Checklist</h3>\n        <ol>\n            <li>✅ Downloaded <strong>latest template</strong> from SC → Inventory → Add Products via Upload</li>\n            <li>✅ Used Mandatory-Data Macro Tool to identify required fields</li>\n            <li>✅ Validated all EAN/UPC codes (no duplicates, no test barcodes)</li>\n            <li>✅ All image URLs return direct image (ends with .jpg/.png/.gif)</li>\n            <li>✅ File saved as <strong>.txt (Tab Delimited)</strong> — Excel format rejected</li>\n            <li>✅ <code>update_delete</code> set to <em>PartialUpdate</em> for existing listings</li>\n            <li>✅ Used Check My File tool before final submission</li>\n        </ol>\n\n        <h3>5. Post-Upload Error Fix Workflow</h3>\n        <ol>\n            <li>Download Processing Report from SC → Inventory → Upload Status (within 20 mins)</li>\n            <li>Filter by Error status rows only</li>\n            <li>Cross-reference each error code with this guide</li>\n            <li>Fix all errors in batch (not one-by-one)</li>\n            <li>Wait 15–30 minutes before re-uploading (Amazon rate-limits corrections)</li>\n            <li>Keep a correction log — same errors recur across templates</li>\n        </ol>\n\n        <div class='bookmarks-inline'>\n            <strong>Key Tools:</strong><br>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/listing/download' target='_blank'>Download Templates</a>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/listing/upload' target='_blank'>Upload Products</a>\n            <a class='pill-sc' href='https://bulkresizephotos.com' target='_blank'>BulkResizePhotos</a>\n            <a class='pill-sc' href='https://tinypng.com' target='_blank'>TinyPNG</a>\n            <a class='pill' href='https://gifyu.com' target='_blank'>Gifyu (image hosting)</a>\n        </div>\n\n        <div class='pain-point-section'>\n            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>\n            <div class='pain-point-body'>\n                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>A single EAN mismatch silently rejects 200 SKUs. Seller discovers this 2 hours later when checking the processing report — losing the entire upload window before a sale event.</p></div>\n                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Strategic Solution</div><p>Build a pre-upload validation Google Sheet: check duplicate EANs, image URL format validation (must end .jpg/.png), and required field completeness before touching Seller Central.</p></div>\n                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Pro Insight</div><p>Use <em>PartialUpdate</em> not <em>Update</em> for all content edits. <em>Update</em> overwrites every field including Amazon-approved content — causing immediate listing suppression in competitive categories.</p></div>\n            </div>\n        </div>\n    ",
+    "process_flow": "",
+    "tools": "",
+    "videos": [],
+    "checklist": [
+      "Always downloading latest flat file template before each upload session",
+      "Running Mandatory-Data Macro Tool to identify required fields",
+      "Using PartialUpdate (not Update) for all content edits",
+      "Validating all EAN/UPC codes before upload",
+      "Image URLs end with .jpg/.png (direct image URL, not webpage)",
+      "File saved as .txt Tab Delimited (not .xlsx)",
+      "Downloading and reviewing Processing Report within 20 minutes of upload"
+    ],
+    "quiz": [
+      {
+        "question": "Error 8007 'Parent SKU Not Found' is caused by:",
+        "options": [
+          "Image too large",
+          "EAN/UPC mismatch",
+          "Parent-child relationship data inconsistency",
+          "Missing brand registration"
+        ],
+        "answer": "Parent-child relationship data inconsistency",
+        "explanation": "Error 8007 occurs when parent row is missing or children reference wrong parent_sku. Fix: verify parent row has relationship_type='Parent' and all children reference exact same parent_sku."
+      },
+      {
+        "question": "Which file format must flat file uploads use for Amazon India?",
+        "options": [
+          "Excel .xlsx",
+          "CSV .csv",
+          "Text (Tab Delimited) .txt",
+          "JSON .json"
+        ],
+        "answer": "Text (Tab Delimited) .txt",
+        "explanation": "Amazon India flat file uploads require Text (Tab Delimited) .txt format. Excel .xlsx is rejected. File tabs must not be renamed after saving."
+      }
+    ]
+  },
+  {
+    "id": "2.7",
+    "pillar": "p2",
+    "number": "Module 2.7",
+    "title": "FBA Shipment Creation & Inbounding",
+    "difficulty": "Intermediate",
+    "time": "35 mins",
+    "overview": "<p>Getting inventory into Amazon FCs efficiently is a core operational competency. This module covers the complete FBA inbound workflow — from creating the shipping plan and FNSKU labeling to booking FC appointments and reconciling your shipment — with exact SOPs used by professional sellers.</p>",
+    "content": "\n        <h3>1. FBA Inbound Process at a Glance</h3>\n        <div class='callout info'><div>Create Shipping Plan → Generate FNSKU Labels → Prepare Products → Create STN → Book FC Appointment → Dispatch → Track → Reconcile</div></div>\n\n        <h3>2. Creating Your Shipping Plan</h3>\n        <ol>\n            <li>Go to <strong>Inventory → Manage FBA Shipment → Create Shipping Plan</strong></li>\n            <li>Select \"Multiple ASINs\" for bulk — download shipping plan template</li>\n            <li>Fill template with SKU list and quantities</li>\n            <li>Upload template (system auto-converts SKUs to FNSKUs)</li>\n            <li>Amazon assigns destination FC(s) — review and confirm</li>\n            <li>Generate FNSKU labels from Seller Central (PDF)</li>\n        </ol>\n\n        <h3>3. FNSKU vs EAN — Critical Distinction</h3>\n        <div class='callout warning'><div><strong>FNSKU ≠ EAN:</strong> Amazon requires unique FNSKU barcode on every FBA unit (not your product EAN/UPC). FNSKU tracks inventory ownership at unit level. Mislabeled units are quarantined at the FC — no selling during quarantine period.</div></div>\n        <table class='data-table'>\n            <thead><tr><th>FNSKU Label Element</th><th>Requirement</th></tr></thead>\n            <tbody>\n                <tr><td>FNSKU Barcode</td><td>Scannable, not covered by other labels</td></tr>\n                <tr><td>Product Title</td><td>Abbreviated below barcode</td></tr>\n                <tr><td>Condition</td><td>New / Used</td></tr>\n                <tr><td>Placement</td><td>Must cover or replace original barcode</td></tr>\n                <tr><td>Minimum Size</td><td>1\" × 2\" (25mm × 51mm)</td></tr>\n            </tbody>\n        </table>\n\n        <h3>4. Outer Packaging Labels (Mandatory)</h3>\n        <ul>\n            <li>Seller Name &amp; Address</li>\n            <li>Product Category</li>\n            <li>Quantity per unit</li>\n            <li>MRP (₹ — must match physical product label)</li>\n            <li>Country of Origin: India</li>\n            <li>Contact Number</li>\n            <li>FNSKU Barcode (covering original barcode)</li>\n        </ul>\n\n        <h3>5. Stock Transfer Note (STN) — Mandatory Legal Document</h3>\n        <div class='callout success'><div><strong>STN Must Include:</strong> Seller legal name + GSTIN | Destination FC name + address | Product-wise list (FNSKU, name, quantity, unit value) | Total value + applicable GST | Date + seller signature | Sequential invoice number</div></div>\n\n        <h3>6. FC Appointment via FCAS</h3>\n        <ol>\n            <li>Access FC Appointment System (FCAS) link from Seller Central</li>\n            <li>Select destination FC and shipment ID</li>\n            <li>Choose appointment date/time slot (book 3–5 days in advance)</li>\n            <li>Confirm — receive appointment ID</li>\n            <li>Logistics partner must arrive within appointment window (rejection outside window)</li>\n        </ol>\n\n        <h3>7. Reconciliation (Within 7 Days of FC Receipt)</h3>\n        <ol>\n            <li>Go to Inventory → Manage FBA Shipments → Completed Shipments</li>\n            <li>Compare Units Shipped vs. Units Received per SKU</li>\n            <li>Discrepancy ≥ 1 unit: raise Reconciliation case with STN + photos as evidence</li>\n            <li>Amazon SLA: 5–7 business days for resolution</li>\n            <li>Keep STN + packing list for minimum 6 months (required for disputes)</li>\n        </ol>\n\n        <div class='bookmarks-inline'>\n            <strong>Key Links:</strong><br>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/gp/ssof/shipping-queue.html' target='_blank'>Manage FBA Shipments</a>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/fba/inbound-nontransportation/label' target='_blank'>Generate FNSKU Labels</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/gp/help/external/G201074960' target='_blank'>FBA Packaging Requirements</a>\n        </div>\n\n        <div class='pain-point-section'>\n            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>\n            <div class='pain-point-body'>\n                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>Units quarantined at FC because seller applied EAN instead of FNSKU — 500 units stuck for 3–4 weeks while festive season passes and competitors take their rank.</p></div>\n                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Strategic Solution</div><p>Generate FNSKU labels from Seller Central and verify correct FNSKU per SKU before printing. Cross-verify 10 random units after labeling. Never trust manufacturer labels — always cover them.</p></div>\n                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Pro Insight</div><p>Book FC appointments 4–5 days in advance. During festive season, FCAS slots fill 7–10 days ahead. Late inbounding = missed ranking boost from deal traffic — the most expensive mistake in the festive calendar.</p></div>\n            </div>\n        </div>\n    ",
+    "process_flow": "",
+    "tools": "",
+    "videos": [],
+    "checklist": [
+      "Created shipping plan via SC → Manage FBA Shipment → Create Shipping Plan",
+      "Generated FNSKU labels and verified correct FNSKU per SKU",
+      "Applied FNSKU barcode covering original manufacturer barcode",
+      "Prepared STN with all mandatory fields (GSTIN, FC address, product list)",
+      "Confirmed MRP label matches physical product packaging",
+      "Booked FC appointment 3–5 days in advance via FCAS",
+      "Reconciled shipment within 7 days of FC receipt"
+    ],
+    "quiz": [
+      {
+        "question": "Why is FNSKU different from EAN/UPC?",
+        "options": [
+          "FNSKU is Amazon's unique barcode that tracks inventory ownership at unit level",
+          "FNSKU is required only for international products",
+          "FNSKU is the same as EAN but printed differently",
+          "FNSKU is only needed for oversize products"
+        ],
+        "answer": "FNSKU is Amazon's unique barcode that tracks inventory ownership at unit level",
+        "explanation": "FNSKU (Fulfillment Network Stock Keeping Unit) links each unit to a specific seller inventory at Amazon FC. It replaces the EAN/UPC on the product and enables Amazon to track whose inventory is sold."
+      },
+      {
+        "question": "What should you do if units received at FC don't match units shipped?",
+        "options": [
+          "Accept the discrepancy",
+          "Raise a Reconciliation case within 7 days with STN evidence",
+          "Wait 30 days for automatic adjustment",
+          "Deduct from next shipment"
+        ],
+        "answer": "Raise a Reconciliation case within 7 days with STN evidence",
+        "explanation": "Any discrepancy between shipped and received units must be disputed via a Reconciliation case in Seller Central within 7 days, providing the STN and packing photos as evidence."
+      }
+    ]
+  },
+  {
+    "id": "2.8",
+    "pillar": "p2",
+    "number": "Module 2.8",
+    "title": "Parent-Child Variations & Brand Size Charts",
     "difficulty": "Advanced",
     "time": "40 mins",
-    "overview": """<p>Pricing on Amazon India is a dynamic, real-time battleground. Win the Buy Box, protect margins, and grow revenue simultaneously using competitive analysis, automated repricing, deal calendars, price elasticity testing, and B2B pricing.</p>""",
-    "content": """
-        <h3>1. Buy Box Win Rate Monitoring</h3>
-        <div class='callout pro-tip'>
-            <div><strong>Buy Box Factors (by weight):</strong><br>
-            1. FBA fulfilment status<br>
-            2. Competitive landed price<br>
-            3. Seller metrics (ODR &lt;1%, LDR &lt;4%)<br>
-            4. Stock availability<br>
-            5. Seller feedback rating</div>
-        </div>
-        <p>Track at: <strong>SC → Business Reports → Detail Page Sales → Buy Box Percentage</strong><br>
-        Target: &gt;80% Buy Box win rate on all hero ASINs.</p>
-
-        <h3>2. Automated Repricing Rules</h3>
-        <table class='data-table'>
-            <thead><tr><th>Rule Type</th><th>Use Case</th><th>Must-Have Safeguard</th></tr></thead>
-            <tbody>
-                <tr><td>Beat competitor by X%</td><td>Stay below competition</td><td>Set minimum price floor</td></tr>
-                <tr><td>Featured Offer (Buy Box)</td><td>Match Buy Box price</td><td>Always pair with min price</td></tr>
-                <tr><td>Sales velocity</td><td>Raise price when selling fast</td><td>Monitor margin impact</td></tr>
-            </tbody>
-        </table>
-        <div class='callout warning'>
-            <div><strong>Always set a minimum price.</strong> Floor = Product Cost + FBA Fees + 15% minimum margin. Without it, rules race to zero.</div>
-        </div>
-
-        <h3>3. Deal & Coupon Calendar</h3>
-        <table class='data-table'>
-            <thead><tr><th>Type</th><th>Min Discount</th><th>Best Use</th></tr></thead>
-            <tbody>
-                <tr><td>Lightning Deal</td><td>≥15% off reference price</td><td>Fast velocity, new launches</td></tr>
-                <tr><td>7-Day Best Deal</td><td>≥10% (invite only)</td><td>Sustained volume boost</td></tr>
-                <tr><td>Coupon</td><td>Any ₹X or X%</td><td>Conversion boost, review seeding</td></tr>
-                <tr><td>Prime Exclusive Discount</td><td>≥10% for Prime members</td><td>Prime Day &amp; festive events</td></tr>
-            </tbody>
-        </table>
-
-        <h3>4. Price Elasticity Testing</h3>
-        <ol>
-            <li>Baseline: 2-week avg price, units/day, revenue/day</li>
-            <li>Test: ±10% price change</li>
-            <li>Measure 2 weeks: units and revenue change</li>
-            <li>PE = % change units ÷ % change price</li>
-            <li>PE &gt;1 (elastic): lower price. PE &lt;1 (inelastic): raise price.</li>
-        </ol>
-
-        <h3>5. B2B Pricing & Quantity Discounts</h3>
-        <div class='callout success'>
-            <div>30%+ of Amazon India GMV is B2B. Set Business Price without affecting retail Buy Box.<br>
-            <strong>SC → B2B → Manage Offers → Business Price &amp; Quantity Discounts</strong></div>
-        </div>
-
-        <div class='bookmarks-inline'>
-            <strong>Key Links:</strong><br>
-            <a class='pill' href='https://sellercentral.amazon.in/pricing/automation/rules' target='_blank'>Automate Pricing</a>
-            <a class='pill' href='https://sellercentral.amazon.in/merchandising/lightning-deals' target='_blank'>Lightning Deals</a>
-            <a class='pill' href='https://sellercentral.amazon.in/coupons' target='_blank'>Manage Coupons</a>
-            <a class='pill' href='https://sellercentral.amazon.in/business/pricing' target='_blank'>B2B Pricing</a>
-        </div>
-    """,
+    "overview": "<p>Variations consolidate reviews, improve discoverability, and present your full product line on a single page. Brand Size Charts unlock deal eligibility for apparel and footwear sellers. This module covers both with error-proof SOPs so your variations go live right the first time and your size chart approvals land weeks before the deal window opens.</p>",
+    "content": "\n        <h3>1. Why Variations Matter</h3>\n        <ul>\n            <li><strong>Review consolidation:</strong> All child reviews consolidate on parent — new size variants inherit existing reviews</li>\n            <li><strong>Discoverability:</strong> Customers find you whether they search Size S or Size XL</li>\n            <li><strong>Higher conversion:</strong> Switch between variants without leaving the page</li>\n            <li><strong>Lower ad cost:</strong> One sponsored ad covers all variants</li>\n        </ul>\n\n        <h3>2. Variation Themes</h3>\n        <table class='data-table'>\n            <thead><tr><th>Theme</th><th>Required Fields</th><th>Best For</th></tr></thead>\n            <tbody>\n                <tr><td>SizeName</td><td>size_name only</td><td>Jeans in S, M, L, XL</td></tr>\n                <tr><td>ColorName</td><td>color_name only</td><td>T-shirt in Red, Blue, Green</td></tr>\n                <tr><td>SizeName-ColorName</td><td>size_name + color_name</td><td>Shirt in M-Red, M-Blue, L-Red</td></tr>\n                <tr><td>ItemPackageQuantity</td><td>item_package_quantity</td><td>FMCG packs (1-pack, 3-pack)</td></tr>\n            </tbody>\n        </table>\n\n        <h3>3. Variation Wizard Step-by-Step</h3>\n        <ol>\n            <li>Go to <strong>Inventory → Add a Product → Variation Wizard</strong></li>\n            <li>Select variation theme</li>\n            <li>Upload parent product with base content</li>\n            <li>Add each child: Part Number, Color, Size, UPC/EAN</li>\n            <li>Download auto-populated flat file from Wizard</li>\n            <li>Fill remaining required fields per category template</li>\n            <li>Verify: parent row = <code>relationship_type: Parent</code></li>\n            <li>Verify: all children reference exact same <code>parent_sku</code></li>\n            <li>Upload and check Processing Report within 20 mins</li>\n        </ol>\n\n        <div class='callout warning'><div><strong>When NOT to Variate:</strong> Unrelated products | Different categories | More than 2 variation attributes | Products with different technical specs. Improper variations violate Amazon policy and can result in all variants being suppressed simultaneously.</div></div>\n\n        <h3>4. Brand Size Chart — Non-Negotiable for Apparel Sellers</h3>\n        <div class='callout pro-tip'><div><strong>Deal Eligibility Block:</strong> Without an approved Brand Size Chart, apparel and footwear ASINs are <em>completely ineligible</em> for Lightning Deals, Best Deals, and Deals of the Day. This is a hard block — no exceptions. Submit 3–4 weeks before any deal window.</div></div>\n\n        <h3>5. Size Chart Submission SOP</h3>\n        <ol>\n            <li>Go to <strong>Seller Central → Catalog → Size Chart → Download template</strong> for your sub-category</li>\n            <li>Fill all measurement columns: chest, waist, hips, inseam, etc. for each size (XS–3XL)</li>\n            <li>Open Seller Support case — exact subject: <em>\"Request to Update Size Chart of '[Brand]' in '[Category]'\"</em></li>\n            <li>Include: brand_name | department_name | recommended_browse_nodes | Classification | product_type_name | 2–3 sample ASINs</li>\n            <li>Attach completed template</li>\n            <li>Amazon reviews in 3–7 business days</li>\n            <li>Verify size chart appears on all child ASINs (wait 48–72 hrs after approval)</li>\n        </ol>\n\n        <div class='callout info'><div><strong>Node-Level Rule:</strong> Each browse node requires a separate size chart submission. Men's shirts AND Women's shirts = 2 separate cases. New product type = fresh chart required. Set quarterly calendar reminders to renew.</div></div>\n\n        <div class='bookmarks-inline'>\n            <strong>Key Links:</strong><br>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/catalog/size-chart' target='_blank'>Size Chart Manager</a>\n            <a class='btn-sc' href='https://sellercentral.amazon.in/cu/contact-us' target='_blank'>Seller Support</a>\n            <a class='pill-sc' href='https://sellercentral.amazon.in/gp/help/1661' target='_blank'>Browse Tree Guide</a>\n        </div>\n\n        <div class='pain-point-section'>\n            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>\n            <div class='pain-point-body'>\n                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>Apparel seller submits Lightning Deal 5 days before Diwali — rejected because size chart was never approved. Entire festive season lost for top 5 ASINs.</p></div>\n                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Strategic Solution</div><p>Treat size chart approval as a pre-requisite, not an afterthought. Submit 6–8 weeks before any deal window. Maintain a size chart tracker — one row per brand × category × department combination.</p></div>\n                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Pro Insight</div><p>Error 8007 (parent SKU not found) almost always comes from variation_theme mismatch. If using SizeName-ColorName, BOTH size_name and color_name must be filled on every child row — no blanks, no exceptions.</p></div>\n            </div>\n        </div>\n    ",
     "process_flow": "",
     "tools": "",
     "videos": [],
     "checklist": [
-        "Buy Box win rate &gt;80% for all hero ASINs",
-        "Automated repricing rules with min/max floors on all active ASINs",
-        "Deal calendar planned 6 weeks ahead",
-        "Coupons running on targeted ASINs",
-        "B2B pricing enabled with quantity tiers",
-        "Price elasticity tested on top 10 ASINs quarterly"
+      "Identified correct variation theme before using Variation Wizard",
+      "Parent row has relationship_type = Parent",
+      "All child rows reference exact same parent_sku",
+      "Unique size/color combination across all children",
+      "Separate image uploaded per color variant",
+      "Size chart submitted for each brand × category × department combination",
+      "Size chart approved and visible on all child ASINs before any deal submission"
     ],
     "quiz": [
-        {
-            "question": "What is the #1 factor for winning the Buy Box on Amazon India?",
-            "options": ["Lowest absolute price", "FBA fulfilment status", "Most reviews", "Oldest seller account"],
-            "answer": "FBA fulfilment status",
-            "explanation": "FBA provides Amazon-controlled fast delivery and Prime eligibility — the highest-weighted Buy Box factor."
-        },
-        {
-            "question": "Minimum discount required for a Lightning Deal submission?",
-            "options": ["5%", "10%", "15%", "20%"],
-            "answer": "15%",
-            "explanation": "Amazon India requires a minimum 15% off the reference price for Lightning Deal eligibility, plus ≥3★ and Prime eligibility."
-        }
+      {
+        "question": "A seller wants a shirt in sizes S, M, L in colors Red and Blue. Which variation theme is correct?",
+        "options": [
+          "SizeName",
+          "ColorName",
+          "SizeName-ColorName",
+          "MultiPack"
+        ],
+        "answer": "SizeName-ColorName",
+        "explanation": "When a product varies by both size AND color, SizeName-ColorName is required. Both size_name and color_name must be filled for every child row."
+      },
+      {
+        "question": "How far in advance should apparel sellers submit Brand Size Chart before a Lightning Deal?",
+        "options": [
+          "Same day",
+          "1 week",
+          "3–4 weeks",
+          "2 days"
+        ],
+        "answer": "3–4 weeks",
+        "explanation": "Amazon catalog team takes 3–7 business days to review size charts. Submit at least 3–4 weeks before any deal window to ensure approval before the deal submission deadline."
+      }
     ]
-},
-
-# ─────────────────────────────────────────────────────────────
-{
-    "id": "2.4",
-    "number": "Module 2.4",
-    "title": "Review & Rating",
-    "difficulty": "Intermediate",
-    "time": "35 mins",
-    "overview": """<p>Reviews are the social proof engine of Amazon. A 4.2★/200-review product consistently outperforms a 5★/5-review product. This module covers velocity targets, Vine enrollment, negative review handling, policy compliance, and review request automation — all within Amazon's Terms of Service.</p>""",
-    "content": """
-        <h3>1. Review Velocity Targets</h3>
-        <table class='data-table'>
-            <thead><tr><th>Phase</th><th>Target</th><th>Priority Action</th></tr></thead>
-            <tbody>
-                <tr><td>Launch (0–30 days)</td><td>1 review / 10–20 orders</td><td>Vine + Request a Review</td></tr>
-                <tr><td>Growth (30–90 days)</td><td>5–10 reviews/month</td><td>Vine + automated requests</td></tr>
-                <tr><td>Mature (&gt;90 days)</td><td>Maintain ≥4.0★</td><td>Monitor &amp; respond</td></tr>
-            </tbody>
-        </table>
-        <div class='callout pro-tip'>
-            <div><strong>Benchmark rule:</strong> Target 50% of your top 3 competitors' review count to compete effectively on conversion.</div>
-        </div>
-
-        <h3>2. Vine Program</h3>
-        <ul>
-            <li>Eligibility: Brand Registry, &lt;30 reviews, FBA stock available</li>
-            <li>Cost: Free for ASINs with &lt;2 reviews (check current policy)</li>
-            <li>Path: SC → Advertising → Amazon Vine → Enrol product</li>
-            <li>Send 2–30 units; reviews appear in 4–8 weeks</li>
-        </ul>
-
-        <h3>3. Negative Review Response SOP</h3>
-        <div class='callout success'>
-            <div>1. Acknowledge the experience (don't argue)<br>
-            2. Apologise sincerely<br>
-            3. Offer resolution (replacement, refund)<br>
-            4. Move offline: "Contact us at [support]"<br>
-            5. Fix root cause<br><br>
-            Respond within 24 hours — prospective buyers read your responses.</div>
-        </div>
-
-        <h3>4. What's Allowed vs. Not Allowed</h3>
-        <div class='callout warning'>
-            <div><strong>NEVER do:</strong> incentivised reviews, family/friend reviews, review clubs, refunds for reviews.</div>
-        </div>
-        <div class='callout info'>
-            <div><strong>ALLOWED:</strong> Vine programme, "Request a Review" button in SC, neutral packaging inserts ("Love it? Review us!"), responding to existing reviews.</div>
-        </div>
-
-        <h3>5. Request a Review Automation</h3>
-        <p><strong>Manual:</strong> SC → Orders → Manage Orders → Request a Review (4–30 days post-delivery)</p>
-        <p><strong>Tools:</strong> FeedbackWhiz, Helium 10, Jungle Scout — automate within Amazon ToS windows.</p>
-
-        <div class='bookmarks-inline'>
-            <strong>Key Links:</strong><br>
-            <a class='pill' href='https://sellercentral.amazon.in/vine/dashboard' target='_blank'>Amazon Vine</a>
-            <a class='pill' href='https://sellercentral.amazon.in/orders-v3' target='_blank'>Manage Orders</a>
-            <a class='pill' href='https://sellercentral.amazon.in/performance/feedback' target='_blank'>Feedback Manager</a>
-        </div>
-    """,
-    "process_flow": "",
-    "tools": "",
-    "videos": [],
-    "checklist": [
-        "Review velocity tracked monthly per ASIN",
-        "Vine enrolled for all new launches (&lt;30 reviews)",
-        "Automated 'Request a Review' active for all orders",
-        "All negative reviews responded to within 24 hours",
-        "Review manipulation checklist reviewed with team monthly",
-        "Star rating ≥4.0 on all hero ASINs"
-    ],
-    "quiz": [
-        {
-            "question": "Which review acquisition method is compliant with Amazon ToS?",
-            "options": ["Refund in exchange for a review", "Vine programme enrolment", "Review Facebook groups", "Email blast for 5-star reviews"],
-            "answer": "Vine programme enrolment",
-            "explanation": "Amazon Vine is Amazon's own compliant review programme. All other methods mentioned are prohibited and risk account suspension."
-        },
-        {
-            "question": "What review count benchmark should you aim for vs. top competitors?",
-            "options": ["Equal to their count", "50% of their count", "Double their count", "10% of their count"],
-            "answer": "50% of their count",
-            "explanation": "50% of the top competitor's review count provides enough social proof to compete effectively on conversion rate."
-        }
-    ]
-},
-
-# ─────────────────────────────────────────────────────────────
-{
-    "id": "2.5",
-    "number": "Module 2.5",
-    "title": "A+ & Brand Content",
-    "difficulty": "Intermediate",
-    "time": "35 mins",
-    "overview": """<p>A+ Content transforms your product description area into a rich brand experience driving 3–10% higher conversion. This module covers Basic vs Premium A+ eligibility, module layout strategy, comparison charts for cross-selling, and Brand Story creation.</p>""",
-    "content": """
-        <h3>1. Basic vs Premium A+ Eligibility</h3>
-        <table class='data-table'>
-            <thead><tr><th>Feature</th><th>A+ Basic</th><th>Premium A+</th></tr></thead>
-            <tbody>
-                <tr><td>Requirement</td><td>Brand Registered</td><td>BR + Brand Story + ≥5 approved A+ pages</td></tr>
-                <tr><td>Interactive modules</td><td>No</td><td>Yes (hotspot, carousel, video)</td></tr>
-                <tr><td>CVR lift</td><td>3–5%</td><td>8–10%</td></tr>
-                <tr><td>Cost</td><td>Free</td><td>Free (earned)</td></tr>
-            </tbody>
-        </table>
-        <p>Check eligibility: <strong>SC → Advertising → A+ Content Manager</strong></p>
-
-        <h3>2. Recommended A+ Layout (7 modules)</h3>
-        <div class='callout pro-tip'>
-            <div>1. Hero banner — brand lifestyle<br>
-            2. 4-column feature icons — top 4 benefits<br>
-            3. Feature + image — deep dive on #1 feature<br>
-            4. Comparison chart — your product range<br>
-            5. Technical specs table<br>
-            6. Lifestyle + use case text<br>
-            7. Brand statement + logo</div>
-        </div>
-
-        <h3>3. Comparison Chart for Cross-Selling</h3>
-        <ul>
-            <li>Compare up to 6 of your own ASINs (not competitors)</li>
-            <li>Drives 5–15% uplift in multi-ASIN basket size</li>
-            <li>Use to upsell to premium tier or cross-sell complementary products</li>
-        </ul>
-
-        <h3>4. Brand Story</h3>
-        <div class='callout success'>
-            <div>Brand Story appears on every ASIN under your brand and unlocks Premium A+.<br>
-            Published once → applies to all ASINs automatically.<br><br>
-            <strong>Steps:</strong> SC → Advertising → A+ Content Manager → Brand Story → upload logo, heritage image, mission statement → Submit (7-day review)</div>
-        </div>
-
-        <div class='bookmarks-inline'>
-            <strong>Key Links:</strong><br>
-            <a class='pill' href='https://sellercentral.amazon.in/enhanced-content/marketing/dashboard' target='_blank'>A+ Content Manager</a>
-            <a class='pill' href='https://brandservices.amazon.in' target='_blank'>Brand Registry Portal</a>
-        </div>
-    """,
-    "process_flow": "",
-    "tools": "",
-    "videos": [],
-    "checklist": [
-        "A+ Content live on all Brand Registered ASINs",
-        "Brand Story published",
-        "Premium A+ eligibility checked and unlocked",
-        "7-module layout used on hero ASINs",
-        "Comparison chart linking to product range",
-        "A+ CVR performance reviewed monthly"
-    ],
-    "quiz": [
-        {
-            "question": "What is required to unlock Premium A+ Content?",
-            "options": ["100+ reviews", "Brand Story + 5 approved A+ pages", "500+ monthly sales", "DSP advertising active"],
-            "answer": "Brand Story + 5 approved A+ pages",
-            "explanation": "Premium A+ requires an approved Brand Story plus at least 5 approved A+ Basic pages published on your ASINs."
-        },
-        {
-            "question": "Average CVR lift from A+ Content?",
-            "options": ["0–1%", "1–2%", "3–10%", "15–20%"],
-            "answer": "3–10%",
-            "explanation": "Amazon's data shows A+ Content drives 3–10% higher conversion rate. Premium A+ reaches the upper end."
-        }
-    ]
-}
-,
-
-# ─────────────────────────────────────────────────────────────
-{
-    "id": "2.6",
-    "number": "Module 2.6",
-    "title": "Buy Box Strategy — Win, Maintain & Recover",
-    "difficulty": "Advanced",
-    "time": "35 mins",
-    "overview": """<p>Over 80% of Amazon India orders are placed through the Buy Box. Lose it and sales can drop overnight — win it consistently and you own the category. This module breaks down the Buy Box algorithm, the 5 factors that control it, and the exact tactics to win and defend your position.</p>""",
-    "content": """
-        <h3>1. What Is the Buy Box?</h3>
-        <p>The Buy Box is the "Add to Cart" button on the product detail page. When a customer clicks Add to Cart, their order goes to the Buy Box winner — not necessarily the brand owner or lowest price.</p>
-        <div class='callout pro-tip'><div><strong>The 80% Rule:</strong> &gt;80% of Amazon India orders go through the Buy Box. Losing it even temporarily (during repricing delays, stockouts, or metric drops) can cause 50–80% sales decline in 24 hours.</div></div>
-
-        <h3>2. Buy Box Win Factors (Weighted)</h3>
-        <table class='data-table'>
-            <thead><tr><th>Factor</th><th>Weight</th><th>Action</th></tr></thead>
-            <tbody>
-                <tr><td>Price (Landed Price)</td><td>30–40%</td><td>Monitor competitors hourly; use dynamic pricing</td></tr>
-                <tr><td>Fulfillment Method</td><td>25–30%</td><td>FBA &gt; Easy Ship Prime &gt; FBM</td></tr>
-                <tr><td>Seller Metrics</td><td>15–20%</td><td>Feedback 4.5+, return rate &lt;2%, cancellation &lt;1.5%</td></tr>
-                <tr><td>In-Stock Status</td><td>10–15%</td><td>Never go OOS; maintain 30-day safety stock</td></tr>
-                <tr><td>Response Time + Compliance</td><td>5–10%</td><td>Respond to messages within 24 hrs; no policy violations</td></tr>
-            </tbody>
-        </table>
-
-        <h3>3. Step-by-Step: Winning the Buy Box</h3>
-        <ol>
-            <li>Ensure <strong>Professional Seller Plan</strong> (required for Buy Box eligibility)</li>
-            <li>Use <strong>FBA fulfillment</strong> (highest priority in algorithm)</li>
-            <li>Set competitive price — match or beat the current Buy Box price by ₹1–₹5</li>
-            <li>Maintain feedback rating <strong>4.5+</strong> (request reviews post-delivery)</li>
-            <li>Keep return rate &lt;2% and cancellation rate &lt;1.5%</li>
-            <li>Maintain inventory in stock (OOS = immediate Buy Box loss)</li>
-            <li>Respond to all customer messages within 24 hours</li>
-            <li>Monitor Buy Box % daily: Reports → Buy Box Percentage Detail</li>
-        </ol>
-
-        <h3>4. Monitoring Buy Box Ownership</h3>
-        <ol>
-            <li>Go to <strong>Reports → Buy Box Percentage Detail</strong></li>
-            <li>Check daily Buy Box share percentage per ASIN</li>
-            <li>Identify days when Buy Box was lost</li>
-            <li>Correlate with: price changes, stock levels, competitor activity, metric drops</li>
-        </ol>
-
-        <h3>5. Recovering Lost Buy Box</h3>
-        <ol>
-            <li>Check Account Health (Performance → Account Health) for violations</li>
-            <li>Check inventory status — ensure in stock</li>
-            <li>Review price vs. Buy Box competitor (may need adjustment)</li>
-            <li>Check feedback rating — ensure 4.5+</li>
-            <li>Check return and cancellation rates</li>
-            <li>If no issue found, raise Seller Support case</li>
-            <li>Monitor Buy Box % daily until recovered</li>
-        </ol>
-
-        <h3>6. Dynamic Pricing Rules</h3>
-        <table class='data-table'>
-            <thead><tr><th>Rule</th><th>Value</th></tr></thead>
-            <tbody>
-                <tr><td>Maximum price</td><td>Never exceed this (controls margin)</td></tr>
-                <tr><td>Minimum price</td><td>COGS + all fees + minimum 15% margin</td></tr>
-                <tr><td>Buy Box strategy</td><td>Undercut current Buy Box by ₹1–₹5</td></tr>
-                <tr><td>Repricing frequency</td><td>Hourly in competitive categories</td></tr>
-            </tbody>
-        </table>
-
-        <div class='bookmarks-inline'>
-            <strong>Key Links:</strong><br>
-            <a class='btn-sc' href='https://sellercentral.amazon.in/pricing/dashboard' target='_blank'>Manage Pricing</a>
-            <a class='btn-sc' href='https://sellercentral.amazon.in/performance/dashboard' target='_blank'>Account Health Dashboard</a>
-            <a class='pill-sc' href='https://sellercentral.amazon.in/gp/reports-manager/report.html/ref=xx_buybox_dnav_xx?ie=UTF8&reportType=GET_V2_SETTLEMENT_REPORT_DATA_PERFORMANCE' target='_blank'>Buy Box Report</a>
-        </div>
-
-        <div class='pain-point-section'>
-            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>
-            <div class='pain-point-body'>
-                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>Seller goes OOS for 3 days — loses Buy Box to competitor. When restocked, competitor still holds Buy Box. Sales don't recover for 2–3 weeks.</p></div>
-                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Strategic Solution</div><p>Maintain minimum 30-day safety stock. Set Seller Central inventory alerts at 14 days of supply. On restock, run a 3-day Lightning Deal to rebuild sales velocity and reclaim Buy Box.</p></div>
-                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Pro Insight</div><p>FBA gives a significant Buy Box advantage over FBM even at a slightly higher price. In most categories, an FBA listing at ₹500 beats an FBM listing at ₹480. Switching to FBA often recovers lost Buy Box without any price change.</p></div>
-            </div>
-        </div>
-    """,
-    "checklist": [
-        "Enrolled in Professional Seller Plan (Buy Box eligibility requirement)",
-        "Using FBA for all primary ASINs (highest Buy Box priority)",
-        "Price set within ₹1–₹5 of current Buy Box price",
-        "Feedback rating maintained at 4.5+ stars",
-        "Return rate below 2% and cancellation rate below 1.5%",
-        "Minimum 30-day safety stock maintained for top ASINs",
-        "Reviewing Buy Box Percentage Detail report weekly"
-    ],
-    "quiz": [
-        {
-            "question": "What percentage of Amazon India orders typically go through the Buy Box?",
-            "options": ["40%", "60%", "80%+", "95%+"],
-            "answer": "80%+",
-            "explanation": "Over 80% of Amazon India orders are placed through the Buy Box (the Add to Cart button). Losing the Buy Box even temporarily causes 50–80% sales decline for most sellers."
-        },
-        {
-            "question": "Which fulfillment method has the highest priority in Amazon's Buy Box algorithm?",
-            "options": ["FBM with lowest price", "Easy Ship Standard", "FBA (Fulfillment by Amazon)", "Seller Flex"],
-            "answer": "FBA (Fulfillment by Amazon)",
-            "explanation": "FBA is prioritized highest in the Buy Box algorithm, followed by Easy Ship Prime (Seller Fulfilled Prime), then standard Easy Ship, and finally FBM. FBA often wins the Buy Box even at a slightly higher price than FBM competitors."
-        }
-    ]
-},
-
-# ─────────────────────────────────────────────────────────────
-{
-    "id": "2.7",
-    "number": "Module 2.7",
-    "title": "Deals & Promotions Mastery",
-    "difficulty": "Intermediate",
-    "time": "35 mins",
-    "overview": """<p>Deals are the fastest way to spike sales velocity, push organic rank, and acquire new-to-brand customers. This module covers the 4 deal types on Amazon India, eligibility requirements, profit-impact calculation, and a seasonal deal calendar so every promotion drives maximum ROI.</p>""",
-    "content": """
-        <h3>1. Four Deal Types on Amazon India</h3>
-        <table class='data-table'>
-            <thead><tr><th>Deal Type</th><th>Duration</th><th>Visibility</th><th>Best For</th></tr></thead>
-            <tbody>
-                <tr><td><strong>Lightning Deal</strong></td><td>6–24 hours</td><td>Today's Deals page + category</td><td>New product launches, sales velocity boost</td></tr>
-                <tr><td><strong>Best Deal</strong></td><td>7–14 days</td><td>Deals section + category listing</td><td>Sustained awareness, festival periods</td></tr>
-                <tr><td><strong>Deal of the Day</strong></td><td>24 hours</td><td>Homepage featured + email blasts</td><td>High-volume clearance, hero products</td></tr>
-                <tr><td><strong>Coupon</strong></td><td>Custom (up to 90 days)</td><td>Search results badge + detail page</td><td>Always-on conversion boost</td></tr>
-            </tbody>
-        </table>
-
-        <h3>2. Deal Eligibility Checklist (All Deal Types)</h3>
-        <ul>
-            <li>✅ Professional Seller Plan (mandatory)</li>
-            <li>✅ Buy Box winner for the ASIN</li>
-            <li>✅ Feedback rating: 4.5+ stars</li>
-            <li>✅ Account in good standing (no active violations)</li>
-            <li>✅ Product images meet Amazon requirements (1,000px+)</li>
-            <li>✅ Inventory in stock (sufficient quantity through deal period)</li>
-            <li>✅ Brand Size Chart approved (for apparel/footwear)</li>
-            <li>✅ Price higher than deal price before deal period (real discount)</li>
-        </ul>
-
-        <h3>3. Creating a Lightning Deal</h3>
-        <ol>
-            <li>Go to <strong>Advertising → Deals → Create Lightning Deal</strong></li>
-            <li>Select eligible ASIN</li>
-            <li>Set discount % or fixed amount</li>
-            <li>Choose start/end time (high-traffic: evenings 6–10PM, weekends)</li>
-            <li>Set max deal quantity (30–50% of weekly sales volume)</li>
-            <li>Submit 10+ days in advance (Amazon approval required)</li>
-            <li>Monitor performance real-time: sales volume + inventory remaining</li>
-        </ol>
-
-        <h3>4. Deal Profit Impact Calculation</h3>
-        <div class='callout pro-tip'><div><strong>Deal P&amp;L Formula:</strong><br>
-        Deal Profit = (Deal Price × Deal Units) − (COGS × Deal Units) − (All Fees × Deal Units)<br><br>
-        Example (₹500 product, 20% deal = ₹400):<br>
-        COGS: ₹200 | FBA Fee: ₹80 | Referral (10%): ₹40 | GST on fees: ₹21.60<br>
-        Deal Profit per unit: ₹400 − ₹200 − ₹80 − ₹40 − ₹21.60 = <strong>₹58.40 (14.6% margin)</strong><br>
-        Volume impact: Even at 14.6% margin, 3× volume may be more valuable than 25% margin at normal velocity — especially for ranking recovery or new product launch.</div></div>
-
-        <h3>5. No Cost EMI — Seller-Funded Financing</h3>
-        <div class='callout info'><div><strong>How No Cost EMI Works for Sellers:</strong> Customers pay no interest — but sellers absorb a cost equivalent to the bank interest rate. The cost is typically 1–2% of transaction value per month of EMI. For a 6-month EMI on a ₹3,000 item, seller absorbs ~₹180–₹360. Factor this into your deal price calculation for products eligible for EMI.</div></div>
-
-        <h3>6. SPC (Special Price Consideration) Strategy</h3>
-        <p>SPC (Smart Price Consideration) allows sellers to set temporarily reduced prices during high-visibility windows without going through the formal Deals approval process. Available via <strong>Advertising → Deals → SPC</strong> in select categories.</p>
-
-        <h3>7. Seasonal Deal Calendar</h3>
-        <table class='data-table'>
-            <thead><tr><th>Season</th><th>Months</th><th>Deal Strategy</th></tr></thead>
-            <tbody>
-                <tr><td>Republic Day Sale</td><td>Jan</td><td>Lightning Deals, stock up 6 weeks prior</td></tr>
-                <tr><td>Amazon Summer Sale</td><td>Apr–May</td><td>Summer-relevant SKUs, coupons</td></tr>
-                <tr><td>Prime Day India</td><td>Jul–Aug</td><td>10 weeks prior: deal submissions + inventory build</td></tr>
-                <tr><td>Great Indian Festival</td><td>Oct</td><td>12 weeks prior: all deal types, maximum inventory</td></tr>
-                <tr><td>Diwali Peak</td><td>Oct–Nov</td><td>Deals of the Day, gifting SKUs, bundles</td></tr>
-                <tr><td>Year-End Sale</td><td>Dec</td><td>Clearance + hero products for GOSF</td></tr>
-            </tbody>
-        </table>
-
-        <div class='bookmarks-inline'>
-            <strong>Key Links:</strong><br>
-            <a class='btn-sc' href='https://sellercentral.amazon.in/merchandising-new/' target='_blank'>Deals Dashboard</a>
-            <a class='btn-sc' href='https://sellercentral.amazon.in/coupons' target='_blank'>Coupons Manager</a>
-            <a class='pill-sc' href='https://sellercentral.amazon.in/gp/help/external/G202111490' target='_blank'>Lightning Deal Help</a>
-        </div>
-
-        <div class='pain-point-section'>
-            <div class='pain-point-header'><span>⚠️</span><h4>Seller Pain Points &amp; Strategic Solutions</h4></div>
-            <div class='pain-point-body'>
-                <div class='pp-card pp-pain'><div class='pp-card-label'>😤 Pain Point</div><p>Seller runs a 40% Lightning Deal without profit-impact calculation — sells 200 units at a loss, spends ad budget on a deal that destroys margin, and has no inventory left for the real festive peak.</p></div>
-                <div class='pp-card pp-solution'><div class='pp-card-label'>✅ Strategic Solution</div><p>Always run the Deal P&amp;L formula before submission. Minimum deal margin: 10% for deals with volume multiplier; 20%+ for standard deals. Set max deal quantity at 30–50% of weekly sales volume to protect inventory.</p></div>
-                <div class='pp-card pp-insight'><div class='pp-card-label'>💡 Pro Insight</div><p>The value of a Lightning Deal is not just the direct profit — it's the ranking boost from sales velocity spike. A deal that runs break-even can pay for itself 3× over through organic rank improvement in the 2 weeks after the deal ends.</p></div>
-            </div>
-        </div>
-    """,
-    "checklist": [
-        "Confirmed Buy Box ownership before submitting any deal",
-        "Apparel/footwear size chart approved before deal submission",
-        "Calculated deal profit impact (Deal P&L formula) before submission",
-        "Set max deal quantity at 30–50% of weekly sales volume",
-        "Submitted deal 10+ days in advance for approval",
-        "Deal planned for high-traffic time slot (evenings, weekends)",
-        "Seasonal deal calendar created with 12-week lead time for GIF/Prime Day"
-    ],
-    "quiz": [
-        {
-            "question": "For a Lightning Deal, how far in advance should a seller submit for Amazon approval?",
-            "options": ["Same day", "3 days", "10+ days", "30 days"],
-            "answer": "10+ days",
-            "explanation": "Amazon requires Lightning Deal submissions at least 10 days in advance for review and approval. For major events like GIF or Prime Day, Amazon often requires submissions 4–6 weeks in advance."
-        },
-        {
-            "question": "An apparel seller's Lightning Deal was rejected even though they are the Buy Box winner. Most likely reason:",
-            "options": ["Feedback rating below 4.8", "Brand Size Chart not approved", "Inventory too high", "Price too low"],
-            "answer": "Brand Size Chart not approved",
-            "explanation": "Amazon requires an approved Brand Size Chart for all apparel and footwear deal submissions. Without it, Lightning Deals, Best Deals, and Deals of the Day are blocked regardless of other eligibility criteria."
-        }
-    ]
-}
-
+  }
 ]
